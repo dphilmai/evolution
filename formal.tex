@@ -1,16 +1,52 @@
 \documentclass[10pt]{article}
 \input{mathinput.tex}
 \pgfplotsset{compat=1.11}
+\linespread{1.5}
+\newcommand{\natnumb}{\mathbb{N}}
+\newcommand{\realnumb}{\mathbb{R}}
 \begin{document}
 {\noindent\Huge\bf  \\[0.5\baselineskip] {\fontfamily{cmr}\selectfont  Übungsblatt 11 - Plots}         }\\[2\baselineskip] % Title
 { {\bf \fontfamily{cmr}\selectfont Mathematik für Physiker 1}\\ {\textit{\fontfamily{cmr}\selectfont \today   }}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\
 {\textsc{Daniel Mairhofer 5610026}}% Author name
 \\[1.4\baselineskip] 
     
-\begin{align}
-                \frac 12 = x \cdot 2
-\end{align}
-\section{Replicator Dynamics}
+\section{Stag Hunt game}
+A two player, two strategy normalform game in game theory is usually defined 
+as a triplet $\Gamma := (I,S,F)$, consisting of the set of players 
+$I = \{1,2\}$, the space of pure stragies of the game $S= S^1 \times S^2$,
+where $S^i = \left\{\left(s_1^i, s_2^i\right)\right\}$ is the pure stragey 
+space of player $ i \in I$. Whereas $S^i$ describes all possible pure stragies
+an individual $i$ can choose, $S$ describes all possible states of the game
+in pure strategies.
+\\
+\\
 
-Das ist eine Gleichung.
+The first element of a formal description of the strategic interactions of 
+agents\footnote{Defining the agent as individual, group, e.t.c.} game theory
+tries to describe is the set of players $I = \{1,2,...,n\}$, consisting of 
+$ n \in \natnumb$ players. As we will focus on two player games, we set $n=2$.
+Secondly, each agent playing the game needs a bunch of strategies\footnote{
+In gametheory a strategy may be a performed action, an attidude with which a 
+certain action is performed or even a phenotyp in biological contexts} he can
+choose of. So we define for each agent 
+$i \in I$ the pure strategy space 
+$S^i = \{(s_1,s_2,...,s_{m_i})\}$, where $s_{j}$ represents pure strategy $j \in 
+\{1,2,...,m_i\}$ and $m_i \in \natnumb$ the total
+number of pure strategies of player i. In the introduced Stag Hunt game the 
+total number of pure strategies is $m_i = 2$ for each player. 
+The players decide between shooting the stag or the hare. 
+We define hunting the stag as strategy $s_1$ for each player and hunting the 
+hare as strategy $s_2$. Therefore, the (pure) strategy space of each player
+in this game is symmetric as each hunter can choose from the same set of 
+strategies. For later use we define the pure strategy space $S = S^1 \times 
+S^2$. 
+
+The last element of an usual game is the payoff function. A map $F:S \rightarrow
+\realnumb^2$ is called the payoff function of the game which assigns to each element of
+the set of pure strategies an element of $\realnumb^2$, the payoff to the players. 
+In a normalform game this payoff function can be represented with a matrix for
+each player $F^i \in \realnumb^{2 \times 2}$. As the stag hunt game is a
+symmetric game which means that the roles of the players are identical, their
+payoff matrices fulfill the relation $F^2 = (F^1)^T$. 
+
 \end{document}
