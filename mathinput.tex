@@ -9,7 +9,6 @@
 \usepackage{amsthm}
         % packages that allow mathematical formatting
 \usepackage{setspace}
-\onehalfspacing
 \setlength\parindent{0pt}
         % set space and indent and indent
 \usepackage{hyperref}
@@ -19,13 +18,11 @@
                     citecolor={blue!50!black},
                         urlcolor={blue!80!black}
                 }
-\usepackage[dvips,letterpaper,margin=1in,bottom=1in]{geometry}
+\usepackage[portrait]{geometry}
 
 % New commands
 \let\conju\overline
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
-\renewcommand\thesection{Aufgabe \arabic{section}}
-\renewcommand\thesubsection{\normalfont(\roman{subsection})}
 \newcount\colveccount
 \newcommand*\colvec[1]{
         \global\colveccount#1
@@ -43,7 +40,4 @@
         \fi
 }
         % Columnvectors
-\newenvironment{s}
-{\begin{proof}}
-        {\end{proof}}
 
