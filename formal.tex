@@ -66,6 +66,7 @@ strategies $\stu_j \in \strat_i$, with $j \in \{1,2\}$. The probabilities
 $\sprob_{ij}$ are subject to the normalization conditions
 \begin{alignat*}{2}
         \sum_{j=1}^{2} \sprob_{ij}= 1 \qquad \forall i \in I, \sprob_{ij} \geq 0.
+        \label{norm}
 \end{alignat*}
 With this addition, one defines player $i$'s mixed-strategy space as 
 \begin{align*}
@@ -109,7 +110,7 @@ indicating that both players of the game choose from the same set of strategies
 and face the same payoffs. In the \sthuga\ this is clearly the case as both
 hunters choose from two pure strategies and we assume that both receive the
 same payoff from selling their loot. 
-With this notation the mixed strategy payoff to player 1 and to player 2 can be
+With this notation the mixed strategy payoff to player 1 can be
 formulated as
 \begin{alignat}{2}
         \mixpay_1(\svec_1,\svec_2) &= (\svec_1)^T \payma \ \svec_2 \\
@@ -126,6 +127,12 @@ of the two player therefore reduces to
         \\
         &= a \sprob_{11} \sprob_{21} + b \sprob_{11} \sprob_{22} 
         + c \sprob_{12} \sprob_{21} + d \sprob_{12} \sprob_{22}
+        \\
+        &= a \sprob_{11} \sprob_{21} + b (\sprob_{11} - \sprob_{11} \sprob_{12} 
+        ) +c (\sprob_{11} - \sprob_{11} \sprob_{12}) + d ( 1- \sprob_{11}- \sprob_{12}   
+        + \sprob_{11} \sprob_{12} ) 
 \end{alignat}
+,where in the last step the normalization equation \eqref{norm} was used.
+The payoff for player 2 follows similiarly from equation \eqref{mixedmatrixpay}.
 \end{document}
 
