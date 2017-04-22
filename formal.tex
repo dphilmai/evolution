@@ -1,52 +1,115 @@
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \input{mathinput.tex}
 \pgfplotsset{compat=1.11}
 \linespread{1.5}
+\newcommand{\sthuga}{Stag hunt game}
 \newcommand{\natnumb}{\mathbb{N}}
 \newcommand{\realnumb}{\mathbb{R}}
+\newcommand{\triplet}{$\Gamma$}
+\newcommand{\player}{I}
+\newcommand{\strat}{S}
+\newcommand{\stu}{s}
+\newcommand{\pay}{F}
+\newcommand{\sprob}{\hat{s}}
+\newcommand{\svec}{\vec{\sprob}}
+\renewcommand{\vec}{\mathbf}
+\newcommand{\mixpay}{\hat{\pay}}
+\newcommand{\mixstratspace}{\Omega}
+\newcommand{\payma}{\mathbb{A}}
 \begin{document}
-{\noindent\Huge\bf  \\[0.5\baselineskip] {\fontfamily{cmr}\selectfont  Übungsblatt 11 - Plots}         }\\[2\baselineskip] % Title
-{ {\bf \fontfamily{cmr}\selectfont Mathematik für Physiker 1}\\ {\textit{\fontfamily{cmr}\selectfont \today   }}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\
-{\textsc{Daniel Mairhofer 5610026}}% Author name
-\\[1.4\baselineskip] 
-    
-\section{Stag Hunt game}
-A two player, two strategy normalform game in game theory is usually defined 
-as a triplet $\Gamma := (I,S,F)$, consisting of the set of players 
-$I = \{1,2\}$, the space of pure stragies of the game $S= S^1 \times S^2$,
-where $S^i = \left\{\left(s_1^i, s_2^i\right)\right\}$ is the pure stragey 
-space of player $ i \in I$. Whereas $S^i$ describes all possible pure stragies
-an individual $i$ can choose, $S$ describes all possible states of the game
-in pure strategies.
-\\
-\\
+\section{The Stag hunt game}
+Game theory tries to describe the behaviour of agents in strategic interactions.
+By strategic interaction a game theorist means that the so called agents
+can choose between actions, effecting not only their personal outcome, but 
+also their opponent's. Such a situation is called a \textit{game}. 
+A \textit{game} is represented in \textit{normal form} if the agents choose
+their strategies simultaneously, without knowing what the other agents chose. 
+More formaly a game is usually represented as a triplet \triplet$=(\player,
+\strat,\pay)$, where $\player$ is the set of players playing the game,
+$\strat$ the strategy space of the game and $\pay$ the payoff function
+displaying the outcome of the game. 
+The previoulsy introduced \sthuga is a game in \textit{normal form} as both 
+players, the two hunters, choose simulatenously whether to hunt the stag or
+the hare. Formally, the set of players $\player \in  {1,2}$ are the two hunters.
+Each hunter $i \in \player$ can choose from a pure strategy in their pure
+strategy space $\strat_i = \{1,2\}$, where strategy 1 is the strategy hunting
+stag and strategy 2 represents hunting hare. The \textit{pure-strategy space}
+of the game is defined as $\strat = \strat_1 \times \strat_2$, the cartesian
+product of the individual pure strategy spaces. A vector $\stu = (\stu_1,\stu_2)  \in  \strat$
+is called a \textit{pure-strategy profile} indicating which pure strategies 
+$s_i$ with $i \in \player$ the players chose. The last element for a formal 
+description is the map determining the outcome of the game, or in the analogy
+of the \sthuga, with what loot each hunter comes home. Therefore, let 
+the individual payoff function be $\pay_i: \strat \rightarrow \realnumb$ for
+a player $i \in \player$. This maps to every pure-strategy profile $\stu \in S$ a
+payoff. In terms of the \sthuga, this defines for every strategy a hunter can
+choose a payoff, the amount of loot he gets, depending on the strategy 
+of the other hunter. Extending this to a pure-strategy payoff function 
+$\pay: \strat \rightarrow \realnumb^n$ one can describe the payoff to all
+players to a particular strategy profile $\stu \in \strat$ with a vector
+$\pay(\stu) = \left(\pay_1,\pay_2\right)$. 
+Typically the formulation of a normal form game is extended by the abillity
+for each player to randomize the choice of their strategies. A game is then 
+called a game with \textit{mixed strategies}. One can either
+interpret this in the for a lot of games rather unconvincing interpretation
+that a player truly flips a coin or some other randomizing process to choose
+between their strategies. 
+\begin{enumerate}
+        \item Mixed strategies Interpretation
+       \item Sources
+        \item Later on, I will introduce the concept of a population game in
+                which mixed strategies can be interpreted quite differently.
+\end{enumerate} 
+Therefore, mixed strategies can be formalized as that every player $i \in 
+\player$ assignes (positive) probabilities $\sprob_{ij}$ to each of his pure
+strategies $\stu_j \in \strat_i$, with $j \in \{1,2\}$. The probabilities 
+$\sprob_{ij}$ are subject to the normalization conditions
+\begin{alignat*}{2}
+        \sum_{j=1}^{2} \sprob_{ij}= 1 \qquad \forall i \in I, \sprob_{ij} \geq 0.
+\end{alignat*}
+With this addition, one defines player $i$'s mixed-strategy space as 
+\begin{align*}
+        \Delta_i = \{\svec_i = \left(\sprob_{i1}, \sprob_{i2}\right)| \sprob_{i1} + 
+        \sprob_{i2} = 1, \sprob_{i1} \geq 0, \sprob_{i2} \geq 0\}
+\end{align*}
+\begin{enumerate}
+        \item   Geometrically, this can be interpreted as a simplex
+\end{enumerate}
+The vector $\svec_i$ is therefore called a \textit{mixed-strategy profile} of player
+$i \in I$. For example a hunter could flip a (perfect) coin determining if 
+he chooses to hunt stag or hare. This strategy would be expressed as
+$\svec_i = \left( \sprob_{i1},\sprob_{i2}\right)= \left(0.5,0.5\right)$, 
+assigning a 50\% chance to strategy 1 and 50\% to strategy 2. 
+A pure strategy can also be interpreted as a mixed strategy. In that case a 
+player $i$ chooses to assign a probability of $\sprob_{ij}=1$ to strategy
+$j \in \{1,2\}$, while then $\sprob_{ik}=0, \ \forall k \neq j$ i.e. player $i$ 
+just uses strategy $j$. Particularly, $\sprob_i = \left(1,0\right)$ and 
+$\sprob_i = \left(0,1\right)$ describe the use of the pure strategy 1 and 2 of 
+player i in the mixed-strategy space, respectively. 
+As for the pure strategy spaces one typically defines the \textit{mixed-strategy}
+space of the game as $\Omega = \Delta_1 \times \Delta_2$. One writes 
+$\sprob = \left(\sprob_1,\sprob_2\right)$ for the mixed strategy profile of 
+the game. 
+Additionally, one defines the \textit{mixed payoff function} of the game,
+the payoffs to the players using mixed strategies as 
+$\mixpay: (\mixpay_1,\mixpay_2): \mixstratspace \rightarrow \realnumb^2$, 
+where the individual payoff to player $i \in I$ choosing the mixed-strategy 
+profile $\svec_i$ against $\svec_k$,  $k \in I, k \neq i$, $\mixpay_i$ is 
+defined as
+\begin{align}
+        \mixpay_i(\svec_1,\svec_2) = \sum_{j_{1}=1}^{2} \sum_{j_{2}=1}^{2} 
+        \pay_{i}(\stu_{i{j_1}},\stu_{i{j_2}}) \cdot \sprob_{1j_1} \cdot 
+        \sprob_{2j_1}
+\end{align}
+In a two player game it is useful to define payoff matrices $\payma$ for player
+1 and $\mathbb{B}$ for player 2. The entries are defined as $\payma_{jk} = 
+\pay_1(s_{1j},s_{2j})$ and $\mathbb{B}_{jk} = \pay_2(s_{1j},s_{2j})$. 
+The game is called \itemit{symmetric} if it holds that $\mathbb{B} = \payma^T$,
+indicating that both players of the game choose from the same set of strategies
+and face the same payoffs. In the \sthuga\ this is clearly the case as both
+hunters choose from two pure strategies and we assume that both receive the
+same payoff from selling their loot. 
 
-The first element of a formal description of the strategic interactions of 
-agents\footnote{Defining the agent as individual, group, e.t.c.} game theory
-tries to describe is the set of players $I = \{1,2,...,n\}$, consisting of 
-$ n \in \natnumb$ players. As we will focus on two player games, we set $n=2$.
-Secondly, each agent playing the game needs a bunch of strategies\footnote{
-In gametheory a strategy may be a performed action, an attidude with which a 
-certain action is performed or even a phenotyp in biological contexts} he can
-choose of. So we define for each agent 
-$i \in I$ the pure strategy space 
-$S^i = \{(s_1,s_2,...,s_{m_i})\}$, where $s_{j}$ represents pure strategy $j \in 
-\{1,2,...,m_i\}$ and $m_i \in \natnumb$ the total
-number of pure strategies of player i. In the introduced Stag Hunt game the 
-total number of pure strategies is $m_i = 2$ for each player. 
-The players decide between shooting the stag or the hare. 
-We define hunting the stag as strategy $s_1$ for each player and hunting the 
-hare as strategy $s_2$. Therefore, the (pure) strategy space of each player
-in this game is symmetric as each hunter can choose from the same set of 
-strategies. For later use we define the pure strategy space $S = S^1 \times 
-S^2$. 
-
-The last element of an usual game is the payoff function. A map $F:S \rightarrow
-\realnumb^2$ is called the payoff function of the game which assigns to each element of
-the set of pure strategies an element of $\realnumb^2$, the payoff to the players. 
-In a normalform game this payoff function can be represented with a matrix for
-each player $F^i \in \realnumb^{2 \times 2}$. As the stag hunt game is a
-symmetric game which means that the roles of the players are identical, their
-payoff matrices fulfill the relation $F^2 = (F^1)^T$. 
 
 \end{document}
+
