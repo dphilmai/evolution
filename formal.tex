@@ -114,7 +114,18 @@ formulated as
 \begin{alignat}{2}
         \mixpay_1(\svec_1,\svec_2) &= (\svec_1)^T \payma \ \svec_2 \\
         \mixpay_2(\svec_2,\svec_2) &= (\svec_1)^T \payma^T \svec_2
+        \label{mixedmatrixpay}
    \end{alignat}
-
+The payoff matrix for the parametrized \sthuga\ shown in figure ???? %\ref{sthu}
+$\payma = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$, where 
+$a,b,c,d \in \realnumb$. The mixed strategy payoff in \eqref{mixedmatrixpay}
+of the two player therefore reduces to 
+\begin{alignat}{2}
+        \mixpay_1(\svec_1,\svec_2) &= \mqty(\sprob_{11} & \sprob_{12}) 
+        \pmqty{a & b \\ c & d} \pmqty{\sprob_{21} \\ \sprob_{22}}
+        \\
+        &= a \sprob_{11} \sprob_{21} + b \sprob_{11} \sprob_{22} 
+        + c \sprob_{12} \sprob_{21} + d \sprob_{12} \sprob_{22}
+\end{alignat}
 \end{document}
 
