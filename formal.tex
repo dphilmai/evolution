@@ -104,12 +104,17 @@ defined as
 In a two player game it is useful to define payoff matrices $\payma$ for player
 1 and $\mathbb{B}$ for player 2. The entries are defined as $\payma_{jk} = 
 \pay_1(s_{1j},s_{2j})$ and $\mathbb{B}_{jk} = \pay_2(s_{1j},s_{2j})$. 
-The game is called \itemit{symmetric} if it holds that $\mathbb{B} = \payma^T$,
+The game is called \textit{symmetric} if it holds that $\mathbb{B} = \payma^T$,
 indicating that both players of the game choose from the same set of strategies
 and face the same payoffs. In the \sthuga\ this is clearly the case as both
 hunters choose from two pure strategies and we assume that both receive the
 same payoff from selling their loot. 
-
+With this notation the mixed strategy payoff to player 1 and to player 2 can be
+formulated as
+\begin{alignat}{2}
+        \mixpay_1(\svec_1,\svec_2) &= (\svec_1)^T \payma \ \svec_2 \\
+        \mixpay_2(\svec_2,\svec_2) &= (\svec_1)^T \payma^T \svec_2
+   \end{alignat}
 
 \end{document}
 
