@@ -1,11 +1,14 @@
 \documentclass[12pt]{article}
+\usepackage{todonotes}
 \input{mathinput.tex}
 \pgfplotsset{compat=1.11}
 \linespread{1.5}
 \newcommand{\natnumb}{\mathbb{N}}
 \newcommand{\realnumb}{\mathbb{R}}
+\presetkeys{todonotes}{color=yellow,size=\scriptsize}{}
 \begin{document}
 \section{The Stag hunt game}
+\todo{Motivation of traditional game theory}
 As introduced, the stag hunt game is played by two players who choose their
 strategies simultaneoulsy. Both have information about the strategies of the
 other player and the payoffs they and their opponents receive. In game theory
@@ -32,7 +35,8 @@ of the two players with the cartesian product
 yields the definiton of the pure strategy space of the game
 $\mathbb{S}= S \times S = S^2$.
 
-the hunters do not just hunt for their pleasure \footnote{Even though the
+In SH the hunters do not just hunt for their pleasure \todo{Hunter bewerten 
+Ausgang des Spiels}\footnote{Even though the
 situation would not differ, aslong as we assume the pleasure hunting a stag
 to be higher than hunting hare, since economically payoffs are interpreted as
 utility in the theory of households.}, but to seek 
@@ -44,7 +48,113 @@ every outcome of the game, every combination of strategies the players could
 individually choose, is defined. In the special case of two player, one 
 can define a payoff matrix for player 1 $A \in \realnumb^{2 \times2}$ and for 
 player 2  $B \in \realnumb^{2 \times2}$, where $A_{kl} = F_1(k,l)$ and $
-B_{kl} = F_2(k,l)$ with the pure strategies $k,l \in S$. 
+B_{kl} = F_2(k,l)$ with the pure strategies $k,l \in S$. Using the 
+representation above, one can indentify the payoff matrices for the player as
+\begin{align}
+        A = \mqty(a && b \\ c && d), \quad B = \mqty(a && c \\ b && d)
+        \label{eq:matrix}
+\end{align}
+
+In the study of games, one is interested in defining subclasses of games.
+For the game here in study the following definition is important: 
+\begin{mydef}
+        A two player game $\Gamma=(I,S_1 \times S_2, A,B)$ is called symmetric
+        if the players of the game have the same strategy space $S_1=S_2=S$ and
+        for the payoff matrices the condition $B=A^T$ holds. Therefore, the
+        game is well-defined as $\Gamma=(I,S^2,A)$.
+        \label{symmetry}
+\end{mydef}
+Clearly, the SH game is such a game. Both hunters have the same strategies 
+available and the payoff matrices defined in \todo{Richtiges Nummerieren der 
+Gleichungen} \eqref{eq:matrix} fulfill the required condition in Definition
+\ref{symmetry}. Hence, it is irrelevant which player we label 1 or 2.
+
+
+Usually a game is extended by the possibility of the players to play
+\textit{mixed strategies}. Intuitively, in the analogy of SH, one can think of
+such strategies as that a hunter decides whether to shoot the stag or the hare
+by flipping a coin which shows head or tails, not necessarily with an equal
+probabillity. Formally, every player of the game assigns a probabillity 
+distribution over his pure strategies space.  
+A strategy $x_i \in \Delta_i$ of player $i \in I$ 
+is called a \textit{mixed strategy}, where $\Delta_i$ is the mixed strategy 
+space 
+\begin{align*}
+        $\Delta_i = \{ x_i \in \realnumb^2 : \sum_{k \in S} x_{ik} = 1, x_{ik} \geq 0 \quad
+\forall k \in S\}.
+\end{align*}
+\todo{Geometric Interpretation as a Simplex}
+Since there is no restriction for any players choice of the probabillity 
+distribution, in a symmetric game the mixed strategy spaces of the players
+also equal. For the SH game this means $\Delta_1 = \Delta_2 = \Delta$.
+With this notation a pure strategy can be interpreted as a mixed strategy
+which assigns probabillity one to the pure strategy choosen and zero to all
+other strategies. This is represented by the unit vectors of the simplex 
+$\hat{e}_k \in \Delta$, $\hat{e}_1 = (1,0)^T$ is the pure strategy hunting stag 
+and $\hat{e}_2 =(0,1)^T$ denots the pure strategy hunting hare.
+Similiar to the pure strategy case, the mixed strategy spaces of the players 
+$\Delta$ is combined to the mixed strategy space of the game $\Delta^2 =
+\Delta \times \Delta$. From now on $x \in \Delta$ denotes a (mixed) strategy
+chosen by player 1 and $y \in \Delta$ a (mixed) strategy of player 2.
+Again similiar to the pure strategy case, the mixed strategy payoff 
+$\hat{F}_i:\Delta^2 \rightarrow \realnumb$ maps to any state in the mixed strategy
+space  $(x,y) \in \Delta^2$ a payoff $\hat{F}_i(x,y) \in \realnumb$.
+With the matrix notation this is defined as: 
+\begin{alignat*}{2}
+        \hat{F}_1(x,y) &= x^T A y \\
+        \hat{F}_2(x,y) &= x^T A^T y 
+\end{alignat*}
+
+Finally, the SH game is formally defined as a symmetric two-player normal form
+game $\Gamma = (I=\{1,2\}, \Delta^2, \hat{F})$.
+
+\subsection{Traditional concepts}
+In describing the behavior of agents game theory developed a wide range of 
+tools to solve this strategic interactions. \todo{Rationality assumption and
+Equilibrium knowledge required for Nash equilibrium}
+
+The \textit{best-reply} for player $i \in I$ to a strategy $y \in \Delta$ 
+played by $j \neq i$ is defined as:
+\begin{align}
+        \beta(y) = \{x \in \Delta: \hat{F}(x,y) \geq \hat{F}(x',y), 
+        \quad \forall x' \in \Delta\}
+\end{align}
+This formally assigns to each strategy of the other player the strategies
+of player $i$ resulting in the highest payoff for player $i$. However, a player
+must be capable of computing his best-reply to a given strategy.
+
+The most famous and used traditional solution concept, the \textit{Nash 
+equilibrium} assumes this kind of capability of each individual players. 
+The Nash equilibrium was named by its proposer J. Nash in 1950. \todo{Citation
+of Nash and history}
+
+A Nash equilibrium for the SH game is defined as
+\begin{mydef}
+        A state of $(x^*,y^*) \in \Delta^2$ is called a Nash equilibrium if 
+        it holds that\todo{Nicer form}
+\begin{itemize}
+        \item   $(x^*)^T A y^* \geq x^T A y^*, \quad \forall x \in \Delta$
+        \item   $(x^*)^T A y^* \geq (x^*)^T A y, \quad \forall y \in \Delta$.
+\end{itemize}
+        It is called symmetric if $x^* = y^*$.
+\end{mydef}
+It is equivalent to say that both players play best-replies in a Nash 
+equilibrium. One can proof that in every normal form games with mixed 
+strategies a Nash equilibrium exists. This existence proof is due to Nash\todo{Citation}.
+
+So, the SH game admits three symmetric Nash equilibria. The first one consists
+of both players choosing strategy 1, hunting stag, $(\hat{e}_1,\hat{e}_1) \in
+\Delta^2$. The second one is the state of 
+both players choosing strategy 2, hunting hare, $(\hat{e}_2,\hat{e}_2)
+\in \Delta^2$. Additionally to this Nash equilibria in pure strategies, there 
+is a mixed strategy equilibrium. 
+
+
+
+
+\subsection{Evolutionary concepts}
+
+
 
 
 
@@ -59,7 +169,6 @@ B_{kl} = F_2(k,l)$ with the pure strategies $k,l \in S$.
        
 \end{document}
 
-\
 
 
 
