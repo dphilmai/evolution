@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+\input{mathinput.tex}
+\pgfplotsset{compat=1.11}
+\linespread{1.5}
+\newcommand{\natnumb}{\mathbb{N}}
+\newcommand{\realnumb}{\mathbb{R}}
+\begin{document}
+\section{The Stag hunt game}
+As introduced, the stag hunt game is played by two players who choose their
+strategies simultaneoulsy. Both have information about the strategies of the
+other player and the payoffs they and their opponents receive. In game theory
+such a game is called a \textit{normalform} game. Typically, such a game is
+formalized as a Triplet $\Gamma = (I,\mathbb{S},F)$, with the set of players 
+$I=\{1,2,...,n\}$, where $n$ is the total number of players, 
+the pure strategy space of the game $S = \times_i S_i$
+with the pure strategy space $S_i$ of an individual player 
+$i \in I$ defined as $S_i = \{1,2,...,m_i\}$, where $m_i$ denotes the total
+number of strategies available to player $i$, and the payoff function 
+$F: S \rightarrow \realnumb^n$.
+As this text focusses on the stag hunt game, which is a normalform game,
+this definitons reduce to the following.
+By setting $n=2$, we define the two hunters playing SH as $I=\{1,2\}$. A 
+player $i \in I$  can choose from a set of pure strategies from his 
+pure strategy space, $S_i$. Those strategies are called pure, because they 
+differ from the later defined mixed strategies. In the SH game, 
+each hunter can choose out of two pure strategies, namely, huntig the stag 
+(strategy 1) or hunting hare (strategy 2).
+Therefore, the pure strategy space is defined by $S_i = {1,2}$, which results
+from definiton ???? by setting $m_i$. In the SH game both players choose from
+the same set of stragies such that $S_1 =S_1=S$. Combining the strategy spaces
+of the two players with the cartesian product
+yields the definiton of the pure strategy space of the game
+$\mathbb{S}= S \times S = S^2$.
+
+the hunters do not just hunt for their pleasure \footnote{Even though the
+situation would not differ, aslong as we assume the pleasure hunting a stag
+to be higher than hunting hare, since economically payoffs are interpreted as
+utility in the theory of households.}, but to seek 
+a reward for their loot. This is captured by the definition of an individual
+payoff function $F_i:S \rightarrow \realnumb$, which maps for a player $i \in
+I$ to every state of the game $s=(s_1,s_2) \in S^2$, where $s_i$ is a 
+pure strategy of player $i$, a payoff $F_i(s) \in \realnumb$. So
+every outcome of the game, every combination of strategies the players could
+individually choose, is defined. In the special case of two player, one 
+can define a payoff matrix for player 1 $A \in \realnumb^{2 \times2}$ and for 
+player 2  $B \in \realnumb^{2 \times2}$, where $A_{kl} = F_1(k,l)$ and $
+B_{kl} = F_2(k,l)$ with the pure strategies $k,l \in S$. 
+
+
+
+
+
+
+
+
+
+
+
+       
+\end{document}
+
+\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
