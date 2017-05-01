@@ -149,7 +149,8 @@ A Nash equilibrium for the SH game is defined as
         \item   $(x^*)^T A y^* \geq x^T A y^*, \quad \forall x \in \Delta$
         \item   $(x^*)^T A y^* \geq (x^*)^T A y, \quad \forall y \in \Delta$.
 \end{itemize}
-        It is called symmetric if $x^* = y^*$.
+It is called symmetric if $x^* = y^*$. It is a strict Nash equilibrium if 
+the inequality is strict.
 \end{mydef}
 It is equivalent to say that both players play best-replies in a Nash 
 equilibrium. One can proof that in every normal form games with mixed 
@@ -161,7 +162,7 @@ of both players choosing strategy 1, hunting stag, $(\hat{e}_1,\hat{e}_1) \in
 both players choosing strategy 2, hunting hare, $(\hat{e}_2,\hat{e}_2)
 \in \Delta^2$. Additionally to this Nash equilibria in pure strategies, there 
 is a mixed strategy equilibrium. 
-
+\todo{Local shifts, associated payoff matrices}
 \subsection{Evolutionary concepts}
 
 \subsection{Equilibrium Selection}
@@ -198,10 +199,27 @@ defined as
 \begin{mydef}
          The Nash equilibrium $x=(\hat{e_2},\hat{e_2})$ \textit{risk-dominates} 
          the Nash equilibrium $y=(\hat{e}_1,\hat{e}_1)$, if $d-b > a-c$.
+         \label{riskdom}
  \end{mydef}\todo{Maybe change this definition}
  As mentioned in \cite{weibull} a NE risk-dominates, if it is Pareto-efficient
  in the reduced payoff version of the game, associated with the diagonal
- payoff matrix. 
+ payoff matrix in \eqref{diagmatrix}, as the definition \ref{riskdom} 
+ corresponds to $\alpha_1 < \alpha_2$.
+So both pure Nash equilibria have a certain appeal for game theorists to be
+favoured. Indeed, there is no clear consent which equilibrium is favored. 
+\cite{Whatever} argues that communication before the game would lead to 
+an agreement on the Pareto-dominant equilibrium.\todo{Cheap talk}
+Although Harsanyi and Selten introduced the Risk-dominance criterion in 
+\cite{seltenharsanyigeneral}, their theory favors Payoff-dominance in the
+Stag hunt case. On the hand, Harsanyi, as Aumann later advocates in \cite{harsanyinew} 
+for the Risk-dominant criterion. 
+
+The evolutionary approach outlined in the next section may contributes to 
+the equilibrium selection problem. 
+
+\section{The Evolutionary Game}
+
+
 \section{Conclusion}
 \printbibliography
 \end{document}
