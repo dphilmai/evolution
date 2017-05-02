@@ -218,38 +218,93 @@ The evolutionary approach outlined in the next section may contributes to
 the equilibrium selection problem. 
 
 \section{The Evolutionary Game}
+Evolutionary game theory, started by Maynard Smith, has find a lot of 
+recognition in the game theory literature. \todo{Applications and stuff}
+
+In an evolutionary game, a population of agents interacts in a 
+strategic environment. It is usually assumed that the number of agents is 
+large, such that an individual agents decision has a small effect on the
+state of the population. This is called a \textit{population game} \cite{sandholm}.
+
+An evolutionary stag hunt game then consists of agents in a population who
+are randomly matched against each other playing the normal form game 
+$\Gamma = (I,\Delta^2,\hat{F})$ discussed before. In a \textit{monomorphic}\footnote{In 
+contrast to \textit{polymorhpic} populations where each agent can also 
+play mixed strategies} setting, the agents are only able to play pure 
+strategies. As both settings do not differ in their main implications, 
+monomorphic populations admit a handy interpretation for mixed-strategies\todo{Citation, What is Game Theory Trying to accomplish}.
+Let $p_j(t) \geq 0$ be the number of individuals playing strategy $j \in \{1,2\}$
+at time $t \in \realnumb$ and let $p(t) = p_1(t) + p_2(t)$ describe all individuals 
+in the population\footnote{In the model considered here the population will 
+not be allowed to grow and hence $p(t) = P \forall t \in \realnumb$}
+then $x(t) = \left(x_1(t),x_2(t)\right)=\left(\frac{p_1(t)}{p(t)},\frac{p_2(t)}{p(t)}\right)$ is called the state vector of the population at
+time $t \in \realnumb$. The components of the population state vector represent
+the share of agents choosing a specific strategy. 
+As the individuals can only choose between strategy one and two it holds that 
+$x_2(t) = 1-x_1(t)$. Since the population state is formally not different from
+a mixed-strategy, $x(t) \in \Delta$, a mixed-strategy can be interpreted as a
+population state in a monomorpic population. 
+In the biological literature\cite{maynard} strategies are interpreted as
+phenotypes of the population and the payoffs represents the so-called 
+\texit{Darwinian fitness} expressing the expected offsprings for the phenotype
+in the population. Some animals in the population then die and are replaced
+according to the fitness of the phenotype in the current population
+state.\todo{Nicer formulation} 
+This interpretation is rather unpractical since economic situations rarely
+involve the death of their participiants. Therefore, the literature introduces
+\texit{Revision Protocols} to model the adjustment of each agents' strategy.
+So the agents in this context are not simply replaced by new ones, but rather
+change their strategy according to a certain rule. Nevertheless, the
+similiarity to the biological stays in the manner that the agents are not
+assumed to be the \textit{homo rationalis} game theory usually deals with, but
+are "programmed", how some authors put it, to the revision rule.
+\subsection{Revision Protocols}
+
+
+\subsection{Replicator Dynamics}
+The Replicator Dynamic, which is called the "best know dynamic in
+evolutionary game theory" by \cite{Sandholm}, has a wide range of applications
+and attractive properties. As discussed above, it can be motivated by 
+different revision protocols. Formulated for the stag hunt game, one finds
+\begin{align}
+        \dot{x}_1 = x_1\left(\left(x^T A\right)_i - \left(x^T A x\right)\right)
+        \lable{replicator}
+\end{align}
+and the condition $x_2(t) = 1-x_1(t)$. The growth of the share
+$\dot{x}_1(t)$ at time $t \in \realnumb$ depends on the current share in the
+population of that strategy and the excess payoff $\bar{F}(x(t)) 
+= \hat{F}(x.x) = x^T A x$ that strategy earns 
+compared to the average payoff of the entire population. Intuitively, the
+share of a strategy in the population increases (decreases) if the strategy
+yields a higher (lower) than average payoff. This property of a (deterministic)
+evolutionary dynamic is called \textit{Positive correlation} \cite{sandholm}.
+Another property of the Replicators Dynamics is the low data requirement. As 
+seen in the previous section, it is not necessary to assume that an agent
+is able to calculate or gets to know the payoffs of all agent in the population.
+It was sufficient to assume that he gets to know the payoff of one player. 
+One drawback of the Replicator Dynamic for certain applications, especially
+for biologists, is the lack of mutation. Mutation \todo{Definition of mutation}
+\eqref{replicator} shows that the growth of a strategy not present in a 
+population state $x(t)$ is zero. So, a population only consisting of agents
+playing strategy one stays in that state forever. 
+This leads to the concept of a fixed point. A point of a dynamic system,
+such as the replicator dynamic in \eqref{replicator}, is called a fixed point
+if $\dot{x}(t) = 0$ i.e. it stays in the current state for all $t \in 
+\realnumb$. Analyzing \eqref{replicator}, this happens if either a strategy
+is not present in the population or the excess payoff $\bar{F}(x)$
+of a strategy is zero. In the stag hunt game, the fixed points of the
+dynamic coincide with the Nash equilibriums of the base game. In general, 
+the replicator dynamic lacks the \textit{Nash stationarity} property discussed
+in \cite{sandholm}, and hence there are games with rest points which are not
+Nash.\footnote{For a trivial example, consider the prisoners dilemma in 
+\ref{prisoners}. A population only consisting of cooperating agents stays in
+that state which is not a Nash equilibrium.} 
+
 
 
 \section{Conclusion}
 \printbibliography
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
