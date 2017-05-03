@@ -87,7 +87,7 @@ Usually a game is extended by the possibility of the players to play
 \textit{mixed strategies}. Intuitively, in the analogy of SH, one can think of
 such strategies as that a hunter decides whether to shoot the stag or the hare
 by flipping a coin which shows head or tails, not necessarily with an equal
-probabillity. Formally, every player of the game assigns a probabillity 
+probabillity.\todo{Interpretation intuitively problematic e.t.c.} Formally, every player of the game assigns a probabillity 
 distribution over his pure strategies space.  
 A strategy $x_i \in \Delta_i$ of player $i \in I$ 
 is called a \textit{mixed strategy}, where $\Delta_i$ is the mixed strategy 
@@ -101,7 +101,7 @@ Since there is no restriction for any players choice of the probabillity
 distribution, in a symmetric game the mixed strategy spaces of the players
 also equal. For the SH game this means $\Delta_1 = \Delta_2 = \Delta$.
 With this notation a pure strategy can be interpreted as a mixed strategy
-which assigns probabillity one to the pure strategy choosen and zero to all
+which assigns probabillity one to the pure strategy chosen and zero to all
 other strategies. This is represented by the unit vectors of the simplex 
 $\hat{e}_k \in \Delta$, $\hat{e}_1 = (1,0)^T$ is the pure strategy hunting stag 
 and $\hat{e}_2 =(0,1)^T$ denots the pure strategy hunting hare.
@@ -173,7 +173,7 @@ the Nash equilibrium, and refinements such as the ESS are
 not sufficient to select a unique equilibrium, even in the case of a simple
 2x2 game. This does not satisfy game theorists since it is not clear which
 equilibrium is finally played by the agents. Or how \cite{weibull} puts it,
-this kind of coordination games "caused\footnote{And still cause} game theorists and users of 
+this kind of coordination games "caused\footnote{And still causes} game theorists and users of 
 noncooperative game theory a fair amount of frustration". 
 
 A closer look at the two pure Nash equilibria in the Stag hunt game 
@@ -190,14 +190,15 @@ game this is not the case. Every agent plays a best-reply in the Pareto efficien
 outcome, but since there is another Nash equilibrium it is not clear 
 which one is played based on this criterion alone. Based on \cite{schelling}
 one may argue that Pareto-dominance characterizes $(\hat{e}_1,\hat{e}_1)$ 
-as a focal point of the game, a solution of the game which makes the most sense to play but the reasons for this are abstracted away from the strategic form and are consens among
+as a focal point of the game, a solution of the game which makes the most sense
+to play but the reasons for this are abstracted away from the strategic form and are consens among
 the players. \todo{Focal points definition} However, the equilibrium point
 $(\hat{e}_2,\hat{e}_2)$ exhibits the feature of \textit{Risk-Dominance}. 
 \cite{seltenharsanyigeneral} defined this selection criterion based on the
-risk for the players associated with an equilibrium point. Formally, this is
-defined as 
+risk for the players associated with an equilibrium point. Formally, in the
+SH game, 
 \begin{mydef}
-         The Nash equilibrium $x=(\hat{e_2},\hat{e_2})$ \textit{risk-dominates} 
+The Nash equilibrium $x=(\hat{e}_2,\hat{e}_2)$ \textit{risk-dominates} 
          the Nash equilibrium $y=(\hat{e}_1,\hat{e}_1)$, if $d-b > a-c$.
          \label{riskdom}
  \end{mydef}\todo{Maybe change this definition}
@@ -206,12 +207,13 @@ defined as
  payoff matrix in \eqref{diagmatrix}, as the definition \ref{riskdom} 
  corresponds to $\alpha_1 < \alpha_2$.
 So both pure Nash equilibria have a certain appeal for game theorists to be
-favoured. Indeed, there is no clear consent which equilibrium is favored. 
-\cite{Whatever} argues that communication before the game would lead to 
-an agreement on the Pareto-dominant equilibrium.\todo{Cheap talk}
+favored. Indeed, there is no clear consent which equilibrium will be played. 
+\cite{aumann} argues that communication before the game would lead to 
+an agreement on the Pareto-dominant equilibrium.\todo{Cheap talk: Find the paper
+Aumann 1990}
 Although Harsanyi and Selten introduced the Risk-dominance criterion in 
-\cite{seltenharsanyigeneral}, their theory favors Payoff-dominance in the
-Stag hunt case. On the hand, Harsanyi, as Aumann later advocates in \cite{harsanyinew} 
+\cite{seltenharsanyigeneral}, their general theory favors Payoff-dominance in the
+Stag hunt case. On the hand, Harsanyi, as Aumann, later advocates in \cite{harsanyinew} 
 for the Risk-dominant criterion. 
 
 The evolutionary approach outlined in the next section may contributes to 
@@ -241,9 +243,12 @@ then $x(t) = \left(x_1(t),x_2(t)\right)=\left(\frac{p_1(t)}{p(t)},\frac{p_2(t)}{
 time $t \in \realnumb$. The components of the population state vector represent
 the share of agents choosing a specific strategy. 
 As the individuals can only choose between strategy one and two it holds that 
-$x_2(t) = 1-x_1(t)$. Since the population state is formally not different from
-a mixed-strategy, $x(t) \in \Delta$, a mixed-strategy can be interpreted as a
-population state in a monomorpic population. 
+$x_2(t) = 1-x_1(t)$. Since $x(t) \in \Delta$ \footnote{There is formally no
+difference between population state and mixed strategy} a mixed-strategy can 
+be interpreted as a population state in a monomorpic population, where the 
+population is divided on different strategies. Solving the interpretation
+problem for the population setting this interpretation has little relevance
+for the standard case. \todo{Cite Interpretation paper}
 In the biological literature\cite{maynard} strategies are interpreted as
 phenotypes of the population and the payoffs represents the so-called 
 \texit{Darwinian fitness} expressing the expected offsprings for the phenotype
@@ -255,9 +260,9 @@ involve the death of their participiants. Therefore, the literature introduces
 \texit{Revision Protocols} to model the adjustment of each agents' strategy.
 So the agents in this context are not simply replaced by new ones, but rather
 change their strategy according to a certain rule. Nevertheless, the
-similiarity to the biological stays in the manner that the agents are not
+similiarity to biology stays in the manner that the agents are not
 assumed to be the \textit{homo rationalis} game theory usually deals with, but
-are "programmed", how some authors put it, to the revision rule.
+are "programmed" or "wired" \cite{gintis} to their strategy to the revision rule.
 \subsection{Revision Protocols}
 
 
@@ -265,13 +270,18 @@ are "programmed", how some authors put it, to the revision rule.
 The Replicator Dynamic, which is called the "best know dynamic in
 evolutionary game theory" by \cite{Sandholm}, has a wide range of applications
 and attractive properties. As discussed above, it can be motivated by 
-different revision protocols. Formulated for the stag hunt game, one finds
+different revision protocols. Formulated for the stag hunt game, one finds for
+the strategies $j \in \{1,2\}$
 \begin{alignat}{2}
-        \dot{x}_1 = x_1\left(\left(x^T A\right)_i - \left(x^T A x\right)\right)
-        \label{replicator}
+        \dot{x}_j &= x_j\left(\left(x^T A\right)_j - \left(x^T A x\right)\right) 
+        \label{replicator}.
 \end{alignat}
-and the condition $x_2(t) = 1-x_1(t)$. The growth of the share
-$\dot{x}_1(t)$ at time $t \in \realnumb$ depends on the current share in the
+$x(t)=(x_1(t), x_2(t)) \in \realnumb^2$ is then called a \textit{dynamical
+system} defined by the two differential equations in \eqref{replicator}. For
+later definitions I will denote the equations as $\dot{x}(t) = f(x(t))$, where
+$f(x(t))$ describes the vector field corresponding to the right side of
+\label{replicator}.
+The growth of the share $\dot{x}_1(t)$ at time $t \in \realnumb$ depends on the current share in the
 population of that strategy and the excess payoff $\bar{F}(x(t)) 
 = \hat{F}(x,x) = x^T A x$ that strategy earns 
 compared to the average payoff of the entire population. Intuitively, the
@@ -282,14 +292,21 @@ Another property of the Replicators Dynamics is the low data requirement. As
 seen in the previous section, it is not necessary to assume that an agent
 is able to calculate or gets to know the payoffs of all agent in the population.
 It was sufficient to assume that he gets to know the payoff of one player. 
+As the agents with such revision protocols are often described as boundedly
+rational, \cite{gintis} argues that "this is very misleading, because the real 
+issue is the distribution of the information". The argument goes, that even
+if they were not "bounded" they could not optimize since they do not have
+not more information. 
 One drawback of the Replicator Dynamic for certain applications, especially
-for biologists, is the lack of mutation. Mutation \todo{Definition of mutation}
+for biologists, is the lack of mutation, a random error in the replication 
+process.
 \eqref{replicator} shows that the growth of a strategy not present in a 
 population state $x(t)$ is zero. So, a population only consisting of agents
 playing strategy one stays in that state forever. 
-This leads us to the concept of a fixed point. A point of a dynamic system,
+
+This leads us to the concept of a fixed point. A point $x^* \in \realnumb^2$ of a dynamic system,
 such as the replicator dynamic in \eqref{replicator}, is called a fixed point
-if $\dot{x}(t) = 0$ i.e. it stays in the current state for all $t \in 
+if $\dot{x}(t) = f(x^*) = 0$ i.e. it stays in the current state for all $t \in 
 \realnumb$. Analyzing \eqref{replicator}, this happens if either a strategy
 is not present in the population or the excess payoff $\bar{F}(x)$
 of a strategy is zero. In the stag hunt game, the fixed points of the
