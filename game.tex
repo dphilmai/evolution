@@ -280,7 +280,7 @@ $x(t)=(x_1(t), x_2(t)) \in \realnumb^2$ is then called a \textit{dynamical
 system} defined by the two differential equations in \eqref{replicator}. For
 later definitions I will denote the equations as $\dot{x}(t) = f(x(t))$, where
 $f(x(t))$ describes the vector field corresponding to the right side of
-\label{replicator}.
+\label{replicator}. \todo{Introduce the notation and terms of a dynamical system}
 The growth of the share $\dot{x}_1(t)$ at time $t \in \realnumb$ depends on the current share in the
 population of that strategy and the excess payoff $\bar{F}(x(t)) 
 = \hat{F}(x,x) = x^T A x$ that strategy earns 
@@ -307,28 +307,35 @@ playing strategy one stays in that state forever.
 This leads us to the concept of a fixed point. A point $x^* \in \realnumb^2$ of a dynamic system,
 such as the replicator dynamic in \eqref{replicator}, is called a fixed point
 if $\dot{x}(t) = f(x^*) = 0$ i.e. it stays in the current state for all $t \in 
-\realnumb$. Analyzing \eqref{replicator}, this happens if either a strategy
+\realnumb$. 
+It is practical for further use to express the replicator dynamics for the
+parametrized SH game as 
+\begin{align}
+        \dot{x} = f(x) = x^2(a-b+2d-2c) - x^3(a-b+d-c) -x(d-c) 
+\end{align}
+where f(x) is a polynominal of degree $3$. The (real) roots in the 
+of this polynominal correspond to the fixed points. 
+For the parameter set $a=5, b=3, c=0, d=2$  the graph is plotted in \ref{polynominal}.
+Analyzing \eqref{replicator}, this happens if either a strategy
 is not present in the population or the excess payoff $\bar{F}(x)$
 of a strategy is zero. In the stag hunt game, the fixed points of the
 dynamic coincide with the Nash equilibriums of the base game. In general, 
 the replicator dynamic lacks the \textit{Nash stationarity} property discussed
-in \cite{sandholm}, and hence there are games with rest points which are not
+in \cite{sandholm}, and hence there are games with fixed points which are not
 Nash.\footnote{For a trivial example, consider the prisoners dilemma in 
 \ref{prisoners}. A population only consisting of cooperating agents stays in
 that state, which is not a Nash equilibrium.} 
-A natural question concerning fixed point is to ask whether they are stable
-or if the system tends to move away once it is disturbed. I here consider the
-concept of \textit{asymptotical stability}.
+Concerning fixed points, a natural question to ask is if they are stable. 
+A rather strong requirement is the concept of \textit{asymptotical stability}.
 \begin{mydef}
         A state of a differential equation is called asymptotically stable
         if ....
 \end{mydef}\todo{Exact definition}
-One way to show asymptotical stability for rest points is by using the
-theorem of \cite{hartmanngrobman}. \todo{State the theorem of hartmanngrobman}
-
-
-
-
+Hence, the system tends to move back to an asymptotical stable fixed point
+once disturbed. 
+A useful theorem to check for asymptotical stability is that 
+of \cite{hartmanngrobman}. \todo{State the theorem of hartmanngrobman}
+Applying this theorem to the replicator dynamic of the stag hunt game, we find
 \section{Conclusion}
 \printbibliography
 \end{document}
