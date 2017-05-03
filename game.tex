@@ -266,14 +266,14 @@ The Replicator Dynamic, which is called the "best know dynamic in
 evolutionary game theory" by \cite{Sandholm}, has a wide range of applications
 and attractive properties. As discussed above, it can be motivated by 
 different revision protocols. Formulated for the stag hunt game, one finds
-\begin{align}
+\begin{alignat}{2}
         \dot{x}_1 = x_1\left(\left(x^T A\right)_i - \left(x^T A x\right)\right)
-        \lable{replicator}
-\end{align}
+        \label{replicator}
+\end{alignat}
 and the condition $x_2(t) = 1-x_1(t)$. The growth of the share
 $\dot{x}_1(t)$ at time $t \in \realnumb$ depends on the current share in the
 population of that strategy and the excess payoff $\bar{F}(x(t)) 
-= \hat{F}(x.x) = x^T A x$ that strategy earns 
+= \hat{F}(x,x) = x^T A x$ that strategy earns 
 compared to the average payoff of the entire population. Intuitively, the
 share of a strategy in the population increases (decreases) if the strategy
 yields a higher (lower) than average payoff. This property of a (deterministic)
@@ -287,7 +287,7 @@ for biologists, is the lack of mutation. Mutation \todo{Definition of mutation}
 \eqref{replicator} shows that the growth of a strategy not present in a 
 population state $x(t)$ is zero. So, a population only consisting of agents
 playing strategy one stays in that state forever. 
-This leads to the concept of a fixed point. A point of a dynamic system,
+This leads us to the concept of a fixed point. A point of a dynamic system,
 such as the replicator dynamic in \eqref{replicator}, is called a fixed point
 if $\dot{x}(t) = 0$ i.e. it stays in the current state for all $t \in 
 \realnumb$. Analyzing \eqref{replicator}, this happens if either a strategy
@@ -298,7 +298,17 @@ the replicator dynamic lacks the \textit{Nash stationarity} property discussed
 in \cite{sandholm}, and hence there are games with rest points which are not
 Nash.\footnote{For a trivial example, consider the prisoners dilemma in 
 \ref{prisoners}. A population only consisting of cooperating agents stays in
-that state which is not a Nash equilibrium.} 
+that state, which is not a Nash equilibrium.} 
+A natural question concerning fixed point is to ask whether they are stable
+or if the system tends to move away once it is disturbed. I here consider the
+concept of \textit{asymptotical stability}.
+\begin{mydef}
+        A state of a differential equation is called asymptotically stable
+        if ....
+\end{mydef}\todo{Exact definition}
+One way to show asymptotical stability for rest points is by using the
+theorem of \cite{hartmanngrobman}. \todo{State the theorem of hartmanngrobman}
+
 
 
 
