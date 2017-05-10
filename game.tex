@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage{todonotes}
 \usepackage{biblatex}
+\bibliography{bibevol2.bib}
 \bibliography{bibevol.bib}
 \usepackage{sgame}
 \input{mathinput.tex}
@@ -336,6 +337,78 @@ once disturbed.
 A useful theorem to check for asymptotical stability is that 
 of \cite{hartmanngrobman}. \todo{State the theorem of hartmanngrobman}
 Applying this theorem to the replicator dynamic of the stag hunt game, we find
+\section{Experimental Evidence}
+This section focuses on the question what people in coordination problems
+and especially in the stag hunt game actually play. Do people implictly
+use the selection criterias theory suggests? Which factors influence
+individuals in their choice of stragies in an experimental enviroment? Does 
+the evolutionary approach describe the behavior observed in those experiments?
+In the literature, the term 'coordination failure' is not uniformly used and
+either means the individuals could not coordinate on any equilibrium of the game
+or there was no coordination on the payoff-dominating equilibrium 
+\cite{whenandwhy}. The literature mainly concentrated on structural characterstics
+of the payoff matrix \cite{whenandwhy}. For example \cite{schmidt_playing_2003}
+let individuals play different stag hunt games with a varying degree
+of payoff-dominance and risk-dominance. This definitions are needed to
+compare games and hold effects constant\footnote{Since payoff-dominance and risk-dominance 
+are usually defined within a game and not useful to discriminate between games. See also
+\cite{schmidt_playing_2003}}. They define the payoff-dominance 
+characteristic P of a game as the difference in payoffs between the two 
+equilibria relative to the payoff of the payoff-dominant equilibrium
+\begin{align}
+        P = \frac{F(e_1,e_1) -F(e_2,e_2)}{F(e_1,e_2)}=1-\frac{d}{a}.
+        \label{ostrompayoffdom}
+\end{align} 
+Measuring the degree of risk-dominance, they use a method by Selten \todo{Axiomatic Theory 
+of a Risk Dominance Measure for Bipolar Games with Linear Incentives}
+\begin{align}
+        R = ln\left(\frac{a-c}{d-b}\right)
+        \label{ostromriskdom}
+\end{align}
+Based on this measures, they find that individuals respond rather to changes
+in the risk measure than to the payoff-dominance. Indeed, the hypothesis 
+of an increasing risk measurement leading to a higher choice of  the strategy
+in the risk-dominant equilibrium can be concluded from the evidence.
+However, the appropriate choice of risk measure is not quite clear. 
+\cite{DubioisWillingerVan} propose the concept of 'relative riskiness'. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Conclusion}
 \printbibliography
 \end{document}
