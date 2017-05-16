@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{todonotes}
-\usepackage{biblatex}
+\usepackage[style=authoryear,url=false]{biblatex}
 \bibliography{bibevol2.bib}
 \bibliography{bibevol.bib}
 \usepackage{sgame}
@@ -221,13 +221,14 @@ The evolutionary approach outlined in the next section may contributes to
 the equilibrium selection problem. 
 
 \section{The Evolutionary Game}
+\label{evolutionarysection}
 Evolutionary game theory, started by Maynard Smith, has find a lot of 
 recognition in the game theory literature. \todo{Applications and stuff}
 
 In an evolutionary game, a population of agents interacts in a 
 strategic environment. It is usually assumed that the number of agents is 
 large, such that an individual agents decision has a small effect on the
-state of the population. This is called a \textit{population game} \cite{sandholm}.
+state of the population. This is called a \textit{population game} \cite{sandholm_population_2010}.
 
 An evolutionary stag hunt game then consists of agents in a population who
 are randomly matched against each other playing the normal form game 
@@ -269,7 +270,7 @@ are "programmed" or "wired" \cite{gintis} to their strategy to the revision rule
 
 \subsection{Replicator Dynamics}
 The Replicator Dynamic, which is called the "best know dynamic in
-evolutionary game theory" by \cite{Sandholm}, has a wide range of applications
+evolutionary game theory" by \cite{sandholm_populaton_2010}, has a wide range of applications
 and attractive properties. As discussed above, it can be motivated by 
 different revision protocols. Formulated for the stag hunt game, one finds for
 the strategies $j \in \{1,2\}$
@@ -281,7 +282,7 @@ $x(t)=(x_1(t), x_2(t)) \in \realnumb^2$ is then called a \textit{dynamical
 system} defined by the two differential equations in \eqref{replicator}. For
 later definitions I will denote the equations as $\dot{x}(t) = f(x(t))$, where
 $f(x(t))$ describes the vector field corresponding to the right side of
-\label{replicator}. \todo{Introduce the notation and terms of a dynamical system}
+\eqref{replicator}. \todo{Introduce the notation and terms of a dynamical system}
 The growth of the share $\dot{x}_1(t)$ at time $t \in \realnumb$ depends on the current share in the
 population of that strategy and the excess payoff $\bar{F}(x(t)) 
 = \hat{F}(x,x) = x^T A x$ that strategy earns 
@@ -338,54 +339,113 @@ A useful theorem to check for asymptotical stability is that
 of \cite{hartmanngrobman}. \todo{State the theorem of hartmanngrobman}
 Applying this theorem to the replicator dynamic of the stag hunt game, we find
 \section{Experimental Evidence}
-This section surveys the experimental economic literature regarding 
+A third approach beside the traditional and the evolutionary treatment of coordination problems is what \cite{camerer} calls 'fundamental empirical'.
+Hence, this section surveys the experimental economic literature regarding 
 laboratory coordination games to provide evidence how actual people choose
 their strategies in such situations and which factors might influence them. 
 Precisely, do people, if they are able to coordinate on an equilibrium at all,
 play the risk-dominant or the payoff-dominant equilibrium? And how does their
 choice change playing the game repeatedly?
-Since their is a large amount of studies conducting experiments about
-social dilemmetas I will concentrate on those similiar to the framework
-of the (evolutionary) stag hunt. 
-The papers of \cite{vanhuyck1990}, \cite{vanhuyck1991} and \cite{copperdejong1992} are usually 
-seen as the first experiments investigating coordination games \cite{whenandwhy}.
-In \cite{vanhuyck1990} amd \cite{vanhuyck1991}, subjects do not play a stag
+Due to the rich experimental literature on human decisions in social dilemmetas, I will concentrate on studies with frameworks similiar to the evolutionary stag hunt trying to compare the evidence with the results of the theoretical approaches outlined in previous sections. 
+
+The papers of \textcite{van_huyck_tacit_1990} and \textcite{cooper_communication_1992} are 
+seen as the first experiments investigating coordination games \parencite{devetag_when_2007}.
+In \textcite{van_huyck_tacit_1990}, subjects do not play a stag
 hunt, but an order-statistics game. These games differ in that subjects choose
 from a broader set of strategies and hence there are more than two equilibria
-in the game. Nevertheless, the structure is similiar to the stag hunt since
-the equilibria are Pareto-ranked, with one risk-dominant equilibrium \cite{when
-andwhy}. So evidence from this games is likely to be transferable to the 
-simpler case of two strategies. 
+in the game. Also the games are played in a group and the payoff to all 
+players depend on the lowest strategy one of them chose, thus the name 
+'weak-link' order statistics game. Nevertheless, the structure is similiar to 
+the stag hunt in the way that the equilibria are Pareto-ranked, with one 
+'safe' strategy \parencite{devetag_when_2007}. So evidence from this games is likely to 
+be transferable to the coordination problem in the stag hunt game. In 
+\cite{van_huyck_tacit_1990} subjects play the order-statistics game in groups of 
+14-16 for 10 periods. They only received information about their payoff, but 
+so they could find out what the lowest choice of one subject in their group was.
+Astonishingly, in every experiment the groups converged
+to the equilibrium with the lowest payoff. This result were preserved in another 
+five periods of this game although the subjects played an alternative payoff
+matrix embracing the payoff-efficient equilibrium across all groups. 
+Replications of this results have been performed numerously, with varying group
+sizes and slightly changed payoff matrices. One may consult \textcite{devetag_when_2007}
+for a summary. 
+\textcite{cooper_communication_1992} perform a experiment with a standard two-player stag
+hunt game\footnote{They call it simple coordination game(SCG)} 
+and one augmented by a dominated strategy. They find that 
+subjects in randomly matched one-shot games, knowing only about their own
+received payoffs, coordination also fails without any preplay communication. 
+However, they find that two-way communication, in which both players were
+able to send a message to their matched partner containing which strategy
+they intend to choose, solves the coordination problem in the SCG. 
+This early approaces suggest that coordination failure\footnote{Here in the 
+meaning of not being able to coordinate on the payoff-dominant equilibrium} is
+common in laboratory \parencite{devetag_when_2007}. It is noteworthy that the studies 
+discussed used different matching protocols, fixed matching in groups and 
+random matching against one other player, and yet found the same results. 
+A 'very likely consequence of this' is the focus on characteristics of the
+payoff matrix in stag hunt games' rather than the implementational details' 
+such as the matching protocol \parencite{devetag_when_2007}.
+
+The implementation of random matching in a group is the closest to the 
+evolutionary setting discussed in section \ref{evolutionarysection}. This 
+procedure was conducted by \textcite{battalio_optimization_2001}. Subjects 
+played three stag hunt games with the typical symmetric pure strategy
+equilbrium and the symmetric mixed strategy equilibrium at $(0.8,0.2) \in
+\Delta$. Figure \ref{fig:payoffbattalio} show the payoff matrices of the
+games $2R, R$ and $0.6R$ used. The names become clear when observing the 
+\textit{optimization premium} of the games. While controlling for the basin of 
+attraction of the equilibria, i.e. the mixed equilibrium is equal across all games,
+they want to explore the effect of an increase in the "premium for playing
+a best-response" \parencite[751]{battalio_optimization_2001}. 
+\begin{figure}[h]
+        \label{fig:payoffbattalio}
+\caption{Payoff matrices of games in \textcite{battalio_optimization_2001}}
+\begin{alignat*}{3}
+        A_{2R} &= \mqty(45 & 0 \\ 35 & 40) \quad & &A_{R} = \mqty(45 & 0 \\ 
+        40 & 20) \quad & &A_{0.6R} = \mqty( 45 & 0 \\ 42 & 12) \\
+        \delta_{2R} &= 50  \quad & &\ \delta_{R} = 25 \quad & &\ \delta_{0.6R} = 15
+\end{alignat*}
+\end{figure}
+Therefore they define the optimization premium $r(y)$ of a game $j$ as the 
+differece in payoffs choosing the pure strategies $e_1$ and $e_2$ 
+while expecting the opponent to play a strategy $y=(q,1-q) \in \Delta$:
+\begin{align}
+        r_j(y)= \hat{F_j}(e_1,y) - \hat{F_j}(e_2,y) = \delta_j(q-q^*),
+\end{align}
+with the \texit{optimization premium parameter} $\delta_j$. In the notation
+parametrized stag hunt game $\delta_j = a - c + d - b$.
+The parameters for the payoff matrices are reported in figure \ref{fig:payoffbattalio}. 
+First of all, they find support for their hyptohesis that in games with a 
+larger optimization premium subjects coordinated less frequently on the 
+payoff-dominant equilibrium. 
+Contrary to game $0.6R$, where only one cohort coordinated on the risk-
+dominant, in $2R$ no cohort and in $R$ only one cohort converged to the 
+payoff-dominant equilibrium. The replicator dynamic does not offer a
+a description of this behavior, since convergence to a equilibrium only 
+depends on its basin of attractions, which do not differ for the three games, 
+and the initial conditions. Whereas "all 24 cohorts start in the basin of attraction
+of the risk-dominant equilibrium" \parencite{battalio_optimization_2001}, 
+all should converge to the risk-dominant equilibrium according to the dynamic.
+In the most cases this is true, with only three exception in game $0.6R$ 
+and two in $R$.
+But, for the sake of completness, a crossing of the  
+"best-response separatrix" \parencite{battalio_optimization_2001} i.e. 
+mixed-strategy equilibrium, can not happen in the deterministic replicator 
+dynamic.
+Furthermore, as they conjectured, a larger
+optimization premium increases the speed of convergence. Hence, a coordination
+on a equilibrium was achieved fastest in the $2R$ game. 
+This is consistend with a postulated replicator dynamic for this games. 
+Starting from \ref{replicator}, one can derive that the dynamics of this games
+are the same up to a change in speed, proportional to the ratio of 
+optimization premia of the games. In game $R$ the change in the population share
+playing strategy one is, thus, half the speed of $2R$ and four thirds of $0.6R$,
+$\dot{x}_{R} = 0.5 \dot{x}_{2R} = \frac{4}{3}\dot{x}_R$.
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 
