@@ -94,7 +94,7 @@ A strategy $x_i \in \Delta_i$ of player $i \in I$
 is called a \textit{mixed strategy}, where $\Delta_i$ is the mixed strategy 
 space 
 \begin{align*}
-        $\Delta_i = \{ x_i \in \realnumb^2 : \sum_{k \in S} x_{ik} = 1, x_{ik} \geq 0 \quad
+        \Delta_i = \{ x_i \in \realnumb^2 : \sum_{k \in S} x_{ik} = 1, x_{ik} \geq 0 \quad
 \forall k \in S\}.
 \end{align*}
 \todo{Geometric Interpretation as a Simplex}
@@ -253,13 +253,13 @@ problem for the population setting this interpretation has little relevance
 for the standard case. \todo{Cite Interpretation paper}
 In the biological literature\cite{maynard} strategies are interpreted as
 phenotypes of the population and the payoffs represents the so-called 
-\texit{Darwinian fitness} expressing the expected offsprings for the phenotype
+\textit{Darwinian fitness} expressing the expected offsprings for the phenotype
 in the population. Some animals in the population then die and are replaced
 according to the fitness of the phenotype in the current population
 state.\todo{Nicer formulation} 
 This interpretation is rather unpractical since economic situations rarely
 involve the death of their participiants. Therefore, the literature introduces
-\texit{Revision Protocols} to model the adjustment of each agents' strategy.
+\textit{Revision Protocols} to model the adjustment of each agents' strategy.
 So the agents in this context are not simply replaced by new ones, but rather
 change their strategy according to a certain rule. Nevertheless, the
 similiarity to biology stays in the manner that the agents are not
@@ -412,7 +412,7 @@ while expecting the opponent to play a strategy $y=(q,1-q) \in \Delta$:
 \begin{align}
         r_j(y)= \hat{F_j}(e_1,y) - \hat{F_j}(e_2,y) = \delta_j(q-q^*),
 \end{align}
-with the \texit{optimization premium parameter} $\delta_j$. In the notation
+with the \textit{optimization premium parameter} $\delta_j$. In the notation
 parametrized stag hunt game $\delta_j = a - c + d - b$.
 The parameters for the payoff matrices are reported in figure \ref{fig:payoffbattalio}. 
 First of all, they find support for their hyptohesis that in games with a 
@@ -441,13 +441,44 @@ are the same up to a change in speed, proportional to the ratio of
 optimization premia of the games. In game $R$ the change in the population share
 playing strategy one is, thus, half the speed of $2R$ and four thirds of $0.6R$,
 $\dot{x}_{R} = 0.5 \dot{x}_{2R} = \frac{4}{3}\dot{x}_R$.
-
-
-
-
-    
-
-
+\textcite{schmidt_playing_2003} designed their experiment such that the effect
+of differing risk levels could be observed. It is convenient to relabel 
+the strategies in the game, because in their treatment the payoff-dominant 
+equilibria is in the right corner of the normal form game representation,
+contrary the notation used throuhout this text. Comparing risk levels between
+games, they used a measure due to \cite{Seltenanaxiomaticriskmeasure}, defined
+as:
+\begin{align}
+        \label{riskmeasureschmidt}
+        R = ln\left(\frac{\hat{F}(e_2,e_2) -\hat{F}(e_2,e_1)}{\hat{F}(e_1,e_1) 
+        -\hat{F}(e_2,e_1)}\right) = ln \left(\frac{d-b}{a-c}\right)
+\end{align}
+The risk measure $R$ is positive, if the Nash equilibrium $(e_2,e_2)$ is
+risk-dominant, and negative if the payoff-dominant equilibrium inhibits both
+properties.
+None of the four games in \textcite{schmidt_playing_2003} handles
+the case of $R=0$, where the mixed-strategy equilibrium is risk-dominant.
+In difference to \textcite{battalio_optimization_2001}, they do not
+use the proposed optimization premium, but rather measure the risk-dominance 
+level in relative terms as $P=\frac{a-d}{a}$.\footnote{As they mention, the 
+games in \textcite{battalio_optimization_2001} vary in their level of 
+P accordingly.}
+The payoff matrices of the games are shown in \ref{fig:payoffschmidt}.
+Comparing Game 2 with Game 3, and Game 1 with Game 4, the only difference is the 
+degree of risk-dominance and hence one can investigate if subjects react 
+to the change in risk-dominance. For game 1 and game 3 the basin of attraction
+of both equilibria is equal (Mixed-NE at $(\frac 12, \frac 12)$) and  for
+game 2,3 the Mixed-NE is at $(\frac 34,\frac 14)$ resulting in the typical 
+larger basin of attraction of the strategy $(e_2,e_2)$. So one would expect
+from the replicator dynamic, of course depending on the inital condition 
+of the game one, to be more likely attracted to the 'hare-hunting' equilibrium
+in game 2,3.
+\textcite{schmidt_playing_2003} implement three different types of matching
+protocol. First of all, a random matching protocol where each subjects is not
+matched twice with another person and only has information about his payoff and
+the action of the person he was matched against. 
+Secondly, a fixed protocol, matching two persons for several rounds against 
+each other, followed by a series of one-shot games. 
 
 
 
@@ -460,6 +491,16 @@ $\dot{x}_{R} = 0.5 \dot{x}_{2R} = \frac{4}{3}\dot{x}_R$.
 
 
 \section{Conclusion}
+\section{appendix}
+\begin{figure}[h]
+\label{fig:payoffschmidt}
+\begin{alignat*}{3}
+        A_{Game1} = \mqty( 100 & 20 \\ 60 & 60), \quad A_{Game2} 
+                               &= \mqty( 100 & 20 \\ 80 & 80), \\  A_{Game3} = \mqty( 100 
+             & 60 \\ 80 & 80), \quad A_{Game4} &= \mqty( 100
+                             & 0 \\ 80 & 60)
+        \end{alignat}
+\end{figure}
 \printbibliography
 \end{document}
 
