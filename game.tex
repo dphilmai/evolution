@@ -1,8 +1,9 @@
 \documentclass[12pt]{article}
 \usepackage{todonotes}
-\usepackage[style=authoryear,url=false]{biblatex}
+\usepackage[style=authoryear,maxcitenames=2,url=false]{biblatex}
 \bibliography{bibevol2.bib}
 \bibliography{bibevol.bib}
+\bibliography{bibevol3.bib}
 \usepackage{sgame}
 \input{mathinput.tex}
 \pgfplotsset{compat=1.11}
@@ -479,12 +480,33 @@ matched twice with another person and only has information about his payoff and
 the action of the person he was matched against. 
 Secondly, a fixed protocol, matching two persons for several rounds against 
 each other, followed by a series of one-shot games. 
+In the random matching protcol, they find evidence that an increase in 
+risk-dominance, i.e. an increase in $R$, leads to a higher choice of the
+strategy in the risk-dominant NE.\todo{Schmidt et al paper.} 
 
-
-
-
-
-
+\textcite{dubois_optimization_2012} conduct a similiar experiment as 
+\textcite{schmidt_playing_2003} and \textcite{battalio_optimization_2001},
+but introduce a different measure for the risk subjects are confronted with in
+the games. They define the \textit{relative riskiness} of a games 
+"safe strategy relative to the risky strategy" as $RR = \frac{|c-d|}{a-b}$.
+Intuitively, a player commited to strategy one and calculating the 
+difference a deviation of the other player from strategy one to two, gets
+$(a-b)$. Similiary for strategy two, he receives $c-d$. The relative riskiness
+measure is, hence, the ratio of those deviation calculations. Alternatively,
+it can be interpreted as the ratio of the standard deviations of the payoffs 
+\parencite{dubois_optimization_2012}. 
+Observing the values of the relative riskiness by 
+\textcite{dubois_optimization_2012} and the risk-dominance measure of 
+\textcite{schmidt_playing_2003} for the games used in the papers, it is clear
+that both measures are in a conflict. As by \textcite{schmidt_playing_2003}
+measure, risk-dominance is kept constant in the games of 
+\textcite{battalio_optimization_2001}, relative riskiness indicates a 
+variation. On the other hand, relative riskiness cannot distinguish between
+the games 1,2 and 3 of \textcite{schmidt_playing_2003}, since $RR=0$. In an
+early working version of their paper they explicitly excluded the case 
+$c \neq d$ and statet that "a more general measure of relative riskiness 
+should allow for the case where c=d as compared to $(a-b)$ 
+\parencite{dubois_optimization_2008_working}.
 
 
 
