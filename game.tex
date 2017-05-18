@@ -23,6 +23,7 @@
 \caption{A parametrized form of the Stag hunt game}
 \end{figure}
 \section{The Stag hunt game}
+\label{sec:traditional}
 \todo{Motivation of traditional game theory}
 As introduced, the stag hunt game is played by two players who choose their
 strategies simultaneoulsy. Both have information about the strategies of the
@@ -348,7 +349,14 @@ Precisely, do people, if they are able to coordinate on an equilibrium at all,
 play the risk-dominant or the payoff-dominant equilibrium? And how does their
 choice change playing the game repeatedly?
 Due to the rich experimental literature on human decisions in social dilemmetas, I will concentrate on studies with frameworks similiar to the evolutionary stag hunt trying to compare the evidence with the results of the theoretical approaches outlined in previous sections. 
-
+\textcolor{red}{Since the papers I will discuss use different notation and 
+label strategies different I find it useful to translate theirs into the
+notation I used throughout this text. On these grounds, I will call the 
+strategy used in the payoff-dominant equilibrium of the stag hunt game
+\textit{strategy 1} or in analogy to the stag hunt story \textit{hunting stag}.
+Consistently, the strategy used in the risk-dominant equilibrium is called
+\textit{strategy 2} or \textit{hunting hare}. Moreover, I use the notation
+introduced in section \ref{sec:traditional} to formulate relevant definitions.}
 The papers of \textcite{van_huyck_tacit_1990} and \textcite{cooper_communication_1992} are 
 seen as the first experiments investigating coordination games \parencite{devetag_when_2007}.
 In \textcite{van_huyck_tacit_1990}, subjects do not play a stag
@@ -513,17 +521,41 @@ should allow for the case where c=d as compared to $(a-b)$
 \parencite{dubois_optimization_2008_working}. 
 \todo{Maybe both measures capture different things: Intuition}
 With the implementation of game 1 a replication of the results for 
-\textcite{battalio_optimization_2001}'s game $0.6R$ could be performed
-\footnote{The payoff matrices are identical. Compare \ref{fig:payoffdubois}
-and \ref{fig:payoffbattalio}}. As per their conjecture they found that a 
-lower relative riskiness in a game decreased the rate of choice of strategy
-one, keeping the optimization premium constant. 
-This is congruent with the intuition that the severity of the impact 
+\textcite{battalio_optimization_2001}'s game $0.6R$ could be 
+performed\footnote{The payoff matrices are identical. 
+Compare \ref{fig:payoffdubois} and \ref{fig:payoffbattalio}}. 
+As per their conjecture they found that a lower relative riskiness in a game 
+decreased the rate of choice of strategy one, keeping the optimization premium 
+constant. This is congruent with the intuition that the severity of the impact 
 related with the strategic uncertainty subjects face in a game, expressed in
 the difference in payoff a deviation of the other player would cause,
-effects the choice of the strategy.  
+effects the choice of the strategy. 
+On the other hand, keeping the relative riskiness constant and varying the
+optimization premium, they cannot find an effect on the frequency of 
+strategy 1. 
+In measuring the "coordination sucess", they deploy the concept of "strong
+coordination". 
+In other words, counting the occurence of periods in which a group
+uniformly adopts a strategy such that every pair of subjects lands in one
+of the Nash equilibria. \textcite{dubois_optimization_2012} intend to sort 
+out "furtuitous coordination", coordination as consequence of subjects being
+randomly matched with each other. Comparing strong coordinations between the
+games they find a non-significant difference between game 1 and game 2 in 
+which only the relative riskiness certeris paribus was changed. Contrary to 
+that there is a significant difference in the commoness in game 3 to game 2.
+Since game 3 and game 2 only differ in their optimization premium 
+\textcite{dubois_optimization_2012} conclude that a higher optimization
+premium leads to more (strong) coordination. As they mention, this agrees
+with the observation of \textcite{battalio_optimization_2001} that the 
+speed of convergence hinge positively on the optimization premium. \todo{
+Is it really the convergence or did I miss something?}
+\todo{History of Play}
 
+As \textcite{battalio_optimization_2001}, \textcite{schmidt_playing_2003} and
+\textcite{dubois_optimization_2012} point out, the structure of the payoff 
+matrix has a strong impact on the way people play the stag hunt game.  
 
+The findings of :
 
 
 
@@ -553,9 +585,6 @@ effects the choice of the strategy.
                 \frac 14
         \end{alignat*}
 \end{figure}
-    
-
-
 \printbibliography
 \end{document}
 
