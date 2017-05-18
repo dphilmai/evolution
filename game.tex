@@ -494,7 +494,11 @@ difference a deviation of the other player from strategy one to two, gets
 $(a-b)$. Similiary for strategy two, he receives $c-d$. The relative riskiness
 measure is, hence, the ratio of those deviation calculations. Alternatively,
 it can be interpreted as the ratio of the standard deviations of the payoffs 
-\parencite{dubois_optimization_2012}. 
+\parencite{dubois_optimization_2012}. They speak of "comparable riskiness",
+if the $RR$ measure is close to one \cite{dubois_optimization_2012}. 
+According to $RR$, the risk-dominant strategy 2 is said to be less risky 
+relative to the payoff-dominant strategy 1 in on game compared to another if 
+$RR$ is smaller.
 Observing the values of the relative riskiness by 
 \textcite{dubois_optimization_2012} and the risk-dominance measure of 
 \textcite{schmidt_playing_2003} for the games used in the papers, it is clear
@@ -506,7 +510,19 @@ the games 1,2 and 3 of \textcite{schmidt_playing_2003}, since $RR=0$. In an
 early working version of their paper they explicitly excluded the case 
 $c \neq d$ and statet that "a more general measure of relative riskiness 
 should allow for the case where c=d as compared to $(a-b)$ 
-\parencite{dubois_optimization_2008_working}.
+\parencite{dubois_optimization_2008_working}. 
+\todo{Maybe both measures capture different things: Intuition}
+With the implementation of game 1 a replication of the results for 
+\textcite{battalio_optimization_2001}'s game $0.6R$ could be performed
+\footnote{The payoff matrices are identical. Compare \ref{fig:payoffdubois}
+and \ref{fig:payoffbattalio}}. As per their conjecture they found that a 
+lower relative riskiness in a game decreased the rate of choice of strategy
+one, keeping the optimization premium constant. 
+This is congruent with the intuition that the severity of the impact 
+related with the strategic uncertainty subjects face in a game, expressed in
+the difference in payoff a deviation of the other player would cause,
+effects the choice of the strategy.  
+
 
 
 
@@ -514,15 +530,32 @@ should allow for the case where c=d as compared to $(a-b)$
 
 \section{Conclusion}
 \section{appendix}
-\begin{figure}[h]
+\begin{figure}[H]
 \label{fig:payoffschmidt}
+\caption{Payoff matrices of the games used in \cite{schmidt_playing_2003}}
 \begin{alignat*}{3}
         A_{Game1} = \mqty( 100 & 20 \\ 60 & 60), \quad A_{Game2} 
-                               &= \mqty( 100 & 20 \\ 80 & 80), \\  A_{Game3} = \mqty( 100 
+                               &= \mqty( 100 & 20 \\ 80 & 80), \\ 
+        A_{Game3} = \mqty( 100 
              & 60 \\ 80 & 80), \quad A_{Game4} &= \mqty( 100
                              & 0 \\ 80 & 60)
         \end{alignat}
 \end{figure}
+\begin{figure}[H]
+        \capture{Payoff matrices of the games used
+        in \cite{dubois_optimization_2012}}
+        \label{fig:payoffdubois}
+        \begin{alignat*}{3}     
+                A_{Game1} &= \mqty(45 & 0 \\ 42 & 12),
+                A_{Game2} &= \mqty(40 & 20 \\37 & 32),
+                A_{Game3} &= \mqty(44 & 4 \\ 38 & 28) \\
+                RR_{Game1}&= \frac 23, RR_{Game2}&=\frac 14, RR_{Game3}&=
+                \frac 14
+        \end{alignat*}
+\end{figure}
+    
+
+
 \printbibliography
 \end{document}
 
