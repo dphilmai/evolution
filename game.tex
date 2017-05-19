@@ -1,9 +1,11 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage{todonotes}
-\usepackage[style=authoryear,maxcitenames=2,url=false]{biblatex}
-\bibliography{bibevol2.bib}
+\usepackage{float}
+\usepackage[backend=biber,style=authoryear,maxcitenames=2,url=false]{biblatex}
+%\bibliography{bibevol2.bib}
 \bibliography{bibevol.bib}
-\bibliography{bibevol3.bib}
+%\bibliography{bibevol3.bib}
+\bibliography{bibevol4.bib}
 \usepackage{sgame}
 \input{mathinput.tex}
 \pgfplotsset{compat=1.11}
@@ -565,12 +567,40 @@ speed of convergence hinge positively on the optimization premium. \todo{
 Is it really the convergence or did I miss something?}
 \todo{History of Play}
 
-As seen from  the evidence \textcite{battalio_optimization_2001},
+As seen from the evidence \textcite{battalio_optimization_2001},
 \textcite{schmidt_playing_2003} and \textcite{dubois_optimization_2012} 
-point out, the structure of the payoff matrix has a strong impact on the way 
-people play the stag hunt game.  
+found, the structure of the payoff matrix has a strong impact on the way 
+people play the stag hunt game.   
+The story this evidence tells is quite frightening. Failure to coordinate 
+on the payoff-dominant equilibrium seems to be common. Following an argument
+of \textcite{kreps_game_1990} that identical strategic interactions, such
+as the play of completely indentical stag hunt games in the laboratory,
+"take us very little distance outside the laboratory", 
+\textcite{rankin_strategic_2000} design an experiment with a randomly 
+pertubated stag hunt game. Essentially, the payoff to strategy 1 is fixed 
+whereas the payoff to strategy 2 varies randomly between the games. This is
+depicted in the payoff matrix \eqref{eq:payoffrankin}.
+\begin{align}
+        \label{eq:payoffrankin}
+        A = \mqty(1 & 0 \\ x & x)
+\end{align}        
+The parameter $x$ is equally distributed between $(0,1)$ and once a sequence
+was calculated used for all cohorts participating in the experiment. This
+variation justifies to describe the games as "similiar" but not
+"identical", hence the structure stays the same, but the risk-dominance 
+property varies. Indeed, if $x$ is greater than $0.5$ risk-dominance and
+payoff-dominance select different equilibria, $(e_2,e_2)$ and $(e_1,e_1)$,
+respectively. For a value of $x$ smaller than $0.5$ both select the 
+the equilibrium in strategy 1. One finds that the optimization premium for 
+this randomly perturbed games does not change, since $\delta=1-x+x+0=1$. 
+The relative riskiness measure $RR$ cannot discriminate between this games,
+since $|d-c|=0\ \forall x$. \cite{schmidt_playing_2003} measure of risk of 
+course is positive for $x > 0.5$ and negative for $x <0.5$
+The question \textcite{ranking_strategic_2000}
+want to investigate is, if this framework of sligthly varied situations may
+lead the groups to form a "convention" which deductive principle to choose. 
 
-The findings of :
+
 
 
 
@@ -586,10 +616,10 @@ The findings of :
         A_{Game3} = \mqty( 100 
              & 60 \\ 80 & 80), \quad A_{Game4} &= \mqty( 100
                              & 0 \\ 80 & 60)
-        \end{alignat}
+        \end{alignat*}
 \end{figure}
 \begin{figure}[H]
-        \capture{Payoff matrices of the games used
+        \caption{Payoff matrices of the games used
         in \cite{dubois_optimization_2012}}
         \label{fig:payoffdubois}
         \begin{alignat*}{3}     
