@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage{todonotes}
 \usepackage{float}
 \usepackage[backend=biber,style=authoryear,maxcitenames=2,url=false]{biblatex}
@@ -147,6 +147,7 @@ just referred to as equilibrium.
 
 A Nash equilibrium for the SH game is defined as
 \begin{mydef}
+        \label{def:nashequilibrium}
         A state of $(x^*,y^*) \in \Delta^2$ is called a Nash equilibrium if 
         it holds that\todo{Nicer form}
 \begin{itemize}
@@ -157,7 +158,7 @@ It is called symmetric if $x^* = y^*$. A Nash equilibrium is
 strict Nash equilibrium if the inequality is strict.
 \end{mydef}
 Equivalently, both players choose a best-reply in the Nash equilibrium.
-One can proof that in every normal form games with mixed 
+One can proof that in every normal form game with mixed 
 strategies a Nash equilibrium exists. This existence proof is due to 
 \textcite{nash_equilibrium_1950}.
 
@@ -166,20 +167,108 @@ of both players choosing strategy 1, hunting stag, $(\hat{e}_1,\hat{e}_1) \in
 \Delta^2$, where both players receive the payoff $a$. 
 None of both has an incentive to change his decision. For both
 playing the pure strategy 1 is a best-reply because a unilateral deviation 
-leads to the payoff $c \seq a$
+leads to the payoff $c \leq a$.
 The second equilibrium is the state of 
 both players choosing strategy 2, hunting hare, $(\hat{e}_2,\hat{e}_2)
 \in \Delta^2$. Again by definition, both play a best-reply and a unilateral 
-deviation of a player results in a lower payoff $b<d$
+deviation of a player results in a lower payoff $b<d$.
 Additionally to this Nash equilibria in pure strategies, there is a symmetric
 mixed-strategy equilbrium assigning a probability $q=\frac{d-b}{a-c+d-b}$ to
-strategy 1. To see this, calculating the pay
+strategy 1. To see this, calculating the pay \todo{Calculation that payoff is
+not dependend what strategy is chosen againt q}
 
-is a mixed strategy equilibrium. 
-\todo{Local shifts, associated payoff matrices}
+For further analysis it is convenient to use that Nash equilibria are only
+defined by a difference inequality. Hence, any affine transformation of the
+payoff matrix and \textit{local shifts} do not change the set of Nash equilibria 
+of the game \parencite[17-19]{weibull_evolutionary_1997}. A transformation is
+called a local shift if to all payoffs in a column of the payoff matrix for 
+a player the same constant is added. Formally, let $A_{ij}$ denote the 
+elements of the player's payoff matrix, a local shift to column $j^*$ 
+transform this payoff
+matrix into the payoff matrix $A^*$ as:
+\begin{align}
+        A^*_{ij} =
+        \begin{cases}
+                A_{ij} + v & \text{for}\ j=j^*, v \in \realnumb \\
+                A_{ij}
+        \end{cases}
+\end{align}
+This does not change the best-reply structures of the normal form game,
+since it does not the change the differences a player considers when valuating
+which strategy is better against a given strategy of the other player. When 
+applying this to the stag hunt game one can use two local shifts to get
+the shifted payoff matrix with the diagonal elements $A_{11}=\alpha_1$ and 
+$A_{22}=\alpha_2$, where $\alpha_1=a-c$ and $\alpha_2=d-b$ and 
+zero off the diagonal. \textcite[28]{weibull_evolutionary_1997} 
+groups all symmetric 2x2 games into four categories with different 
+equilibrium properties. Outlined in the discussion, the stag hunt game 
+is considered as a coordination game and in contrast to the three other
+categories the solution is not so obvious. I will discuss this in the section
+concerning the selection of an equilibria \ref{sec:equilibriumselection}.
+
 \subsection{Evolutionary concepts}
+The stag hunt game has multiple Nash equilibria. But which equilibrium will
+no be played one might ask. Answering this question, game theorists tried
+to construct refinements of the Nash equilibria in cases where some Nash
+equilibria seemed to be unconvincing. Motivated by the context of evolution
+in animal populations \cite{maynard} constructed the refinement 
+\textit{Evolutionary stable strategy} (ESS). In his model, animals are of a
+specific phenotype, representing strategies, playing a normal form game where
+the payoffs are not directly measured in utility but represent the darwinian 
+fitness of that phenotyp, i.e. the expected number of offsprings to that
+phenotype. A crucial difference to the games traditional game theory considers, 
+played by agents with a fair amount of ability to calculate best-replies,
+is that the animals \textit{are} of a phenotyp and cannot change it by will.
+They cannot \textit{choose} their "strategy" in the game like agents do.
+Biologists then ask which composition of the population cannot be invaded.
+Formally, this intuition leads for a symmetric
+two-player game to
+\begin{mydef}
+        \label{def:ess}
+        A strategy $x \in \Delta$ is called evolutionary stable (ESS) if it
+        holds that
+        \begin{align*}
+                \label{eq:essinvasion}
+                \hat{F}(x,\epsilon y + (1-\epsilon) x) > 
+                \hat{F}(y,\epsilon y + (1-\epsilon) y), \numberthis
+        \end{align*}
+        where $y \in \Delta, y \neq x$ is the strategy of the group invading the
+        existing population with share $\epsilon \in (0,1)$.
+        Alternatively, the ESS $x$ satisfies
+        \begin{alignat}{2}
+                \label{eq:essstrict}
+                \hat{F}(x,x) &\geq \hat{F}(y,x) \forall y \\ 
+                \hat{F}(y,x) &= \hat{F}(x,x) \Rightarrow  
+                \hat{F}(y,y) < \hat{F}(x,y) \label{eq:essstrict2}
+        \end{alignat}
+\end{mydef}
+The first part of the definition depicts the intution of an invasion in the
+population context.
+Hence, the highest share $\bar{\epsilon}$ of $y$ the evolutionary stable 
+strategy $x$  can be invaded such that the inequality in definition 
+\ref{def:ess} holds for any $\epsilon \in (0,\bar{\epsilon})$ is called  
+\textit{invasion barrier} \cite{weibull_evolutionary_1997}. 
+The alternative defintion in \eqref{eq:essstrict} and \eqref{eq:essstrict2}
+shows why it is called an refinement of the Nash equilibrium. Indeed,
+seen in \eqref{eq:essstrict}, an ESS is used in a Nash equilibrium as it 
+needs to be a best-reply to satisfy the ESS condition. In addition, 
+a strategy used in a strict Nash equilibrium is always an ESS, 
+since it directly satisfies 
+\eqref{eq:essstrict}
+Not all strategies in the equilibria of the stag hunt game are evolutionary
+stable strategies. The pure strategies $e_1$ and $e_2$ are evolutionary stable,
+since both symmetric equilibria consisting of them are strict and so 
+satisfy the condition \eqref{eq:essstrict}. The strategy assigning 
+a probability of $q=\frac{\alpha_1}{\alpha_1 + \alpha_2}$ used in the 
+mixed equilibrium is not an ESS, because condition \eqref{eq:essstrict} is
+an equality and the implication of \eqref{eq:essstrict2} does not hold for all
+strategies $y \in \Delta$.
+Consider for example $y =(e_1,e_1)$ the pure strategy $e_1$. It follows that
+the $\hat{F}((q,1-q),y) = \frac{\alpha_1 \alpha_2}{\alpha_1+\alpha_2}
+< \alpha_1 = \hat{F}(y,y)$, violating inequality \eqref{eq:essstrict2}.
 
 \subsection{Equilibrium Selection}
+\label{sec:equilibriumselection}
 Clearly, game theory has the aspiration to provide advise for agents in 
 situations such as that defined above.
 As seen in the stag hunt game, the mostly used solution concept, 
@@ -216,7 +305,7 @@ The Nash equilibrium $x=(\hat{e}_2,\hat{e}_2)$ \textit{risk-dominates}
          the Nash equilibrium $y=(\hat{e}_1,\hat{e}_1)$, if $d-b > a-c$.
          \label{riskdom}
  \end{mydef}\todo{Maybe change this definition}
- As mentioned in \cite{weibull} a NE risk-dominates, if it is Pareto-efficient
+ As mentioned in \cite{weibull_evolutionary_1997} a NE risk-dominates, if it is Pareto-efficient
  in the reduced payoff version of the game, associated with the diagonal
  payoff matrix in \eqref{diagmatrix}, as the definition \ref{riskdom} 
  corresponds to $\alpha_1 < \alpha_2$.
@@ -372,14 +461,15 @@ parametrized SH game as
 \end{align}
 where f(x) is a polynominal of degree $3$. The (real) roots in the 
 of this polynominal correspond to the fixed points. 
-For the parameter set $a=5, b=3, c=0, d=2$  the graph is plotted in \ref{fig:polynominal}.
+For the parameter set $a=5, b=3, c=0, d=2$  the graph is plotted in figure 
+\ref{fig:polynominal}.
 \begin{figure}[h]
+        \label{fig:polynominal}
         \centering
         \includegraphics[scale=0.5]{polynominal.png}
         \caption{$\varphi(x)$ for the parameter setting $a=5, b=3, c=0, d=2$}
 \end{figure}
-
-Analyzing \eqref{replicator}, this happens if either a strategy
+Analyzing \eqref{eq:replicator}, this happens if either a strategy
 is not present in the population or the excess payoff $\bar{F}(x)$
 of a strategy is zero. In the stag hunt game, the fixed points of the
 dynamic coincide with the Nash equilibriums of the base game, $f(x) = 0$ for
@@ -485,15 +575,6 @@ games $2R, R$ and $0.6R$ used. The names become clear when observing the
 attraction of the equilibria, i.e. the mixed equilibrium is equal across all games,
 they want to explore the effect of an increase in the "premium for playing
 a best-response" \parencite[751]{battalio_optimization_2001}. 
-\begin{figure}[h]
-        \label{fig:payoffbattalio}
-\caption{Payoff matrices of games in \textcite{battalio_optimization_2001}}
-\begin{alignat*}{3}
-        A_{2R} &= \mqty(45 & 0 \\ 35 & 40) \quad & &A_{R} = \mqty(45 & 0 \\ 
-        40 & 20) \quad & &A_{0.6R} = \mqty( 45 & 0 \\ 42 & 12) \\
-        \delta_{2R} &= 50  \quad & &\ \delta_{R} = 25 \quad & &\ \delta_{0.6R} = 15
-\end{alignat*}
-\end{figure}
 Therefore they define the optimization premium $r(y)$ of a game $j$ as the 
 differece in payoffs choosing the pure strategies $e_1$ and $e_2$ 
 while expecting the opponent to play a strategy $y=(q,1-q) \in \Delta$:
@@ -743,6 +824,15 @@ a simplification that helps to understand some of the patterns observeable
 when real people interact.
 \section{Application and Outlook}
 \section{appendix}
+\begin{figure}[h]
+        \label{fig:payoffbattalio}
+\caption{Payoff matrices of games in \textcite{battalio_optimization_2001}}
+\begin{alignat*}{3}
+        A_{2R} &= \mqty(45 & 0 \\ 35 & 40) \quad & &A_{R} = \mqty(45 & 0 \\ 
+        40 & 20) \quad & &A_{0.6R} = \mqty( 45 & 0 \\ 42 & 12) \\
+        \delta_{2R} &= 50  \quad & &\ \delta_{R} = 25 \quad & &\ \delta_{0.6R} = 15
+\end{alignat*}
+\end{figure}
 \begin{figure}[H]
 \label{fig:payoffschmidt}
 \caption{Payoff matrices of the games used in \cite{schmidt_playing_2003}}
