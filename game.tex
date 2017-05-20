@@ -22,7 +22,7 @@
 \\ $H$ &$c,b$ &$d,d$ \end{game}
 \label{sh}
 \end{center}
-\caption{A parametrized form of the Stag hunt game}
+\caption{A parametrized form of the Stag hunt game, $a>c\geq d >b$}
 \end{figure}
 \section{The Stag hunt game}
 \label{sec:traditional}
@@ -101,7 +101,6 @@ space
         \Delta_i = \{ x_i \in \realnumb^2 : \sum_{k \in S} x_{ik} = 1, x_{ik} \geq 0 \quad
 \forall k \in S\}.
 \end{align*}
-\todo{Geometric Interpretation as a Simplex}
 Since there is no restriction for any players choice of the probabillity 
 distribution, in a symmetric game the mixed strategy spaces of the players
 also equal. For the SH game this means $\Delta_1 = \Delta_2 = \Delta$.
@@ -143,8 +142,8 @@ must be capable of computing his best-reply to a given strategy.
 
 The most famous and used traditional solution concept, the \textit{Nash 
 equilibrium} assumes this kind of capability of each individual players. 
-The Nash equilibrium was named by its proposer J. Nash in 1950. \todo{Citation
-of Nash and history}
+The Nash equilibrium was named by its proposer J. Nash in 1950 
+just referred to as equilibrium.
 
 A Nash equilibrium for the SH game is defined as
 \begin{mydef}
@@ -154,18 +153,28 @@ A Nash equilibrium for the SH game is defined as
         \item   $(x^*)^T A y^* \geq x^T A y^*, \quad \forall x \in \Delta$
         \item   $(x^*)^T A y^* \geq (x^*)^T A y, \quad \forall y \in \Delta$.
 \end{itemize}
-It is called symmetric if $x^* = y^*$. It is a strict Nash equilibrium if 
-the inequality is strict.
+It is called symmetric if $x^* = y^*$. A Nash equilibrium is 
+strict Nash equilibrium if the inequality is strict.
 \end{mydef}
-It is equivalent to say that both players play best-replies in a Nash 
-equilibrium. One can proof that in every normal form games with mixed 
-strategies a Nash equilibrium exists. This existence proof is due to Nash\todo{Citation}.
+Equivalently, both players choose a best-reply in the Nash equilibrium.
+One can proof that in every normal form games with mixed 
+strategies a Nash equilibrium exists. This existence proof is due to 
+\textcite{nash_equilibrium_1950}.
 
-So, the SH game admits three symmetric Nash equilibria. The first one consists
+The SH game admits three symmetric Nash equilibria. The first one consists
 of both players choosing strategy 1, hunting stag, $(\hat{e}_1,\hat{e}_1) \in
-\Delta^2$. The second one is the state of 
+\Delta^2$, where both players receive the payoff $a$. 
+None of both has an incentive to change his decision. For both
+playing the pure strategy 1 is a best-reply because a unilateral deviation 
+leads to the payoff $c \seq a$
+The second equilibrium is the state of 
 both players choosing strategy 2, hunting hare, $(\hat{e}_2,\hat{e}_2)
-\in \Delta^2$. Additionally to this Nash equilibria in pure strategies, there 
+\in \Delta^2$. Again by definition, both play a best-reply and a unilateral 
+deviation of a player results in a lower payoff $b<d$
+Additionally to this Nash equilibria in pure strategies, there is a symmetric
+mixed-strategy equilbrium assigning a probability $q=\frac{d-b}{a-c+d-b}$ to
+strategy 1. To see this, calculating the pay
+
 is a mixed strategy equilibrium. 
 \todo{Local shifts, associated payoff matrices}
 \subsection{Evolutionary concepts}
@@ -280,13 +289,55 @@ different revision protocols. Formulated for the stag hunt game, one finds for
 the strategies $j \in \{1,2\}$
 \begin{alignat}{2}
         \dot{x}_j &= x_j\left(\left(x^T A\right)_j - \left(x^T A x\right)\right) 
-        \label{replicator}.
+        \label{eq:replicator}.
 \end{alignat}
 $x(t)=(x_1(t), x_2(t)) \in \realnumb^2$ is then called a \textit{dynamical
-system} defined by the two differential equations in \eqref{replicator}. For
-later definitions I will denote the equations as $\dot{x}(t) = f(x(t))$, where
-$f(x(t))$ describes the vector field corresponding to the right side of
-\eqref{replicator}. \todo{Introduce the notation and terms of a dynamical system}
+system} defined by the two differential equations in \eqref{replicator}. 
+Since the population size is fixed ($\sum\dot{x}_i=0$), 
+we can reduce the dynamical system to one differential equation by setting 
+$x_1(t) = x(t)$ and $x_2(t) = 1-x(t)$.
+By summing up the two equations in \eqref{replicator} one can verify this.
+The growth of the share $\dot{x}_1(t)$ at time $t \in \realnumb$ depends on the current share in the
+population of that strategy and the excess payoff $\bar{F}(x(t)) 
+= \hat{F}(x,x) = x^T A x$ that strategy earns 
+compared to the average payoff of the entire population. Intuitively, the
+share of a strategy in the population increases (decreases) if the strategy
+yields a higher (lower) than average payoff. This property of a (deterministic)
+evolutionary dynamic is called \textit{Positive correlation} \cite{sandholm}.
+Another property of the Replicators Dynamics is the low data requirement. As 
+seen in the previous section, it is not necessary to assume that an agent
+is able to calculate or gets to know the payoffs of all agent in the population.
+It was sufficient to assume that he gets to know the payoff of one player. 
+As the agents with such revision protocols are often described as boundedly
+rational, \cite{gintis} argues that "this is very misleading, because the real 
+issue is the distribution of the information". The argument goes, that even
+if they were not "bounded" they could not optimize since they do not have
+not more information. 
+One drawback of the Replicator Dynamic for certain applications, especially
+for biologists, is the lack of mutation, a random error in the replication 
+process.
+Since the population size is fixed ($\sum\dot{x}_i=0$), 
+we can reduce the dynamical system to one differential equation by setting 
+$x_1(t) = x(t)$ and $x_2(t) = 1-x(t)$.
+
+By summing up the two equations in \eqref{replicator} one can verify this.
+For the purpose of analyzing the properties of the replicator dynamic, it is 
+useful to introduce the notation used in dynamical system theory. 
+Equation \eqref{eq:replicator} can be expressed as $\dot{x}=\varphi(x)$, where in
+the simple case discussed $\varphi(x)$ is a polynominal in $x$.
+A solution through an initial state $x_0 \in X$ of the dynamical system is called a 
+\textit{trajectory}, whereby it is distinguished between a forward trajectory 
+for $t \rightarrow \infty$ and backward trajectory for $t \leftarrow \infty$.
+Only in simple cases a analytical solution to the replicator dynamic can be 
+found. Most parameter settings for the stag hunt games are easier solved using
+numerical tools. However, the existence and uniqueness of a solution through
+any initial state for the replicator dynamic is guaranteed by the theorem 
+of \textit{Picard-Lindel\"of} , theorem 6.1 in 
+\textcite[74]{weibull_evolutionary_1997}. It applies since $\varphi(x)$ is a 
+polynominal and hence is locally Lipschitz-continous. 
+
+A special interest for our purposes are \textit{fixed points} 
+
 The growth of the share $\dot{x}_1(t)$ at time $t \in \realnumb$ depends on the current share in the
 population of that strategy and the excess payoff $\bar{F}(x(t)) 
 = \hat{F}(x,x) = x^T A x$ that strategy earns 
@@ -317,22 +368,34 @@ if $\dot{x}(t) = f(x^*) = 0$ i.e. it stays in the current state for all $t \in
 It is practical for further use to express the replicator dynamics for the
 parametrized SH game as 
 \begin{align}
-        \dot{x} = f(x) = x^2(a-b+2d-2c) - x^3(a-b+d-c) -x(d-c) 
+        \dot{x} = \varphi(x) = x^2(a-b+2d-2c) - x^3(a-b+d-c) -x(d-c) 
 \end{align}
 where f(x) is a polynominal of degree $3$. The (real) roots in the 
 of this polynominal correspond to the fixed points. 
-For the parameter set $a=5, b=3, c=0, d=2$  the graph is plotted in \ref{polynominal}.
+For the parameter set $a=5, b=3, c=0, d=2$  the graph is plotted in \ref{fig:polynominal}.
+\begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.5]{polynominal.png}
+        \caption{$\varphi(x)$ for the parameter setting $a=5, b=3, c=0, d=2$}
+\end{figure}
+
 Analyzing \eqref{replicator}, this happens if either a strategy
 is not present in the population or the excess payoff $\bar{F}(x)$
 of a strategy is zero. In the stag hunt game, the fixed points of the
-dynamic coincide with the Nash equilibriums of the base game. In general, 
-the replicator dynamic lacks the \textit{Nash stationarity} property discussed
-in \cite{sandholm}, and hence there are games with fixed points which are not
-Nash.\footnote{For a trivial example, consider the prisoners dilemma in 
+dynamic coincide with the Nash equilibriums of the base game, $f(x) = 0$ for
+$x \in \{0,\frac{d-c}{a-b+d-c},1\}$. In general, 
+the replicator dynamic lacks the \textit{Nash stationarity} property
+and hence there are games with fixed points which are not
+Nash\footnote{For a trivial example, consider the prisoners dilemma in 
 \ref{prisoners}. A population only consisting of cooperating agents stays in
 that state, which is not a Nash equilibrium.} 
-Concerning fixed points, a natural question to ask is if they are stable. 
-A rather strong requirement is the concept of \textit{asymptotical stability}.
+\parencite{sandholm_population_2010}.
+Concerning fixed points, one is usually interested if the fixed points of 
+a dynamic system are stable in terms of some disturbance of the system. 
+There are different approaches to stability. A quite strict and useful one 
+in the stag hunt game is \textit{asymptotic stability}. 
+It essentially requires that a system in a specific fixed point returns 
+to the fixed point after a perturbation happend.
 \begin{mydef}
         A state of a differential equation is called asymptotically stable
         if ....
@@ -666,7 +729,7 @@ playing the coordination game might be a rationale for the initial conditions
 in the evolutionary dynamic. The intitial conditions might be used to 
 capture the composition of the subjects interacting in reflecting how well
 trust or some kind of cultural risk aversion is embedded as convention. 
-Nevertheless, it seems difficult, atleast for the author, to justifyj
+Nevertheless, it seems difficult, atleast for the author, to justify
 the reduction of culture to one\footnote{Of course, in games with more 
 than two strategies the initial conditions are represented by a vector}
 dimension such as $x_0$
@@ -678,7 +741,7 @@ to a strategy, while being attracted and moved to an equilibrium by a dynamic
 in a fully deterministic fashion. But, as a model should, the analysis offers 
 a simplification that helps to understand some of the patterns observeable 
 when real people interact.
-\section{Conclusion}
+\section{Application and Outlook}
 \section{appendix}
 \begin{figure}[H]
 \label{fig:payoffschmidt}
