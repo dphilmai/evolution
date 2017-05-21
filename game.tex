@@ -411,7 +411,7 @@ strategy 1 is determined by agents switching away to strategy 2 and agents
 with strategy 2 switching to 1.
 Hence, one gets
 \begin{align}
-        Pdx_1 = \underbrace{Px_1 \rho_{12}dt}_{\text{Switches from 1 to 2}} 
+        Pdx_1 =  \underbrace{-Px_1 \rho_{12}dt}_{\text{Switches from 1 to 2}} 
         + \underbrace{Px_2 \rho_{21}dt}_{\text{Switches from 2 to 1}} 
 \end{align}
 Division of this by $P$ and $dt$ leaves us with the differential equation for
@@ -419,21 +419,50 @@ the share of agents playing strategy 1 $\dot{x_1} =\frac{dx_1}{dt}$.
 Applying the definitons \todo{equation numbers} of the previous section,
 the sum of the time derivatives of population shares must equal zero, hence,
 $\dot{x}_2 =  - \dot{x}_1$.
-A standard form of a conditional switching rate $\rho_{ij}$ commonly studied
-is the \textit{pairwise proportional imitiation} 
-\textcite{sandholm_population_2010} suggest. It assumes, that whenever an
+There are different plausible revision protocols studied in the literature. 
+\textcite[128,129,178]{sandholm_population_2010} discusses various forms of 
+them such as logit choice, comparison to average payoff and best response 
+protocol, all with different properties concering informational burden and the
+properties the dynamics have. With an eye to the implied dynamic, I will
+outline the \textit{pairwise proportional imitation} protocol. 
+It assumes, that whenever an
 agent receives a revision opportunity he randomly gets to know another agent's
 strategy and its payoff receved in the current state of the population. 
 The probability the agent switches is proportional to the excess payoff the 
 other agent had over his strategy. This is formalized as 
 \begin{align}
-        $\rho_{ij}(F_i(x),\vec{x}) = \begin{cases}
-                x_j (F_j(x) - F_i(x)) &\ \text{, for} F_j(x) - F_i(x) > 0 \\
-                0 & \ \text{else}
-        \end{cases}
+        \label{eq:pairwiseproportionalimitiation}
+        p_{ij}(F_i(\vec{x}),\vec{x}) =
+                \begin{cases}
+                        x_j(F_j(x) -F_i(x)) &\ , \text{for } F_j(x) - F_i(x) > 0 \\
+                        0 &\ , \text{else}
+                \end{cases}
 \end{align}
+A metaphor illustrating this pairwise imitation about trader on a marketplace
+can be told. Suppose the traders interact on some market selling some 
+goods, implicitly playing a game with each other. Each trader usually does not
+observe the strategies other traders use to sell things, because the market
+place is large and the bustle going on comlicated. 
+So a trader is usually commited to a strategy he got to know a while ago.
+However, occasionally as he returns to his tavern, he sometimes gets to meet 
+another trader for the same good. Being proud of their earnings they get using
+their individual strategy, they boast about it. That is how they get to know
+other traders strategies and as they also want to live a life in pageantry,
+they might imitate the other traders. The probability to imitate, however, is
+proportional to the difference in earnings since traders with higher payoffs 
+boast even more feeling superior over their counterpart in the tavern.
+\todo{tradermetaphor}
 
-
+Plugging this into the equation for $\dot_{x_1}$ one receives the 
+\textit{replicator dynamics}:
+\begin{alignat*}{2}
+        \dot{x}_1 &= 2 x_1 x_2 (F_1(x) - F_2(x)) \\
+                  &= 2 x_1 ((1-x_1) F_1(x) - x_2 F_2(x)) \\
+                  &= 2 x_1 (F_1(x) - \bar{F}(x)) 
+\end{alignat*}
+The next section deals with the properties of this dynamic and shows the 
+link with the underlying base game.
+            
 \subsection{Replicator Dynamics}
 \label{sec:replicatordynamic}
 The Replicator Dynamic, which is called the "best know dynamic in
