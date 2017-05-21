@@ -349,35 +349,41 @@ Let $p_j(t) \geq 0$ be the number of individuals playing strategy $j \in \{1,2\}
 at time $t \in \realnumb$ and let $P = p(t) = p_1(t) + p_2(t)$ describe all individuals 
 in the population\footnote{In the model considered here the population will 
 not be allowed to grow and hence $p(t) = P \forall t \in \realnumb$}
-then $x(t) = \left(x_1(t),x_2(t)\right)=\left(\frac{p_1(t)}{p(t)},\frac{p_2(t)}{p(t)}\right)$ is called the state vector of the population at
+then $\vec{x}(t) = \left(x_1(t),x_2(t)\right)
+=\left(\frac{p_1(t)}{p(t)},\frac{p_2(t)}{p(t)}\right)$ 
+is called the state vector of the population at
 time $t \in \realnumb$. The components of the population state vector represent
 the share of agents choosing a specific strategy. 
 As the individuals can only choose between strategy one and two it holds that 
 $x_2(t) = 1-x_1(t)$. Since $x(t) \in \Delta$ \footnote{There is formally no
 difference between population state and mixed strategy} a mixed-strategy can 
 be interpreted as a population state in a monomorpic population, where the 
-population is divided on different strategies. Solving the interpretation
+population is divided on different pure strategies. Solving the interpretation
 problem for the population setting this interpretation has little relevance
 for the traditional case. \todo{Cite Interpretation paper}
-In the biological literature\cite{maynard} strategies are interpreted as
-phenotypes of the population and the payoffs represents the so-called 
-\textit{Darwinian fitness} expressing the expected offsprings for the phenotype
-in the population. Some animals in the population then die and are replaced
-according to the fitness of the phenotype in the current population
-state.\todo{Nicer formulation} 
-This interpretation is rather unpractical since economic situations rarely
+Out of convenience in the monomorphic population, the expected payoff 
+to an strategy $i \in \Delta$ of an individual when randomly matched
+against some other individual in the current population state $\vec{x}^t$ 
+is denoted as $\hat{F}_i(\vec{x}) = \hat{F}(e_i,\vec{x})$.
+In the biological literature \cite{smith_evolution_1982} strategies are 
+interpreted as phenotypes of the population and the payoffs represents the k
+so-called  \textit{Darwinian fitness} expressing the expected offsprings for 
+the phenotype in the population. Some animals in the population then die and 
+are replaced according to the fitness of the phenotype in the current 
+population state. \todo{Nicer formulation} 
+ This interpretation is rather unpractical since economic situations rarely
 involve the death of their participiants. Therefore, the literature introduces
 \textit{Revision Protocols} to model the adjustment of each agents' strategy.
 So the agents in this context are not simply replaced by new ones, but rather
 change their strategy according to a certain rule. Nevertheless, the
 similiarity to biology stays in the manner that the agents are not
 assumed to be the \textit{homo rationalis} game theory usually deals with, but
-are "programmed" or "wired" \cite{gintis} to their strategy to the revision rule.
+are "programmed" or "wired" \parencite{gintis_game_2000} the revision rule.
 \subsection{Revision Protocols}
-With that in mind, the rule how agents choose their strategy and so the
-evolution of the population in time, can be motivated. As stated, in 
-evolutionary game theory, agents are usually not assumed to be able to 
-calculate a best-reply, nor are they observing the information relevant
+With that in mind, this section motivates the use of revision protocols to
+model the behavior of agents.
+As stated, in evolutionary game theory, agents are usually not assumed to be 
+able to alculate a best-reply, nor are they observing the information relevant
 to perform that calculations. This is formalized as a behavior rule called
 the revision protocol. The following derivation of the mean dynamic is due to 
 \textcite{sandholm_population_2010}. Typically it is 
@@ -415,7 +421,8 @@ Hence, one gets
         + \underbrace{Px_2 \rho_{21}dt}_{\text{Switches from 2 to 1}} 
 \end{align}
 Division of this by $P$ and $dt$ leaves us with the differential equation for
-the share of agents playing strategy 1 $\dot{x_1} =\frac{dx_1}{dt}$. 
+the change in the share of agents playing strategy 1, 
+$\dot{x_1} =\frac{dx_1}{dt}$. 
 Applying the definitons \todo{equation numbers} of the previous section,
 the sum of the time derivatives of population shares must equal zero, hence,
 $\dot{x}_2 =  - \dot{x}_1$.
@@ -439,8 +446,8 @@ other agent had over his strategy. This is formalized as
                 \end{cases}
 \end{align}
 A metaphor illustrating this pairwise imitation about trader on a marketplace
-can be told. Suppose the traders interact on some market selling some 
-goods, implicitly playing a game with each other. Each trader usually does not
+can be told. Suppose the traders interact on a market selling some 
+good, implicitly playing a game with each other. Each trader usually does not
 observe the strategies other traders use to sell things, because the market
 place is large and the bustle going on comlicated. 
 So a trader is usually commited to a strategy he got to know a while ago.
