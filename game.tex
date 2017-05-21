@@ -31,7 +31,7 @@
 \\ $D$ &$c,b$ &$d,d$ \end{game}
 \label{pd}
 \end{center}
-\caption{A parametrized representation of the prisoners dilemma, \geq d >b$}
+\caption{A parametrized representation of the prisoners dilemma}
 \end{figure}
 \section{The Stag hunt game}
 \label{sec:traditional}
@@ -561,7 +561,7 @@ It is easier to solve the differential equation numerically using some
 computer software. 
 However, the existence and uniqueness of a solution through
 any initial state for the replicator dynamic is guaranteed by the theorem 
-of \textit{Picard-Lindel\"of} , theorem 6.1 in 
+of \textit{Picard-Lindel\"of}, theorem 6.1 in 
 \textcite[74]{weibull_evolutionary_1997}. It applies since $\varphi(x)$ is a 
 polynominal and therefore is locally Lipschitz-continous. 
 
@@ -584,7 +584,7 @@ reducing the degree by polynominal division.
 In general, the replicator dynamic lacks the \textit{Nash stationarity} 
 property and hence there are games with fixed points which are not
 Nash\footnote{For a trivial example, consider the prisoners dilemma in 
-\ref{prisoners}. A population only consisting of cooperating agents stays in
+\ref{pd}. A population only consisting of cooperating agents stays in
 that state, which is not a Nash equilibrium even though it is 
 Pareto-dominating.} \parencite{sandholm_population_2010}.
 Concerning fixed points, one is usually interested if the fixed points of 
@@ -593,15 +593,48 @@ There are different approaches to stability. A quite strict and useful one
 in the stag hunt game is \textit{asymptotic stability}. 
 It essentially requires that a system in a specific fixed point returns 
 to the fixed point after a perturbation happend.
-\begin{mydef}
-        A state of a differential equation is called asymptotically stable
-        if ....
-\end{mydef}\todo{Exact definition}
 Hence, the system tends to move back to an asymptotical stable fixed point
-once disturbed. 
-A useful theorem to check for asymptotical stability is that 
-of \cite{hartmanngrobman}. \todo{State the theorem of hartmanngrobman}
-Applying this theorem to the replicator dynamic of the stag hunt game, we find
+once disturbed. Formally, a $\epsilon$-perturbation of 
+\eqref{eq:replicatorpara} is a trajectory of the system with the initial
+condition $x_0$ at some ball $B_\epsilon(x)$ of radius $\epsilon >0$ and 
+$x_0 \neq x^*$. The fixed point $x^*$ is then called \textit{asymptotically
+stable} if there exists an $\epsilon$-perturbation for that $x(t) \rightarrow
+x^*$ as $t \rightarrow \infty$. 
+The \textit{basin of attraction} is defined as the set of points 
+$x_0 \in \realnumb$ a trajectory through $x_0$ approaches the fixed points 
+$x^*$. In the one dimensional case, this is simply the range of $x$ for that
+any solution to the differential equation with the inital conditions in this
+range converges to the fixed point. With the following theorem indepentendly
+contributed by \cite{hartmann_lemma_1960} and 
+\cite{grobman_homeomorphism_1959}, one can easily 
+find the asymptotical stable fixed points in the stag hunt game:
+\begin{mydef}
+        If a one-dimensional dynamical system $\dot{x}(t) = \varphi{x}$ 
+        has a hyperbolic fixed point $x^*$, $x^*$ is asymptotically stable
+        if its linearization 
+        $\dot{x}(t) = \frac{\partial\varphi(x)}{\partial x} := \varphi'(x)$ 
+        is asymptotically stable. Additionally, if $x^*$ is 
+        asymptotically stable, then $\varphi'(x^*)<0$.
+\end{mydef}
+The solution to the linearization can be analytical derived by separating 
+variables as $x(t)= x(0) e^{\varphi'(x^*)t}$, where $x(0)$ denotes the 
+initial condition, i.e. the share of agents choosing strategy 1 of the 
+stag hunt game.
+Applying the theorem to \eqref{eq:replicatorpara}, one finds that the 
+fixed point $x=0$ corresponding to the Nash equilibrium of hunting hare, is 
+asymptotically stable, since $\varphi'(0) = - \alpha_2 <0$. 
+The linearization than is $x(t) = x(0) e^{-\alpha_2 t}$, which clearly 
+approaches zero as $t \rightarrow \infty$. Similiarly, the Nash equilibrium 
+of hunting stag at $x=1$ is a asymptotically stable fixed point as
+$\varphi'(1) = -\alpha_1 <0$. 
+\begin{figure}
+        \centering
+        \includegraphics[scale=0.5]{basinofattraction.png}
+        \caption{Replicator dynamics in the stag hunt game for 
+                $\alpha_1=1,\ \alpha_2=3$ with different initial conditions}
+                \label{fig:basinofattraction}
+\end{figure}
+
 \section{A simple model of project coordination}
 In unversity, students are faced with assignments and projects, which are 
 often performed in groups with fellow students.
