@@ -22,7 +22,16 @@
 \\ $H$ &$c,b$ &$d,d$ \end{game}
 \label{sh}
 \end{center}
-\caption{A parametrized form of the Stag hunt game, $a>c\geq d >b$}
+\caption{A parametrized representation of the Stag hunt game, $a>c\geq d >b$}
+\end{figure}
+\begin{figure}[h]
+\begin{center}
+\begin{game}{2}{2} & $C$ & $D$
+\\ $C$ &$a,a$ &$b,c$
+\\ $D$ &$c,b$ &$d,d$ \end{game}
+\label{pd}
+\end{center}
+\caption{A parametrized representation of the prisoners dilemma, \geq d >b$}
 \end{figure}
 \section{The Stag hunt game}
 \label{sec:traditional}
@@ -69,7 +78,7 @@ player 2  $B \in \realnumb^{2 \times2}$, where $A_{kl} = F_1(k,l)$ and $
 B_{kl} = F_2(k,l)$ with the pure strategies $k,l \in S$. Using the 
 representation above, one can indentify the payoff matrices for the player as
 \begin{align}
-        A = \mqty(a && b \\ c && d), \quad B = \mqty(a && c \\ b && d)
+     A = \mqty(a && b \\ c && d), \quad B = \mqty(a && c \\ b && d)
         \label{eq:matrix}
 \end{align}
 
@@ -126,6 +135,7 @@ Finally, the SH game is formally defined as a symmetric two-player normal form
 game $\Gamma = (I=\{1,2\}, \Delta^2, \hat{F})$.
 
 \subsection{Traditional concepts}
+\label{sec:traditionalconcepts}
 In describing the behavior of agents game theory developed a wide range of 
 tools to solve this strategic interactions. \todo{Rationality assumption and
 Equilibrium knowledge required for Nash equilibrium}
@@ -463,6 +473,7 @@ boast even more feeling superior over their counterpart in the tavern.
 Plugging this into the equation for $\dot{x_1}$ one receives the 
 \textit{replicator dynamics}:
 \begin{alignat*}{2}
+        \label{eq:replicatorrevision}
         \dot{x}_1 &= 2 x_1 x_2 (F_1(x) - F_2(x)) \\
                   &= 2 x_1 ((1-x_1) F_1(x) - x_2 F_2(x)) \\
                   &= 2 x_1 (F_1(x) - \bar{F}(x)) 
@@ -475,94 +486,61 @@ link with the underlying base game.
 The Replicator Dynamic, which is called the "best know dynamic in
 evolutionary game theory" by \cite{sandholm_populaton_2010}, has a wide range of applications
 and attractive properties. As discussed above, it can be motivated by 
-different revision protocols. Formulated for the stag hunt game, one finds for
+different revision protocols. Using matrix notation, one finds for 
 the strategies $j \in \{1,2\}$
 \begin{alignat}{2}
         \dot{x}_j &= x_j\left(\left(x^T A\right)_j - \left(x^T A x\right)\right) 
         \label{eq:replicator}.
 \end{alignat}
-$x(t)=(x_1(t), x_2(t)) \in \realnumb^2$ is then called a \textit{dynamical
-system} defined by the two differential equations in \eqref{replicator}. 
-Since the population size is fixed ($\sum\dot{x}_i=0$), 
-we can reduce the dynamical system to one differential equation by setting 
-$x_1(t) = x(t)$ and $x_2(t) = 1-x(t)$.
-By summing up the two equations in \eqref{replicator} one can verify this.
-The growth of the share $\dot{x}_1(t)$ at time $t \in \realnumb$ depends on the current share in the
-population of that strategy and the excess payoff $\bar{F}(x(t)) 
-= \hat{F}(x,x) = x^T A x$ that strategy earns 
-compared to the average payoff of the entire population. Intuitively, the
-share of a strategy in the population increases (decreases) if the strategy
-yields a higher (lower) than average payoff. This property of a (deterministic)
-evolutionary dynamic is called \textit{Positive correlation} \cite{sandholm}.
-Another property of the Replicators Dynamics is the low data requirement. As 
+The lack of the factor $2$ comparing it with equation 
+\eqref{eq:replicatorrevision} is due to the derivation. In fact, any
+positive transformation of the payoff matrix and hence the payoff function
+results only in a change in speed in the replicator dynamic
+\parencite[73]{weibull_evolutionary_1997}.
+The growth of the share $\dot{x}_j(t)$ at time $t \in \realnumb$ depends 
+on the current share in the population of strategy $j$ and the 
+excess payoff of that strategy, the difference between the expected 
+payoff to strategy $j$ against the current state of the population and the
+avergae payoff of the whole population.
+Intuitively, the share of a strategy in the population increases (decreases) 
+if the strategy yields a higher (lower) than average payoff. 
+This property of a (deterministic) evolutionary dynamic is called 
+\textit{Positive correlation} \parencite{sandholm_population_2010}.
+Another property of the replicators dynamics is the low data requirement. As 
 seen in the previous section, it is not necessary to assume that an agent
-is able to calculate or gets to know the payoffs of all agent in the population.
-It was sufficient to assume that he gets to know the payoff of one player. 
-As the agents with such revision protocols are often described as boundedly
-rational, \cite{gintis} argues that "this is very misleading, because the real 
-issue is the distribution of the information". The argument goes, that even
-if they were not "bounded" they could not optimize since they do not have
-not more information. 
+gets to know the payoffs of all agent in the population.
+It was sufficient to assume that he gets to know the payoff of one random 
+player. 
+Contrary to the interpretation that agents with such revision protocols 
+are boundedly rational, \cite{gintis_game_2000}\todo{page number} argues that 
+"this is very misleading, because the real issue is the distribution of the 
+information". The argument goes, that even if they were not "bounded" they 
+could not optimize since they do not have more information. 
 One drawback of the Replicator Dynamic for certain applications, especially
 for biologists, is the lack of mutation, a random error in the replication 
-process.
-Since the population size is fixed ($\sum\dot{x}_i=0$), 
-we can reduce the dynamical system to one differential equation by setting 
-$x_1(t) = x(t)$ and $x_2(t) = 1-x(t)$.
-
-By summing up the two equations in \eqref{replicator} one can verify this.
-For the purpose of analyzing the properties of the replicator dynamic, it is 
-useful to introduce the notation used in dynamical system theory. 
-Equation \eqref{eq:replicator} can be expressed as $\dot{x}=\varphi(x)$, where in
-the simple case discussed $\varphi(x)$ is a polynominal in $x$.
-A solution through an initial state $x_0 \in X$ of the dynamical system is called a 
-\textit{trajectory}, whereby it is distinguished between a forward trajectory 
-for $t \rightarrow \infty$ and backward trajectory for $t \leftarrow \infty$.
-Only in simple cases a analytical solution to the replicator dynamic can be 
-found. Most parameter settings for the stag hunt games are easier solved using
-numerical tools. However, the existence and uniqueness of a solution through
-any initial state for the replicator dynamic is guaranteed by the theorem 
-of \textit{Picard-Lindel\"of} , theorem 6.1 in 
-\textcite[74]{weibull_evolutionary_1997}. It applies since $\varphi(x)$ is a 
-polynominal and hence is locally Lipschitz-continous. 
-
-A special interest for our purposes are \textit{fixed points} 
-
-The growth of the share $\dot{x}_1(t)$ at time $t \in \realnumb$ depends on the current share in the
-population of that strategy and the excess payoff $\bar{F}(x(t)) 
-= \hat{F}(x,x) = x^T A x$ that strategy earns 
-compared to the average payoff of the entire population. Intuitively, the
-share of a strategy in the population increases (decreases) if the strategy
-yields a higher (lower) than average payoff. This property of a (deterministic)
-evolutionary dynamic is called \textit{Positive correlation} \cite{sandholm}.
-Another property of the Replicators Dynamics is the low data requirement. As 
-seen in the previous section, it is not necessary to assume that an agent
-is able to calculate or gets to know the payoffs of all agent in the population.
-It was sufficient to assume that he gets to know the payoff of one player. 
-As the agents with such revision protocols are often described as boundedly
-rational, \cite{gintis} argues that "this is very misleading, because the real 
-issue is the distribution of the information". The argument goes, that even
-if they were not "bounded" they could not optimize since they do not have
-not more information. 
-One drawback of the Replicator Dynamic for certain applications, especially
-for biologists, is the lack of mutation, a random error in the replication 
-process.
-\eqref{replicator} shows that the growth of a strategy not present in a 
-population state $x(t)$ is zero. So, a population only consisting of agents
-playing strategy one stays in that state forever. 
-
-This leads us to the concept of a fixed point. A point $x^* \in \realnumb^2$ of a dynamic system,
-such as the replicator dynamic in \eqref{replicator}, is called a fixed point
-if $\dot{x}(t) = f(x^*) = 0$ i.e. it stays in the current state for all $t \in 
-\realnumb$. 
+process. Indeed, the deterministic replicator dynamic does not incoporate 
+any such effect as a strategy that has not existed or vanished will not 
+be in a future state of the population. That means that if in a population 
+state only a subset $S' \subset S$ of the set of pure strategies, any future
+population state can also only possibly contain strategies from this subset
+$S'$. Hence, if a strategy in the stag hunt game vanishes, the population 
+state is in one of the two Nash equilbria.
 It is practical for further use to express the replicator dynamics for the
-parametrized SH game as 
-\begin{align}
-        \dot{x} = \varphi(x) = x^2(a-b+2d-2c) - x^3(a-b+d-c) -x(d-c) 
-\end{align}
-where f(x) is a polynominal of degree $3$. The (real) roots in the 
-of this polynominal correspond to the fixed points. 
-For the parameter set $a=5, b=3, c=0, d=2$  the graph is plotted in figure 
+parametrized SH game using the matrix in \eqref{eq:matrix} and 
+define $x_1(t) := x,\ x_2(t) = 1-x$:
+\begin{alignat}{2}
+        \label{eq:replicatorpara}
+        \dot{x} := \varphi(x) &= x^2(a-b+2d-2c) - x^3(a-b+d-c) -x(d-c) \\
+                              &= x^2(\alpha_1+2\alpha_2) 
+        - x^3(\alpha_1+\alpha_2) - x(\alpha_2)
+\end{alignat}
+The last step follows by using local shifts to the matrix $A$ from section
+\ref{sec:traditionalconcepts}. This does not change the dynamic at all 
+\parencite[73]{weibull_evolutionary_1997}. The polynominal $\varphi(x)$ is
+of degree $3$ and contains useful information about the dynamic. Actually, 
+outlined in the following, it tells which state the population converges to.
+For the parameter set $a=5, b=3, c=0, d=2$ the graph of $\varphi(x)$ is 
+plotted in figure 
 \ref{fig:polynominal}.
 \begin{figure}[h]
         \label{fig:polynominal}
@@ -570,17 +548,45 @@ For the parameter set $a=5, b=3, c=0, d=2$  the graph is plotted in figure
         \includegraphics[scale=0.5]{polynominal.png}
         \caption{$\varphi(x)$ for the parameter setting $a=5, b=3, c=0, d=2$}
 \end{figure}
-Analyzing \eqref{eq:replicator}, this happens if either a strategy
-is not present in the population or the excess payoff $\bar{F}(x)$
-of a strategy is zero. In the stag hunt game, the fixed points of the
-dynamic coincide with the Nash equilibriums of the base game, $f(x) = 0$ for
-$x \in \{0,\frac{d-c}{a-b+d-c},1\}$. In general, 
-the replicator dynamic lacks the \textit{Nash stationarity} property
-and hence there are games with fixed points which are not
+
+For the purpose of analyzing the properties of the replicator dynamic, it is 
+useful to introduce some volcabulary used in dynamical system theory. 
+
+A solution through an initial state $x_0 \in X$ of the dynamical system is called a 
+\textit{trajectory}, whereby it is distinguished between a forward trajectory 
+for $t \rightarrow \infty$ and backward trajectory for $t \leftarrow \infty$.
+Analytical solutions, i.e. a solution one can express with the use of
+basic functions, is only for simple cases possible. 
+It is easier to solve the differential equation numerically using some
+computer software. 
+However, the existence and uniqueness of a solution through
+any initial state for the replicator dynamic is guaranteed by the theorem 
+of \textit{Picard-Lindel\"of} , theorem 6.1 in 
+\textcite[74]{weibull_evolutionary_1997}. It applies since $\varphi(x)$ is a 
+polynominal and therefore is locally Lipschitz-continous. 
+
+The natural question that arises once a solution is obtained, is whether there 
+is a connection between the evolutionary dynamic and the equilibria in the 
+stage game. To see this, consider the concept of a fixed point.
+A point $x^* \in \realnumb^2$ of a dynamic system, such as the replicator 
+dynamic in \eqref{eq:replicator}, is called a fixed point
+if $\dot{x}(t) = \varphi(x^*) = 0$ i.e. it stays in the current state for all 
+$t \rightarrow + \infty $. 
+Analyzing \eqref{eq:replicatorpara}, this happens if either a strategy
+is not present in the population or the excess payoff of a strategy is zero. 
+In the stag hunt game, the fixed points of the
+dynamic coincide with the Nash equilibriums of the stage game, 
+$\varphi(x^*) = 0$ for $x^* \in \{0,\frac{\alpha_2}{\alpha_1+\alpha_2},1\}$. 
+It suffices to calculate the roots of the polynominal $\varphi(x)$, either
+numerical or, as the Nash equilibria are usually calculated beforehand,
+reducing the degree by polynominal division.
+
+In general, the replicator dynamic lacks the \textit{Nash stationarity} 
+property and hence there are games with fixed points which are not
 Nash\footnote{For a trivial example, consider the prisoners dilemma in 
 \ref{prisoners}. A population only consisting of cooperating agents stays in
-that state, which is not a Nash equilibrium.} 
-\parencite{sandholm_population_2010}.
+that state, which is not a Nash equilibrium even though it is 
+Pareto-dominating.} \parencite{sandholm_population_2010}.
 Concerning fixed points, one is usually interested if the fixed points of 
 a dynamic system are stable in terms of some disturbance of the system. 
 There are different approaches to stability. A quite strict and useful one 
