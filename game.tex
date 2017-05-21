@@ -202,9 +202,10 @@ $A_{22}=\alpha_2$, where $\alpha_1=a-c$ and $\alpha_2=d-b$ and
 zero off the diagonal. \textcite[28]{weibull_evolutionary_1997} 
 groups all symmetric 2x2 games into four categories with different 
 equilibrium properties. Outlined in the discussion, the stag hunt game 
-is considered as a coordination game and in contrast to the three other
-categories the solution is not so obvious. I will discuss this in the section
-concerning the selection of an equilibria \ref{sec:equilibriumselection}.
+is considered as a coordination game, with $\alpha_1, \alpha_2 > 0$
+and in contrast to the three other categories the solution is not so obvious.
+I will discuss this in the section concerning the selection of an equilibria 
+\ref{sec:equilibriumselection}.
 
 \subsection{Evolutionary concepts}
 The stag hunt game has multiple Nash equilibria. But which equilibrium will
@@ -254,7 +255,8 @@ seen in \eqref{eq:essstrict}, an ESS is used in a Nash equilibrium as it
 needs to be a best-reply to satisfy the ESS condition. In addition, 
 a strategy used in a strict Nash equilibrium is always an ESS, 
 since it directly satisfies 
-\eqref{eq:essstrict}
+\eqref{eq:essstrict}. The equivalence of both formulations is shown in
+\cite{weibull_evolutionary_1997}.
 Not all strategies in the equilibria of the stag hunt game are evolutionary
 stable strategies. The pure strategies $e_1$ and $e_2$ are evolutionary stable,
 since both symmetric equilibria consisting of them are strict and so 
@@ -264,8 +266,12 @@ mixed equilibrium is not an ESS, because condition \eqref{eq:essstrict} is
 an equality and the implication of \eqref{eq:essstrict2} does not hold for all
 strategies $y \in \Delta$.
 Consider for example $y =(e_1,e_1)$ the pure strategy $e_1$. It follows that
-the $\hat{F}((q,1-q),y) = \frac{\alpha_1 \alpha_2}{\alpha_1+\alpha_2}
+$\hat{F}((q,1-q),y) = \frac{\alpha_1 \alpha_2}{\alpha_1+\alpha_2}
 < \alpha_1 = \hat{F}(y,y)$, violating inequality \eqref{eq:essstrict2}.
+
+In section \ref{sec:replciatordynamic}, the connection of the ESS refinement
+and evolutionary dynamics will become clearer. Especially the first formulation
+of an ESS in equation \eqref{eq:ess} will be justified.
 
 \subsection{Equilibrium Selection}
 \label{sec:equilibriumselection}
@@ -319,7 +325,7 @@ Although Harsanyi and Selten introduced the Risk-dominance criterion in
 Stag hunt case. On the hand, Harsanyi, as Aumann, later advocates in \cite{harsanyinew} 
 for the Risk-dominant criterion. 
 
-The evolutionary approach outlined in the next section may contributes to 
+The evolutionary approach outlined in the next section may contribute to 
 the equilibrium selection problem. 
 
 \section{The Evolutionary Game}
@@ -368,9 +374,68 @@ similiarity to biology stays in the manner that the agents are not
 assumed to be the \textit{homo rationalis} game theory usually deals with, but
 are "programmed" or "wired" \cite{gintis} to their strategy to the revision rule.
 \subsection{Revision Protocols}
+With that in mind, the rule how agents choose their strategy and so the
+evolution of the population in time, can be motivated. As stated, in 
+evolutionary game theory, agents are usually not assumed to be able to 
+calculate a best-reply, nor are they observing the information relevant
+to perform that calculations. This is formalized as a behavior rule called
+the revision protocol. The following derivation of the mean dynamic is due to 
+\textcite{sandholm_population_2010}. Typically it is 
+assumed that agents have an inner alarm clock which rings at a rate R 
+following an exponential distribution. The clocks of the agents are assumed
+to be independent of each other. Whenever the clock of an agent rings, he
+receives a revision opportunity, which means that he changes his strategy
+with the probability $\frac{\rho_{ij}}{R}$. $\rho_{ij}(F_i(\vec{x}),\vec{x})$
+is called the conditional switch rate, representing the rule by which agents
+change from strategy $i$ to strategy $j$. 
+In a two-strategy game there are then two, $\rho_{12}$ describing rate 
+of switching from strategy 1 to 2 and $\rho_{21}$, switching from strategy 2
+to 1. For $\rho_{ii}$ no actual switch happens. 
+This switch rates can have various forms and therefore on the one side 
+describe different behavior of agents and on the other side result in 
+different dynamics for the population game.
+The dynamics are derived as follows:
+Every agents receives $R dt$ revision opportunities, i.e. the clock rings, 
+in an time interval $[0,dt]$ as it follows a Poisson distribution with
+mean $Rdt$ \cite[123]{sandholm_population_2010}. 
+If the population in the stag hunt game is at state $\vec{x}$, the share
+of agents currently playing strategy $i$ receiving a revision opportunity 
+during the time interval of length $dt$ is $x_i R dt$. As 
+\textcite{sandholm_population_2010} argues, this is an approximation because
+the state of the population $\vec{x}$ may change during this time interval.
+With the probability an agent playing $i$ switches to $j$, one gets for the
+expected number of switches for strategy $i$ during $[0,dt]$, 
+$P x_i \rho_{ij} dt$. 
+In a two strategy game, the change number of agents in the population playing 
+strategy 1 is determined by agents switching away to strategy 2 and agents 
+with strategy 2 switching to 1.
+Hence, one gets
+\begin{align}
+        Pdx_1 = \underbrace{Px_1 \rho_{12}dt}_{\text{Switches from 1 to 2}} 
+        + \underbrace{Px_2 \rho_{21}dt}_{\text{Switches from 2 to 1}} 
+\end{align}
+Division of this by $P$ and $dt$ leaves us with the differential equation for
+the share of agents playing strategy 1 $\dot{x_1} =\frac{dx_1}{dt}$. 
+Applying the definitons \todo{equation numbers} of the previous section,
+the sum of the time derivatives of population shares must equal zero, hence,
+$\dot{x}_2 =  - \dot{x}_1$.
+A standard form of a conditional switching rate $\rho_{ij}$ commonly studied
+is the \textit{pairwise proportional imitiation} 
+\textcite{sandholm_population_2010} suggest. It assumes, that whenever an
+agent receives a revision opportunity he randomly gets to know another agent's
+strategy and its payoff receved in the current state of the population. 
+The probability the agent switches is proportional to the excess payoff the 
+other agent had over his strategy. This is formalized as 
+\begin{align}
+        $\rho_{ij}(F_i(x),\vec{x}) = \begin{cases}
+                x_j (F_j(x) - F_i(x)) &\ \text{, for} F_j(x) - F_i(x) > 0 \\
+                0 & \ \text{else}
+        \end{cases}
+\end{align}
 
 
 \subsection{Replicator Dynamics}
+\label{sec:replicatordynamic}
 The Replicator Dynamic, which is called the "best know dynamic in
 evolutionary game theory" by \cite{sandholm_populaton_2010}, has a wide range of applications
 and attractive properties. As discussed above, it can be motivated by 
