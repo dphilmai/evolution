@@ -319,7 +319,7 @@ SH game,
 \begin{mydef}
 The Nash equilibrium $x=(\hat{e}_2,\hat{e}_2)$ \textit{risk-dominates} 
          the Nash equilibrium $y=(\hat{e}_1,\hat{e}_1)$, if $d-b > a-c$.
-         \label{riskdom}
+         \label{eq:riskdom}
  \end{mydef}\todo{Maybe change this definition}
  As mentioned in \cite{weibull_evolutionary_1997} a NE risk-dominates, if it is Pareto-efficient
  in the reduced payoff version of the game, associated with the diagonal
@@ -390,6 +390,7 @@ similiarity to biology stays in the manner that the agents are not
 assumed to be the \textit{homo rationalis} game theory usually deals with, but
 are "programmed" or "wired" \parencite{gintis_game_2000} the revision rule.
 \subsection{Revision Protocols}
+\label{sec:revisionprotocols}
 With that in mind, this section motivates the use of revision protocols to
 model the behavior of agents.
 As stated, in evolutionary game theory, agents are usually not assumed to be 
@@ -648,7 +649,7 @@ there is some $\epsilon$-perturbation of the system  \todo{Voooodoooo}
  The use of the word invasion is not by coincidence. This clearly shows the 
  connection of the evolutionary stable strategy of the stage game and the 
  stable fixed points of the dynamic. In fact, one can prove that this is not
- only true in the simple stag hunt, but also true under general settings.
+ only true in the simple stag hunt, but holds also under general settings.
  \todo{citation}
 \begin{figure}
         \centering
@@ -658,22 +659,129 @@ there is some $\epsilon$-perturbation of the system  \todo{Voooodoooo}
                 \label{fig:basinofattraction}
 \end{figure}
 
+Concering the equilibrium selection, the evolutionary approach with replicator
+dynamic has a definite answer. The population will reach one of the three
+Nash equilibria depending on the initial condition. 
+A not asymptotically stable equilibrium is rather unplausible,
+because it only emerges from one initial condition, where the population
+is already exactly in that population state. 
+Intuitively, one addtional agent playing
+a pure strategy suffices to get the population state moving to one of the
+pure equilibria. The population converges to the stag hunting or the hare
+hunting equilibrium if the inital conditions lie in their basin of attraction.
+As discussed, the population converges to the state $x=1$, the stag hunting 
+equilibrium of the stage game, for all inital conditions 
+$x_0 \in (\frac{\alpha_2}{\alpha_1+\alpha_2},1]$. Any trajectory of the 
+dynamical system with initial conditions 
+$x_0 \in [0,\frac{\alpha_2}{\alpha_1+\alpha_2})$ lead to the hare hunting
+equilibrium. Again, one observes an interesting connection of the 
+dynamic with the stage game. The basin of attraction is larger for the
+risk-dominanting equilibrium. By definition \ref{eq:riskdom} 
+the hare hunting equilibrium risk-dominates if $\alpha_2 > \alpha_1$,
+so in fact the basin of attraction is larger. With the parameter setting shown
+in figure \ref{fig:basinofattraction},$75\%$ of the possible initital 
+conditions lead to the risk-dominant equilibirum, whereas only $25\%$ of the 
+initial conditions lead to the payoff-dominant equilibrium. 
+Hence, the equilibrium selection is determined by the position of the initial
+condition. However, it is not specified on what the first random play
+of the agent depend. If for example the agents choose a random strategy,
+independetly of each other, one can say that the equilibrium with the
+larger basin of attraction, the risk-dominant equilibrium, is more likely 
+reached. \todo{what does evolutionary game theory tell about inital condition} 
+Giving an exact answer which equilibrium will be selected through the dynamic
+process, this approach still leaves us with the problem of what agents 
+choose in a first round one-shot game. Section \ref{sec:empiricalevidence} 
+summarizes evidence found in laboratory stag hunt game concerning the 
+one-shot game strategy choice and so the justification for initial conditions.
 
 \section{A simple model of project coordination}
+Outlining a model of coordination among students choosing software for their
+assignments, this section tries to investigate the effect of a network 
+externality accompanied with a strategy in a evolutionary setting.
+
 In unversity, students are faced with assignments and projects, which are 
 often performed in groups with fellow students.
-Nowadays, most of them involve some kind of 
-software tool to either present the results, analyze the subject or just
-manage the process of aggretating knowledge. Usually the choice of the tools
-can be simplified to two possibilities.
-One can either use proprietary software
-which is usually more user-friendly or choose to rely on free software which
-gains in effectiveness by the open community discussing and solving problems
-accordingly. Therefore, proprietary software has clearly the disadvantage of
-being expensive, resulting in cost for a license for the student or the
-institution using it. 
+Nowadays, most of them involve some kind of software tool to either present 
+the results, analyze the subject or just manage the process of aggretating 
+knowledge. Usually the choice of the tools can be simplified to two 
+possibilities. One can either use proprietary software
+which is usually more user-friendly, but costly due to relative high 
+license cost for either the student or the institution using it. 
+Beyond that, students can choose to use open source software which is freely
+available and can be customized, contrary to proprietary software,
+for the personal needs. 
+For simplifaction, I assume that during their studies, a larger body of 
+students is randomly paired into groups of two playing a coordination game
+in which they have two strategies available. In that game both contribute 
+to their group project independetly, using either open source software, 
+represented by strategy 1 or proprietary software, i.e. strategy 2.
+If both players choose strategy 1, both use open source software receiving 
+the utility $a$. Players that fail to coordinate on the same type of
+software, the player using proprietary software receives the utility $c$ and
+the player contributing with open source software gets $b$. I assume that 
+for the utilities $a>c>b$ holds, 
+as they benefit from coordination to open source,
+because of the high customizability to their project. The "costs" of 
+miscoordination are beared by the student using open source, because he has
+to port \footnote{In practice, it is
+often easier (and so wanted by producers of proprietary software) to
+transform from open source to closed source than the other way due to the
+portability.} his results to the proprietary standard, hence receiving only
+$b < c$. The last strategy pair is coordination on proprietary software where
+both receive the payoff $d$. High cost for licenses despite the success 
+in coordination I assume that $a<c\geq d<b$. So, by assumption, the students
+play a stag hunt game as shown in \ref{sh}.
+Therefore, the analysis of the previous section hold. Coordination on open
+source software is the payoff-dominant Nash equilibrium, but it is 
+risk-dominant to coordinate on proprietary software. 
+The students are not fixed to one other student in their study life and
+meet other students they have to do a project with, randomly assigned by their
+professor. Additionally, I assume that they are not perfectly rational and
+do not revaluate their software choice each time. For simplifaction, students
+in this model behave according to the revision protocol of pairwise
+proportional imitation discussed in section \ref{sec:revisionprotocol}. This
+is justified, because most students actually tend to use the software they
+always used except they go to know some other students telling them about
+another software they were productive with in their last project. So, 
+every once in a while a student gets to know another student and then he switches
+away from his software to choice in the manner outlined previously. 
+Therefore the dynamic in the model can be described by the replicator dynamic
+derived for the stag hunt game in equation \eqref{eq:replicatordynamicpara}.
+This model would not differ in terms of convergence and stability of Nash 
+equilibria to the evolutionary stag hunt game above.
+
+However, I want to introduce "network externalities" in this model. 
+The interest of the economic literature turned to open source software 
+development, because it is commonly observed that users contribut to 
+projects without receiving payment for it.
+In fact users share their source code publicly to the open source community,
+being motivated by reputation and the signaling effect one can achieve.
+The utility for a user then increases with the size of the community as 
+more people contributing code increases the variety and usefulness of the 
+software. I incorporate that in the model by letting the utility for a student 
+in the case of coordination on open source software be a function of 
+coordination size, $f(x)$. 
+Preserving the general structure of the
+game, it is useful to focus on the functional specification 
+$f(x) = a + e(x)$, where $a$ is the paramater used previously and $e(x)$ 
+denotes the network externality. 
+A positive network externality therefore satisifes $e(x)>0$. Including the
+parameter $a$ makes sure that the utility of this strategy combination is 
+never below the utility of coordination on proprietary software. So to say,
+the network externality adds to the fact that open source software is cheaper 
+and customizable. The payoff matrix, using local shifts, than is 
+$A=\begin{psmallmatrix}\alpha_1+u(x) && 0 \\ 0&& \alpha_2\end{psmallmatrix}$. 
+Substituting into the replicator dynamic  \ref{eq:replicatorpara} one gets:
+\begin{alignat}{2}
+        \dot{x} = \varphi(x) = x^2(\alpha_1+e(x) +2\alpha_2 ) 
+        - x^3(\alpha_1+e(x)+\alpha_2) - x(\alpha_2)
+\end{alignat}
+
+
+
 
 \section{Experimental Evidence}
+\ref{sec:experimentalevidence}
 A third approach beside the traditional and the evolutionary treatment of coordination problems is what \cite{camerer} calls 'fundamental empirical'.
 Hence, this section surveys the experimental economic literature regarding 
 laboratory coordination games to provide evidence how actual people choose
