@@ -1,6 +1,8 @@
 \documentclass[11pt]{article}
 \usepackage{todonotes}
 \usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage[backend=biber,style=authoryear,maxcitenames=2,url=false]{biblatex}
 %\bibliography{bibevol2.bib}
 \bibliography{bibevol.bib}
@@ -804,7 +806,21 @@ $x_3 = -\frac{\alpha_1+\alpha_2}{2 \beta} +
 Some arithmetic can verify that $0<x_3<1$, is in the feasible range of the
 population share variable. The plot of the dynamic and the polynominal is 
 shown figure \ref{fig:plotmodellinear}.
-
+\begin{figure}
+        \centering
+        \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[scale=0.5]{polynominallinearmodel.png}
+        \caption{The polynominal with marked roots} 
+        \end{subfigure}%    
+        \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[scale=0.5]{dynamiclinearmodel.png}
+        \caption{The dynamic} 
+        \end{subfigure}%        
+        \caption{The linear model for paramters $\alpha_1=1,\alpha_2=2,
+        \beta=1$}
+\end{figure}
 
 
 
