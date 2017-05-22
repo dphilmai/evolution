@@ -729,30 +729,31 @@ transform from open source to closed source than the other way due to the
 portability.} his results to the proprietary standard, hence receiving only
 $b < c$. The last strategy pair is coordination on proprietary software where
 both receive the payoff $d$. High cost for licenses despite the success 
-in coordination I assume that $a<c\geq d<b$. So, by assumption, the students
-play a stag hunt game as shown in \ref{sh}.
+in coordination, I assume that $a>c\geq d>b$. So, by assumption, the students
+play a stag hunt game as shown in figure \ref{sh}.
 Therefore, the analysis of the previous section hold. Coordination on open
 source software is the payoff-dominant Nash equilibrium, but it is 
 risk-dominant to coordinate on proprietary software. 
 The students are not fixed to one other student in their study life and
 meet other students they have to do a project with, randomly assigned by their
 professor. Additionally, I assume that they are not perfectly rational and
-do not revaluate their software choice each time. For simplifaction, students
+do not revaluate their software choice each time they have to do a project. 
+For simplifaction, students
 in this model behave according to the revision protocol of pairwise
-proportional imitation discussed in section \ref{sec:revisionprotocol}. This
+proportional imitation discussed in section \ref{sec:revisionprotocols}. This
 is justified, because most students actually tend to use the software they
-always used except they go to know some other students telling them about
+always used except when they go to know some other students telling them about
 another software they were productive with in their last project. So, 
 every once in a while a student gets to know another student and then he switches
-away from his software to choice in the manner outlined previously. 
+away from his software choice following the revision protocol. 
 Therefore the dynamic in the model can be described by the replicator dynamic
-derived for the stag hunt game in equation \eqref{eq:replicatordynamicpara}.
+derived for the stag hunt game in equation \eqref{eq:replicatorpara}.
 This model would not differ in terms of convergence and stability of Nash 
 equilibria to the evolutionary stag hunt game above.
 
 However, I want to introduce "network externalities" in this model. 
 The interest of the economic literature turned to open source software 
-development, because it is commonly observed that users contribut to 
+development, because it is commonly observed that users contribute to 
 projects without receiving payment for it.
 In fact users share their source code publicly to the open source community,
 being motivated by reputation and the signaling effect one can achieve.
@@ -760,12 +761,14 @@ The utility for a user then increases with the size of the community as
 more people contributing code increases the variety and usefulness of the 
 software. I incorporate that in the model by letting the utility for a student 
 in the case of coordination on open source software be a function of 
-coordination size, $f(x)$. 
+population size using that strategy, $f(x)$. 
 Preserving the general structure of the
 game, it is useful to focus on the functional specification 
 $f(x) = a + e(x)$, where $a$ is the paramater used previously and $e(x)$ 
 denotes the network externality. 
-A positive network externality therefore satisifes $e(x)>0$. Including the
+A positive network externality therefore satisifes $e(x)>0$ and 
+$\frac{de(x)}{dx}$, an increase of the population share choosing the strategy
+also increases the utility due to the network. Including the
 parameter $a$ makes sure that the utility of this strategy combination is 
 never below the utility of coordination on proprietary software. So to say,
 the network externality adds to the fact that open source software is cheaper 
@@ -775,7 +778,32 @@ Substituting into the replicator dynamic  \ref{eq:replicatorpara} one gets:
 \begin{alignat}{2}
         \dot{x} = \varphi(x) = x^2(\alpha_1+e(x) +2\alpha_2 ) 
         - x^3(\alpha_1+e(x)+\alpha_2) - x(\alpha_2)
+        \label{eq:externalitymodel}
 \end{alignat}
+Plugging $x=0$ and $x=1$ into equation \eqref{eq:externalitymodel} one can 
+ensure that the fixed point with pure strategies and their
+property of asymptotical stability did not change.
+($\varphi'(1) = -\alpha_1 -e(1),\ \varphi'(0) = -\alpha_2 -e(2)$)
+In \cite{paperaboutnetworkexternality} a linear form for the network
+externality is suggested. With the additional parameter $\beta \in \realnumb_+$
+one than gets $e(x) = \beta x$. While not changing the state in which
+the whole population coordinated to one strategy, the inner fixed point
+is changed by the dynamic. The $\varphi$ is still a polynominal but of 
+degree $4$:
+\begin{align}
+        \dot{x} = \varphi(x) = -\beta x^4 -x^3(\alpha_1 + \alpha_2 
+        - \beta ) + x^2 (\alpha_1 + 2 \alpha_2) - x(\alpha_2)
+\end{align}
+Using the knowledge from the general case, we can find the roots, i.e. fixed
+points of the dynamic, by reducing the degree with the two roots known. The
+polynominal of degree $2$ can then be solved applying a quadratic formula\footnote{
+The solution with negative sign was omitted, since it has no economic 
+interpretation}, so that the fixed point with a mixed popultation state is
+$x_3 = -\frac{\alpha_1+\alpha_2}{2 \beta} + 
+\sqrt{(\frac{\alpha_1+\alpha_2)^2}{4\beta^2} +\frac{\alpha_2}{\beta}}$. 
+Some arithmetic can verify that $0<x_3<1$, is in the feasible range of the
+population share variable. The plot of the dynamic and the polynominal is 
+shown figure \ref{fig:plotmodellinear}.
 
 
 
