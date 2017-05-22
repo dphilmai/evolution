@@ -614,7 +614,8 @@ find the asymptotical stable fixed points in the stag hunt game:
         if its linearization 
         $\dot{x}(t) = \frac{\partial\varphi(x)}{\partial x} := \varphi'(x)$ 
         is asymptotically stable. Additionally, if $x^*$ is 
-        asymptotically stable, then $\varphi'(x^*)<0$.
+        asymptotically stable, then $\varphi'(x^*)<0$. A fixed point
+        is called hyperbolic in one-dimension if $\varphi'(x^*) \neq 0$.
 \end{mydef}
 The solution to the linearization can be analytical derived by separating 
 variables as $x(t)= x(0) e^{\varphi'(x^*)t}$, where $x(0)$ denotes the 
@@ -626,7 +627,29 @@ asymptotically stable, since $\varphi'(0) = - \alpha_2 <0$.
 The linearization than is $x(t) = x(0) e^{-\alpha_2 t}$, which clearly 
 approaches zero as $t \rightarrow \infty$. Similiarly, the Nash equilibrium 
 of hunting stag at $x=1$ is a asymptotically stable fixed point as
-$\varphi'(1) = -\alpha_1 <0$. 
+$\varphi'(1) = -\alpha_1 <0$ with linearizattion $x(t) = x(0) e^{-\alpha_1 t}$.
+However, the linearization theorem cannot be used for the mixed Nash 
+equilibrium, hence the dynamical system is not hyperbolic there, 
+$\varphi'(\frac{\alpha_2}{\alpha_1+\alpha_2}) = 0$. Nevertheless, suppose 
+there is some $\epsilon$-perturbation of the system  \todo{Voooodoooo}
+ with $x_0= \frac{\alpha_2}{\alpha_1+\alpha_2}+ \epsilon$ and 
+ $\frac{\alpha_1}{\alpha_1+\alpha_2} > \epsilon > 0$. Plugging this into
+ \eqref{eq:replicatorpara} one sees that $\dot{x} >0$, the population share
+ grows montonotically for every $\epsilon$, converging to the fixed point 
+ $x = 1$. Conversely, for $0 > \epsilon > \frac{\alpha_2}{\alpha_1+\alpha_2}$,
+ $\dot{x} < 0$ and so the population share of agents 
+ playing strategy 1 decreases monototically, until it reaches the 
+ fixed point $x=0$. This is also shown in figure \ref{fig:basinofattraction}.
+ The horizonal line marks the mixed-strategy fixed point at $75\%$ for the
+ parameter setting $\alpha_1 = 1$ and $\alpha_2=3$. If the population starts
+ at this fixed point it by definiton stays there without any disturbance. 
+ But any invasion of individuals with a uniform strategy leads away from
+ this fixed point, resulting in convergence to one of pure strategy equilibria.
+ The use of the word invasion is not by coincidence. This clearly shows the 
+ connection of the evolutionary stable strategy of the stage game and the 
+ stable fixed points of the dynamic. In fact, one can prove that this is not
+ only true in the simple stag hunt, but also true under general settings.
+ \todo{citation}
 \begin{figure}
         \centering
         \includegraphics[scale=0.5]{basinofattraction.png}
@@ -634,6 +657,7 @@ $\varphi'(1) = -\alpha_1 <0$.
                 $\alpha_1=1,\ \alpha_2=3$ with different initial conditions}
                 \label{fig:basinofattraction}
 \end{figure}
+
 
 \section{A simple model of project coordination}
 In unversity, students are faced with assignments and projects, which are 
