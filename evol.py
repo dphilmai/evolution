@@ -23,10 +23,10 @@ def repgenroot(x):
     b =0
     c =4
     d =3
-    gamma1=2
-    gamma2=1
-    delta=1
-    eps=1
+    gamma1=1
+    gamma2=0
+    delta=0
+    eps=3
     a1 = a-c
     a2 = d-b  
     return (x**2)*(a1+eps*x**gamma1+2*(a2+delta*x**gamma2)) - (x**3)*(a1+eps*x**gamma1+a2+delta*x**gamma2) - x*(a2+delta*x**gamma2)
@@ -34,14 +34,14 @@ a =5
 b =0
 c =4
 d =3
-gamma1=2
-gamma2=1
-delta=1
-eps=1
+gamma1=1
+gamma2=0
+delta=0
+eps=3
 a1 = a-c
 a2 = d-b  
 x = np.linspace(0,1,100)
-root = newton(repgenroot,0.8)
+root = newton(repgenroot,0.5)
 print(root)
 plt.plot(x,repgen(x,t,a1,a2,eps,delta,gamma1,gamma2))
 plt.show()
@@ -53,7 +53,8 @@ plt.show()
 runs=10
 for i in range(1,runs):
     x0 = i/runs
-    sol = odeint(repgen,x0,t,args=(a1,a2,eps,gamma1,gamma2,delta))
+    sol = odeint(repgen,x0,t,args=(a1,a2,eps,delta,gamma1,gamma2))
     plt.plot(t,sol)
+sol =odeint(repgen,root,t,args=(a1,a2,eps,delta,gamma1,gamma2))
 plt.plot(t,sol)
 plt.show()
