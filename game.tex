@@ -50,7 +50,7 @@ $i \in I$ defined as $S_i = \{1,2,...,m_i\}$, where $m_i$ denotes the total
 number of strategies available to player $i$, and the payoff function 
 $F: S \rightarrow \realnumb^n$.
 As this text focusses on the stag hunt game, which is a normalform game,
-this definitons reduce to the following.
+this definitions reduce to the following.
 By setting $n=2$, we define the two hunters playing SH as $I=\{1,2\}$. A 
 player $i \in I$  can choose from a set of pure strategies from his 
 pure strategy space, $S_i$. This strategies are called pure, because I later
@@ -61,7 +61,7 @@ Therefore, the pure strategy space is defined by $S_i = \{1,2\}$, which results
 by setting $m_i$. In the SH game both players choose from
 the same set of stragies such that $S_1 =S_2=S$. Combining the strategy spaces
 of the two players with the cartesian product
-yields the definiton of the pure strategy space of the game
+yields the definition of the pure strategy space of the game
 $\mathbb{S}= S \times S = S^2$. Games played by two players with two strategies
 each, are often said to be \textit{2x2 games}.
 
@@ -237,7 +237,7 @@ is that the animals \textit{are} of a phenotyp and cannot change it by will.
 They cannot \textit{choose} their "strategy" in the game like agents do.
 Biologists then ask which composition of the population cannot be invaded.
 Formally, this intuition leads for a symmetric
-two-player game to the definiton of an evolutionary stable strategy.
+two-player game to the definition of an evolutionary stable strategy.
 \begin{mydef}
         \label{def:ess}
         A strategy $x \in \Delta$ is called evolutionary stable (ESS) if it
@@ -788,7 +788,7 @@ In \cite{paperaboutnetworkexternality} a linear form for the network
 externality is suggested. With the additional parameter $\beta \in \realnumb_+$
 one than gets $e(x) = \beta x$. While not changing the state in which
 the whole population coordinated to one strategy, the inner fixed point
-is changed by the dynamic. The $\varphi$ is still a polynominal but of 
+is changed by the dynamic. $\varphi(x)$ is still a polynominal but of 
 degree $4$:
 \begin{align}
         \dot{x} = \varphi(x) = -\beta x^4 -x^3(\alpha_1 + \alpha_2 
@@ -798,13 +798,22 @@ Using the knowledge from the general case, we can find the roots, i.e. fixed
 points of the dynamic, by reducing the degree with the two roots known. The
 polynominal of degree $2$ can then be solved applying a quadratic formula\footnote{
 The solution with negative sign was omitted, since it has no economic 
-interpretation}, so that the fixed point with a mixed popultation state is
+interpretation}, so that the fixed point with a mixed population state is
 $x_3 = -\frac{\alpha_1+\alpha_2}{2 \beta} + 
 \sqrt{(\frac{\alpha_1+\alpha_2)^2}{4\beta^2} +\frac{\alpha_2}{\beta}}$. 
 Some arithmetic can verify that $0<x_3<1$, is in the feasible range of the
 population share variable. The plot of the dynamic and the polynominal is 
 shown figure \ref{fig:plotmodellinear}.
-\begin{figure}
+Note that the share of students choosing strategy 1 is now lower at the 
+inner fixed point, showing that the positive externality has a positive 
+effect on the attractiveness of choosing open source software. Indeed,
+the basin of attraction of the equilibrium in which all students are using 
+open source software became larger, depicted by the distance to the
+inner fixed point.
+Comparison of the red horizontal line, the inner fixed point without externality,
+with the green horizontal line, the inner fixed point with externality,
+in figure \ref{fig:dynamiclinear}, illustrates this. 
+\begin{figure}[h]
         \centering
         \begin{subfigure}{.5\textwidth}
         \centering
@@ -815,10 +824,15 @@ shown figure \ref{fig:plotmodellinear}.
         \centering
         \includegraphics[scale=0.5]{dynamiclinearmodel.png}
         \caption{The dynamic} 
+        \label{fig:dynamiclinear}
         \end{subfigure}%        
-        \caption{The linear model for paramters $\alpha_1=1,\alpha_2=2,
+        \caption{The linear model for parameters $\alpha_1=1,\alpha_2=2,
         \beta=1$}
 \end{figure}
+
+
+
+
 
 
 
@@ -938,7 +952,7 @@ Starting from \eqref{eq:replicator}, one can derive that the dynamics of this
 games are the same up to a change in speed, proportional to the ratio of 
 optimization premia of the games. In game $R$ the change in the population share
 playing strategy one is, thus, half the speed of $2R$ and four thirds of $0.6R$,
-$\dot{x}_{R} = 0.5 \dot{x}_{2R} = \frac{4}{3}\dot{x}_R$.
+$\dot{x}_{R} = \frac 12 \dot{x}_{2R} = \frac{4}{3}\dot{x}_R$.
 
 \textcite{schmidt_playing_2003} designed their experiment such that the effect
 of differing risk levels could be observed. It is convenient to relabel 
@@ -967,13 +981,13 @@ Comparing Game 2 with Game 3, and Game 1 with Game 4, the only difference is the
 degree of risk-dominance and hence one can investigate if subjects react 
 to the change in risk-dominance. For game 1 and game 3 the basin of attraction
 of both equilibria is equal (Mixed-NE at $(\frac 12, \frac 12)$) and  for
-game 2,3 the Mixed-NE is at $(\frac 34,\frac 14)$ resulting in the typical 
-larger basin of attraction of the strategy $(e_2,e_2)$. So one would expect
-from the replicator dynamic, of course depending on the inital condition 
-of the game one, to be more likely attracted to the 'hare-hunting' equilibrium
-in game 2,3.
+game 2 and 3 the Mixed-NE is at $(\frac 34,\frac 14)$ resulting in the typical 
+larger basin of attraction of the strategy $(e_2,e_2)$. Therefore, it is  
+expected from the replicator dynamic, of course depending on the inital condition 
+of the game, that subjetcs are more likely attracted to the 'hare-hunting' 
+equilibrium in game 2 and 3.
 \textcite{schmidt_playing_2003} implement three different types of matching
-protocol. First of all, a random matching protocol where each subjects is not
+protocol. First of all, a random matching protocol where each subject is not
 matched twice with another person and only has information about his payoff and
 the action of the person he was matched against. 
 Secondly, a fixed protocol, matching two persons for several rounds against 
@@ -989,20 +1003,20 @@ the games. They define the \textit{relative riskiness} of a games
 "safe strategy relative to the risky strategy" as $RR = \frac{|c-d|}{a-b}$.
 Intuitively, a player commited to strategy one and calculating the 
 difference a deviation of the other player from strategy one to two, gets
-$(a-b)$. Similiary for strategy two, he receives $c-d$. The relative riskiness
-measure is, hence, the ratio of those deviation calculations. Alternatively,
-it can be interpreted as the ratio of the standard deviations of the payoffs 
-\parencite{dubois_optimization_2012}. They speak of "comparable riskiness",
-if the $RR$ measure is close to one \cite{dubois_optimization_2012}. 
-According to $RR$, the risk-dominant strategy 2 is said to be less risky 
-relative to the payoff-dominant strategy 1 in on game compared to another if 
-$RR$ is smaller.
+$(a-b)$. Similiary for strategy two, he receives $(c-d)$. The relative riskiness
+measure is, hence, the ratio of the effect a deviation of the other play has 
+on the payoff. Alternatively, it can be interpreted as the ratio of the 
+standard deviations of the payoffs \parencite{dubois_optimization_2012}. 
+They speak of "comparable riskiness", if the $RR$ measure is close to one 
+\parencite{dubois_optimization_2012}. According to $RR$, the risk-dominant 
+strategy 2 is said to be less risky relative to the payoff-dominant strategy 
+1 in on game compared to another if the $RR$ is smaller.
 Observing the values of the relative riskiness by 
 \textcite{dubois_optimization_2012} and the risk-dominance measure of 
 \textcite{schmidt_playing_2003} for the games used in the papers, it is clear
 that both measures are in a conflict. As by \textcite{schmidt_playing_2003}
 measure, risk-dominance is kept constant in the games of 
-\textcite{battalio_optimization_2001}, relative riskiness indicates a 
+\textcite{battalio_optimization_2001}, whereas relative riskiness indicates a 
 variation. On the other hand, relative riskiness cannot distinguish between
 the games 1,2 and 3 of \textcite{schmidt_playing_2003}, since $RR=0$. In an
 early working version of their paper they explicitly excluded the case 
@@ -1014,8 +1028,8 @@ With the implementation of game 1 a replication of the results for
 \textcite{battalio_optimization_2001}'s game $0.6R$ could be 
 performed\footnote{The payoff matrices are identical. 
 Compare \ref{fig:payoffdubois} and \ref{fig:payoffbattalio}}. 
-As per their conjecture they found that a lower relative riskiness in a game 
-decreased the rate of choice of strategy one, keeping the optimization premium 
+As per their conjecture, they found that a lower relative riskiness in a game 
+decreases the rate of choice of strategy one, keeping the optimization premium 
 constant. This is congruent with the intuition that the severity of the impact 
 related with the strategic uncertainty subjects face in a game, expressed in
 the difference in payoff a deviation of the other player would cause,
@@ -1031,14 +1045,14 @@ of the Nash equilibria. \textcite{dubois_optimization_2012} intend to sort
 out "furtuitous coordination", coordination as consequence of subjects being
 randomly matched with each other. Comparing strong coordinations between the
 games they find a non-significant difference between game 1 and game 2 in 
-which only the relative riskiness certeris paribus was changed. Contrary to 
-that there is a significant difference in the commoness in game 3 to game 2.
-Since game 3 and game 2 only differ in their optimization premium 
+which only the relative riskiness ceteris paribus was changed. Contrary to 
+that, there is a significant difference in the commonness in game 3 to game 2.
+Since game 3 and 2 only differ in their optimization premium, 
 \textcite{dubois_optimization_2012} conclude that a higher optimization
-premium leads to more (strong) coordination. As they mention, this agrees
-with the observation of \textcite{battalio_optimization_2001} that the 
-speed of convergence hinge positively on the optimization premium. \todo{
-Is it really the convergence or did I miss something?}
+premium leads to more frequent (strong) coordination. 
+As they mention, this agrees with the observation of 
+\textcite{battalio_optimization_2001} that the speed of convergence hinge 
+positively on the optimization premium. \todo{Is it really the convergence or did I miss something?}
 \todo{History of Play}
 
 As seen from the evidence \textcite{battalio_optimization_2001},
@@ -1046,10 +1060,10 @@ As seen from the evidence \textcite{battalio_optimization_2001},
 found, the structure of the payoff matrix has a strong impact on the way 
 people play the stag hunt game.   
 The story this evidence tells is quite frightening. Failure to coordinate 
-on the payoff-dominant equilibrium seems to be common. Following an argument
-of \textcite{kreps_game_1990} that identical strategic interactions, such
-as the play of completely indentical stag hunt games in the laboratory,
-"take us very little distance outside the laboratory", 
+on the payoff-dominant equilibrium seems to be common. 
+Following an argument of \textcite{kreps_game_1990} that identical strategic 
+interactions, such as the play of completely indentical stag hunt games in the 
+laboratory, "take us very little distance outside the laboratory", 
 \textcite{rankin_strategic_2000} design an experiment with a randomly 
 pertubated stag hunt game. Essentially, the payoff to strategy 1 is fixed 
 whereas the payoff to strategy 2 varies randomly between the games. This is
@@ -1064,7 +1078,7 @@ variation justifies to describe the games as "similiar" but not
 "identical", hence the structure stays the same, but the risk-dominance 
 property varies. Indeed, if $x$ is greater than $0.5$ risk-dominance and
 payoff-dominance select different equilibria, $(e_2,e_2)$ and $(e_1,e_1)$,
-respectively. For a value of $x$ smaller than $0.5$ both select the 
+respectively. For a value of $x$ smaller than $0.5$ both select 
 the equilibrium in strategy 1. One finds that the optimization premium for 
 this randomly perturbed games does not change, since $\delta=1-x+x+0=1$. 
 The relative riskiness measure $RR$ cannot discriminate between this games,
@@ -1074,14 +1088,14 @@ The question \textcite{rankin_strategic_2000}
 want to investigate is, if this framework of sligthly varied situations may
 lead the groups to form a "convention" which deductive principle to choose. 
 In contrast to the studies performed with identical stag hunt games, they 
-observe emerging coordination to the payoff dominant equilibrium across
+observe coordination to the payoff dominant equilibrium across
 all cohorts. Whereas in the first ten periods of play risk dominance seems
 to have some explanatory power for the choice of strategy, in the last ten
 rounds 91\% choose the payoff dominant action. 
-In the cases of coinciding equilibrium selection of risk-dominance and payoff-
-dominance ($x < 0.5$) all subjects coordinated on that equilibrium in group
-1-5 and 95\% of the subjects in group 6. But also for the other case a high
-coordination on the payoff-dominant strategy was observed, ranging from 
+In the cases of coinciding equilibrium selection of risk-dominance and 
+payoff-dominance ($x < 0.5$) all subjects coordinated on that equilibrium in 
+group 1-5 and 95\% of the subjects in group 6. But also for the other case a 
+high coordination on the payoff-dominant strategy was observed, ranging from 
 80\% to 95\% of the strategies played, suggesting that there is clear evidence
 for the hypothesis of an emerging convention based on the deductive principle
 payoff-dominance. This sends a quite positive image about coordination, because 
@@ -1100,7 +1114,7 @@ in the efficient equilibrium and less "disequilibrium play" in general.
 random matching protocol. But it is different to random matching on group
 basis, where subjects can play against the same opponent again 
 and hence there is the possibility that a "convention" emerges like in 
-\cite{rankin_strategic_2000}.
+\textcite{rankin_strategic_2000}.
 
 Even more subtle experiment design differences are conjectured to have an
 effect. For example \textcite{devetag_when_2007} suggest that the formulation
@@ -1113,13 +1127,14 @@ of each period, in each group (composed of 8 participants), the computer
 system will form 4 pairs of subjects. [...] The experiment 
 involves 75 rounds". While essentially containing the same information,
 it does not emphasize the fact that subjects can reencounter the same 
-players again. 
+players again and consequently might have influenced the subjects to play
+the strategy associated with less risk.
 
 An interesting experimental approach is executed by 
-\cite{dufwenberg_gender_2005}. They try to evaluate if there is a diffrence
-in coordination behaviour accross genders, motivated by the different
-treatment of males and femals in the work place. Playing the weak-link order
-statistics game in \cite{van_huyck_tacit_1990}, groups of only femals or only
+\textcite{dufwenberg_gender_2005}. They try to evaluate if there is a difference
+in coordination behavior accross genders, motivated by the different
+treatment of males and females in the work place. Playing the weak-link order
+statistics game in \cite{van_huyck_tacit_1990}, groups of only females or only
 males face the coordination problem with Pareto-ranked equilibria. The 
 motivation of observing gender differences was "never explicitly pointed 
 out to the subjects" \parencite{dufwenberg_gender_2005}\footnote{
@@ -1130,8 +1145,8 @@ different. Differences in the beginning "disappear fast" and "no difference
 is found in later stages". All groups converge to the choice of the minimum
 contribution. As they mention, it might be useful to investigate differences
 with groups that also have some other characteristica in common. They refer
-to the differences group identity has for femals and males playing a 
-public goods game. Namely \textcite{croson_groups_2008} found that when
+to the differences group identity has for females and males playing a 
+public goods game. Namely, \textcite{croson_groups_2008} found that when
 females in a sorrority play the public goods games they perform better than 
 females with no specific belongingness. Contrarly, males in a fraternity 
 performed worse than males without a group identity. 
@@ -1139,11 +1154,11 @@ Interestingly, this and other factors concerning the group of subjects
 playing the coordination game might be a rationale for the initial conditions
 in the evolutionary dynamic. The intitial conditions might be used to 
 capture the composition of the subjects interacting in reflecting how well
-trust or some kind of cultural risk aversion is embedded as convention. 
+trust or cultural convecntions are embedded in the population. 
 Nevertheless, it seems difficult, atleast for the author, to justify
-the reduction of culture to one\footnote{Of course, in games with more 
+the reduction of the inheritance of cultural values to one\footnote{Of course, in games with more 
 than two strategies the initial conditions are represented by a vector}
-dimension such as $x_0$
+dimension such as the initial conditions $x_0$.
 \todo{External validity}
 
 The discussion of the laboratory research makes on clear: There is more
@@ -1155,8 +1170,8 @@ when real people interact.
 \section{Application and Outlook}
 \section{appendix}
 \begin{figure}[h]
-        \label{payoffbattalio}
 \caption{Payoff matrices of games in \textcite{battalio_optimization_2001}}
+        \label{figpayoffbattalio}
 \begin{alignat*}{3}
         A_{2R} &= \mqty(45 & 0 \\ 35 & 40) \quad & &A_{R} = \mqty(45 & 0 \\ 
         40 & 20) \quad & &A_{0.6R} = \mqty( 45 & 0 \\ 42 & 12) \\
