@@ -810,9 +810,9 @@ effect on the attractiveness of choosing open source software. Indeed,
 the basin of attraction of the equilibrium in which all students are using 
 open source software became larger, depicted by the distance to the
 inner fixed point.
-Comparison of the red horizontal line, the inner fixed point without externality,
-with the green horizontal line, the inner fixed point with externality,
-in figure \ref{fig:dynamiclinear}, illustrates this. 
+Comparison of the dashed, red horizontal line, the inner fixed point without 
+externality, with the dashed, green horizontal line, the inner fixed point 
+with externality, in figure \ref{fig:dynamiclinear}, illustrates this. 
 \begin{figure}[h]
         \centering
         \begin{subfigure}{.5\textwidth}
@@ -827,7 +827,8 @@ in figure \ref{fig:dynamiclinear}, illustrates this.
         \label{fig:dynamiclinear}
         \end{subfigure}%        
         \caption{The linear externality model for parameters $\alpha_1=1,\alpha_2=3,
-        \beta=1$}
+        \beta=3$}
+        \label{fig:plotmodellinear}
 \end{figure}
 The basins of attraction have equal size for $\beta^* = 2 (\alpha_2 -\alpha_1)$,
 attracting an equal amount of initial conditions. However,
@@ -838,15 +839,34 @@ to change the risk-dominance property. I conclude that in this model,
 the size of the basin of attraction and the risk-dominance property do not
 coincide in general, since the externality changes the Nash product associated
 with the pure strategy 1 equilibrium. Consider for example the parameter setting 
-used in the plots, $\alpha_1 =1, \alpha_2=3$ and now let $\beta=3$. 
-The basin of attraction is not equal, since $3<\beta^*=4$. 
+$\alpha_1 =1, \alpha_2=3$, but now let $\beta=3$. 
+The basin of attraction is not equal, since $3<\beta^*= 4$. 
 The open source equilibrium attracts all trajectories starting within 
-$x_0 \in (2+\sqrt{7},1]$ and hence the propriertary equilibrium attracts
-all trajectories $x_0 \in [0,2+\sqrt{7})$. Clearly, the latter basin of 
-attraction is larger, but the open source equilibrium gets risk-dominant for
+$x_0 \in (\frac{-2+\sqrt{13}}{3},1]$ and hence the propriertary equilibrium attracts
+all trajectories $x_0 \in [0,\frac{-2+\sqrt{13}}{3})$. Clearly, the latter basin of 
+attraction is larger ($\frac{-2+\sqrt{13}}{3}>0.5)$), 
+but the open source equilibrium gets risk-dominant for
 $x>\frac 23$. Implying that the network externality not only increases the
 utility obtained from the choice of open source software, but also,
 combined with a high enough user base, makes this choice risk-dominant.
+
+The model presented here is quite a simplification of the real world. 
+First, the students are expected to be able to review which software is 
+appropriate for their projects, hence have more information available then 
+assumed in the model. Secondly, talking to their fellow student seems
+possible before deciding which software to use for the project. 
+However, as the experimental literature, discussed in 
+\ref{sec:experimentalevidence}, suggests, cheap talk does not generally
+solve the coordination problem. 
+Additionally, it might be interesting to use a network framework as presented
+in \textcite{hanauske} for the communication in scientific network. This 
+removes the quite unconvincing assumption that students are just randomly
+matched to each other into projects. In university students usually try
+to do projects with their friends in their social network and only do
+projects with students in the same classes. So, the situation outlined 
+might be better understood as a social network of students in 
+university courses, playing the coordination game of software choice.
+
 
 
 
