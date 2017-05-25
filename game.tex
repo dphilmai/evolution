@@ -3,7 +3,7 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage[backend=biber,style=authoryear,maxcitenames=2,url=false]{biblatex}
+\usepackage[backend=biber,style=authoryear,url=false]{biblatex}
 %\bibliography{bibevol2.bib}
 \bibliography{bibevol.bib}
 %\bibliography{bibevol3.bib}
@@ -17,6 +17,27 @@
 \presetkeys{todonotes}{color=yellow,size=\scriptsize}{}
 \begin{document}
 \section{Introduction}
+Asking a social scientists about \textit{the} example of a social dilemma, 
+one usually gets to hear the story about two prisoners, arrested and 
+seperately interrogated by an authority. Lacking the amount of evidence for the
+serious crimes, the authority offers them a deal simultaenously.
+A confession grants a prisoner with amnesty and hence he escapes the punishment
+for the serious crimes. However, if both choose to confess, they receive the
+full sharpness of the law. Not admitting the crimes would leave the authority
+with too little evidence, resulting only in a sentence for minor crimes.
+This story, developed by Alber Tucker in 1950 and suitably named Prisoner's
+Dilemma is usually represented in a table, as shown in figure \ref{fig:pd}, with
+the options for each prisoners denoted by C, remaining silent, and D, admiting
+their crimes. The dilemma is that the total amount of years for the group
+is lowest if both do not confess, but each individual prisoner has the 
+incentive to take the deal of the authority as this leaves him, independently
+of what his fellow prisoner does, with a lower time in prison. Hence, 
+individual interest and the benefit of the group are in conflict
+\parencite{skyrms_stag_2004}. However, there is another "story that became
+a game" \parencite[1]{skyrms_stag_2004}, which describes a different, but
+as Skyrms argues, underrepresented social dilemma.
+
+
 \begin{figure}[h]
 \begin{center}
 \begin{game}{2}{2} & $S$ & $H$
@@ -29,10 +50,10 @@
 \begin{figure}[h]
 \begin{center}
 \begin{game}{2}{2} & $C$ & $D$
-\\ $C$ &$a,a$ &$b,c$
-\\ $D$ &$c,b$ &$d,d$ \end{game}
-\label{pd}
+\\ $C$ &$-1,-1$ &$-4,0$
+\\ $D$ &$0,-4$ &$-3,-3$ \end{game}
 \end{center}
+\label{pd}
 \caption{A parametrized representation of the prisoners dilemma}
 \end{figure}
 \section{The Stag hunt game}
@@ -161,11 +182,11 @@ notation for symmteric two player game.
 \begin{mydef}
         \label{def:nashequilibrium}
         A state of $(x^*,y^*) \in \Delta^2$ is called a Nash equilibrium if 
-        it holds that\todo{Nicer form}
-\begin{itemize}
-        \item   $(x^*)^T A y^* \geq x^T A y^*, \quad \forall x \in \Delta$
-        \item   $(x^*)^T A^T y^* \geq (x^*)^T A^T y, \quad \forall y \in \Delta$.
-\end{itemize}
+        it holds that\todo{Definition for symmetric game.}
+        \begin{alignat*}{2}
+                (x^*)^T A y^* &\geq x^T A y^*, \quad \forall x \in \Delta \\
+                (x^*)^T A^T y^* &\geq (x^*)^T A^T y, \quad \forall y \in \Delta.
+        \end{alignat*}
 It is called symmetric if $x^* = y^*$. A Nash equilibrium is 
 strict Nash equilibrium if the inequality is strict.
 \end{mydef}
