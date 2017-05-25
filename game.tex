@@ -17,16 +17,27 @@
 \presetkeys{todonotes}{color=yellow,size=\scriptsize}{}
 \begin{document}
 \section{Introduction}
+
+The beginnings of game theory date back to Johann von Neumann in 1928 
+\parencite{v._neumann_zur_1928}, who developed a mathematical framework
+for modelling situations with strategic interactions of rational agents.
+In a situation of strategic interaction, the outcome for an agent does not
+only depend on his choice, but also on the choice of the other agents.
+In economics, such situations often present themselves as a social dilemma,
+a situation where a group of agents is prevented to achieve the best
+outcome for the group, because of strategic considerations of the individual
+agent.
 Asking a social scientists about \textit{the} example of a social dilemma, 
 one usually gets to hear the story about two prisoners, arrested and 
-seperately interrogated by an authority. Lacking the amount of evidence for the
-serious crimes, the authority offers them a deal simultaenously.
+seperately interrogated by an authority. Lacking the amount of evidence to sue 
+the criminals for serious crimes, the authority offers them a deal 
+simultaneously.
 A confession grants a prisoner with amnesty and hence he escapes the punishment
 for the serious crimes. However, if both choose to confess, they receive the
 full sharpness of the law. Not admitting the crimes would leave the authority
 with too little evidence, resulting only in a sentence for minor crimes.
-This story, developed by Alber Tucker in 1950 and suitably named Prisoner's
-Dilemma is usually represented in a table, as shown in figure \ref{fig:pd}, with
+This story, developed by Albert Tucker in 1950 and suitably named Prisoner's
+Dilemma(PD) is usually represented in a table, as shown in figure \ref{fig:pd}, with
 the options for each prisoners denoted by C, remaining silent, and D, admiting
 their crimes. The dilemma is that the total amount of years for the group
 is lowest if both do not confess, but each individual prisoner has the 
@@ -35,14 +46,66 @@ of what his fellow prisoner does, with a lower time in prison. Hence,
 individual interest and the benefit of the group are in conflict
 \parencite{skyrms_stag_2004}. However, there is another "story that became
 a game" \parencite[1]{skyrms_stag_2004}, which describes a different, but
-as Skyrms argues, underrepresented social dilemma.
+as Skyrms argues, underrepresented social dilemma. In \textit{A Discourse on
+Inequality}, Rousseau outlines the situation of hunters, heading out to hunt 
+stag. However, if a hare runs past a hunter, he might consider to
+shoot the hare, banishing all stags in the forest. The total reward for
+the group is surely lower, but it is rationale for the single hunter if he
+expects the others to act the same, given the opportunity. In contrast
+to PD, it is not the hunters individual interest that is competing with the
+benefit of the group, but the uncertainty about what the other hunters choose
+to do. In fact, none of the hunters would have bad feelings about his choice
+not to shoot a hare when returning with a stag, as his personal benefit is 
+greater with a stag as bounty. Figure \ref{fig:sh} represents this dilemma 
+for two hunters. When both coodinate on stag hunting, denoted by S, they receive 
+$5$. If one of them decides to shoot the hare, he gets $4$, whereas
+the other hunter is left out in the cold with no prey. Coordination on hare
+hunting yields both $2$. In game theory, this type of situation is called
+a coordination game. Since in the outcomes the hunters coordinated, either
+on hunting stag or hare, they have no incentive to change their action. 
+Both outcomes are what game theory calls a Nash-equilibrium, originally
+formulated by John Nash in 1950 \parencite{nash_equilibrium_1950}. In a 
+Nash equilibrium all players of a game choose a best reply against
+the strategies of the other players, so that none of them has an incentive
+to deviate unilateral from his decision. Although this is the mainly used
+solution concept, it does not give a definite answer in the stag hunt game.
+One might argue that both hunters can speak to each other beforehand and
+assure each other that hare hunting is more attractive to both them. However,
+\textcite{camerer_behavioral_2003} argues that empirical observation and theory 
+suggest that the problem is not solved that easily.
+Furthermore, in a wide range of economic applications interaction of agents
+happen repeatedly. Analyzing repeated prisoner dilemmas, it turns 
+out that the resulting game can actually be interpreted as a stag-hunt game with
+two Nash equilibria \parencite{skyrms_stag_2004}.
+This connection between this two social dilemmas advocates that
+the selection of equilibria should be investigated more deeply. 
+An interesting approach to the equilibrium selection problem comes from
+biology. Evolutionary game theory, a time dependent extension of the
+static framework of game theory, was pioneered by Maynard Smith in his 
+work on the conflict of animals in populations \parencite{smith_lhe_1973}.
+In contrast to traditional game theory, in the evolutionary approach agents
+in a large population interact repeatedly in a strategic enviroment. 
+The agents are also not assumed to be rational, but follow a specific rule,
+updating their strategy. As outlined in the rest of this text, the
+evolutionary approach offers an answer to the coordination problem in the
+stag hunt game.
+The thesis is organized as follows. Chapter 2 introduces the 
+framework of traditional game theory for the stag hunt game and discusses
+the traditional approach to the equilibrium selection problem. Chapter 3
+motivates evolutionary game theory and presents the replicator dynamic. 
+Later on, it will be discussed how the evolutionary approach selects
+between multiple equilibria. Chapter 4 demonstrates the effect of a
+network externality in the underlying framework. Looking for evidence
+how real people play the stag hunt game, chapter 5 considers experimental
+literature on the topic. Chapter 6 concludes and shows application of
+evolutionary game theory and the stag hunt game in economics.
 
 
 \begin{figure}[h]
 \begin{center}
 \begin{game}{2}{2} & $S$ & $H$
-\\ $S$ &$a,a$ &$b,c$
-\\ $H$ &$c,b$ &$d,d$ \end{game}
+\\ $S$ &$5,5$ &$0,4$
+\\ $H$ &$4,0$ &$2,2$ \end{game}
 \label{sh}
 \end{center}
 \caption{A parametrized representation of the Stag hunt game, $a>c\geq d >b$}
