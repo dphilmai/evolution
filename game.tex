@@ -80,15 +80,21 @@ two Nash equilibria \parencite{skyrms_stag_2004}.
 This connection between this two social dilemmas advocates that
 the selection of equilibria should be investigated more deeply. 
 An interesting approach to the equilibrium selection problem comes from
-biology. Evolutionary game theory, a time dependent extension of the
-static framework of game theory, was pioneered by Maynard Smith in his 
-work on the conflict of animals in populations \parencite{smith_lhe_1973}.
-In contrast to traditional game theory, in the evolutionary approach agents
-in a large population interact repeatedly in a strategic enviroment. 
-The agents are also not assumed to be rational, but follow a specific rule,
-updating their strategy. As outlined in the rest of this text, the
+biology. Evolutionary game theory was pioneered by Maynard J. Smith and George
+R. Pricein their work on the conflict of animals in populations 
+\parencite{smith_lhe_1973}. Started as a refinement of the Nash equilibrium,
+the concept of an evolutionary stable strategy, various other authors, for 
+example \textcite{taylor_evolutionary_1978}, \textcite{hofbauer_note_1979} and
+\textcite{zeeman_dynamics_1981}, developed a "time dependent dynamical
+extension of game theory" \parencite[55]{hanauske_evolutionare_2011}.
+In contrast to traditional game theory, the evolutionary approach  models
+ agents in a large population, interacting repeatedly in a strategic enviroment. 
+Furthermore, the agents are not assumed to be rational, but follow a specific 
+rule, updating their strategy. 
+As outlined in the rest of this text, the
 evolutionary approach offers an answer to the coordination problem in the
 stag hunt game.
+
 The thesis is organized as follows. Chapter 2 introduces the 
 framework of traditional game theory for the stag hunt game and discusses
 the traditional approach to the equilibrium selection problem. Chapter 3
@@ -99,7 +105,6 @@ network externality in the underlying framework. Looking for evidence
 how real people play the stag hunt game, chapter 5 considers experimental
 literature on the topic. Chapter 6 concludes and shows application of
 evolutionary game theory and the stag hunt game in economics.
-
 
 \begin{figure}[h]
 \begin{center}
@@ -123,15 +128,16 @@ evolutionary game theory and the stag hunt game in economics.
 \label{sec:traditional}
 \todo{Motivation of traditional game theory}
 As introduced, the stag hunt game (SH) is played by two players who choose their
-strategies simultaneoulsy. Both have information about the strategies of the
+strategies simultaneoulsy, without knowing each others choice.
+Both have information about the strategies of the
 other player and the payoffs they and their opponents receive. In game theory
 such a game is called a \textit{normalform} game. Typically, such a game is
 formalized as a Triplet $\Gamma = (I,\mathbb{S},F)$, with the set of players 
-$I=\{1,2,...,n\}$, where $n$ is the total number of players, 
-the pure strategy space of the game $\mathbb{S} = \times_i S_i$
+$I=\{1,2,...,n\}$, where $n$ is the total number of players.
+The pure strategy space of the game $\mathbb{S} = \times_i S_i$
 with the pure strategy space $S_i$ of an individual player 
 $i \in I$ defined as $S_i = \{1,2,...,m_i\}$, where $m_i$ denotes the total
-number of strategies available to player $i$, and the payoff function 
+number of strategies available to player $i$. and the payoff function 
 $F: S \rightarrow \realnumb^n$.
 As this text focusses on the stag hunt game, which is a normalform game,
 this definitions reduce to the following.
@@ -169,7 +175,6 @@ representation above, one can indentify the payoff matrices for the player as
      A = \mqty(a && b \\ c && d), \quad B = \mqty(a && c \\ b && d)
         \label{eq:matrix}
 \end{align}
-
 For the game here in study, the following definition is important: 
 \begin{mydef}
         A two player game $\Gamma=(I,S_1 \times S_2, A,B)$ is called symmetric
@@ -1292,7 +1297,35 @@ to a strategy, while being attracted and moved to an equilibrium by a dynamic
 in a fully deterministic fashion. But, as a model should, the analysis offers 
 a simplification that helps to understand some of the patterns observeable 
 when real people interact.
-\section{Application and Outlook}
+\section{Summary and Outlook}
+Stag hunt games do not just have to occur in the literal version Rousseau
+described, even though there exists an interesting example provided by 
+David A. Nolin and Michale S. Alvard on whale hunting in Lamalera, Indonesia
+\parencite{nolin_meat-sharing_2000}.
+Actually, many situation in economics contain the coordination of actions
+of individuals. 
+Indicated in the introduction, usually the prisoner's dilemma is then used
+as a framework to analyze why individuals may not be able to coordinate on the 
+Pareto-dominant outcome. However, as Camerer
+suggests, various situations that "are thought to be a prisoner's dilemma 
+are actually a stag hunt game", if the described situation "evokes emotion,
+has enough synergy or excludability" 
+\parencite[376-377]{camerer_behavioral_2003}. Furthermore, repeated prisoner's
+dilemma becomes a stag hunt game when only strategies grim trigger
+and always defect are compared. \textcite{blonski_prisoners_2003} show that
+this relationship is true for other strategies, considering the discrepancy
+between Pareto-dominance and risk-dominance as equilibrium selection criteria 
+for a wide range of parameter settings. 
+Evolutionary game theory provides a theory in which the selection of an
+equilibrium is endogenous once the dynamic is set into operation. Yet, it
+does not offer an explanation for the initial conditions, which in fact 
+determine on which equilibrium the population coordinates. Likewise, the
+assumptions about the connection of individuals, discussed in 
+\ref{sec:simplemodel}, the continous population and the way agents
+adjust their strategy need to be justified for the given application. 
+
+
+
 \section{appendix}
 \begin{figure}[h]
 \caption{Payoff matrices of games in \textcite{battalio_optimization_2001}}
