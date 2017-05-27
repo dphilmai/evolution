@@ -366,7 +366,7 @@ needs to be a best-reply to satisfy the ESS condition. In addition,
 a strategy used in a strict Nash equilibrium is always an ESS, 
 since it directly satisfies 
 \eqref{eq:essstrict}. The equivalence of both formulations is shown in
-\textcite{weibull_evolutionary_1997}}.
+\textcite{weibull_evolutionary_1997}.
 Not all strategies in the equilibria of the stag hunt game are evolutionary
 stable strategies. The pure strategies $e_1$ and $e_2$ are evolutionary stable,
 since both are strict symmetric Nash equilibria and so 
@@ -409,14 +409,15 @@ Nash equilibrium, due to the fact that every agent has the incentive to
 deviate and accept the deal of the authority.
 Contrary to that, in SH, every agent plays a best-reply 
 in the Pareto efficient outcome, but since there is another Nash equilibrium 
-it is not clear which one is played based on this criterion alone. 
-Following \cite[57]{schelling_strategy_1960}, one may argue that 
+it is not clear which one is played based equilibrium play alone. 
+Following \textcite[57]{schelling_strategy_1960}, one may argue that 
 Pareto-dominance characterizes $(\hat{e}_1,\hat{e}_1)$ as a focal point, 
 an outcome of a game that is psychologically prominent, of 
 the game, helping the players to coordinate on this outcome.
 However, the equilibrium point $(\hat{e}_2,\hat{e}_2)$ exhibits the feature 
 of \textit{Risk-Dominance}. 
-\cite{seltenharsanyigeneral} defined this selection criterion based on the
+\textcite{harsanyi_general_1988} defined this selection criterion 
+based on the
 risk for the players associated with an equilibrium point. Formally, in the
 SH game, 
 \begin{mydef}
@@ -434,25 +435,37 @@ corresponds to $\alpha_1 < \alpha_2$.
 So both pure Nash equilibria have a certain appeal for game theorists to be
 favored as an outcome of the game. The question is, do people rather play
 safe and coordinate on the hare hunting equilibrium, terminating in a social
-dilemma as they could not reach the outcome with higher payoff for them of
-them. Or are they able to recognize the Payoff-dominance of stag hunting, 
+dilemma, as there exists an outcome in which everyone of them is better off.
+Or are they able to recognize the Payoff-dominance of stag hunting, 
 trusting each other not to react to a hare passing by.
-Indeed, there is no clear consent which equilibrium will be played. 
+Indeed, there is no consensus which equilibrium will be played. 
 Although Harsanyi and Selten introduced the Risk-dominance criterion in 
 \textcite{harsanyi_general_1988}, their general theory of equilibrium 
 selection favors Payoff-dominance in the Stag hunt case. They argue that
 "if each player knows the other to be fully rational [...] they should trust
 each other to be fully rational" \parencite[89]{harsanyi_general_1988}.
 Further on, Harsanyi and Selten expect players to coordinate on the
-Pareto-dominant equilibrium if they are allowed to communicate beforehand, 
-because "an agreement to do so is self-stabilizing". In contrast to that,
-\textcite{aumann_nash_1990} points out that a message from player 1 to
+Pareto-dominant equilibrium if they are allowed to communicate beforehand,
+sometimes referred to as \textit{cheap talk} when it is not associated with
+costs to the players \textcite{farrell_cheap_1996}, 
+because "an agreement to do so is self-stabilizing". 
+In contrast to that,
+\textcite{aumann_nash_1990} points out that a message from player 1 to 
+player 2, saying that he intends to coordinate on the Payoff-dominant 
+equilibrium, does not contain any useful information to player 2 for 
+figuring out which strategy player 1 intends to choose, as player 1 would
+want player 2 to choose strategy 1 anyways. Despite this argument, 
+\textcite[114]{farrell_cheap_1996} expect that 
+"cheap talk will do a good deal to
+bring Artemis and Calliope\footnote{The names
+\textcite{farrell_cheap_1996} used for player 1 and player 2.} 
+to the stag hunt". The experimental evidence will give a hint how cheap
+talk affects real players. 
+\todo{harsanyia}
 
-On the hand, Harsanyi, as Aumann, later advocates in \cite{harsanyinew} 
-for the Risk-dominant criterion. 
-
-The evolutionary approach outlined in the next section may contribute to 
-the equilibrium selection problem. 
+Even though the evolutionary refinement ESS does not help as a selection
+criterion in this case, the dynamic evolutionary framework, specified in the
+next section, adds to the question which equilibrium is played.
 
 \section{The Evolutionary Game}
 \label{evolutionarysection}
@@ -482,19 +495,19 @@ As the individuals can only choose between strategy one and two it holds that
 $x_2(t) = 1-x_1(t)$. Since $x(t) \in \Delta$ a 
 mixed-strategy\footnote{There is formally no difference between population 
 state and mixed strategy} can 
-be interpreted as a population state in a monomorpic population, where the 
+be interpreted as a population state in a monomorphic population, where the 
 population is divided on playing different pure strategies. 
 Solving the interpretation problem for the population setting this 
 interpretation has little relevance for the traditional case. \todo{Cite Interpretation paper}
 Out of convenience in the monomorphic population, the expected payoff 
-to an strategy $i \in \Delta$ of an individual when randomly matched
-against some other individual in the current population state $\vec{x}^t$ 
+to a strategy $i \in \Delta$ of an individual when randomly matched
+against another individual in the current population state $\vec{x}^t$ 
 is denoted as $\hat{F}_i(\vec{x}) = \hat{F}(e_i,\vec{x})$.
 The literature introduces \textit{revision protocols} to model the adjustment 
 of each agents' strategy. Nevertheless, the similiarity to biology stays in 
 the manner that the agents are not assumed to be the \textit{homo rationalis} 
 game theory usually deals with, but are "programmed" or "wired" 
-\parencite{gintis_game_2000} the revision rule.
+\parencite{gintis_game_2000} to the revision rule.
 \subsection{Revision Protocols}
 \label{sec:revisionprotocols}
 With that in mind, this section motivates the use of revision protocols to
@@ -505,12 +518,18 @@ to perform that calculations. This is formalized as a behavior rule called
 the revision protocol. The following derivation of the mean dynamic is due to 
 \textcite{sandholm_population_2010}. Typically it is 
 assumed that agents have an inner alarm clock which rings at a rate R 
-following an exponential distribution. The clocks of the agents are assumed
-to be independent of each other. Whenever the clock of an agent rings, he
+following an exponential distribution. Of course, this does not translate 
+to economic applications in individuals having literal clocks around their
+wrist, but illustrates the idea of a randomly occuring chance to reconsider
+their strategy choice.
+The agents' clocks are assumed to be independent of each other such that
+individuals chance to revise does not depenend on others.
+Whenever the clock of an agent rings, he
 receives a revision opportunity, which means that he changes his strategy
 with the probability $\frac{\rho_{ij}}{R}$, where
 $\rho_{ij}(F_i(\vec{x}),\vec{x})$ is called the conditional switch rate,
-representing the rule by which agents change from strategy $i$ to strategy $j$. 
+representing the rule by which agents change from strategy 
+$i$ to strategy $j$. 
 In a two-strategy game there are two conditional switch rates, $\rho_{12}$ 
 describing rate of switching from strategy 1 to 2 and $\rho_{21}$, 
 rate for switching from strategy 2 to 1. For $\rho_{ii}$ no actual switch 
@@ -518,7 +537,7 @@ happens. This switch rates can have various forms and therefore on the one
 side describe different behavior of agents and on the other side result in 
 different dynamics for the population game.
 The dynamics are derived as follows:
-Every agents receives $R dt$ revision opportunities, i.e. the clock rings, 
+Every agent receives $R dt$ revision opportunities, i.e. the clock rings, 
 in an time interval $[0,dt]$ as it follows a Poisson distribution with
 mean $Rdt$ \parencite[123]{sandholm_population_2010}. 
 If the population in the stag hunt game is at state $\vec{x}$, the number 
@@ -530,7 +549,7 @@ With the probability for an agent playing strategy $i$ switching to strategy
 $j$, one gets for the expected number of switches for strategy $i$ during 
 $[0,dt]$ across the population,  $P x_i \rho_{ij} dt$. 
 In a two strategy game, the change in the number of agents in the population 
-playing  strategy 1 is determined by agents switching away to strategy 2 
+playing strategy 1 is determined by agents switching to strategy 2 
 and agents with strategy 2 switching to 1. Hence, one gets:
 \begin{align} 
         Pdx_1 =  \underbrace{-Px_1 \rho_{12}dt}_{\text{Switches from 1 to 2}} 
@@ -543,15 +562,18 @@ The sum of the time derivatives of population shares must equal zero and so
 $\dot{x}_2(t) =- \dot{x}_1(t)$.
 There are different plausible revision protocols studied in the literature. 
 \textcite[128,129,178]{sandholm_population_2010} discusses various forms of 
-them such as logit choice, comparison to average payoff and best response 
-protocol, all with different properties concering informational burden and the
-properties the dynamics have. With an eye to the implied dynamic, I will
-outline the \textit{pairwise proportional imitation} protocol. 
+this revision protocols, such as logit choice, comparison to average payoff 
+and best response 
+protocol, all with different properties concering informational 
+burden and the
+properties the dynamics have. With an eye to the implied dynamic, the 
+\textit{pairwise proportional imitation} protocol will be outlined . 
 It assumes, that whenever an
-agent receives a revision opportunity he randomly gets to know another agent's
-strategy and its payoff received in the current state of the population. 
-The probability the agent switches is proportional to the excess payoff the 
-other agent had over his strategy. This is formalized as 
+agent receives a revision opportunity he randomly gets to know 
+another agent's strategy and its payoff received in the current 
+state of the population. 
+The switching probability of an agent is proportional to the 
+excess payoff the other agent had over his strategy. This is formalized as 
 \begin{align}
         \label{eq:pairwiseproportionalimitation}
         p_{ij}(F_i(\vec{x}),\vec{x}) =
@@ -560,46 +582,53 @@ other agent had over his strategy. This is formalized as
                         0 &\ , \text{else}
                 \end{cases}
 \end{align}
-A metaphor illustrating this pairwise imitation about trader on a marketplace
-can be told. Suppose the traders interact on a market selling some 
-good, implicitly playing a game with each other. Each trader usually does not
+As a metaphor illustrating this revision protocol, I want to tell the 
+story of traders on a marketplace.
+Suppose the traders interact on a market selling some 
+good, implicitly playing a game with each other. The strategies may be the
+way they organize their market stall or what position on the market they 
+choose. Each trader usually does not
 observe the strategies other traders use to sell things, because the market
 place is large and the bustle going on complicated. 
 So a trader is usually commited to a strategy he got to know a while ago.
 However, occasionally as he returns to his tavern, he sometimes gets to meet 
-another trader for the same good. Being proud of their earnings they get using
-their individual strategy, they boast about it. In this way, they get to know
-other traders strategies and as they also want to live a life in pageantry,
-they might imitate the other traders. The probability to imitate, however, is
-proportional to the difference in earnings since traders with higher payoffs 
-boast even more, feeling superior over their counterpart in the tavern.
+another trader. Being proud of their earnings, they boast about their 
+individual strategy. In this way, they get to know
+other traders strategies and as they all dream of a live in pageantry,
+they might imitate the other traders. 
+However, they are more likely to imitate traders with a higher payoff 
+compared to theirs, as such traders feel superior and thus, are the 
+loudest in the tavern. 
 
 Plugging the conditional switch rate of the pairwise imitation protocol 
 \eqref{eq:pairwiseproportionalimitation} into equation for the change 
 of the population share playing strategy 1, $\dot{x}_1(t)$ leads to the 
 \textit{replicator dynamics}:
 \begin{alignat*}{2}
-        \label{replicatorrev}
+        \label{eq:replicatorrev}
         \dot{x}_1 &= 2 x_1 x_2 (F_1(x) - F_2(x)) \\
                   &= 2 x_1 ((1-x_1) F_1(x) - x_2 F_2(x)) \\
                   &= 2 x_1 (F_1(x) - \bar{F}(x)) 
 \end{alignat*}
-This equation describes the evolution of the population in time fully. The
-properties of the dynamic are discussed in the next section.
+This equation fully describes the evolution of the population in time.
+Properties and the result of it are discussed in the next section.
 
 \subsection{Replicator Dynamics}
 \label{sec:replicatordynamic}
-The Replicator Dynamic, which is called the "best know dynamic in
+The Replicator Dynamic, called the "best know dynamic in
 evolutionary game theory" by \textcite{sandholm_population_2010}, has a wide 
-range of applications and attractive properties. As discussed above, it can be 
+range of applications and attractive properties. 
+\todo{replicator herkunft, dawkin e.t.c.}
+As discussed above, it can be 
 motivated by different revision protocols. Using matrix notation, one finds 
 for the strategies $j \in \{1,2\}$
 \begin{alignat}{2}
-        \dot{x}_j &= x_j\left(\left(x^T A\right)_j - \left(x^T A x\right)\right) 
-        \label{eq:replicator}.
+        \dot{x}_j &= x_j\left(\left(x^T A\right)_j -
+                \left(x^T A x\right)\right). 
+        \label{eq:replicator}
 \end{alignat}
 The lack of the factor $2$, comparing it with equation 
-\eqref{replicatorrev}, is due to the derivation. In fact, any
+\eqref{eq:replicatorrev}, is due to the derivation. In fact, any
 positive transformation of the payoff matrix and hence the payoff function
 results only in a change in speed in the replicator dynamic
 \parencite[73]{weibull_evolutionary_1997}.
@@ -611,24 +640,28 @@ average payoff across the whole population.
 Intuitively, the share of a strategy in the population increases (decreases) 
 if the strategy yields a higher (lower) than average payoff. 
 This property of a (deterministic) evolutionary dynamic is called 
-\textit{Positive correlation} \parencite{sandholm_population_2010}.
+\textit{Positive correlation} \parencite{sandholm_population_2010}. 
+\todo{pagenumber}
 Another property of the replicator dynamic is the low data requirement. As 
 seen in the previous section, it is not necessary to assume that an agent
 gets to know the payoffs of all agents in the population.
 It was sufficient to assume that he gets to know the payoff of one random 
 player. 
 Contrary to the interpretation that agents with such revision protocols 
-are boundedly rational, \textcite[273]{gintis_game_2000}  argues 
+are boundedly rational, \textcite{gintis_game_2000}  argues 
 that "this is very misleading, because the real issue is the distribution of 
-the information". The argument goes, that even if they were not "bounded" they 
+the information" \parencite[273]{gints_game_2000}. 
+The argument goes, that even if they were not "bounded" they 
 could not calculate since they do not have more information. 
 One drawback of the replicator dynamic for certain applications, especially
 for biologists, is the lack of mutation, a random error in the replication 
-process. Indeed, the deterministic replicator dynamic does not incoporate 
+process.\todo{cite hofbauersigmund}
+Indeed, the deterministic replicator dynamic does not incoporate 
 any such effect. A strategy that has not existed or has vanished from the 
 population will not be in a future state of the population. 
-That means that if in a population state only a subset $S' \subset S$ of the 
-set of pure strategies are used, any future population state can also only 
+That means, that if in a population state only a 
+subset $S' \subset S$ of the 
+set of pure strategies is used, any future population state can also only 
 contain strategies from this subset $S'$. Hence, if a strategy in 
 the stag hunt game vanishes, the population state is in one of the two pure 
 Nash equilbria. It is practical for further use to express the replicator 
@@ -646,7 +679,8 @@ The last step follows by using local shifts to the matrix $A$ from section
 of degree $3$ and contains all information about the dynamic. Actually, 
 outlined in the following, it tells which state the population converges to.
 For the parameter set $a=5, b=3, c=0, d=2$ the graph of $\varphi(x)$ is 
-plotted in figure. \todo{Description of the graph, roots e.t.c.} 
+plotted in figure \ref{fig:polynominal}. 
+\todo{Description of the graph, roots e.t.c.}
 \ref{fig:polynominal}.
 \begin{figure}[h]
         \label{fig:polynominal}
@@ -694,7 +728,7 @@ a dynamic system are stable in terms of some disturbance of the system.
 There are different approaches to stability. A quite strict and useful one 
 in the stag hunt game is \textit{asymptotic stability}. 
 It essentially requires that a system in a specific fixed point returns 
-to the fixed point after a perturbation happend.
+to the fixed point after a perturbation happened.
 Hence, the system tends to move back to an asymptotically stable fixed point
 once disturbed. Formally, a $\epsilon$-perturbation of 
 \eqref{eq:replicatorpara} is a trajectory of the system with the initial
@@ -707,7 +741,7 @@ of points $x_0 \in \realnumb$ for which a trajectory through $x_0$ approaches
 the fixed points $x^*$. In the one dimensional case, this is simply the range 
 of $x$ for that any solution to the differential equation with the inital 
 conditions in this range converges to the fixed point. With the following 
-theorem indepentendly contributed by \cite{hartman_lemma_1960} and 
+theorem independently contributed by \cite{hartman_lemma_1960} and 
 \cite{grobman_homeomorphism_1959}, one can easily 
 find the asymptotically stable fixed points in the stag hunt game:
 \begin{mydef}
@@ -730,8 +764,9 @@ beginning.
 Applying the theorem to \eqref{eq:replicatorpara}, one finds that the 
 fixed point $x=0$ corresponding to the Nash equilibrium of hunting hare, is 
 asymptotically stable, since $\varphi'(0) = - \alpha_2 <0$. 
-The linearization than is $x(t) = x(0) e^{-\alpha_2 t}$, which clearly 
-approaches zero as $t \rightarrow \infty$. Similiarly, the Nash equilibrium 
+The linearization around the fixed poin is $x(t) = x(0) e^{-\alpha_2 t}$, 
+which clearly approaches zero as $t \rightarrow \infty$. 
+Similiarly, the Nash equilibrium 
 of hunting stag at $x=1$ is a asymptotically stable fixed point as
 $\varphi'(1) = -\alpha_1 <0$ with linearization $x(t) = x(0) e^{-\alpha_1 t}$.
 However, the linearization theorem cannot be used for the mixed Nash 
@@ -755,8 +790,8 @@ there is some $\epsilon$-perturbation of the system  \todo{Voooodoooo}
  The use of the word invasion is not by coincidence. It clearly shows the 
  connection of the evolutionary stable strategy of the stage game to the 
  stable fixed points of the dynamic. In fact, one can prove that this is not
- only true in the simple stag hunt, but holds also under general settings.
- \todo{citation weibull 103}
+ only true in the simple stag hunt, but it holds also under general settings.
+ \todo{Folk theorem of evolutionary game theory}
 \begin{figure}
         \centering
         \includegraphics[scale=0.5]{basinofattraction.png}
@@ -784,7 +819,7 @@ equilibrium of the stage game, for all inital conditions
 $x_0 \in (\frac{\alpha_2}{\alpha_1+\alpha_2},1]$. Any trajectory of the 
 dynamical system with initial conditions 
 $x_0 \in [0,\frac{\alpha_2}{\alpha_1+\alpha_2})$ lead to the hare hunting
-equilibrium. Interestingly, one observes another interesting connection of the 
+equilibrium. Interestingly, one observes another connection of the 
 dynamic with the stage game. The basin of attraction is larger for the
 risk-dominanting equilibrium. By definition \eqref{eq:riskdom}, 
 the hare hunting equilibrium risk-dominates if $\alpha_2 > \alpha_1$,
@@ -795,7 +830,7 @@ initial conditions lead to the payoff-dominant equilibrium.
 The equilibrium selection is determined by the position of the initial
 condition. However, it is not clear what specifies the initial conditions. 
 If for example the agents choose a random strategy in a first round of the 
-game, independetly of each other, one can say that the equilibrium with the
+game, independently of each other, one can say that the equilibrium with the
 larger basin of attraction, the risk-dominant equilibrium, is more likely 
 reached. \todo{what does evolutionary game theory tell about inital condition} 
 Giving an exact answer which equilibrium will be selected through the dynamic
@@ -823,7 +858,7 @@ for the personal needs.
 For simplifaction, I assume that during their studies, a larger body of 
 students is randomly paired into groups of two playing a coordination game
 in which they have two strategies available. In that game both contribute 
-to their group project independetly, using either open source software, 
+to their group project independently, using either open source software, 
 represented by strategy 1 or proprietary software, i.e. strategy 2.
 If both players choose strategy 1, both use open source software receiving 
 the utility $a$. Players that fail to coordinate on the same type of
@@ -998,18 +1033,19 @@ their strategies in such situations and which factors might influence them.
 Precisely, do people, if they are able to coordinate on an equilibrium at all,
 play the risk-dominant or the payoff-dominant equilibrium? And how does their
 choice change playing the game repeatedly?
-Due to the rich experimental literature on human decisions in social 
-dilemmetas, I will concentrate on studies with frameworks similiar to the 
-evolutionary SH game trying to compare the evidence with the results of the 
-theoretical approaches outlined in previous sections. 
-Since the papers I will discuss use different notation and 
-label strategies differently, I find it useful to translate into the
-notation used throughout this text. On these grounds, I will call the 
-strategy used in the payoff-dominant equilibrium of the SH game
-\textit{strategy 1} or in analogy to the stag hunt story \textit{hunting stag}.
+Due to the rich experimental literature on coordination in social 
+dilemmas, the focus will be on studies with a similiar framework as the
+evolutionary SH game. A comparison will show the shortcomings and what
+is described well by the evolutionary framework.
+ 
+Due to the different notations authors use, a translation into the present
+notation was performed.
+On these grounds, the 
+strategy used in the payoff-dominant equilibrium of the SH game will be 
+either called  \textit{strategy 1} or in analogy to the stag hunt story 
+\textit{hunting stag}.
 Consistently, the strategy used in the risk-dominant equilibrium is called
-\textit{strategy 2} or \textit{hunting hare}. Moreover, I use the notation
-introduced in section \ref{sec:traditional} to formulate relevant definitions.
+\textit{strategy 2} or \textit{hunting hare}. 
 
 The papers of \textcite{van_huyck_tacit_1990} and 
 \textcite{cooper_communication_1992} are seen as the first experiments 
@@ -1019,22 +1055,27 @@ hunt, but an order-statistics game. These games differ in that subjects can
 choose from a broader set of strategies and hence there are more than two 
 equilibria in the game. The games are played in a group and the payoff to 
 all players depend on the lowest strategy one of them chose, thus the name 
-'weak-link' order statistics game. Nevertheless, the structure is similiar to 
+'weak-link' order statistics game. Nevertheless, the structure is similiar to
 the stag hunt in the way that the equilibria are Pareto-ranked, with one 
-'safe' strategy \parencite{devetag_when_2007}. So evidence from this games is 
+'safe' strategy \parencite{devetag_when_2007}.
+So evidence from this games is 
 likely to be transferable to the coordination problem in the stag hunt game. 
-In  \cite{van_huyck_tacit_1990} subjects play the order-statistics game in 
+In \cite{van_huyck_tacit_1990} subjects played the order-statistics game in 
 groups of 14-16 for 10 periods. They only received information about their 
 payoff, but so they could find out what the lowest choice of one subject in 
 their group was. Astonishingly, in every experiment the groups converged
-to the equilibrium with the lowest payoff. This result were preserved in another 
+to the equilibrium with the lowest payoff. 
+This result were preserved in another 
 five periods of this game although the subjects played an alternative payoff
-matrix embracing the payoff-efficient equilibrium across all groups inbetween. 
-Replications of this results have been performed numerously, with varying group
-sizes and slightly changed payoff matrices. 
+matrix embracing the payoff-efficient equilibrium across all groups 
+inbetween. 
+Replications of this results have been performed numerously, with 
+varying group sizes and slightly changed payoff matrices. 
 One may consult \textcite{devetag_when_2007} for a summary. 
+\todo{Summary or not?}
 \textcite{cooper_communication_1992} perform a experiment with a standard 
-two-player stag hunt game\footnote{They call it simple coordination game(SCG).} 
+two-player stag hunt game\footnote{They call 
+it simple coordination game(SCG).} 
 and one augmented by a dominated strategy. They find that 
 subjects in randomly matched one-shot games, knowing only about their own
 received payoffs, also fail to coordinate without any preplay communication. 
@@ -1042,17 +1083,19 @@ However, they find that two-way communication, in which both players were
 able to send a message to their matched partner containing which strategy
 they intend to choose, solves the coordination problem in the SCG. 
 This early approaches suggest that coordination failure\footnote{Here in the 
-meaning of not being able to coordinate on the payoff-dominant equilibrium} is
-common in laboratory \parencite{devetag_when_2007}. It is noteworthy that the studies 
-discussed used different matching protocols, fixed matching in groups and 
+meaning of not being able to coordinate on the payoff-dominant equilibrium} 
+is common in laboratory \parencite{devetag_when_2007}. 
+It is noteworthy that the studies 
+discussed use different matching protocols, fixed matching in groups and 
 random matching against one other player, and yet found the same results. 
-As a consequence, experimentalist focused mainly on the characteristics of the
-payoff matrix of the stag hunt game insÜbersetzungtead of implementational details
+As a consequence, experimentalist focused mainly on the characteristics 
+of the payoff matrix instead of implementational details in laboratory SH 
+games.
 \parencite{devetag_when_2007}.
 
-The implementation of random matching in a group is the close to the 
+The implementation of random matching in a group is closest to the 
 evolutionary setting discussed in section \ref{evolutionarysection}, as a 
-group of player, repeatetly matched in pairs, play the stag hunt 
+group of player, repeatedly matched in pairs, play the stag hunt 
 game, having only information about their own payoff and the payoff their
 opponents used. Of course, it might be suspected that real players, opposed
 to the programmed agents in the evoltuionary setting, are able to remember
