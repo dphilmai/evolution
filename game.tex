@@ -128,7 +128,7 @@ evolutionary game theory and the stag hunt game in economics.
 \label{sec:traditional}
 \todo{Motivation of traditional game theory}
 As introduced, the stag hunt game (SH) is played by two players who choose their
-strategies simultaneoulsy, without knowing each others choice.
+strategies without knowing each others choice.
 Both have information about the strategies of the
 other player and the payoffs they and their opponents receive. In game theory
 such a game is called a \textit{normalform} game. Typically, such a game is
@@ -137,18 +137,18 @@ $I=\{1,2,...,n\}$, where $n$ is the total number of players.
 The pure strategy space of the game $\mathbb{S} = \times_i S_i$
 with the pure strategy space $S_i$ of an individual player 
 $i \in I$ defined as $S_i = \{1,2,...,m_i\}$, where $m_i$ denotes the total
-number of strategies available to player $i$. and the payoff function 
-$F: S \rightarrow \realnumb^n$.
-As this text focusses on the stag hunt game, which is a normalform game,
-this definitions reduce to the following.
-By setting $n=2$, we define the two hunters playing SH as $I=\{1,2\}$. A 
+number of strategies available to player $i$. The payoff function of the game
+is denoted by $F: S \rightarrow \realnumb^n$.
+As this text focusses on the stag hunt game, this definitions reduce to the 
+following.
+By setting $n=2$, we define the set of two hunters playing SH as $I=\{1,2\}$. A 
 player $i \in I$  can choose from a set of pure strategies from his 
-pure strategy space, $S_i$. This strategies are called pure, because I later
-consider mixed strategies. In the SH game, 
-each hunter can choose out of two pure strategies, namely, huntig the stag 
-(strategy 1) or hunting hare (strategy 2).
+pure strategy space, $S_i$. The strategies are called pure to distinguish
+them between the later introduced mixed strategies. 
+In the SH game, each hunter can choose one out of two pure strategies, namely, 
+huntig the stag (strategy 1) or hunting hare (strategy 2).
 Therefore, the pure strategy space is defined by $S_i = \{1,2\}$, which results
-by setting $m_i$. In the SH game both players choose from
+by setting $m_i=2$. In the SH game both players choose from
 the same set of stragies such that $S_1 =S_2=S$. Combining the strategy spaces
 of the two players with the cartesian product
 yields the definition of the pure strategy space of the game
@@ -157,18 +157,16 @@ each, are often said to be \textit{2x2 games}.
 
 In the analogy of the story Rousseau told, the hunters do not just hunt
 for their pleasure, but to sell their loot for a reward. 
-This is captured by the definition of an individual
-payoff function $F_i:S \rightarrow \realnumb$, which maps for a player $i \in
-I$ to every state of the game $s=(s_1,s_2) \in S^2$, where $s_i$ is a 
-pure strategy of player $i$, a payoff $F_i(s) \in \realnumb$.
-When the game is played by individuals, the payoff usually represents 
-\textit{Von-Neumann} utility to capture risk effects. A game played by
-firms, payoff usually is in terms of earnings.
-The payoff functions assings an outcome of the game for every strategy 
-combination possible.
+This is captured by the definition of an individual payoff function for player
+i, $F_i:S \rightarrow \realnumb$, which maps a payoff $F_i(s) \in \realnumb$ 
+to every state of the game $s=(s_1,s_2) \in S^2$, where $s_i$ i s a pure
+strategy of player $i$.\todo{this sentence}
+The payoffs are usually interpreted as \textit{Von-Neumann}-utility when 
+played by individuals or households and represent earnings regarding firms. 
+
 In the special case of two player, one 
-can define a payoff matrix for player 1 $A \in \realnumb^{2 \times2}$ and for 
-player 2  $B \in \realnumb^{2 \times2}$, where $A_{kl} = F_1(k,l)$ and $
+can define a payoff matrix for player 1, $A \in \realnumb^{2 \times2}$ and for 
+player 2,  $B \in \realnumb^{2 \times2}$, where $A_{kl} = F_1(k,l)$ and $
 B_{kl} = F_2(k,l)$ with the pure strategies $k,l \in S$. Using the 
 representation above, one can indentify the payoff matrices for the player as
 \begin{align}
@@ -185,33 +183,44 @@ For the game here in study, the following definition is important:
 \end{mydef}
 Clearly, the SH game satisfies this condition. Both hunters have the same 
 strategies available and the payoff matrices defined in 
-\eqref{eq:matrix} fulfill the required condition in definition
-\ref{symmetry}. Hence, it is irrelevant which player is labeled 1 or 2.
+\eqref{eq:matrix}  are the transpose of the other.
+Hence, it is irrelevant which player is labeled as player 1 or 2, because 
+they are identical with respect to their strategies and payoffs.
 
 Usually a game is extended by the possibility of the players to play
-\textit{mixed strategies}. Intuitively, in the analogy of SH, one can think of
-such strategies as that a hunter decides whether to shoot the stag or the hare
-by flipping a coin which shows head or tails, not necessarily with an equal
-probabillity.\todo{Interpretation intuitively problematic e.t.c.} 
-Formally, every player of the game assigns a probabillity distribution over 
-his pure strategies space. A strategy $x_i \in \Delta_i$ of player $i \in I$ 
-is called a \textit{mixed strategy}, where $\Delta_i$ is the mixed strategy 
-space 
+\textit{mixed strategies}. 
+The first intuition of a mixed strategy in the SH game would be hunters
+choosing whether to shoot the stag or the hare by using a randomization
+tool such as flipping a coin. However, randomization is not really
+satisfying in the most applications \parencite{radner_private_1982}. An
+alternative interpretation, outlined by Rubinstein, is that mixed 
+strategies are actually deterministic, but seem to be random because they 
+depend on not modelled private information of the individuals 
+\parencite[914]{rubinstein_comments_1991}. In the evolutionary context
+discussed in section \ref{evolutionarystaghunt}, mixed stragies have
+a different, unproblematic interpretation. Besides the interpretation,
+mixed stragies are appealing because they ensure the existence
+of a Nash equilibrium which is defined later in this text.
+
+Formally, every player of the game assigns a probabillity distribution over
+his pure strategies space. A strategy $x_i \in \Delta_i$ of 
+player $i \in I$ is called a \textit{mixed strategy}, where $\Delta_i$ is 
+the mixed strategy space, a simplex
 \begin{align*}
-        \Delta_i = \{ x_i \in \realnumb^2 : \sum_{k \in S} x_{ik} = 1, x_{ik} \geq 0 \quad
+        \Delta_i = \{ x_i \in \realnumb^2 : \sum_{k=1}^2 x_{ik} = 1, x_{ik} \geq 0 \quad
 \forall k \in S\}.
 \end{align*}
-Since there is no restriction for any players choice of the probabillity 
-distribution, in a symmetric game the mixed strategy spaces of the players
-also equal. For the SH game this means $\Delta_1 = \Delta_2 = \Delta$.
+In a symmetric game the mixed strategy spaces of the players
+equal, as both players are identical in assigning probabilities to their
+pure strategies. For the SH game this means $\Delta_1 = \Delta_2 = \Delta$.
 With this notation a pure strategy can be interpreted as a mixed strategy
 which assigns probabillity one to the pure strategy chosen and zero to all
 other strategies. This is represented by the unit vectors of the simplex 
 $\hat{e}_k \in \Delta$, $\hat{e}_1 = (1,0)^T$ is the pure strategy hunting stag 
-and $\hat{e}_2 =(0,1)^T$ denots the pure strategy hunting hare.
-Similiar to the pure strategy spacae, the mixed strategy spaces of the players 
-are combined to the mixed strategy space of the game $\Delta^2 =
-\Delta \times \Delta$. From now on $x \in \Delta$ denotes a (mixed) strategy
+and $\hat{e}_2 =(0,1)^T$ denotes the pure strategy hunting hare.
+The combined mixed strategy space of the game is $\Delta^2 = \Delta \times
+\Delta$.
+From now on $x \in \Delta$ denotes a (mixed) strategy
 chosen by player 1 and $y \in \Delta$ a (mixed) strategy of player 2.
 Again similiar to the pure strategy case, the mixed strategy payoff 
 $\hat{F}_i:\Delta^2 \rightarrow \realnumb$ maps to any state in the mixed strategy
@@ -242,9 +251,9 @@ of player $i$ resulting in the highest payoff for player $i$. However, a
 real player must be capable of computing his best-reply to a given strategy.
 
 The most famous and used traditional solution concept, the \textit{Nash 
-equilibrium} assumes this kind of capability of each individual players. 
+equilibrium}, assumes this kind of capability of each individual players. 
 The Nash equilibrium was named by its proposer J. Nash in 1950 
-and due to its prominence I will sometimes simply refer to it as equilibrium.
+and due to its prominence it is sometimes simply referred to as equilibrium.
 The following states the defintion of the Nash equilibrium in the matrix
 notation for symmteric two player game.
 \begin{mydef}
@@ -280,15 +289,18 @@ mixed-strategy equilbrium assigning a probability $q=\frac{d-b}{a-c+d-b}$ to
 strategy 1. To see this, calculating the pay \todo{Calculation that payoff is
 not dependend what strategy is chosen againt q}
 
-For further analysis it is convenient to use that Nash equilibria are only
-defined by a difference inequality. Hence, any affine transformation of the
-payoff matrix and \textit{local shifts} do not change the set of Nash equilibria 
+For further analysis it is convenient to use the fact that Nash equilibria 
+are only defined by a difference inequality. 
+Hence, any affine transformation of the payoff matrix does not change the 
+best-replies of the players and so does not effect the set Nash equilibria 
 of the game \parencite[17-19]{weibull_evolutionary_1997}. 
-Adding a constant to every entry in a column of the payoff matrix is called
-a \textit{local shift}.
-Formally, let $A_{ij}$ denote the 
-elements of the player's payoff matrix. A local shift to column $j^*$ 
-transform this payoff matrix into the payoff matrix $A^*$:
+Furthermore, adding a constant to every entry in a column of the payoff matrix, 
+called a \textit{local shift}, does also not effect the payoff differences
+a player considers when valuating which strategy is better against a given
+strategy of the other player.
+Formally, let $A_{ij}$ denote the elements of the player's payoff matrix. 
+A local shift to column $j^*$ transform this payoff matrix into the payoff 
+matrix $A^*$:
 \begin{align}
         A^*_{ij} =
         \begin{cases}
@@ -296,17 +308,15 @@ transform this payoff matrix into the payoff matrix $A^*$:
                 A_{ij}
         \end{cases}
 \end{align}
-This does not change the best-reply structures of the normal form game,
-since it does not the change the payoff differences a player considers when 
-valuating which strategy is better against a given strategy of the other player. 
 Applying this to the stag hunt game one can use two local shifts to turn 
 the payoff matrix into a diagonal matrix with the elements $A_{11}=\alpha_1$ 
 and $A_{22}=\alpha_2$, where $\alpha_1=a-c$ and $\alpha_2=d-b$. 
 \textcite[28]{weibull_evolutionary_1997} groups all symmetric 2x2 games into 
 four categories with different equilibrium properties. 
-Outlined in the discussion, the stag hunt game is considered as a coordination 
-game, with $\alpha_1, \alpha_2 > 0$ and in contrast to the three other 
-categories the solution is not so obvious.
+The stag hunt game is considered as a coordination 
+game, with $\alpha_1, \alpha_2 > 0$ and in contrast to the class of games
+with dominated strategies, for example the PD, the solution of the game
+is not so obvious as there are multiple Nash equilibria.
 I will discuss this in the section concerning the selection of an equilibrium 
 \ref{sec:equilibriumselection}.
 
@@ -315,22 +325,25 @@ The stag hunt game has multiple Nash equilibria. Asking which equilibrium
 will be played, seems to be reasonable. Answering this question, game 
 theorists tried to construct refinements of the Nash equilibrium in cases where 
 some equilibria seemed to be unconvincing. Motivated by the context of 
-evolution in animal populations \cite{smith_lhe_1973} constructed the refinement of
-a \textit{Evolutionary stable strategy} (ESS). In his model, animals are of a
-specific phenotype, representing strategies, playing a normal form game where
-the payoffs are not directly measured in utility but represent the darwinian 
-fitness of that phenotyp, i.e. the expected number of offsprings to that
-phenotype. A crucial difference to the games traditional game theory considers, 
-played by agents with a fair amount of ability to calculate best-replies,
+evolution in animal populations \textcite{smith_lhe_1973} constructed the 
+refinement of a \textit{Evolutionary stable strategy} (ESS). In their model, 
+animals are of a specific phenotype, representing strategies, playing a normal 
+form game where the payoffs are not directly measured in utility but represent 
+the darwinian fitness of that phenotype, i.e. the expected number of offsprings 
+to that phenotype. A crucial difference to the games traditional game theory 
+considers, played by agents with a fair amount 
+of ability to calculate best-replies,
 is that the animals \textit{are} of a phenotyp and cannot change it by will.
-They cannot \textit{choose} their "strategy" in the game like agents do.
+They cannot \textit{choose} their "strategy" in the way agents are assumed
+to do.
 Biologists then ask which composition of the population cannot be invaded.
-Formally, this intuition leads for a symmetric
+Formally, this intuition leads in a symmetric
 two-player game to the definition of an evolutionary stable strategy.
 \begin{mydef}
         \label{def:ess}
         A strategy $x \in \Delta$ is called evolutionary stable (ESS) if it
         holds that
+        \todo{wegdammit}
         \begin{align*}
                 \label{eq:essinvasion}
                 \hat{F}(x,\epsilon y + (1-\epsilon) x) > 
@@ -346,12 +359,6 @@ two-player game to the definition of an evolutionary stable strategy.
                 \hat{F}(y,y) < \hat{F}(x,y) \label{eq:essstrict2}
         \end{alignat}
 \end{mydef}
-The first part of the definition depicts the intution of an invasion in the
-population context.
-\textcolor{red}{Hence, the highest share $\bar{\epsilon}$ of $y$ the evolutionary stable 
-strategy $x$  can be invaded such that the inequality in definition 
-\ref{def:ess} holds for any $\epsilon \in (0,\bar{\epsilon})$ is called  
-\textit{invasion barrier} \cite{weibull_evolutionary_1997}. 
 The alternative defintion in \eqref{eq:essstrict} and \eqref{eq:essstrict2}
 shows why it is called an refinement of the Nash equilibrium. Indeed,
 seen in \eqref{eq:essstrict}, an ESS is used in a Nash equilibrium as it 
@@ -359,10 +366,10 @@ needs to be a best-reply to satisfy the ESS condition. In addition,
 a strategy used in a strict Nash equilibrium is always an ESS, 
 since it directly satisfies 
 \eqref{eq:essstrict}. The equivalence of both formulations is shown in
-\cite{weibull_evolutionary_1997}}.
+\textcite{weibull_evolutionary_1997}}.
 Not all strategies in the equilibria of the stag hunt game are evolutionary
 stable strategies. The pure strategies $e_1$ and $e_2$ are evolutionary stable,
-since both symmetric equilibria consisting of them are strict and so 
+since both are strict symmetric Nash equilibria and so 
 satisfy the condition \eqref{eq:essstrict}. The strategy assigning 
 a probability of $q=\frac{\alpha_2}{\alpha_1 + \alpha_2}$ to strategy 1 used in the 
 mixed equilibrium is not an ESS, because condition \eqref{eq:essstrict} is
@@ -372,9 +379,8 @@ Consider for example the pure strategy $e_1$. It follows that
 $\hat{F}((q,1-q)^T,y) = \frac{\alpha_1 \alpha_2}{\alpha_1+\alpha_2}
 < \alpha_1 = \hat{F}(y,y)$, violating inequality \eqref{eq:essstrict2}.
 
-In section \ref{sec:replciatordynamic}, the connection of the ESS refinement
-and evolutionary dynamics will become clearer. Especially the first formulation
-of an ESS in equation \eqref{eq:ess} will be justified.
+In section \ref{sec:replicatordynamic}, the connection of the ESS refinement
+and dynamic formulation of evolutionary game theory will become clearer. 
 
 \subsection{Equilibrium Selection}
 \label{sec:equilibriumselection}
@@ -391,21 +397,20 @@ noncooperative game theory a fair amount of frustration".
 
 A closer look at the two pure Nash equilibria in the Stag hunt game 
 shows their difference. Considering the normal form representation in figure 
-\ref{fig:sh}, the Nash equilibrium where both players choose strategy one 
+\ref{fig:sh}, the Nash equilibrium, in which both players choose strategy one 
 has the highest payoff
 for both players. $(\hat{e}_1,\hat{e}_2)$ is then said to
-\textit{Payoff-dominat} $(\hat{e}_2,\hat{e}_2)$. In the other standard 
-normal form game describing a social-dilemmata, the Prisoners Dilemma, as 
-shown in figure \ref{fig:pd} the Payoff-dominant outcome is not a 
-Nash equilibrium\footnote{This is true for one-shot games. 
-In repeated games there is the possibility in ending at the Pareto efficient 
-outcome.}, because every agent has the incentive to deviate. In the stag hunt
-game this is not the case. Every agent plays a best-reply in the Pareto efficient
-outcome, but since there is another Nash equilibrium it is not clear 
-which one is played based on this criterion alone. Based on \cite{schelling}
-one may argue that Pareto-dominance characterizes $(\hat{e}_1,\hat{e}_1)$ 
-as a focal point of the game, a solution of the game which makes the most sense
-to play but the reasons for this are abstracted away from the strategic form and are consens among
+\textit{payoff-dominant} $(\hat{e}_2,\hat{e}_2)$. In the Prisoners Dilemma,
+briefly described in the introduction, the payoff-dominant outcome is not a 
+Nash equilibrium, due to the fact that every agent has the incentive to 
+deviate and accept the deal of the authority.
+Contrary to that, in SH, every agent plays a best-reply 
+in the Pareto efficient outcome, but since there is another Nash equilibrium 
+it is not clear which one is played based on this criterion alone. 
+Based on \cite{schelling_strategy_1960} one may argue that Pareto-dominance 
+characterizes $(\hat{e}_1,\hat{e}_1)$ as a focal point of the game, a 
+solution of the game which makes the most sense to play but the reasons for 
+this are abstracted away from the strategic form and are consens among
 the players. \todo{Focal points definition} However, the equilibrium point
 $(\hat{e}_2,\hat{e}_2)$ exhibits the feature of \textit{Risk-Dominance}. 
 \cite{seltenharsanyigeneral} defined this selection criterion based on the
