@@ -950,8 +950,12 @@ The solution with negative sign was omitted, since it has no economic
 interpretation}, so that the fixed point with a mixed population state is
 $x_3 = -\frac{\alpha_1+\alpha_2}{2 \beta} + 
 \sqrt{(\frac{\alpha_1+\alpha_2)^2}{4\beta^2} +\frac{\alpha_2}{\beta}}$. 
-Some arithmetic can verify that $0<x_3<1$, is in the feasible range of the
-population share variable. The plot of the dynamic and the polynominal is 
+Some arithmetic can verify that $0<x_3<\frac{\alpha_2}{\alpha_1+\alpha_2}$, 
+is in the feasible range of the population share variable. 
+Taking the limit, $\lim_{\beta \rightarrow 0} x_3 = 
+\frac{\alpha_1}{\alpha_2+\alpha_1}$, approves the intuition that for a 
+diminishing network externality the model without externality is obtained.
+The plot of the dynamic and the polynominal is 
 shown figure \ref{fig:plotmodellinear}.
 Note that the share of students choosing strategy 1 is now lower at the 
 inner fixed point, showing that the positive externality has a positive 
@@ -983,17 +987,17 @@ The basins of attraction have equal size for $\beta^* = 2 (\alpha_2 -\alpha_1)$,
 attracting an equal amount of initial conditions. However,
 the proprietary equilibrium looses its risk-dominance property 
 only for $1 > x > \frac{\alpha_2-\alpha_1}{\beta}  $, using definition 
-\ref{eq:riskdom}. The right hand side of the equation must be lower than $1$
-to change the risk-dominance property. I conclude that in this model, 
-the size of the basin of attraction and the risk-dominance property do not
-coincide in general, since the externality changes the Nash product associated
-with the pure strategy 1 equilibrium. Consider for example the parameter setting 
-$\alpha_1 =1, \alpha_2=3$, but now let $\beta=3$. 
+\ref{eq:riskdom}. The right hand side of the equation must be lower than one 
+to change the risk-dominance property. This leads to the conclusion 
+that in this model, the size of the basin of attraction and the risk-dominance
+property do not coincide in general, since the externality changes the Nash 
+product associated with the pure strategy 1 equilibrium. Consider for example 
+the parameter setting $\alpha_1 =1, \alpha_2=3$, but now let $\beta=3$. 
 The basin of attraction is not equal, since $3<\beta^*= 4$. 
 The open source equilibrium attracts all trajectories starting within 
 $x_0 \in (\frac{-2+\sqrt{13}}{3},1]$ and hence the propriertary equilibrium attracts
 all trajectories $x_0 \in [0,\frac{-2+\sqrt{13}}{3})$. Clearly, the latter basin of 
-attraction is larger ($\frac{-2+\sqrt{13}}{3}>0.5)$), 
+attraction is larger ($\frac{-2+\sqrt{13}}{3}>0.5)$, 
 but the open source equilibrium gets risk-dominant for
 $x>\frac 23$. Implying that the network externality not only increases the
 utility obtained from the choice of open source software, but also,
@@ -1005,11 +1009,22 @@ appropriate for their projects, hence have more information available then
 assumed in the model. Secondly, talking to their fellow student seems
 possible before deciding which software to use for the project. 
 However, as the experimental literature, discussed in 
-\ref{sec:experimentalevidence}, suggests, cheap talk does not generally
-solve the coordination problem. 
-Additionally, it might be interesting to use a network framework as presented
-in \textcite{hanauske} for the communication in scientific network. This 
-removes the quite unconvincing assumption that students are just randomly
+\ref{sec:experimentalevidence}, and \textcite{aumann_nash_1990} suggests, 
+cheap talk does not generally solve the coordination problem. 
+Additionally, the way the attractivness of a strategy increases with 
+the share of population, the network externality, is model quite naive.
+Networks of students and social networks in general are unlikely to be fully
+connected, meaning that a infinitely number of agents play the coordination
+game against any other agent, as modeled in the evolutionary game. 
+In university for example, students only do projects with students in their 
+classes and also differ in the amount of projects, depending on the type of 
+classes they choose. Social networks
+in general are characterized by highly connected persons \todo{cliques}
+Hanauske calls the implicit assumption of a
+fully connected network "one of the main criticisms of evolutionary game
+theory" \parencite{hanauske_evolutionare_2011}.
+
+eeeeeee the quite unconvincing assumption that students are just randomly
 matched to each other into projects. In university students usually try
 to do projects with their friends in their social network and only do
 projects with students in the same classes. So, the situation outlined 
