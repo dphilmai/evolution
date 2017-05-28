@@ -19,8 +19,9 @@
 \section{Introduction}
 
 The beginnings of game theory date back to Johann von Neumann in 1928 
-\parencite{v._neumann_zur_1928}, who developed a mathematical framework
-for modelling situations with strategic interactions of rational agents.
+who developed a mathematical framework
+for modelling situations with strategic interactions of rational agents 
+\parencite{v._neumann_zur_1928}.
 In a situation of strategic interaction, the outcome for an agent does not
 only depend on his choice, but also on the choice of the other agents.
 In economics, such situations often present themselves as a social dilemma,
@@ -37,17 +38,19 @@ for the serious crimes. However, if both choose to confess, they receive the
 full sharpness of the law. Not admitting the crimes would leave the authority
 with too little evidence, resulting only in a sentence for minor crimes.
 This story, developed by Albert Tucker in 1950 and suitably named Prisoner's
-Dilemma(PD) is usually represented in a table, as shown in figure \ref{fig:pd}, with
+Dilemma (PD) is usually represented in a table, as shown in figure \ref{fig:pd}, with
 the options for each prisoners denoted by C, remaining silent, and D, admiting
-their crimes. The dilemma is that the total amount of years for the group
-is lowest if both do not confess, but each individual prisoner has the 
+their crimes. 
+The total amount of years for the group is lowest if both do not confess, 
+but each individual prisoner has the 
 incentive to take the deal of the authority as this leaves him, independently
-of what his fellow prisoner does, with a lower time in prison. Hence, 
-individual interest and the benefit of the group are in conflict
-\parencite{skyrms_stag_2004}. However, there is another "story that became
-a game" \parencite[1]{skyrms_stag_2004}, which describes a different, but
-as Skyrms argues, underrepresented social dilemma. In \textit{A Discourse on
-Inequality}, Rousseau outlines the situation of hunters, heading out to hunt 
+of what his fellow prisoner does, with a lower time in prison. The dilemma 
+clearly consists of the conflict between individual interest and 
+the benefit of the group \parencite{skyrms_stag_2004}. However, there is 
+another "story that became a game" \parencite[1]{skyrms_stag_2004}, 
+which describes a different, but as Skyrms argues, 
+underrepresented social dilemma. In \textit{A Discourse on Inequality}, 
+Rousseau outlines the situation of hunters, heading out to hunt 
 stag. However, if a hare runs past a hunter, he might consider to
 shoot the hare, banishing all stags in the forest. The total reward for
 the group is surely lower, but it is rationale for the single hunter if he
@@ -58,9 +61,10 @@ to do. In fact, none of the hunters would have bad feelings about his choice
 not to shoot a hare when returning with a stag, as his personal benefit is 
 greater with a stag as bounty. Figure \ref{fig:sh} represents this dilemma 
 for two hunters. When both coodinate on stag hunting, denoted by S, they receive 
-$5$. If one of them decides to shoot the hare, he gets $4$, whereas
-the other hunter is left out in the cold with no prey. Coordination on hare
-hunting yields both $2$. In game theory, this type of situation is called
+$a$. If one of them decides to shoot the hare, he gets $c$, whereas
+the other hunter is left out in the cold with just $b$. Coordination on hare
+hunting yields both with $d$. The parameters are usually assumed to fulfill
+$a > c \geq d >b$. In game theory, this type of situation is called
 a coordination game. Since in the outcomes the hunters coordinated, either
 on hunting stag or hare, they have no incentive to change their action. 
 Both outcomes are what game theory calls a Nash-equilibrium, originally
@@ -71,8 +75,8 @@ to deviate unilateral from his decision. Although this is the mainly used
 solution concept, it does not give a definite answer in the stag hunt game.
 One might argue that both hunters can speak to each other beforehand and
 assure each other that hare hunting is more attractive to both them. However,
-\textcite{camerer_behavioral_2003} argues that empirical observation and theory 
-suggest that the problem is not solved that easily.
+argues that empirical observation and theory suggest that the problem is 
+not solved that easily \parencite[337]{camerer_behavioral_2003}. 
 Furthermore, in a wide range of economic applications interaction of agents
 happen repeatedly. Analyzing repeated prisoner dilemmas, it turns 
 out that the resulting game can actually be interpreted as a stag-hunt game with
@@ -92,8 +96,8 @@ In contrast to traditional game theory, the evolutionary approach  models
 Furthermore, the agents are not assumed to be rational, but follow a specific 
 rule, updating their strategy. 
 As outlined in the rest of this text, the
-evolutionary approach offers an answer to the coordination problem in the
-stag hunt game.
+evolutionary approach offers an possible answer to the coordination
+problem in the stag hunt game.
 
 The thesis is organized as follows. Chapter 2 introduces the 
 framework of traditional game theory for the stag hunt game and discusses
@@ -131,15 +135,15 @@ As introduced, the stag hunt game (SH) is played by two players who choose their
 strategies without knowing each others choice.
 Both have information about the strategies of the
 other player and the payoffs they and their opponents receive. In game theory
-such a game is called a \textit{normalform} game. Typically, such a game is
-formalized as a Triplet $\Gamma = (I,\mathbb{S},F)$, with the set of players 
-$I=\{1,2,...,n\}$, where $n$ is the total number of players.
-The pure strategy space of the game $\mathbb{S} = \times_i S_i$
-with the pure strategy space $S_i$ of an individual player 
-$i \in I$ defined as $S_i = \{1,2,...,m_i\}$, where $m_i$ denotes the total
-number of strategies available to player $i$. The payoff function of the game
-is denoted by $F: S \rightarrow \realnumb^n$.
-As this text focusses on the stag hunt game, this definitions reduce to the 
+such a game is called a \textit{normalform} game with complete information. 
+Typically, such a game is formalized as a Triplet $\Gamma = (I,\mathbb{S},F)$, 
+with the set of players $I=\{1,2,...,n\}$, where $n$ is the 
+total number of players. The pure strategy space of the game 
+$\mathbb{S} = \times_i S_i$ with the pure strategy space $S_i$ of an 
+individual player  $i \in I$ defined as $S_i = \{1,2,...,m_i\}$, where $m_i$ 
+denotes the total number of strategies available to player $i$. The payoff 
+function of the game is denoted by $F: S \rightarrow \realnumb^n$.
+As this text focusses on the stag hunt game, these definitions reduce to the 
 following.
 By setting $n=2$, we define the set of two hunters playing SH as $I=\{1,2\}$. A 
 player $i \in I$  can choose from a set of pure strategies from his 
@@ -153,22 +157,23 @@ the same set of stragies such that $S_1 =S_2=S$. Combining the strategy spaces
 of the two players with the cartesian product
 yields the definition of the pure strategy space of the game
 $\mathbb{S}= S \times S = S^2$. Games played by two players with two strategies
-each, are often said to be \textit{2x2 games}.
-
+each, are often said to be 2x2 games.    
 In the analogy of the story Rousseau told, the hunters do not just hunt
 for their pleasure, but to sell their loot for a reward. 
 This is captured by the definition of an individual payoff function for player
 i, $F_i:S \rightarrow \realnumb$, which maps a payoff $F_i(s) \in \realnumb$ 
 to every state of the game $s=(s_1,s_2) \in S^2$, where $s_i$ i s a pure
 strategy of player $i$.\todo{this sentence}
-The payoffs are usually interpreted as \textit{Von-Neumann}-utility when 
-played by individuals or households and represent earnings regarding firms. 
+The payoffs are usually interpreted as \textit{Von-Neumann} utility when 
+played by individuals or households and are in terms of earnings regarding 
+firms. 
 
 In the special case of two player, one 
 can define a payoff matrix for player 1, $A \in \realnumb^{2 \times2}$ and for 
 player 2,  $B \in \realnumb^{2 \times2}$, where $A_{kl} = F_1(k,l)$ and $
 B_{kl} = F_2(k,l)$ with the pure strategies $k,l \in S$. Using the 
-representation above, one can indentify the payoff matrices for the player as
+representatioa in \ref{fig:sh}, one can indentify the payoff matrices for 
+the player as
 \begin{align}
      A = \mqty(a && b \\ c && d), \quad B = \mqty(a && c \\ b && d)
         \label{eq:matrix}
@@ -186,7 +191,6 @@ strategies available and the payoff matrices defined in
 \eqref{eq:matrix}  are the transpose of the other.
 Hence, it is irrelevant which player is labeled as player 1 or 2, because 
 they are identical with respect to their strategies and payoffs.
-
 Usually a game is extended by the possibility of the players to play
 \textit{mixed strategies}. 
 The first intuition of a mixed strategy in the SH game would be hunters
@@ -196,16 +200,15 @@ satisfying in the most applications \parencite{radner_private_1982}. An
 alternative interpretation, outlined by Rubinstein, is that mixed 
 strategies are actually deterministic, but seem to be random because they 
 depend on not modelled private information of the individuals 
-\parencite[914]{rubinstein_comments_1991}. In the evolutionary context
-discussed in section \ref{evolutionarystaghunt}, mixed stragies have
-a different, unproblematic interpretation. Besides the interpretation,
+\parencite[914]{rubinstein_comments_1991}. In the evolutionary context,
+discussed in section \ref{sec:evolutionarystaghunt}, mixed stragies have
+a different, unproblematic interpretation. Besides the interpretation problem,
 mixed stragies are appealing because they ensure the existence
-of a Nash equilibrium which is defined later in this text.
-
-Formally, every player of the game assigns a probabillity distribution over
+of a Nash equilibrium, which is defined later in this text.
+Formally, every player of the game assigns a probability distribution over
 his pure strategies space. A strategy $x_i \in \Delta_i$ of 
 player $i \in I$ is called a \textit{mixed strategy}, where $\Delta_i$ is 
-the mixed strategy space, a simplex
+the mixed strategy space 
 \begin{align*}
         \Delta_i = \{ x_i \in \realnumb^2 : \sum_{k=1}^2 x_{ik} = 1, x_{ik} \geq 0 \quad
 \forall k \in S\}.
@@ -214,10 +217,10 @@ In a symmetric game the mixed strategy spaces of the players
 equal, as both players are identical in assigning probabilities to their
 pure strategies. For the SH game this means $\Delta_1 = \Delta_2 = \Delta$.
 With this notation a pure strategy can be interpreted as a mixed strategy
-which assigns probabillity one to the pure strategy chosen and zero to all
-other strategies. This is represented by the unit vectors of the simplex 
-$\hat{e}_k \in \Delta$, $\hat{e}_1 = (1,0)^T$ is the pure strategy hunting stag 
-and $\hat{e}_2 =(0,1)^T$ denotes the pure strategy hunting hare.
+which assigns probability one to the pure strategy chosen and zero to all
+other strategies. This is represented by the unit vectors 
+$e_k \in \Delta$, $e_1 = (1,0)^T$ is the pure strategy hunting stag 
+and $e_2 =(0,1)^T$ denotes the pure strategy hunting hare.
 The combined mixed strategy space of the game is $\Delta^2 = \Delta \times
 \Delta$.
 From now on $x \in \Delta$ denotes a (mixed) strategy
@@ -230,64 +233,61 @@ With the matrix notation this is defined as:
         \hat{F}_1(x,y) &= x^T A y \\
         \hat{F}_2(x,y) &= x^T A^T y 
 \end{alignat*}
-
 Summarizing the notation, the SH game can be defined as a symmteric two-player
 normal form game $\Gamma = (I=\{1,2\}, \Delta^2, \hat{F})$.
 
-\subsection{Traditional concepts}
+\subsection{Solution concepts}
 \label{sec:traditionalconcepts}
-In describing the behavior of agents game theory developed a wide range of 
-tools to solve this strategic interactions. \todo{Rationality assumption and
-Equilibrium knowledge required for Nash equilibrium}
-
-The \textit{best-reply} for player $i \in I$ to a strategy $y \in \Delta$ 
-played by $j \neq i$ is defined as:
+In describing the behavior of agents, game theory developed a wide range of 
+tools to solve this strategic interactions. First of all, for each individual
+a best-reply is defined, simply describing the strategies available to him 
+which yield the highest payoff against a given strategy of the other player.
+Formally, the \textit{best-reply} for player $i \in I$ to a 
+strategy $y \in \Delta$ played by $j \neq i$ is defined as:
 \begin{align}
-        \beta(y) = \{x \in \Delta: \hat{F}(x,y) \geq \hat{F}(x',y), 
+        \beta_i(y) = \{x \in \Delta: \hat{F}(x,y) \geq \hat{F}(x',y), 
         \quad \forall x' \in \Delta\}
 \end{align}
-This assigns to each strategy $y$ of the other player the strategies
-of player $i$ resulting in the highest payoff for player $i$. However, a 
-real player must be capable of computing his best-reply to a given strategy.
-
-The most famous and used traditional solution concept, the \textit{Nash 
-equilibrium}, assumes this kind of capability of each individual players. 
+Based on agents choosing a best-reply, the mostly used solution concept of
+a normalform game is the \textit{Nash equilibrium}.
 The Nash equilibrium was named by its proposer J. Nash in 1950 
 and due to its prominence it is sometimes simply referred to as equilibrium.
-The following states the defintion of the Nash equilibrium in the matrix
-notation for symmteric two player game.
+In the following, the definition of a Nash equilibrium in a symmetric two
+player game is stated. W
 \begin{mydef}
         \label{def:nashequilibrium}
         A state of $(x^*,y^*) \in \Delta^2$ is called a Nash equilibrium if 
         it holds that\todo{Definition for symmetric game.}
         \begin{alignat*}{2}
                 (x^*)^T A y^* &\geq x^T A y^*, \quad \forall x \in \Delta \\
-                (x^*)^T A^T y^* &\geq (x^*)^T A^T y, \quad \forall y \in \Delta.
         \end{alignat*}
-It is called symmetric if $x^* = y^*$. A Nash equilibrium is 
+It is called symmetric if $x^* = y^*$. A Nash equilibrium is called a 
 strict Nash equilibrium if the inequality is strict.
 \end{mydef}
-Equivalently, one can say that a strategy combination is an equilibrium if
-the strategies used are a best-reply for the player against the strategy
-of the other player.
+Only one equality is needed in a symmetric game as strategy space and
+payoff function of each player are identical.
+Equivalently to the definition, one can say that a strategy combination 
+is a Nash equilibrium if all players choose a best-reply in that strategy 
+combination and so not one player has the incentive to deviate from his 
+choice, given the choice of the other players.
 In \textcite{nash_equilibrium_1950}, Nash proofed the existence of such 
-an equilibrium in any normal form game with mixed strategies. There are
-games with no Nash equilibrium with only pure strategies.
-
+an equilibrium in any normal form game with mixed strategies. 
 The SH game admits three symmetric Nash equilibria. The first one consists
-of both players choosing strategy 1, hunting stag, $(\hat{e}_1,\hat{e}_1) \in
+of both players choosing strategy 1, hunting stag, $(e_1,e_1) \in
 \Delta^2$, where both players receive the payoff $a$. 
 None of both has an incentive to change his decision. For both
 playing the pure strategy 1 is a best-reply because a unilateral deviation 
 leads to the payoff $c \leq a$.
 The second equilibrium is the state of 
-both players choosing strategy 2, hunting hare, $(\hat{e}_2,\hat{e}_2)
+both players choosing strategy 2, hunting hare, $(e_2,e_2)
 \in \Delta^2$. Again, by definition, both play a best-reply and a unilateral 
 deviation of a player results in a lower payoff $b<d$.
 Additionally to this Nash equilibria in pure strategies, there is a symmetric
-mixed-strategy equilbrium assigning a probability $q=\frac{d-b}{a-c+d-b}$ to
-strategy 1. To see this, calculating the pay \todo{Calculation that payoff is
-not dependend what strategy is chosen againt q}
+mixed-strategy equilbrium where both players assign a probability 
+$q^*=(\alpha_2,\alpha_1 + \alpha_2)$ to strategy 1. 
+To see this, a player is indifferent between choosing one of his pure
+strategies against $y$, $\hat{F}(e_1,y) = \hat{F}(e_2,y)$, exactly
+when $y=(q^*,1-q^*)^T$.
 
 For further analysis it is convenient to use the fact that Nash equilibria 
 are only defined by a difference inequality. 
@@ -301,13 +301,13 @@ strategy of the other player.
 Formally, let $A_{ij}$ denote the elements of the player's payoff matrix. 
 A local shift to column $j^*$ transform this payoff matrix into the payoff 
 matrix $A^*$:
-\begin{align}
+\begin{align*}
         A^*_{ij} =
         \begin{cases}
                 A_{ij} + v & \text{for}\ j=j^*, v \in \realnumb \\
                 A_{ij}
         \end{cases}
-\end{align}
+\end{align*}
 Applying this to the stag hunt game one can use two local shifts to turn 
 the payoff matrix into a diagonal matrix with the elements $A_{11}=\alpha_1$ 
 and $A_{22}=\alpha_2$, where $\alpha_1=a-c$ and $\alpha_2=d-b$. 
@@ -317,8 +317,8 @@ The stag hunt game is considered as a coordination
 game, with $\alpha_1, \alpha_2 > 0$ and in contrast to the class of games
 with dominated strategies, for example the PD, the solution of the game
 is not so obvious as there are multiple Nash equilibria.
-I will discuss this in the section concerning the selection of an equilibrium 
-\ref{sec:equilibriumselection}.
+That the Nash equilibrium does not point to a unique solution for the stag
+hunt game will be discussed in section \ref{sec:equilibriumselection}.
 
 \subsection{Evolutionary concepts}
 The stag hunt game has multiple Nash equilibria. Asking which equilibrium
@@ -326,82 +326,71 @@ will be played, seems to be reasonable. Answering this question, game
 theorists tried to construct refinements of the Nash equilibrium in cases where 
 some equilibria seemed to be unconvincing. Motivated by the context of 
 evolution in animal populations \textcite{smith_lhe_1973} constructed the 
-refinement of a \textit{Evolutionary stable strategy} (ESS). In their model, 
-animals are of a specific phenotype, representing strategies, playing a normal 
-form game where the payoffs are not directly measured in utility but represent 
-the darwinian fitness of that phenotype, i.e. the expected number of offsprings 
-to that phenotype. A crucial difference to the games traditional game theory 
-considers, played by agents with a fair amount 
-of ability to calculate best-replies,
-is that the animals \textit{are} of a phenotyp and cannot change it by will.
-They cannot \textit{choose} their "strategy" in the way agents are assumed
-to do.
-Biologists then ask which composition of the population cannot be invaded.
-Formally, this intuition leads in a symmetric
-two-player game to the definition of an evolutionary stable strategy.
+refinement of a \textit{Evolutionary stable strategy} (ESS).  
+In the biological context, a game is played 
+by a large population randomly matched against each other.
+An ESS is a strategy that, once adopted by the whole population, cannot
+be invaded by any other strategy. 
+This definition of an ESS makes clear that it is actually a refinement of the 
+Nash equilibrium.
 \begin{mydef}
-        \label{def:ess}
-        A strategy $x \in \Delta$ is called evolutionary stable (ESS) if it
-        holds that
-        \todo{wegdammit}
-        \begin{align*}
-                \label{eq:essinvasion}
-                \hat{F}(x,\epsilon y + (1-\epsilon) x) > 
-                \hat{F}(y,\epsilon y + (1-\epsilon) y), \numberthis
-        \end{align*}
-        where $y \in \Delta, y \neq x$ is the strategy of the group invading the
-        existing population with share $\epsilon \in (0,1)$.
-        Alternatively, the ESS $x$ satisfies
+        A strategy $x \in \Delta$ is called a evolutionary stable strategy 
+        (ESS) if it holds that
         \begin{alignat}{2}
                 \label{eq:essstrict}
                 \hat{F}(x,x) &\geq \hat{F}(y,x) \forall y \\ 
                 \hat{F}(y,x) &= \hat{F}(x,x) \Rightarrow  
-                \hat{F}(y,y) < \hat{F}(x,y) \label{eq:essstrict2}
+                \hat{F}(y,y) < \hat{F}(x,y) \forall y \neq x \label{eq:essstrict2}
         \end{alignat}
 \end{mydef}
-The alternative defintion in \eqref{eq:essstrict} and \eqref{eq:essstrict2}
-shows why it is called an refinement of the Nash equilibrium. Indeed,
-seen in \eqref{eq:essstrict}, an ESS is used in a Nash equilibrium as it 
-needs to be a best-reply to satisfy the ESS condition. In addition, 
+Equation \eqref{eq:essstrict}
+requires an ESS $x$ to be a better reply to itself than any other strategy $y$.
+If there exists another strategy $y$ with the same payoff, equation 
+\eqref{eq:essstrict2} demands that it is better to choose $x$ against $y$ than
+choosing $y$ against itself.
+Indeed, seen in \eqref{eq:essstrict}, an ESS is used in a Nash equilibrium as 
+it needs to be a best-reply to satisfy the ESS condition. In addition, 
 a strategy used in a strict Nash equilibrium is always an ESS, 
 since it directly satisfies 
-\eqref{eq:essstrict}. The equivalence of both formulations is shown in
-\textcite{weibull_evolutionary_1997}.
-Not all strategies in the equilibria of the stag hunt game are evolutionary
-stable strategies. The pure strategies $e_1$ and $e_2$ are evolutionary stable,
+\eqref{eq:essstrict}. 
+In the stag hunt game, not all strategies are evolutionary stable.
+The pure strategies $e_1$ and $e_2$ are evolutionary stable,
 since both are strict symmetric Nash equilibria and so 
-satisfy the condition \eqref{eq:essstrict}. The strategy assigning 
-a probability of $q=\frac{\alpha_2}{\alpha_1 + \alpha_2}$ to strategy 1 used in the 
-mixed equilibrium is not an ESS, because condition \eqref{eq:essstrict} is
-an equality and the implication of \eqref{eq:essstrict2} does not hold for all
-strategies $y \in \Delta$.
-Consider for example the pure strategy $e_1$. It follows that
-$\hat{F}((q,1-q)^T,y) = \frac{\alpha_1 \alpha_2}{\alpha_1+\alpha_2}
-< \alpha_1 = \hat{F}(y,y)$, violating inequality \eqref{eq:essstrict2}.
+satisfy condition \eqref{eq:essstrict}. 
+The mixed strategy Nash equilibrium is not an ESS.  
+Let again $y=(q^*,1-q^*)^T$, with $q=\frac{\alpha_2}{\alpha_1+\alpha_2}$.
+Considering for example the pure strategy $e_1$, 
+equation \ref{eq:essstrict} is $\hat{F}(y,e_1)= \hat{F}(y,y)$.  
+But as equation \eqref{eq:essstrict2} is violated,
+$\hat{F}(y,e_1) = \frac{\alpha_1 \alpha_2}{\alpha_1+\alpha_2}
+< \alpha_1 = \hat{F}(e_1,e_1)$, the Nash equilibrium with mixed strategies 
+is not an ESS.
 
-In section \ref{sec:replicatordynamic}, the connection of the ESS refinement
-and dynamic formulation of evolutionary game theory will become clearer. 
+In section \ref{sec:replicatordynamic}, the usefulness of the ESS as solution
+concept for the dynamic framework of evolutionary game theory will come 
+into sharper relief.
 
 \subsection{Equilibrium Selection}
 \label{sec:equilibriumselection}
-Clearly, game theory has the aspiration to provide advise for agents in 
-situations such as that defined above.
+Clearly, game theory has the aspiration to provide a unique solution in every
+strategic interaction.
 As seen in the stag hunt game, the mostly used solution concept, 
 the Nash equilibrium, and refinements such as the ESS are
 not sufficient to select a unique equilibrium, even in the case of a simple
 2x2 SH game. This does not satisfy game theorists, since it is not clear which
 equilibrium is finally played by the agents. Or how 
-\textcite{weibull_evolutionary_1997} puts it, this kind of coordination games 
+Weibull puts it, this kind of coordination games 
 "caused\footnote{And still causes.} game theorists and users of 
-noncooperative game theory a fair amount of frustration". 
+noncooperative game theory a fair amount of frustration" 
+\parencite[30]{weibull_evolutionary_1997}. 
 
 A closer look at the two pure Nash equilibria in the Stag hunt game 
 shows their difference. Considering the normal form representation in figure 
 \ref{fig:sh}, the Nash equilibrium, in which both players choose strategy one 
 has the highest payoff
-for both players. $(\hat{e}_1,\hat{e}_2)$ is then said to 
+for both players. $(e_1,e_2)$ is then said to 
 \textit{payoff-dominate} or to \textit{Pareto-dominate} 
-$(\hat{e}_2,\hat{e}_2)$. Equivalently, the equilibria are said to be
+$(e_2,e_2)$. Equivalently, the equilibria are said to be
 \textit{Pareto-ranked}.
 In the Prisoners Dilemma, briefly described in the introduction, 
 the payoff-dominant outcome is not a 
@@ -409,23 +398,23 @@ Nash equilibrium, due to the fact that every agent has the incentive to
 deviate and accept the deal of the authority.
 Contrary to that, in SH, every agent plays a best-reply 
 in the Pareto efficient outcome, but since there is another Nash equilibrium 
-it is not clear which one is played based equilibrium play alone. 
+it is not clear which one is played based on equilibrium play alone. 
 Following \textcite[57]{schelling_strategy_1960}, one may argue that 
-Pareto-dominance characterizes $(\hat{e}_1,\hat{e}_1)$ as a focal point, 
+Pareto-dominance characterizes $(e_1,e_1)$ as a focal point, 
 an outcome of a game that is psychologically prominent, of 
 the game, helping the players to coordinate on this outcome.
-However, the equilibrium point $(\hat{e}_2,\hat{e}_2)$ exhibits the feature 
+However, the equilibrium point $(e_2,e_2)$ exhibits the feature 
 of \textit{Risk-Dominance}. 
 \textcite{harsanyi_general_1988} defined this selection criterion 
 based on the
 risk for the players associated with an equilibrium point. Formally, in the
 SH game, 
 \begin{mydef}
-The Nash equilibrium $x=(\hat{e}_2,\hat{e}_2)$ \textit{risk-dominates} 
-the Nash equilibrium $y=(\hat{e}_1,\hat{e}_1)$, if $(d-b)^2 > (a-c)^2$.
+The Nash equilibrium $x=(e_2,e_2)$ \textit{risk-dominates} 
+the Nash equilibrium $y=(e_1,e_1)$, if $(d-b)^2 > (a-c)^2$.
          \label{eq:riskdom}
- \end{mydef}\todo{Maybe change this definition}
-The squares on the left and the right side of the inequality are termed
+ \end{mydef}
+The squares on the left and the right side of the inequality are named
 \textit{Nash products}.
 As mentioned in \textcite{weibull_evolutionary_1997} a NE risk-dominates, 
 if it is Pareto-efficient  in the reduced payoff version of the game, 
@@ -435,7 +424,7 @@ corresponds to $\alpha_1 < \alpha_2$.
 So both pure Nash equilibria have a certain appeal for game theorists to be
 favored as an outcome of the game. The question is, do people rather play
 safe and coordinate on the hare hunting equilibrium, terminating in a social
-dilemma, as there exists an outcome in which everyone of them is better off.
+dilemma as there exists an outcome in which everyone of them is better off.
 Or are they able to recognize the Payoff-dominance of stag hunting, 
 trusting each other not to react to a hare passing by.
 Indeed, there is no consensus which equilibrium will be played. 
@@ -446,8 +435,8 @@ selection favors Payoff-dominance in the Stag hunt case. They argue that
 each other to be fully rational" \parencite[89]{harsanyi_general_1988}.
 Further on, Harsanyi and Selten expect players to coordinate on the
 Pareto-dominant equilibrium if they are allowed to communicate beforehand,
-sometimes referred to as \textit{cheap talk} when it is not associated with
-costs to the players \textcite{farrell_cheap_1996}, 
+sometimes referred to as \textit{cheap talk} when it does not directly affect
+the payoffs \parencite[104]{farrell_cheap_1996}, 
 because "an agreement to do so is self-stabilizing". 
 In contrast to that,
 \textcite{aumann_nash_1990} points out that a message from player 1 to 
@@ -466,7 +455,7 @@ of equilibrium selection, solely focussing on risk-dominance as selection
 criterion, hence favorising the hare equilibrium in SH game 
 \parencite[92,94,96]{harsanyi_new_1995}. 
 
-Even though the evolutionary refinement ESS, as they simply coincide with
+Even though the evolutionary refinement ESS, simply coinciding with
 the pure equilibria, does not help as a selection
 criterion in this case, the dynamic evolutionary framework, specified in the
 next section, gives an answer to the question which equilibrium is chosen. 
@@ -474,51 +463,49 @@ next section, gives an answer to the question which equilibrium is chosen.
 \section{The Evolutionary Game}
 \label{evolutionarysection}
 Evolutionary game theory, started by Maynard Smith, has find a lot of 
-recognition in the game theory literature. \todo{Applications and stuff}
-
+recognition in the game theory literature. 
 In an evolutionary game, a large population of agents interacts in a 
 strategic environment. It is usually assumed that the number of agents is 
 large, such that an individual agents decision has a small effect on the
 state of the population. 
 An evolutionary stag hunt game consists of agents in a population who
 are randomly matched against each other playing the normal form game 
-$\Gamma = (I,\Delta^2,\hat{F})$ discussed before. In a \textit{monomorphic}\footnote{In 
-contrast to \textit{polymorhpic} populations where each agent can also 
-play mixed strategies} setting, the agents are only able to play pure 
+$\Gamma = (I,\Delta^2,\hat{F})$ discussed before. In a \textit{monomorphic}\footnote{
+Opposed to \textit{polymorhpic} populations where each agent can also 
+play mixed strategies.} setting, the agents are only able to play pure 
 strategies. Let $p_j(t) \geq 0$ be the number of individuals in the population
 playing strategy $j \in \{1,2\}$ at time $t \in \realnumb$ and 
 let $P = p(t) = p_1(t) + p_2(t)$ describe all individuals 
 in the population\footnote{In the model considered here the population will 
-not be allowed to grow and hence $p(t) = P \forall t \in \realnumb$}
+not be allowed to grow and hence $p(t) = P\  \forall t \in \realnumb$.}
 then $\vec{x}(t) = \left(x_1(t),x_2(t)\right)
 =\left(\frac{p_1(t)}{p(t)},\frac{p_2(t)}{p(t)}\right)$ 
 is called the state vector of the population at
 time $t \in \realnumb$. The components of the population state vector represent
 the share of agents choosing a specific strategy. 
-As the individuals can only choose between strategy one and two it holds that 
-$x_2(t) = 1-x_1(t)$. Since $x(t) \in \Delta$ a 
+As the individuals can only choose between strategy one and two in our example,
+it holds that  $x_2(t) = 1-x_1(t)$. Since $x(t) \in \Delta$ a 
 mixed-strategy\footnote{There is formally no difference between population 
-state and mixed strategy} can 
+state and mixed strategy.} can 
 be interpreted as a population state in a monomorphic population, where the 
 population is divided on playing different pure strategies. 
 Solving the interpretation problem for the population setting this 
-interpretation has little relevance for the traditional case. \todo{Cite Interpretation paper}
-Out of convenience in the monomorphic population, the expected payoff 
+interpretation has little relevance for the traditional case 
+\parencite[914-915]{rubinstein_comments_1991}. 
+Out of convenience, let the expected payoff 
 to a strategy $i \in \Delta$ of an individual when randomly matched
 against another individual in the current population state $\vec{x}^t$ 
-is denoted as $\hat{F}_i(\vec{x}) = \hat{F}(e_i,\vec{x})$.
-The literature introduces \textit{revision protocols} to model the adjustment 
-of each agents' strategy. Nevertheless, the similiarity to biology stays in 
-the manner that the agents are not assumed to be the \textit{homo rationalis} 
-game theory usually deals with, but are "programmed" or "wired" 
-\parencite{gintis_game_2000} to the revision rule.
+be denoted by $\hat{F}_i(\vec{x}) = \hat{F}(e_i,\vec{x})$ in the following.
+The next section will motivate \textit{revision protocols}, a rule to
+which agents are "programmed" or "wired" \parencite{gintis_game_2000}, 
+opposed to any rationality or ability assumption. 
 \subsection{Revision Protocols}
 \label{sec:revisionprotocols}
 With that in mind, this section motivates the use of revision protocols to
 model the behavior of agents.
-As stated, in evolutionary game theory, agents are usually not assumed to be 
+As hinted, in evolutionary game theory, agents are usually not assumed to be 
 able to calculate a best-reply, nor are they observing the information relevant
-to perform that calculations. This is formalized as a behavior rule called
+to perform that calculations. This is formalized as a behaviorl rule called
 the revision protocol. The following derivation of the mean dynamic is due to 
 \textcite{sandholm_population_2010}. Typically it is 
 assumed that agents have an inner alarm clock which rings at a rate R 
@@ -605,8 +592,8 @@ compared to theirs, as such traders feel superior and thus, are the
 loudest in the tavern. 
 
 Plugging the conditional switch rate of the pairwise imitation protocol 
-\eqref{eq:pairwiseproportionalimitation} into equation for the change 
-of the population share playing strategy 1, $\dot{x}_1(t)$ leads to the 
+\eqref{eq:pairwiseproportionalimitation} into the equation for the change 
+of the population share playing strategy 1, $\dot{x}_1(t)$, leads to the 
 \textit{replicator dynamics}:
 \begin{alignat*}{2}
         \label{eq:replicatorrev}
@@ -615,16 +602,20 @@ of the population share playing strategy 1, $\dot{x}_1(t)$ leads to the
                   &= 2 x_1 (F_1(x) - \bar{F}(x)) 
 \end{alignat*}
 This equation fully describes the evolution of the population in time.
-Properties and the result of it are discussed in the next section.
+Properties and the connection to the stage game are discussed in the next
+section.
 
 \subsection{Replicator Dynamics}
 \label{sec:replicatordynamic}
-The Replicator Dynamic, called the "best know dynamic in
-evolutionary game theory" by \textcite{sandholm_population_2010}, has a wide 
-range of applications and attractive properties. 
-\todo{replicator herkunft, dawkin e.t.c.}
-As discussed above, it can be 
-motivated by different revision protocols. Using matrix notation, one finds 
+The Replicator Dynamic, one of most popular dynamics in 
+evolutionary game theory, has a wide range of applications and 
+attractive properties, such as population genetics and ecology, abiogenesis and
+of course game theory \parencite[203]{hofbauer_evolutionstheorie_1984}. 
+It was mathematically formulated by \textcite{taylor_evolutionary_1978}, 
+the biological concept replicator was introduced in 1982 by Dawkins 
+\parencite{dawkins_extended_1982}.
+As discussed above, the replicator dynamic can be motivated by different 
+revision protocols. Using matrix notation, one finds 
 for the strategies $j \in \{1,2\}$
 \begin{alignat}{2}
         \dot{x}_j &= x_j\left(\left(x^T A\right)_j -
@@ -843,10 +834,9 @@ choose in a first round one-shot game. Section \ref{sec:empiricalevidence}
 summarizes evidence found in laboratory stag hunt game concerning the 
 one-shot game strategy choice and so the justification for initial conditions.
 
-\section{Coordination and network externality}
+\section{Coordination and network externalities}
 This section investigates the effect of a network externality on the
 evolutionary stag hunt game.
-
 To motivate the idea, consider students in university being assigned to
 projects in their classes with other students. Nowadays, most of them 
 involve some kind of software tool to either present the results, analyze 
@@ -860,37 +850,36 @@ available and can be customized, contrary to proprietary software,
 for the personal needs. Common examples for this are Latex or Open Office
 vs. Microsoft Word for text editing, Python vs. Matlab for scientific 
 computing and R vs. Stata for statistical analysis.
-For simplifaction, I assume that during their studies, a larger body of 
-students is randomly paired into groups of two playing a coordination game
-in which they have two strategies available. In that game both contribute 
-to their group project independently, using either open source software, 
+For simplification, I assume that during their studies, a large body of 
+homogenous students is randomly paired by their professor into groups of two 
+for a project, implicitly playing a coordination game in which they have two 
+strategies available. The students contribute to the project 
+independently, using either open source software, 
 represented by strategy 1 or proprietary software, i.e. strategy 2.
-If both players choose strategy 1, both use open source software receiving 
-the utility $a$. Players that fail to coordinate on the same type of
-software, the player using proprietary software receives the utility $c$ and
+If both players choose strategy 1 they receive 
+the utility $a$. Using different software, the player with 
+proprietary software receives the utility $c$ and
 the player contributing with open source software gets $b$.
 Due to the high customizability to their projects, coordinating on open
 source software results in the highest utility $a>c>b$.
 When students fail to coordinate, the "costs" of miscoordination are beared
 by the one using open source, as portability is usually only possible in 
-this direction, hence receiving only $b<c$.
+this direction, receiving only $b<c$.
 Coordination on proprietary software leaves both of them with $d$, which 
-satisfies, despite the success to coordinate, $a> \geq d>b$ as they have to
+satisfies, despite the success to coordinate, $a> c\geq d>b$, as they have to
 pay for the licenses. 
 The structure of the game is precisely that of a stag hunt game. 
 Coordination on open source software is the payoff-dominant Nash equilibrium,
 but it is risk-dominated by the equilibrium where the students coordinate on
-proprietary software. However, the students do not play the game against
-one fellow student all the time, but are randomly assigned by their 
-professor into team of two.
-Additionally, I assume that they are not perfectly rational and
-do not revaluate their software choice each time they have to do a project. 
-For simplifaction, students in this model behave according to the 
+proprietary software. 
+Concerning the behavior, I assume that they are not perfectly rational and
+do not adjust their software choice each time they have to do a project.
+For simplicity, students in this model behave according to the 
 revision protocol of pairwise proportional imitation discussed in section 
 \ref{sec:revisionprotocols}. 
 This is justified, as students tend to use software they always used and 
-only change it, if they get to know someone being more successfull with
-another software choice. Therefore the dynamic in the model can be 
+only change it, if they get to know someone being more successful with
+another software choice. Therefore, the dynamic in the model can be 
 described by the replicator dynamic derived for the stag hunt game in 
 equation \eqref{eq:replicatorpara}.
 This model would not differ in terms of convergence and stability of Nash 
@@ -899,9 +888,10 @@ equilibria to the evolutionary stag hunt game above.
 However, I want to introduce "network externalities" in this model. 
 The interest of the economic literature turned to open source software 
 development, because it is commonly observed that users contribute to 
-projects without receiving payment for it.
+projects without receiving a monetary payment for it.
 In fact users share their source code publicly to the open source community,
-being motivated by reputation and the signaling effect one can achieve.
+being motivated by peer recognition and the signaling for career concerns
+a programmer can achieve \parencite[21]{lerner_simple_2002}.
 The utility for a user then increases with the size of the community as 
 more people contributing code increases the variety and usefulness of the 
 software. 
@@ -916,12 +906,12 @@ A positive network externality satisifes $e(x)>0$ and
 $\frac{de(x)}{dx}>0$, 
 an increase of the population share choosing the strategy
 also increases the utility due to the network. 
-Including the
-parameter $a$ makes sure that the utility of this strategy combination is 
-never below the utility of coordination on proprietary software. Otherwise,
-the structure of the stage game would differ fundamentally. So to say,
-the network externality just adds to the fact that open source 
-software is cheaper.
+Including the parameter $a$ makes sure that the utility of this 
+strategy combination is never below the utility of coordination on 
+proprietary software. Otherwise, the structure of the stage game would 
+differ fundamentally with respect to the population share choosing strategy 
+one. So to say, the network externality just adds to the fact that open 
+source software is cheaper and can be customized to the inidividual project.
 The payoff matrix, using local shifts, than is 
 $A=\begin{psmallmatrix}\alpha_1+u(x) && 0 \\ 0&& \alpha_2\end{psmallmatrix}$. 
 Substituting into the replicator dynamic  \ref{eq:replicatorpara} one gets:
@@ -931,20 +921,19 @@ Substituting into the replicator dynamic  \ref{eq:replicatorpara} one gets:
         \label{eq:externalitymodel}
 \end{alignat}
 Plugging $x=0$ and $x=1$ into equation \eqref{eq:externalitymodel} one can 
-ensure that the fixed point with pure strategies and their
+ensure, by applying the linearization theorem,
+that the fixed point with pure strategies and their
 property of asymptotical stability did not change.
-($\varphi'(1) = -\alpha_1 -e(1),\ \varphi'(0) = -\alpha_2 -e(2)$)
+($\varphi'(1) = -\alpha_1 -e(1),\ \varphi'(0) = -\alpha_2 -e(2)$).
 While the literatur on network externalities usually assumes a diminishing
-effect of the network externality $\frac{d^2e(x)}{dx^2} <0$, I will here
+marginal effect of the network externality $\frac{d^2e(x)}{dx^2} <0$ 
+\parencite[73]{lin_impact_2007}, I will 
 focus on the linear form $e(x) = \beta x$, with the externality parameter
-$\beta \in \realnumb_+$. This restriction does not change the implication
+$\beta \in \realnumb_+$. This restriction does not change the main implication
 of the model, but makes it less tedious to derive it.
-
-
-Although the externality does not change the state in which
-the whole population coordinated to one strategy, the inner fixed point
-of the dynamic is changed. $\varphi(x)$ is still a polynominal but of 
-degree $4$:
+Although not changing the stability of the pure states, 
+the externality affected the inner fixed point of the dynamic.
+The polynominal $\varphi(x)$ is now of degree $4$:
 \begin{align}
         \dot{x} = \varphi(x) = -\beta x^4 -x^3(\alpha_1 + \alpha_2 
         - \beta ) + x^2 (\alpha_1 + 2 \alpha_2) - x(\alpha_2)
@@ -953,18 +942,19 @@ Using the knowledge from the general case, we can find the roots, i.e. fixed
 points of the dynamic, by reducing the degree with the two roots known. The
 polynominal of degree $2$ can then be solved applying a quadratic formula\footnote{
 The solution with negative sign was omitted, since it has no economic 
-interpretation}, so that the fixed point with a mixed population state is
+interpretation.}, so that the fixed point with a mixed population state is
 $x_3 = -\frac{\alpha_1+\alpha_2}{2 \beta} + 
 \sqrt{(\frac{\alpha_1+\alpha_2)^2}{4\beta^2} +\frac{\alpha_2}{\beta}}$. 
 Some arithmetic can verify that $0<x_3<\frac{\alpha_2}{\alpha_1+\alpha_2}$, 
-is in the feasible range of the population share variable. 
+the new inner fixed point is in the feasible range of the population share 
+variable.
 Taking the limit, $\lim_{\beta \rightarrow 0} x_3 = 
 \frac{\alpha_1}{\alpha_2+\alpha_1}$, approves the intuition that for a 
 diminishing network externality the model without externality is obtained.
 The plot of the dynamic and the polynominal is 
-shown figure \ref{fig:plotmodellinear}.
+shown figure in \ref{fig:plotmodellinear}.
 Note that the share of students choosing strategy 1 is now lower at the 
-inner fixed point, showing that the positive externality has a positive 
+inner fixed point, showing that the externality has a positive 
 effect on the attractiveness of choosing open source software. Indeed,
 the basin of attraction of the equilibrium in which all students are using 
 open source software became larger, depicted by the distance to the
@@ -1001,13 +991,13 @@ product associated with the pure strategy 1 equilibrium. Consider for example
 the parameter setting $\alpha_1 =1, \alpha_2=3$, but now let $\beta=3$. 
 The basin of attraction is not equal, since $3<\beta^*= 4$. 
 The open source equilibrium attracts all trajectories starting within 
-$x_0 \in (\frac{-2+\sqrt{13}}{3},1]$ and hence the propriertary equilibrium attracts
+$x_0 \in (\frac{-2+\sqrt{13}}{3},1]$ and hence the proprietary equilibrium attracts
 all trajectories $x_0 \in [0,\frac{-2+\sqrt{13}}{3})$. Clearly, the latter basin of 
 attraction is larger ($\frac{-2+\sqrt{13}}{3}>0.5)$, 
 but the open source equilibrium gets risk-dominant for
 $x>\frac 23$. Implying that the network externality not only increases the
 utility obtained from the choice of open source software, but also,
-combined with a high enough user base, makes this choice risk-dominant.
+combined with a high enough user base, makes this choice risk-dominant. 
 
 The model presented here is quite a simplification of the real world. 
 First, the students are expected to be able to review which software is 
@@ -1028,9 +1018,11 @@ theory" \parencite{hanauske_evolutionare_2011}.
 As a consequence, many researchers recently gave attention to the 
 structure of the network underlying the interaction of agents and the 
 evolving of this structure \parencite[46]{szabo_evolutionary_2007-1}.
-For example \textcite{ohtsuki_simple_2006-1} found, that fewer connectivity 
-leads to more cooperation, because "The fewer friends I have the more 
-strongly my fate is bound to theirs" \parencite[1]{ohtsuki_simple_2006-1}.
+For example \textcite{ohtsuki_simple_2006-1} found for a range of 
+network topologies, that fewer connectivity 
+leads to more cooperation, giving the inutition 
+"The fewer friends I have the more strongly my fate is bound to theirs" 
+\parencite[1]{ohtsuki_simple_2006-1}.
 Although the model with a positive linear network externality is far to 
 simple to capture the effect of complex, adapting networks, it gives an 
 intuition of how coordination of a small group, in this case two players, 
@@ -1237,7 +1229,7 @@ should allow for the case where c=d as compared to $(a-b)$
 \todo{Maybe both measures capture different things: Intuition}
 Game 1 replicated \textcite{battalio_optimization_2001}'s 
 game\footnote{The payoff matrices are identical} $0.6R$. 
-Compare \ref{fig:payoffdubois} and \ref{fig:payoffbattalio}}. 
+Compare \ref{fig:payoffdubois} and \ref{fig:payoffbattalio}. 
 As per their conjecture, they found that a lower relative riskiness 
 in a game decreases the rate strategy one was chosen, 
 keeping the optimization premium constant. This is congruent with 
