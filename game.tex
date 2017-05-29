@@ -1,12 +1,13 @@
 \documentclass[11pt]{article}
+\usepackage{pgf}
 \usepackage{todonotes}
 \usepackage{float}
-\usepackage{caption}
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[hypcap=true]{caption}
 \usepackage{subcaption}
-\usepackage[backend=biber,style=authoryear,url=false]{biblatex}
-%\bibliography{bibevol2.bib}
-\bibliography{bibevol.bib}
-%\bibliography{bibevol3.bib}
+\usepackage[backend=biber,style=apa,url=false]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
 \bibliography{bibevol4.bib}
 \usepackage{sgame}
 \input{mathinput.tex}
@@ -115,9 +116,9 @@ evolutionary game theory and the stag hunt game in economics.
 \begin{game}{2}{2} & $S$ & $H$
 \\ $S$ &$5,5$ &$0,4$
 \\ $H$ &$4,0$ &$2,2$ \end{game}
-\label{sh}
 \end{center}
 \caption{A parametrized representation of the Stag hunt game, $a>c\geq d >b$}
+\label{fig:sh}
 \end{figure}
 \begin{figure}[h]
 \begin{center}
@@ -125,8 +126,8 @@ evolutionary game theory and the stag hunt game in economics.
 \\ $C$ &$-1,-1$ &$-4,0$
 \\ $D$ &$0,-4$ &$-3,-3$ \end{game}
 \end{center}
-\label{pd}
 \caption{A parametrized representation of the prisoners dilemma}
+\label{fig:pd}
 \end{figure}
 \section{The Stag hunt game}
 \label{sec:traditional}
@@ -461,7 +462,7 @@ criterion in this case, the dynamic evolutionary framework, specified in the
 next section, gives an answer to the question which equilibrium is chosen. 
 
 \section{The Evolutionary Game}
-\label{evolutionarysection}
+\label{sec:evolutionarystaghunt}
 Evolutionary game theory, started by Maynard Smith, has find a lot of 
 recognition in the game theory literature. 
 In an evolutionary game, a large population of agents interacts in a 
@@ -595,12 +596,12 @@ Plugging the conditional switch rate of the pairwise imitation protocol
 \eqref{eq:pairwiseproportionalimitation} into the equation for the change 
 of the population share playing strategy 1, $\dot{x}_1(t)$, leads to the 
 \textit{replicator dynamics}:
-\begin{alignat*}{2}
-        \label{eq:replicatorrev}
+\begin{alignat}{2}
+        \label{eq:replicatorrev} 
         \dot{x}_1 &= 2 x_1 x_2 (F_1(x) - F_2(x)) \\
                   &= 2 x_1 ((1-x_1) F_1(x) - x_2 F_2(x)) \\
                   &= 2 x_1 (F_1(x) - \bar{F}(x)) 
-\end{alignat*}
+\end{alignat}
 This equation fully describes the evolution of the population in time.
 Properties and the connection to the stage game are discussed in the next
 section.
@@ -678,10 +679,10 @@ plotted in figure \ref{fig:polynominal}.
 \todo{Description of the graph, roots e.t.c.}
 \ref{fig:polynominal}.
 \begin{figure}[h]
-        \label{fig:polynominal}
         \centering
-        \includegraphics[scale=0.5]{polynominal.png}
+        \includegraphics[scale=0.5]{polynominal.pdf}
         \caption{$\varphi(x)$ for the parameter setting $a=5, b=3, c=0, d=2$}
+        \label{fig:polynominal}
 \end{figure}
 For the purpose of analyzing the properties of the replicator dynamic, it is 
 useful to introduce some volcabulary used in dynamical system theory. 
@@ -789,7 +790,7 @@ there is some $\epsilon$-perturbation of the system  \todo{Voooodoooo}
  \todo{Folk theorem of evolutionary game theory}
 \begin{figure}
         \centering
-        \includegraphics[scale=0.5]{basinofattraction.png}
+        \includegraphics[scale=0.5]{basinofattraction.pdf}
         \caption{Replicator dynamics in the stag hunt game for 
                 $\alpha_1=1,\ \alpha_2=3$ with different initial conditions}
                 \label{fig:basinofattraction}
@@ -830,11 +831,12 @@ larger basin of attraction, the risk-dominant equilibrium, is more likely
 reached. \todo{what does evolutionary game theory tell about inital condition} 
 Giving an exact answer which equilibrium will be selected through the dynamic
 process, this approach still leaves us with the problem of what agents 
-choose in a first round one-shot game. Section \ref{sec:empiricalevidence} 
+choose in a first round one-shot game. Section \ref{sec:experimentalevidence} 
 summarizes evidence found in laboratory stag hunt game concerning the 
 one-shot game strategy choice and so the justification for initial conditions.
 
 \section{Coordination and network externalities}
+\label{simplemodel}
 This section investigates the effect of a network externality on the
 evolutionary stag hunt game.
 To motivate the idea, consider students in university being assigned to
@@ -966,12 +968,12 @@ with externality, in figure \ref{fig:dynamiclinear}, illustrates this.
         \centering
         \begin{subfigure}{.5\textwidth}
         \centering
-        \includegraphics[scale=0.5]{polynominallinearmodel.png}
+        \includegraphics[scale=0.5]{polynominallinearmodel.pdf}
         \caption{The polynominal with marked roots} 
         \end{subfigure}%    
         \begin{subfigure}{.5\textwidth}
         \centering
-        \includegraphics[scale=0.5]{dynamiclinearmodel.png}
+        \includegraphics[scale=0.5]{dynamiclinearmodel.pdf}
         \caption{The dynamic} 
         \label{fig:dynamiclinear}
         \end{subfigure}%        
@@ -1017,12 +1019,12 @@ a fully connected network is "one of the main criticisms of evolutionary game
 theory" \parencite{hanauske_evolutionare_2011}. 
 As a consequence, many researchers recently gave attention to the 
 structure of the network underlying the interaction of agents and the 
-evolving of this structure \parencite[46]{szabo_evolutionary_2007-1}.
-For example \textcite{ohtsuki_simple_2006-1} found for a range of 
+evolving of this structure \parencite[46]{szabo_evolutionary_2007}.
+For example \textcite{ohtsuki_simple_2006} found for a range of 
 network topologies, that fewer connectivity 
 leads to more cooperation, giving the inutition 
 "The fewer friends I have the more strongly my fate is bound to theirs" 
-\parencite[1]{ohtsuki_simple_2006-1}.
+\parencite[1]{ohtsuki_simple_2006}.
 Although the model with a positive linear network externality is far to 
 simple to capture the effect of complex, adapting networks, it gives an 
 intuition of how coordination of a small group, in this case two players, 
@@ -1100,7 +1102,7 @@ games.
 \parencite{devetag_when_2007}.
 
 The implementation of random matching in a group is closest to the 
-evolutionary setting discussed in section \ref{evolutionarysection}, because
+evolutionary setting discussed in section \ref{sec:evolutionarystaghunt}, because
 there a group of player, repeatedly matched in pairs, play the stag hunt 
 game, having only information about their own payoff and the payoff their
 opponents used. Certainly, it is to suspect that real players, opposed
@@ -1109,7 +1111,7 @@ what the other players chose in the rounds before. \todo{historyofplay}
 Random matching was conducted by \textcite{battalio_optimization_2001}. 
 Subjects played three stag hunt games with the typical symmetric pure strategy
 equilbrium and the symmetric mixed strategy equilibrium at $(0.8,0.2) \in
-\Delta$. Figure \ref{payoffbattalio} shows the payoff matrices of the
+\Delta$. Figure \ref{fig:payoffbattalio} shows the payoff matrices of the
 games $2R, R$ and $0.6R$ used. The names become clear when observing the 
 \textit{optimization premium} of the games. While controlling for the basin of 
 attraction of the equilibria - the mixed equilibrium is equal in all games -
@@ -1125,7 +1127,7 @@ $y=(q,1-q) \in \Delta$:
 with the \textit{optimization premium parameter} $\delta_j$. In the notation
 parametrized SH game, $\delta_j = a - c + d - b$.
 The parameters for the payoff matrices are reported in figure 
-\ref{payoffbattalio}. 
+\ref{fig:payoffbattalio}. 
 First of all, they find support for their hyptohesis that in games with a 
 larger optimization premium subjects coordinate less frequently on the 
 payoff-dominant equilibrium. 
@@ -1410,7 +1412,7 @@ adjust their strategy need to be justified for the given application.
 \section{appendix}
 \begin{figure}[h]
 \caption{Payoff matrices of games in \textcite{battalio_optimization_2001}}
-        \label{figpayoffbattalio}
+        \label{fig:payoffbattalio}
 \begin{alignat*}{3}
         A_{2R} &= \mqty(45 & 0 \\ 35 & 40) \quad & &A_{R} = \mqty(45 & 0 \\ 
         40 & 20) \quad & &A_{0.6R} = \mqty( 45 & 0 \\ 42 & 12) \\
@@ -1418,8 +1420,8 @@ adjust their strategy need to be justified for the given application.
 \end{alignat*}
 \end{figure}
 \begin{figure}[H]
-\label{fig:payoffschmidt}
 \caption{Payoff matrices of the games used in \cite{schmidt_playing_2003}}
+\label{fig:payoffschmidt}
 \begin{alignat*}{3}
         A_{Game1} = \mqty( 100 & 20 \\ 60 & 60), \quad A_{Game2} 
                                &= \mqty( 100 & 20 \\ 80 & 80), \\ 
