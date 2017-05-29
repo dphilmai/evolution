@@ -17,8 +17,14 @@
 \newcommand{\realnumb}{\mathbb{R}}
 \presetkeys{todonotes}{color=yellow,size=\scriptsize}{}
 \begin{document}
+\input{titlepage.tex}
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\pagenumbering{arabic}
 \section{Introduction}
-
 The beginnings of game theory date back to Johann von Neumann in 1928 
 who developed a mathematical framework
 for modelling situations with strategic interactions of rational agents 
@@ -114,10 +120,10 @@ evolutionary game theory and the stag hunt game in economics.
 \begin{figure}[h]
 \begin{center}
 \begin{game}{2}{2} & $S$ & $H$
-\\ $S$ &$5,5$ &$0,4$
-\\ $H$ &$4,0$ &$2,2$ \end{game}
+\\ $S$ &$a,a$ &$b,c$
+\\ $H$ &$c,b$ &$d,d$ \end{game}
 \end{center}
-\caption{A parametrized representation of the Stag hunt game, $a>c\geq d >b$}
+\caption[Stag hunt game]{A parametrized representation of the Stag hunt game, $a>c\geq d >b$}
 \label{fig:sh}
 \end{figure}
 \begin{figure}[h]
@@ -126,7 +132,7 @@ evolutionary game theory and the stag hunt game in economics.
 \\ $C$ &$-1,-1$ &$-4,0$
 \\ $D$ &$0,-4$ &$-3,-3$ \end{game}
 \end{center}
-\caption{A parametrized representation of the prisoners dilemma}
+\caption[Prisoner's Dilemma]{A parametrized representation of the prisoners dilemma}
 \label{fig:pd}
 \end{figure}
 \section{The Stag hunt game}
@@ -681,7 +687,7 @@ plotted in figure \ref{fig:polynominal}.
 \begin{figure}[h]
         \centering
         \includegraphics[scale=0.5]{polynominal.pdf}
-        \caption{$\varphi(x)$ for the parameter setting $a=5, b=3, c=0, d=2$}
+        \caption[Polynominal of the Replicator Dynamic]{$\varphi(x)$ for the parameter setting $a=5, b=3, c=0, d=2$}
         \label{fig:polynominal}
 \end{figure}
 For the purpose of analyzing the properties of the replicator dynamic, it is 
@@ -791,7 +797,7 @@ there is some $\epsilon$-perturbation of the system  \todo{Voooodoooo}
 \begin{figure}
         \centering
         \includegraphics[scale=0.5]{basinofattraction.pdf}
-        \caption{Replicator dynamics in the stag hunt game for 
+        \caption[Replicator dynamic of the stag hunt game]{Replicator dynamics in the stag hunt game for 
                 $\alpha_1=1,\ \alpha_2=3$ with different initial conditions}
                 \label{fig:basinofattraction}
 \end{figure}
@@ -969,15 +975,15 @@ with externality, in figure \ref{fig:dynamiclinear}, illustrates this.
         \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[scale=0.5]{polynominallinearmodel.pdf}
-        \caption{The polynominal $\varphi(x)$} 
+        \caption[Polynominal of the externality model]{The polynominal $\varphi(x)$} 
         \end{subfigure}%    
         \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[scale=0.5]{dynamiclinearmodel.pdf}
-        \caption{The dynamic $x(t)$ for different $x(t=0)$} 
+        \caption[Replicator dynamic of the model with externality]{The dynamic $x(t)$ for different $x(t=0)$} 
         \label{fig:dynamiclinear}
         \end{subfigure}%        
-        \caption{The linear externality model for parameters $\alpha_1=1,\alpha_2=3,
+        \caption[Polynominal and Dynamic of the model with externality]{The linear externality model for parameters $\alpha_1=1,\alpha_2=3,
         \beta=3$}
         \label{fig:plotmodellinear}
 \end{figure}
@@ -1415,18 +1421,22 @@ adjust their strategy need to be justified for the given application.
 
 
 
-\section{appendix}
-\begin{figure}[h]
+\section{Appendix}
+\begin{figure}[H]
+\begin{subfigure}{\textwidth}
 \caption{Payoff matrices of games in \textcite{battalio_optimization_2001}}
         \label{fig:payoffbattalio}
+        \centering
 \begin{alignat*}{3}
         A_{2R} &= \mqty(45 & 0 \\ 35 & 40) \quad & &A_{R} = \mqty(45 & 0 \\ 
         40 & 20) \quad & &A_{0.6R} = \mqty( 45 & 0 \\ 42 & 12) \\
         \delta_{2R} &= 50  \quad & &\ \delta_{R} = 25 \quad & &\ \delta_{0.6R} = 15
 \end{alignat*}
-\end{figure}
-\begin{figure}[H]
-\caption{Payoff matrices of the games used in \cite{schmidt_playing_2003}}
+\end{subfigure}
+\vspace*{50px}
+\begin{subfigure}{\textwidth}
+        \caption{Payoff matrices of the games used in \textcite{schmidt_playing_2003}}
+        \centering
 \label{fig:payoffschmidt}
 \begin{alignat*}{3}
         A_{Game1} = \mqty( 100 & 20 \\ 60 & 60), \quad A_{Game2} 
@@ -1435,10 +1445,12 @@ adjust their strategy need to be justified for the given application.
              & 60 \\ 80 & 80), \quad A_{Game4} &= \mqty( 100
                              & 0 \\ 80 & 60)
         \end{alignat*}
-\end{figure}
-\begin{figure}[H]
+\end{subfigure}
+\vspace{50px}
+\begin{subfigure}{\textwidth}
         \caption{Payoff matrices of the games used
-        in \cite{dubois_optimization_2012}}
+        in \textcite{dubois_optimization_2012}}
+        \centering
         \label{fig:payoffdubois}
         \begin{alignat*}{3}     
                 A_{Game1} &= \mqty(45 & 0 \\ 42 & 12),
@@ -1447,8 +1459,27 @@ adjust their strategy need to be justified for the given application.
                 RR_{Game1}&= \frac 23, RR_{Game2}&=\frac 14, RR_{Game3}&=
                 \frac 14
         \end{alignat*}
+\end{subfigure}
+\caption[Games in the laboratory experiments]{Payoff matrices for the 
+games used in the experimental literature}
 \end{figure}
 \printbibliography
+\newpage
+\thispagestyle{empty}
+\section*{Ehrenw\"ortliche Erkl\"arung}
+\noindent
+Ich versichere hiermit, dass ich die vorliegende Arbeit 
+selbst\"andig und ohne Benutzung anderer als der angegebenen  Quellen  
+und Hilfsmittel verfasst habe. W\"ortlich  \"ubernommene  S\"atze  oder  
+Satzteile  sind  als  Zitat  belegt, andere Anlehnungen, hinsichtlich Aussage 
+und Umfang, unter Quellenangabe kenntlich gemacht. Die Arbeit hat in gleicher 
+oder \"ahnlicher Form noch keiner Pr\"ufungsbeh\"orde vorgelegen und ist nicht 
+ver\"offentlicht. Sie wurde nicht, auch nicht auszugsweise, f\"ur eine andere 
+Pr\"ufungs oder Studienleistung verwendet.
+\vspace{1cm}
+
+\noindent
+Frankfurt am Main, den  \hspace{3cm} Unterschrift:
 \end{document}
 
 
