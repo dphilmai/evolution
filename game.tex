@@ -46,7 +46,7 @@ full sharpness of the law. Not admitting the crimes would leave the authority
 with too little evidence, resulting only in a sentence for minor crimes.
 This story, developed by Albert Tucker in 1950 and suitably named Prisoner's
 Dilemma (PD) is usually represented in a table, as shown in figure \ref{fig:pd}, with
-the options for each prisoners denoted by C, remaining silent, and D, admiting
+the options for each prisoners denoted by C, remaining silent, and D, admitting
 their crimes. 
 The total amount of years for the group is lowest if both do not confess, 
 but each individual prisoner has the 
@@ -67,7 +67,7 @@ benefit of the group, but the uncertainty about what the other hunters choose
 to do. In fact, none of the hunters would have bad feelings about his choice
 not to shoot a hare when returning with a stag, as his personal benefit is 
 greater with a stag as bounty. Figure \ref{fig:sh} represents this dilemma 
-for two hunters. When both coodinate on stag hunting, denoted by S, they receive 
+for two hunters. When both coordinate on stag hunting, denoted by S, they receive 
 $a$. If one of them decides to shoot the hare, he gets $c$, whereas
 the other hunter is left out in the cold with just $b$. Coordination on hare
 hunting yields both with $d$. The parameters are usually assumed to fulfill
@@ -99,22 +99,22 @@ example \textcite{taylor_evolutionary_1978}, \textcite{hofbauer_note_1979} and
 \textcite{zeeman_dynamics_1981}, developed a `time dependent dynamical
 extension of game theory'' \parencite[55]{hanauske_evolutionare_2011}.
 In contrast to traditional game theory, the evolutionary approach  models
- agents in a large population, interacting repeatedly in a strategic enviroment. 
+ agents in a large population, interacting repeatedly in a strategic environment. 
 Furthermore, the agents are not assumed to be rational, but follow a specific 
 rule, updating their strategy. 
 As outlined in the rest of this text, the
 evolutionary approach offers an possible answer to the coordination
 problem in the stag hunt game.
 
-The thesis is organized as follows. Chapter 2 introduces the 
+The thesis is organized as follows. Section 2 introduces the 
 framework of traditional game theory for the stag hunt game and discusses
-the traditional approach to the equilibrium selection problem. Chapter 3
+the traditional approach to the equilibrium selection problem. Section 3
 motivates evolutionary game theory and presents the replicator dynamic. 
 Later on, it will be discussed how the evolutionary approach selects
-between multiple equilibria. Chapter 4 demonstrates the effect of a
+between multiple equilibria. Section 4 demonstrates the effect of a
 network externality in the underlying framework. Looking for evidence
-how real people play the stag hunt game, chapter 5 considers experimental
-literature on the topic. Chapter 6 concludes and shows application of
+how real people play the stag hunt game, section 5 considers experimental
+literature on the topic. Section 6 concludes and shows application of
 evolutionary game theory and the stag hunt game in economics.
 
 \begin{figure}[h]
@@ -150,7 +150,7 @@ $\mathbb{S} = \times_i S_i$ with the pure strategy space $S_i$ of an
 individual player  $i \in I$ defined as $S_i = \{1,2,...,m_i\}$, where $m_i$ 
 denotes the total number of strategies available to player $i$. The payoff 
 function of the game is denoted by $F: S \rightarrow \realnumb^n$.
-As this text focusses on the stag hunt game, these definitions reduce to the 
+As this text focuses upon the stag hunt game, these definitions reduce to the 
 following.
 By setting $n=2$, we define the set of two hunters playing SH as $I=\{1,2\}$. A 
 player $i \in I$  can choose from a set of pure strategies from his 
@@ -160,7 +160,7 @@ In the SH game, each hunter can choose one out of two pure strategies, namely,
 huntig the stag (strategy 1) or hunting hare (strategy 2).
 Therefore, the pure strategy space is defined by $S_i = \{1,2\}$, which results
 by setting $m_i=2$. In the SH game both players choose from
-the same set of stragies such that $S_1 =S_2=S$. Combining the strategy spaces
+the same set of strategies such that $S_1 =S_2=S$. Combining the strategy spaces
 of the two players with the cartesian product
 yields the definition of the pure strategy space of the game
 $\mathbb{S}= S \times S = S^2$. Games played by two players with two strategies
@@ -179,7 +179,7 @@ In the special case of two player, one
 can define a payoff matrix for player 1, $A \in \realnumb^{2 \times2}$ and for 
 player 2,  $B \in \realnumb^{2 \times2}$, where $A_{kl} = F_1(k,l)$ and $
 B_{kl} = F_2(k,l)$ with the pure strategies $k,l \in S$. Using the 
-representatioa in \ref{fig:sh}, one can indentify the payoff matrices for 
+representation in \ref{fig:sh}, one can identify the payoff matrices for 
 the player as
 \begin{align}
      A = \mqty(a && b \\ c && d), \quad B = \mqty(a && c \\ b && d)
@@ -208,9 +208,9 @@ alternative interpretation, outlined by Rubinstein, is that mixed
 strategies are actually deterministic, but seem to be random because they 
 depend on not modelled private information of the individuals 
 \parencite[914]{rubinstein_comments_1991}. In the evolutionary context,
-discussed in section \ref{sec:evolutionarystaghunt}, mixed stragies have
+discussed in section \ref{sec:evolutionarystaghunt}, mixed strategies have
 a different, unproblematic interpretation. Besides the interpretation problem,
-mixed stragies are appealing because they ensure the existence
+mixed strategies are appealing because they ensure the existence
 of a Nash equilibrium, which is defined later in this text.
 Formally, every player of the game assigns a probability distribution over
 his pure strategies space. A strategy $x_i \in \Delta_i$ of 
@@ -232,7 +232,7 @@ The combined mixed strategy space of the game is $\Delta^2 = \Delta \times
 \Delta$.
 From now on $x \in \Delta$ denotes a (mixed) strategy
 chosen by player 1 and $y \in \Delta$ a (mixed) strategy of player 2.
-Again similiar to the pure strategy case, the mixed strategy payoff 
+Again similar to the pure strategy case, the mixed strategy payoff 
 $\hat{F}_i:\Delta^2 \rightarrow \realnumb$ maps to any state in the mixed strategy
 space  $(x,y) \in \Delta^2$ a payoff $\hat{F}_i(x,y) \in \realnumb$.
 With the matrix notation this is defined as: 
@@ -240,7 +240,7 @@ With the matrix notation this is defined as:
         \hat{F}_1(x,y) &= x^T A y \\
         \hat{F}_2(x,y) &= x^T A^T y 
 \end{alignat*}
-Summarizing the notation, the SH game can be defined as a symmteric two-player
+Summarizing the notation, the SH game can be defined as a symmetric two-player
 normal form game $\Gamma = (I=\{1,2\}, \Delta^2, \hat{F})$.
 
 \subsection{Solution concepts}
@@ -513,7 +513,7 @@ With that in mind, this section motivates the use of revision protocols to
 model the behavior of agents.
 As hinted, in evolutionary game theory, agents are usually not assumed to be 
 able to calculate a best-reply, nor are they observing the information relevant
-to perform that calculations. This is formalized as a behaviorl rule called
+to perform that calculations. This is formalized as a behavioral rule called
 the revision protocol. The following derivation of the mean dynamic is due to 
 \textcite{sandholm_population_2010}. Typically it is 
 assumed that agents have an inner alarm clock which rings at a rate R 
@@ -522,7 +522,7 @@ to economic applications in individuals having literal clocks around their
 wrist, but illustrates the idea of a randomly occuring chance to reconsider
 their strategy choice.
 The agents' clocks are assumed to be independent of each other such that
-individuals chance to revise does not depenend on others.
+individuals chance to revise does not dependent on others.
 Whenever the clock of an agent rings, he
 receives a revision opportunity, which means that he changes his strategy
 with the probability $\frac{\rho_{ij}}{R}$, where
@@ -563,7 +563,7 @@ There are different plausible revision protocols studied in the literature.
 \textcite[128,129,178]{sandholm_population_2010} discusses various forms of 
 this revision protocols, such as logit choice, comparison to average payoff 
 and best response 
-protocol, all with different properties concering informational 
+protocol, all with different properties concerning informational 
 burden and the
 properties the dynamics have. With an eye to the implied dynamic, the 
 \textit{pairwise proportional imitation} protocol will be outlined . 
@@ -589,7 +589,7 @@ way they organize their market stall or what position on the market they
 choose. Each trader usually does not
 observe the strategies other traders use to sell things, because the market
 place is large and the bustle going on complicated. 
-So a trader is usually commited to a strategy he got to know a while ago.
+So a trader is usually committed to a strategy he got to know a while ago.
 However, occasionally as he returns to his tavern, he sometimes gets to meet 
 another trader. Being proud of their earnings, they boast about their 
 individual strategy. In this way, they get to know
@@ -651,7 +651,7 @@ gets to know the payoffs of all agents in the population.
 It was sufficient to assume that he gets to know the payoff of one random 
 player. 
 Contrary to the interpretation that agents with such revision protocols 
-are boundedly rational, \textcite{gintis_game_2000}  argues 
+are "boundedly rational", \textcite{gintis_game_2000}  argues 
 that ``this is very misleading, because the real issue is the 
 distribution of the information'' \parencite[273]{gintis_game_2000}. 
 The argument goes, that even if they were not ``bounded'' they 
@@ -659,7 +659,7 @@ could not calculate since they do not have more information.
 One drawback of the replicator dynamic for certain applications, especially
 for biologists, is the lack of mutation, a random error in the replication 
 process.\todo{cite hofbauersigmund}
-Indeed, the deterministic replicator dynamic does not incoporate 
+ Indeed, the deterministic replicator dynamic does not incorporate 
 any such effect. A strategy that has not existed or has vanished from the 
 population will not be in a future state of the population. 
 That means, that if in a population state only a 
@@ -692,7 +692,7 @@ plotted in figure \ref{fig:polynominal}.
         \label{fig:polynominal}
 \end{figure}
 For the purpose of analyzing the properties of the replicator dynamic, it is 
-useful to introduce some volcabulary used in dynamical system theory. 
+useful to introduce some vocabulary used in dynamical system theory. 
 
 A solution through an initial state $x_0$ of the dynamical system is called a 
 \textit{trajectory}, whereby it is distinguished between a forward trajectory 
@@ -716,7 +716,7 @@ $t \rightarrow + \infty $.
 Analyzing \eqref{eq:replicatorpara}, this happens if either a strategy
 is not present in the population or the excess payoff of a strategy is zero. 
 In the stag hunt game, the fixed points of the
-dynamic coincide with the Nash equilibriums of the stage game, 
+dynamic coincide with the Nash equilibria of the stage game, 
 $\varphi(x^*) = 0$ for $x^* \in \{0,\frac{\alpha_2}{\alpha_1+\alpha_2},1\}$. 
 It suffices to calculate the roots of the polynominal $\varphi(x)$, either
 numerical or, as the Nash equilibria are usually calculated beforehand,
@@ -742,7 +742,7 @@ x^*$ as $t \rightarrow \infty$.
 The \textit{basin of attraction} of a fixed point $x^*$ is defined as the set 
 of points $x_0 \in \realnumb$ for which a trajectory through $x_0$ approaches 
 the fixed points $x^*$. In the one dimensional case, this is simply the range 
-of $x$ for that any solution to the differential equation with the inital 
+of $x$ for that any solution to the differential equation with the initial 
 conditions in this range converges to the fixed point. With the following 
 theorem independently contributed by \cite{hartman_lemma_1960} and 
 \cite{grobman_homeomorphism_1959}, one can easily 
@@ -759,7 +759,7 @@ find the asymptotically stable fixed points in the stag hunt game:
 \end{mydef}
 The solution to the linearization can be analytical derived by 
 a standard tool for differential equation - seperation of variables and 
-intergration.
+integration.
 The linearization around the fixed point $x^*$ is accordingly
 $x(t)= x(0) e^{\varphi'(x^*)t}$, where $x(0)$ denotes the 
 initial condition, i.e. the share of agents choosing strategy 1 in the 
@@ -767,9 +767,9 @@ beginning.
 Applying the theorem to \eqref{eq:replicatorpara}, one finds that the 
 fixed point $x=0$ corresponding to the Nash equilibrium of hunting hare, is 
 asymptotically stable, since $\varphi'(0) = - \alpha_2 <0$. 
-The linearization around the fixed poin is $x(t) = x(0) e^{-\alpha_2 t}$, 
+The linearization around the fixed point is $x(t) = x(0) e^{-\alpha_2 t}$, 
 which clearly approaches zero as $t \rightarrow \infty$. 
-Similiarly, the Nash equilibrium 
+Similarly, the Nash equilibrium 
 of hunting stag at $x=1$ is a asymptotically stable fixed point as
 $\varphi'(1) = -\alpha_1 <0$ with linearization $x(t) = x(0) e^{-\alpha_1 t}$.
 However, the linearization theorem cannot be used for the mixed Nash 
@@ -806,28 +806,28 @@ there is some $\epsilon$-perturbation of the system  \todo{Voooodoooo}
 Concering the equilibrium selection, the evolutionary approach with replicator
 dynamic has a definite answer. The population will reach one of the three
 Nash equilibria depending on the initial condition. 
-However, an equilibrium not asymptotically stable is rather unplausible,
+However, an equilibrium not asymptotically stable is rather implausible,
 because it only emerges from one initial condition, where the population
 is already exactly in that population state. 
-Intuitively, one addtional agent playing
+Intuitively, one additional agent playing
 a pure strategy suffices to get the population state moving to one of the
 pure equilibria. As the model outlined here is only a deterministic
 approximation, any stochastic shock would lead to such a disturbance and hence
 would start convergence to one of the states with evolutionary stable 
 strategies.
 The population converges to the stag hunting or the hare
-hunting equilibrium if the inital conditions lie in their basin of attraction.
+hunting equilibrium if the initial conditions lie in their basin of attraction.
 As discussed, the population converges to the state $x=1$, the stag hunting 
-equilibrium of the stage game, for all inital conditions 
+equilibrium of the stage game, for all initial conditions 
 $x_0 \in (\frac{\alpha_2}{\alpha_1+\alpha_2},1]$. Any trajectory of the 
 dynamical system with initial conditions 
 $x_0 \in [0,\frac{\alpha_2}{\alpha_1+\alpha_2})$ lead to the hare hunting
 equilibrium. Interestingly, one observes another connection of the 
 dynamic with the stage game. The basin of attraction is larger for the
-risk-dominanting equilibrium. By definition \eqref{eq:riskdom}, 
+risk-dominating equilibrium. By definition \eqref{eq:riskdom}, 
 the hare hunting equilibrium risk-dominates if $\alpha_2 > \alpha_1$,
 so in fact the basin of attraction is larger. With the parameter setting shown
-in figure \ref{fig:basinofattraction},$75\%$ of the possible initital 
+in figure \ref{fig:basinofattraction},$75\%$ of the possible initial 
 conditions lead to the risk-dominant equilibrium, whereas only $25\%$ of the 
 initial conditions lead to the payoff-dominant equilibrium. 
 The equilibrium selection is determined by the position of the initial
@@ -835,7 +835,7 @@ condition. However, it is not clear what specifies the initial conditions.
 If for example the agents choose a random strategy in a first round of the 
 game, independently of each other, one can say that the equilibrium with the
 larger basin of attraction, the risk-dominant equilibrium, is more likely 
-reached. \todo{what does evolutionary game theory tell about inital condition} 
+reached. \todo{what does evolutionary game theory tell about initial condition} 
 Giving an exact answer which equilibrium will be selected through the dynamic
 process, this approach still leaves us with the problem of what agents 
 choose in a first round one-shot game. Section \ref{sec:experimentalevidence} 
@@ -871,7 +871,7 @@ proprietary software receives the utility $c$ and
 the player contributing with open source software gets $b$.
 Due to the high customizability to their projects, coordinating on open
 source software results in the highest utility $a>c>b$.
-When students fail to coordinate, the ``costs'' of miscoordination are beared
+When students fail to coordinate, the ``costs'' are beared
 by the one using open source, as portability is usually only possible in 
 this direction, receiving only $b<c$.
 Coordination on proprietary software leaves both of them with $d$, which 
@@ -911,7 +911,7 @@ Preserving the general structure of the
 game, it is useful to focus on the functional specification 
 $f(x) = a + e(x)$, where $a$ is the payoff parameter used 
 previously and $e(x)$ denotes the network externality. 
-A positive network externality satisifes $e(x)>0$ and 
+A positive network externality satisfes $e(x)>0$ and 
 $\frac{de(x)}{dx}>0$, 
 an increase of the population share choosing the strategy
 also increases the utility due to the network. 
@@ -920,7 +920,7 @@ strategy combination is never below the utility of coordination on
 proprietary software. Otherwise, the structure of the stage game would 
 differ fundamentally with respect to the population share choosing strategy 
 one. So to say, the network externality just adds to the fact that open 
-source software is cheaper and can be customized to the inidividual project.
+source software is cheaper and can be customized to the individual project.
 The payoff matrix, using local shifts, than is 
 $A=\begin{psmallmatrix}\alpha_1+u(x) && 0 \\ 0&& \alpha_2\end{psmallmatrix}$. 
 Substituting into the replicator dynamic  \ref{eq:replicatorpara} one gets:
@@ -934,7 +934,7 @@ ensure, by applying the linearization theorem,
 that the fixed point with pure strategies and their
 property of asymptotical stability did not change.
 ($\varphi'(1) = -\alpha_1 -e(1),\ \varphi'(0) = -\alpha_2 -e(2)$).
-While the literatur on network externalities usually assumes a diminishing
+While the literature on network externalities usually assumes a diminishing
 marginal effect of the network externality $\frac{d^2e(x)}{dx^2} <0$ 
 \parencite[73]{lin_impact_2008}, I will 
 focus on the linear form $e(x) = \beta x$, with the externality parameter
@@ -1029,7 +1029,7 @@ structure of the network underlying the interaction of agents and the
 evolving of this structure \parencite[46]{szabo_evolutionary_2007}.
 For example \textcite{ohtsuki_simple_2006} found for a range of 
 network topologies, that fewer connectivity 
-leads to more cooperation, giving the inutition 
+leads to more cooperation, giving the intuition 
 ``The fewer friends I have the more strongly my fate is bound to theirs'' 
 \parencite[1]{ohtsuki_simple_2006}.
 Although the model with a positive linear network externality is far to 
@@ -1071,7 +1071,7 @@ equilibrium is endogenous once the dynamic is set into operation. Yet, it
 does not offer an explanation for the initial conditions, which in fact 
 determine on which equilibrium the population coordinates. Likewise, the
 assumptions about the connection of individuals, discussed in 
-\ref{sec:simplemodel}, the continous population and the way agents
+\ref{sec:simplemodel}, the continuous population and the way agents
 adjust their strategy need to be justified for the given application. 
 
 
