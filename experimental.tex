@@ -1,4 +1,3 @@
-\section{Experimental Evidence}
 \label{sec:experimentalevidence}
 A third approach beside the traditional and the evolutionary treatment of 
 coordination problems is what \textcite{camerer_behavioral_2003} calls the 
@@ -79,9 +78,7 @@ The implementation of random matching in a group closely resembles the
 evolutionary setting discussed in section \ref{sec:evolutionarystaghunt}, 
 because a group of players, repeatedly matched in pairs, play the stag hunt 
 game, having only information about their own payoff and the payoff their
-opponents used. Certainly, it is to suspect that real players, opposed
-to the programmed agents in the evolutionary setting, are able to remember
-what the other players chose in the rounds before. \todo{historyofplay}
+opponents used. 
 
 Random matching was conducted by \textcite{battalio_optimization_2001}. 
 Subjects played three stag hunt games with the typical symmetric pure strategy
@@ -99,10 +96,13 @@ $y=(q,1-q)^T \in \Delta$:
 \begin{align}
         r_j(y)= \hat{F_j}(e_1,y) - \hat{F_j}(e_2,y) = \delta_j(q-q^*),
 \end{align}
-with the \textit{optimization premium parameter} $\delta_j$. In the notation
- of the parametrized SH game, $\delta_j = a - c + d - b$.
-The parameters for the payoff matrices are reported in figure 
-\ref{fig:payoffbattalio}. 
+with the \textit{optimization premium parameter} $\delta_j$ and the 
+probability used in the mixed strategy equilibrium $q^*$. In the notation
+of the parametrized SH game, $\delta_j = a - c + d - b$. The optimization
+premium is only different from zero if a player expects the other player not
+to use the mixed Nash equilibrium strategy.
+The parameters for the payoff matrices used in this study 
+are reported in figure \ref{fig:payoffbattalio}. 
 First of all, they find support for their hyptohesis that in games with a 
 larger optimization premium subjects coordinate less frequently on the 
 payoff-dominant equilibrium. 
@@ -163,7 +163,7 @@ game 2 and 3 the Mixed-NE is at $(\frac 34,\frac 14)$ resulting in the
 typical  larger basin of attraction of the strategy $(e_2,e_2)$. 
 Therefore, it is expected from the replicator dynamic, of course 
 depending on the inital condition 
-of the game, that subjetcs are more likely attracted to the 'hare-hunting' 
+of the game, that subjetcs are more likely attracted to the hare hunting 
 equilibrium in game 2 and 3.
 \textcite{schmidt_playing_2003} implemented three different types of matching
 protocol. First of all, a random matching protocol where each subject is not
@@ -285,6 +285,26 @@ for the hypothesis of an emerging convention based on the deductive principle
 payoff-dominance. This sends a quite positive image about coordination, because 
 this is ``dramatically at odds with claims that coordination failure is common''
 \parencite[9]{devetag_when_2007}. 
+
+Certainly, it is to suspect that real players, opposed
+to the programmed agents in the evolutionary setting, are able to remember
+what the other players chose in the rounds before.  
+\textcite{battalio_optimization_2001} used a logistic-response model to
+investigate if the optimization premium affects the reliance of subjects
+on the history of play. Indeed, they found the highest sensitivity of 
+individuals to previous rounds in game $2R$.
+\textcite{dubois_optimization_2012} confirms this result, also using 
+a logistic-response model. Additionally, they cannot reject the null
+hypothesis that sensitivity to previous play is significantly different for
+game 2 and 1. Hence, they do not find an effect of a change in the
+relative riskiness. Interestingly, the logistic-response model can be
+formulated as a single-population continous-time logistic-resonse dynamic
+\parencite[752]{battalio_optimization_2012}. The derivation is due to
+\textcite{fudenberg_theory_1998}. This dynamic has similiar properties as 
+the imitiative logit dynamic presented in \ref{sec:replicatordynamic}.
+
+
+\subsection{Implementational details}
 As outlined, most studies concerned with the stag hunt game in the 
 laboratory focused on the characteristics of the payoff matrix. 
 However, implementational details 
@@ -321,37 +341,40 @@ An interesting experimental approach is executed by
 \textcite{dufwenberg_gender_2005}. They tried to evaluate whether 
 there is a difference in coordination behavior accross genders, motivated by 
 the different treatment of males and females in the work place. Playing the 
-weak-link order statistics game in \cite{van_huyck_tacit_1990}, groups of 
+weak-link order statistics game of \textcite{van_huyck_tacit_1990}, groups of 
 only females or only males face the coordination problem with Pareto-ranked 
 equilibria. The motivation of observing gender differences was 
 ``never explicitly pointed  out to the subjects'' 
 \parencite{dufwenberg_gender_2005}\footnote{
-Even though it might be interesting to see if there is an effect like 
+Even though it would be interesting to see if there is an effect like 
 the discussed ``crab basket'' effect which leads woman to mistrust each other 
 more than in a mixed group.}. However, they did not find that the groups play
-different. Differences in the beginning ``disappeared fast and no difference
+differently. Differences in the beginning ``disappeared fast and no difference
 is found in later stages'' \parencite[235]{dufwenberg_gender_2005}. 
 All groups converged to the choice of the minimum
-contribution. As they mention, it might be useful to investigate differences
-with groups that also have some other characteristica in common. They refer
-to the differences group identity has for females and males playing a 
+contribution. As they mention, it might be useful to investigate 
+coordination of groups that also have some other 
+characteristica in common. They refer to the differences group 
+identity has for females and males playing a 
 public goods game. Namely, \textcite{croson_groups_2008} found that when
 females in a sorrority play the public goods games they perform better than 
 females with no specific belongingness. Contrarly, males in a fraternity 
 performed worse than males without a group identity. 
 Interestingly, this and other factors concerning the group of subjects 
-playing the coordination game might be a rationale for the initial conditions
-in the evolutionary dynamic. The intitial conditions might be used to 
-capture the composition of the subjects interacting, reflecting how well
-trust or cultural conventions are embedded in the population. 
+playing the coordination game might be a rationale for the 
+initial conditions in the evolutionary dynamic. 
+The intitial conditions then capture the composition of the subjects 
+interacting, reflecting how well trust or cultural conventions 
+are embedded in the population. 
 Nevertheless, it seems difficult, atleast for the author, to justify
-the reduction of the inheritance of cultural values to one\footnote{Of course, 
-in games with more than two strategies the initial conditions are represented 
-by a vector} dimension such as the initial conditions $x_0$.
+the reduction of the inheritance of cultural values to 
+one\footnote{Of course, in games with more than two strategies 
+the initial conditions are represented by a vector} dimension such 
+as the initial conditions $x_0$.
 
 The discussion of the laboratory research makes on clear: There is more
 to the coordination problem than individuals programmed like a robot 
-to a strategy, while being attracted and moved to an equilibrium by a dynamic
-in a fully deterministic fashion. But, as a model should, the analysis offers 
-a simplification that helps to understand some of the patterns observeable 
-when real people interact. 
+to a strategy, while being attracted and moved to an equilibrium by a 
+dynamic in a fully deterministic fashion. But, as a model should, the 
+analysis offers a simplification that helps to understand some of the 
+patterns observeable when real people interact. 
