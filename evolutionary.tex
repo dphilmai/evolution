@@ -149,16 +149,19 @@ section.
 
 \subsection{Replicator Dynamics}
 \label{sec:replicatordynamic}
-The Replicator Dynamic, one of most popular dynamics in 
+The Replicator Dynamics, one of most popular dynamics in 
 evolutionary game theory, has a wide range of applications and 
 attractive properties, such as population genetics and ecology, abiogenesis and
 of course game theory \parencite[203]{hofbauer_evolutionary_1998}. 
 It was mathematically formulated by \textcite{taylor_evolutionary_1978}, 
-the biological concept replicator was introduced in 1982 by Dawkins 
-\parencite{dawkins_extended_2016}.
-As discussed above, the replicator dynamic can be motivated by different 
-revision protocols. Using matrix notation, one finds 
-for the strategies $j \in \{1,2\}$
+termed after the biological concept of a replicator was 
+introduced in 1982 by Dawkins as the ``fundamental units of natural selection,
+the basic things that survive or fail to survive''
+\parencite[254]{dawkin_selfish_2016}. In a purely game theorical fashion,
+strategies are the replicator as they are propagated through the population
+based on the revision protocol.
+Using the matrix notation, the replicator dynamic  
+for the strategies $j \in \{1,2\}$ can be expressed as
 \begin{alignat}{2}
         \dot{x}_j &= x_j\left(\left(x^T A\right)_j -
                 \left(x^T A x\right)\right). 
@@ -166,7 +169,7 @@ for the strategies $j \in \{1,2\}$
 \end{alignat}
 The lack of the factor $2$, comparing it with equation 
 \eqref{eq:replicatorrev}, is due to the derivation. In fact, any
-positive transformation of the payoff matrix and hence the payoff function
+positive transformation of the payoff matrix 
 results only in a change in speed in the replicator dynamic
 \parencite[73]{weibull_evolutionary_1997}.
 The growth of the share $\dot{x}_j(t)$ at time $t \in \realnumb$ depends 
@@ -177,27 +180,23 @@ average payoff across the whole population.
 Intuitively, the share of a strategy in the population increases (decreases) 
 if the strategy yields a higher (lower) than average payoff. 
 This property of a (deterministic) evolutionary dynamic is called 
-\textit{Positive correlation} \parencite{sandholm_population_2010}. 
-\todo{pagenumber}
-Another property of the replicator dynamic is the low data requirement. As 
-seen in the previous section, it is not necessary to assume that an agent
-gets to know the payoffs of all agents in the population.
+\textit{Positive correlation} \parencite[144]{sandholm_population_2010}. 
+Seen in the previous section, it is not necessary to assume that an agent
+gets to know the payoffs of all agents in the population. 
 It was sufficient to assume that he gets to know the payoff of one random 
 player. 
-Contrary to the interpretation that agents with such revision protocols 
+Contrary to the interpretation that agents following a revision protocols 
 are "boundedly rational", \textcite{gintis_game_2000}  argues 
 that ``this is very misleading, because the real issue is the 
 distribution of the information'' \parencite[273]{gintis_game_2000}. 
 The argument goes, that even if they were not ``bounded'' they 
-could not calculate since they do not have more information. 
-One drawback of the replicator dynamic for certain applications, especially
-for biologists, is the lack of mutation, a random error in the replication 
-process.\todo{cite hofbauersigmund}
- Indeed, the deterministic replicator dynamic does not incorporate 
-any such effect. A strategy that has not existed or has vanished from the 
+could not calculate a best-reply since they do not have the information about
+the state of the population.
+
+Furthermore the replicator dynamic does not incorporate any error or mutation.
+In other words, a strategy that has not existed or has vanished from the 
 population will not be in a future state of the population. 
-That means, that if in a population state only a 
-subset $S' \subset S$ of the 
+That means, that if in a population state only a subset $S' \subset S$ of the 
 set of pure strategies is used, any future population state can also only 
 contain strategies from this subset $S'$. Hence, if a strategy in 
 the stag hunt game vanishes, the population state is in one of the two pure 
@@ -215,10 +214,13 @@ The last step follows by using local shifts to the matrix $A$ from section
 \parencite[73]{weibull_evolutionary_1997}. The polynominal $\varphi(x)$ is
 of degree $3$ and contains all information about the dynamic. Actually, 
 outlined in the following, it tells which state the population converges to.
-For the parameter set $a=5, b=3, c=0, d=2$ the graph of $\varphi(x)$ is 
-plotted in figure \ref{fig:polynominal}. 
-\todo{Description of the graph, roots e.t.c.}
-\ref{fig:polynominal}.
+In figure \ref{fig:polynominal} the graph of $\varphi(x)$ for the parameters
+$a=5, b=4,c=0,d=3$ is plotted. The ordinate represents the polynominal and
+the abscissa represents the population share choosing strategy 1 and hence is
+between $0$ and $1$. Roots of the polynominal are those values of $x$ for 
+which $\varphi(x)$ crosses the horizontal dashed gray line. The vertical
+dashed gray line indicates the inner root (the root between 0 and 1).
+
 \begin{figure}[h]
         \centering
         \includegraphics[scale=0.5]{polynominal.pdf}
@@ -227,7 +229,6 @@ plotted in figure \ref{fig:polynominal}.
 \end{figure}
 For the purpose of analyzing the properties of the replicator dynamic, it is 
 useful to introduce some vocabulary used in dynamical system theory. 
-
 A solution through an initial state $x_0$ of the dynamical system is called a 
 \textit{trajectory}, whereby it is distinguished between a forward trajectory 
 for $t \rightarrow \infty$ and backward trajectory for $t \leftarrow \infty$.
@@ -256,14 +257,17 @@ It suffices to calculate the roots of the polynominal $\varphi(x)$, either
 numerical or, as the Nash equilibria are usually calculated beforehand,
 reducing the degree by polynominal division. In general, the replicator 
 dynamic lacks the \textit{Nash stationarity} property and hence there are 
-games with fixed points which are not Nash\footnote{For a trivial example, 
-consider the prisoners dilemma in \ref{fig:pd}. A population only consisting of 
-cooperating agents stays in that state, which is not a Nash equilibrium even 
-though it is Pareto-dominating.} \parencite{sandholm_population_2010}.
-Concerning fixed points, one is usually interested if the fixed points of 
-a dynamic system are stable in terms of some disturbance of the system. 
+games with fixed points which are not a Nash equilibrium
+\parencite{sandholm_population_2010}.
+For a trivial example, consider the prisoners dilemma in \ref{fig:pd}. 
+A population consisting only of cooperating agents stays in that state
+which is not a Nash equilibrium forever. However, inserting one single 
+defecting agent would lead all other agents imitate defecting until the 
+whole population defects.
+Therefore, one is usually interested if fixed points of 
+a dynamical system are stable in terms of some disturbance of the system. 
 There are different approaches to stability. A quite strict and useful one 
-in the stag hunt game is \textit{asymptotic stability}. 
+in the stag hunt game is \textit{asymptotical stability}. 
 It essentially requires that a system in a specific fixed point returns 
 to the fixed point after a perturbation happened.
 Hence, the system tends to move back to an asymptotically stable fixed point
@@ -275,24 +279,24 @@ stable} if there exists an $\epsilon$-perturbation for that $x(t) \rightarrow
 x^*$ as $t \rightarrow \infty$. 
 The \textit{basin of attraction} of a fixed point $x^*$ is defined as the set 
 of points $x_0 \in \realnumb$ for which a trajectory through $x_0$ approaches 
-the fixed points $x^*$. In the one dimensional case, this is simply the range 
+the fixed points $x^*$. In one dimensional case, this is simply the range 
 of $x$ for that any solution to the differential equation with the initial 
 conditions in this range converges to the fixed point. With the following 
 theorem independently contributed by \cite{hartman_lemma_1960} and 
 \cite{grobman_homeomorphism_1959}, one can easily 
 find the asymptotically stable fixed points in the stag hunt game:
 \begin{mydef}
-        If a one-dimensional dynamical system $\dot{x}(t) = \varphi{x}$ 
+        If a one-dimensional dynamical system $\dot{x}(t) = \varphi(x)$ 
         has a hyperbolic fixed point $x^*$, $x^*$ is asymptotically stable
         if its linearization 
         $\dot{x}(t) = \frac{\partial\varphi(x)}{\partial x} := \varphi'(x)$ 
         is asymptotically stable. 
         A fixed point is called hyperbolic in one-dimension if 
         $\varphi'(x^*) \neq 0$ and the linearization is stable at that
-        point if $\varphi'(x^*) < 0$.
+        point if $\varphi'(x^*) < 0$ and not stable if $\varphi'(x) >0$.
 \end{mydef}
 The solution to the linearization can be analytical derived by 
-a standard tool for differential equation - seperation of variables and 
+a standard tool for differential equations - seperation of variables and 
 integration.
 The linearization around the fixed point $x^*$ is accordingly
 $x(t)= x(0) e^{\varphi'(x^*)t}$, where $x(0)$ denotes the 
@@ -310,27 +314,32 @@ However, the linearization theorem cannot be used for the mixed Nash
 equilibrium, hence the dynamical system is not hyperbolic there, 
 $\varphi'(\frac{\alpha_2}{\alpha_1+\alpha_2}) = 0$. Nevertheless, suppose 
 there is some $\epsilon$-perturbation of the system  \todo{Voooodoooo}
- with $x_0= \frac{\alpha_2}{\alpha_1+\alpha_2}+ \epsilon$ and 
- $\frac{\alpha_1}{\alpha_1+\alpha_2} > \epsilon > 0$. Plugging this into
- \eqref{eq:replicatorpara} one sees that $\dot{x} >0$, the population share
- grows monotonically for every $\epsilon$, converging to the fixed point 
- $x = 1$. Conversely, for $0 > \epsilon > \frac{\alpha_2}{\alpha_1+\alpha_2}$,
- $\dot{x} < 0$ and so the population share of agents 
- playing strategy 1 decreases monototically, until it reaches the 
- fixed point $x=0$. This is also shown in figure \ref{fig:basinofattraction}.
- \todo{Better description of the graphic}
- The horizonal line marks the mixed-strategy fixed point at $75\%$ for the
- parameter setting $\alpha_1 = 1$ and $\alpha_2=3$. If the population starts
- at this fixed point it by definiton stays there without any disturbance. 
- But any invasion of individuals with a uniform strategy leads away from
- this fixed point, resulting in convergence to one of pure strategy equilibria.
- The use of the word invasion is not by coincidence. It clearly shows the 
- connection of the evolutionary stable strategy of the stage game to the 
- stable fixed points of the dynamic. In fact, one can prove that this is not
- only true in the simple stag hunt, but it holds also under general settings.
- \todo{Folk theorem of evolutionary game theory}
+with $x_0= \frac{\alpha_2}{\alpha_1+\alpha_2}+ \epsilon$ and 
+$\frac{\alpha_1}{\alpha_1+\alpha_2} > \epsilon > 0$. Plugging this into
+\eqref{eq:replicatorpara} one sees that $\dot{x} >0$, the population share
+grows monotonically for every $\epsilon$, converging to the fixed point 
+$x = 1$. Conversely, for $0 > \epsilon > \frac{\alpha_2}{\alpha_1+\alpha_2}$,
+$\dot{x} < 0$ and so the population share of agents 
+playing strategy 1 decreases monototically, until it reaches the 
+fixed point $x=0$. 
+
+In figure \ref{fig:basinofattraction} the graph of the replicator dynamics
+in the stag hunt game for $\alpha_1=1$ and $\alpha_2=3$ is plotted. The
+horizontal axis represents time $t$, while the vertical axis shows
+the share of the population choosing strategy 1. The dashed gray horizontal
+line represents the inner fixed point of the dynamic at $75\%$.
+Without any disturbance, a population starting at the inner fixed point 
+stays there. But any invasion of individuals with a uniform strategy leads away 
+from this fixed point, resulting in convergence to one of pure 
+strategy equilibria. 
+However, the use of the word invasion is not by coincidence. 
+It clearly shows the connection of the evolutionary stable strategy 
+of the stage game to the stable fixed points of the dynamic. 
+In fact, one can prove that this is not
+only true in the simple stag hunt, but it holds also under general settings.
+\todo{Folk theorem of evolutionary game theory}
 \begin{figure}
-        \centering
+ \centering
         \includegraphics[scale=0.5]{basinofattraction.pdf}
         \caption[Replicator dynamic of the stag hunt game]{Replicator dynamics in the stag hunt game for 
                 $\alpha_1=1,\ \alpha_2=3$ with different initial conditions}
@@ -361,17 +370,13 @@ dynamic with the stage game. The basin of attraction is larger for the
 risk-dominating equilibrium. By definition \eqref{eq:riskdom}, 
 the hare hunting equilibrium risk-dominates if $\alpha_2 > \alpha_1$,
 so in fact the basin of attraction is larger. With the parameter setting shown
-in figure \ref{fig:basinofattraction},$75\%$ of the possible initial 
+in figure \ref{fig:basinofattraction}, $75\%$ of the possible initial 
 conditions lead to the risk-dominant equilibrium, whereas only $25\%$ of the 
 initial conditions lead to the payoff-dominant equilibrium. 
 The equilibrium selection is determined by the position of the initial
 condition. However, it is not clear what specifies the initial conditions. 
 If for example the agents choose a random strategy in a first round of the 
 game, independently of each other, one can say that the equilibrium with the
-larger basin of attraction, the risk-dominant equilibrium, is more likely 
-reached. \todo{what does evolutionary game theory tell about initial condition} 
-Giving an exact answer which equilibrium will be selected through the dynamic
-process, this approach still leaves us with the problem of what agents 
-choose in a first round one-shot game. Section \ref{sec:experimentalevidence} 
-summarizes evidence found in laboratory stag hunt game concerning the 
-one-shot game strategy choice and so the justification for initial conditions.
+larger basin of attraction, the risk-dominant equilibrium, is reached more 
+likely reached. 
+\todo{what does evolutionary game theory tell about initial condition} 
