@@ -1,59 +1,61 @@
 \label{sec:evolutionarystaghunt}
-Evolutionary game theory, started by Maynard Smith, has find a lot of 
-recognition in the game theory literature. 
-In an evolutionary game, a large population of agents interacts in a 
-strategic environment. It is usually assumed that the number of agents is 
-large, such that an individual agents decision has a small effect on the
-state of the population. 
-An evolutionary stag hunt game consists of agents in a population who
-are randomly matched against each other playing the normal form game 
-$\Gamma = (I,\Delta^2,\hat{F})$ discussed before. In a \textit{monomorphic}\footnote{
-Opposed to \textit{polymorhpic} populations where each agent can also 
-play mixed strategies.} setting, the agents are only able to play pure 
-strategies. Let $p_j(t) \geq 0$ be the number of individuals in the population
-playing strategy $j \in \{1,2\}$ at time $t \in \realnumb$ and 
-let $P = p(t) = p_1(t) + p_2(t)$ describe all individuals 
-in the population\footnote{In the model considered here the population will 
-not be allowed to grow and hence $p(t) = P\  \forall t \in \realnumb$.}
-then $\vec{x}(t) = \left(x_1(t),x_2(t)\right)
-=\left(\frac{p_1(t)}{p(t)},\frac{p_2(t)}{p(t)}\right)$ 
-is called the state vector of the population at
-time $t \in \realnumb$. The components of the population state vector represent
-the share of agents choosing a specific strategy. 
-As the individuals can only choose between strategy one and two in our example,
-it holds that  $x_2(t) = 1-x_1(t)$. Since $x(t) \in \Delta$ a 
-mixed-strategy\footnote{There is formally no difference between population 
-state and mixed strategy.} can 
-be interpreted as a population state in a monomorphic population, where the 
-population is divided on playing different pure strategies. 
-Solving the interpretation problem for the population setting this 
-interpretation has little relevance for the traditional case 
-\parencite[914-915]{rubinstein_comments_1991}. 
+Evolutionary games constist a population of agents that are randomly matched 
+over time to play a stage game. So, in an evolutionary interpretation of the 
+stag hunt game, the stage game is the SH game. 
+Usually, the number of agents is assumed to be large such that on the hand, 
+the effect of a single individual on the population is small, and on the
+other hand, the interaction happens anonymously.
+Populations can either be \textit{monomorphic} or \textit{polymorphic}.
+Monomorphic populations consist of agents that are only able to play pure
+strategies, whereas in polymorphic populations mixed strategies are allowed.
+In the following, the focus will be on monomorphic populations as they have
+a straightforward interpretation and the main implications do not differ. 
+Formally, let $p_j(t) \geq 0$ denote the number of individuals in 
+the population playing strategy $j \in \{1,2\}$ at time $t \in \realnumb$ and 
+let $P = p(t) = p_1(t) + p_2(t)$ describe the total number of all individuals 
+in the population. Note, $P =p(t)\ \forall t$ meaning that the population 
+is not growing. The vector $\vec{x}(t) = \left(x_1(t),x_2(t)\right)
+=\left(\frac{p_1(t)}{p(t)},\frac{p_2(t)}{p(t)}\right)$ is called the state 
+vector of the population at time $t \in \realnumb$. 
+Each component of the population state vector represent the share of agents 
+choosing a specific strategy. As the individuals can only choose between 
+strategy one and two in our example, it holds that  $x_2(t) = 1-x_1(t)$. 
+Mentioned earlier, this enables a new interpretation of mixed strategies,
+because $\vec{x}(t)$ is an element of the mixed strategy space $\Delta$.
+Hence, mixed strategies in monomorphic games are simply the state
+of the population, which in the SH game is the division of players on the two
+pure strategies. This has, however, little relevance for the interpretation
+in the traditional game \parencite[914-915]{rubinstein_comments_1991}.
+
 Out of convenience, let the expected payoff 
-to a strategy $i \in \Delta$ of an individual when randomly matched
-against another individual in the current population state $\vec{x}^t$ 
-be denoted by $\hat{F}_i(\vec{x}) = \hat{F}(e_i,\vec{x})$ in the following.
+to a strategy $i \in \{1,2\}$ of an individual randomly matched
+against another individual in the current population state at time $t$, 
+$\vec{x}(t)$, be denoted by $\hat{F}^i(\vec{x}) = \hat{F}(e_i,\vec{x})$. 
+
 The next section will motivate \textit{revision protocols}, a rule to
 which agents are ``programmed'' or ``wired'' \parencite{gintis_game_2000}, 
-opposed to any rationality or ability assumption. 
+opposed to any rationality assumption. 
 \subsection{Revision Protocols}
 \label{sec:revisionprotocols}
-With that in mind, this section motivates the use of revision protocols to
+This section motivates the use of revision protocols to
 model the behavior of agents.
-As hinted, in evolutionary game theory, agents are usually not assumed to be 
-able to calculate a best-reply, nor are they observing the information relevant
-to perform that calculations. This is formalized as a behavioral rule called
-the revision protocol. The following derivation of the mean dynamic is due to 
-\textcite{sandholm_population_2010}. Typically it is 
-assumed that agents have an inner alarm clock which rings at a rate R 
-following an exponential distribution. Of course, this does not translate 
+In contrast to the traditional approach, agents in evolutionary game theory, 
+are usually not able to calculate best-replies, 
+nor are they observing the information relevant
+to perform that calculations.
+Revision protocols formalize the idea that agents are following a certain
+rule by which they change there strategy. 
+The following derivation is due to \textcite{sandholm_population_2010}. 
+Typically it is assumed that agents have an inner alarm clock 
+which rings at a rate R following an exponential distribution. 
+Of course, this does not translate 
 to economic applications in individuals having literal clocks around their
 wrist, but illustrates the idea of a randomly occuring chance to reconsider
 their strategy choice.
 The agents' clocks are assumed to be independent of each other such that
 individuals chance to revise does not dependent on others.
 Whenever the clock of an agent rings, he
-receives a revision opportunity, which means that he changes his strategy
+receives a revision opportunity which means that he changes his strategy
 with the probability $\frac{\rho_{ij}}{R}$, where
 $\rho_{ij}(F_i(\vec{x}),\vec{x})$ is called the conditional switch rate,
 representing the rule by which agents change from strategy 
@@ -61,12 +63,14 @@ $i$ to strategy $j$.
 In a two-strategy game there are two conditional switch rates, $\rho_{12}$ 
 describing rate of switching from strategy 1 to 2 and $\rho_{21}$, 
 rate for switching from strategy 2 to 1. For $\rho_{ii}$ no actual switch 
-happens. This switch rates can have various forms and therefore on the one 
-side describe different behavior of agents and on the other side result in 
-different dynamics for the population game.
-The dynamics are derived as follows:
+happens.
+Switch rates result in first, different individual behavior rules, but 
+secondly also in different dynamics for the whole population. An evolutionary
+dynamic describes the change of the population vector $x(t)$ in time. 
+The derivation of the dynamic can be done for a general conditional switch 
+rate.
 Every agent receives $R dt$ revision opportunities, i.e. the clock rings, 
-in an time interval $[0,dt]$ as it follows a Poisson distribution with
+in a time interval $[0,dt]$ as it follows a Poisson distribution with
 mean $Rdt$ \parencite[123]{sandholm_population_2010}. 
 If the population in the stag hunt game is at state $\vec{x}$, the number 
 of agents currently playing strategy $i$ receiving a revision opportunity 
@@ -101,13 +105,14 @@ agent receives a revision opportunity he randomly gets to know
 another agent's strategy and its payoff received in the current 
 state of the population. 
 The switching probability of an agent is proportional to the 
-excess payoff the other agent had over his strategy. This is formalized as 
+excess payoff the other agent had over his strategy. 
+Formally, 
 \begin{align}
         \label{eq:pairwiseproportionalimitation}
         p_{ij}(F_i(\vec{x}),\vec{x}) =
                 \begin{cases}
                         x_j(F_j(x) -F_i(x)) &\ , \text{for } F_j(x) - F_i(x) > 0 \\
-                        0 &\ , \text{else}
+                        0 &\ , \text{else}.
                 \end{cases}
 \end{align}
 As a metaphor illustrating this revision protocol, I want to tell the 

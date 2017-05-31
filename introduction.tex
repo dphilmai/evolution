@@ -48,10 +48,11 @@ benefit of the group, but the uncertainty about what the other hunters choose
 to do. In fact, none of the hunters would have bad feelings about his choice
 not to shoot a hare when returning with a stag, as his personal benefit is 
 greater with a stag as bounty. Figure \ref{fig:sh} represents this dilemma 
-for two hunters. When both coordinate on stag hunting, denoted by S, they receive 
-$a$. If one of them decides to shoot the hare, he gets $c$, whereas
-the other hunter is left out in the cold with just $b$. Coordination on hare
-hunting yields both with $d$. The parameters are usually assumed to fulfill
+for two hunters with a numerical example and parametrized. 
+When both coordinate on stag hunting, denoted by S, they receive 
+$9$. If one of them decides to shoot the hare, he gets $8$, whereas
+the other hunter is left out in the cold. Coordination on hare
+hunting yields both with $7$. The parameters are usually assumed to fulfill
 $a > c \geq d >b$. In game theory, this type of situation is called
 a coordination game. Since in the outcomes the hunters coordinated, either
 on hunting stag or hare, they have no incentive to change their action. 
@@ -62,9 +63,10 @@ the strategies of the other players, so that none of them has an incentive
 to deviate unilateral from his decision. Although this is the mainly used
 solution concept, it does not give a definite answer in the stag hunt game.
 One might argue that both hunters can speak to each other beforehand and
-assure each other that hare hunting is more attractive to both them. However,
+assure each other that hare hunting is more attractive to both them. 
+However, \textcite{camerer_behavioral_2003}
 argues that empirical observation and theory suggest that the problem is 
-not solved that easily \parencite[337]{camerer_behavioral_2003}. 
+not solved that easily .
 Furthermore, in a wide range of economic applications interaction of agents
 happen repeatedly. Analyzing repeated prisoner dilemmas, it turns 
 out that the resulting game can actually be interpreted as a stag-hunt game with
@@ -99,12 +101,25 @@ literature on the topic. Section 6 concludes and shows application of
 evolutionary game theory and the stag hunt game in economics.
 
 \begin{figure}[h]
+        \begin{subfigure}{0.5\textwidth}
+\begin{center}
+\begin{game}{2}{2} & $S$ & $H$
+\\ $S$ &$5,5$ &$0,4$
+\\ $H$ &$4,0$ &$3,3$ \end{game}
+\end{center}
+\caption{Numerical example}
+\label{fig:numericalsh}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
 \begin{center}
 \begin{game}{2}{2} & $S$ & $H$
 \\ $S$ &$a,a$ &$b,c$
 \\ $H$ &$c,b$ &$d,d$ \end{game}
 \end{center}
-\caption[Stag hunt game]{A parametrized representation of the Stag hunt game, $a>c\geq d >b$}
+\caption{Parametrized: $a > c \geq d > b$}
+\end{subfigure}
+\caption[Stag hunt game]{The stag hunt game: Numerical 
+example and parametrized}
 \label{fig:sh}
 \end{figure}
 \begin{figure}[h]
