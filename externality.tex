@@ -1,0 +1,193 @@
+\label{sec:simplemodel}
+This section investigates the effect of a network externality on the
+evolutionary stag hunt game.
+To motivate the idea, consider students in university being assigned to
+projects in their classes with other students. Nowadays, most of them 
+involve some kind of software tool to either present the results, analyze 
+the subject or just manage the process of aggretating 
+knowledge. Usually the choice of the tools can be simplified to two 
+possibilities. One can either use proprietary software
+which is usually more user-friendly, but costly due to relative high 
+license cost for either the student or the institution using it. 
+Beyond that, students can choose to use open source software which is freely
+available and can be customized, contrary to proprietary software,
+for the personal needs. Common examples for this are Latex or Open Office
+vs. Microsoft Word for text editing, Python vs. Matlab for scientific 
+computing and R vs. Stata for statistical analysis.
+For simplification, I assume that during their studies, a large body of 
+homogenous students is randomly paired by their professor into groups of two 
+for a project, implicitly playing a coordination game in which they have two 
+strategies available. The students contribute to the project 
+independently, using either open source software, 
+represented by strategy 1 or proprietary software, i.e. strategy 2.
+If both players choose strategy 1 they receive 
+the utility $a$. Using different software, the player with 
+proprietary software receives the utility $c$ and
+the player contributing with open source software gets $b$.
+Due to the high customizability to their projects, coordinating on open
+source software results in the highest utility $a>c>b$.
+When students fail to coordinate, the ``costs'' are beared
+by the one using open source, as portability is usually only possible in 
+this direction, receiving only $b<c$.
+Coordination on proprietary software leaves both of them with $d$, which 
+satisfies, despite the success to coordinate, $a> c\geq d>b$, as they have to
+pay for the licenses. 
+The structure of the game is precisely that of a stag hunt game. 
+Coordination on open source software is the payoff-dominant Nash equilibrium,
+but it is risk-dominated by the equilibrium where the students coordinate on
+proprietary software. 
+Concerning the behavior, I assume that they are not perfectly rational and
+do not adjust their software choice each time they have to do a project.
+For simplicity, students in this model behave according to the 
+revision protocol of pairwise proportional imitation discussed in section 
+\ref{sec:revisionprotocols}. 
+This is justified, as students tend to use software they always used and 
+only change it, if they get to know someone being more successful with
+another software choice. Therefore, the dynamic in the model can be 
+described by the replicator dynamic derived for the stag hunt game in 
+equation \eqref{eq:replicatorpara}.
+This model would not differ in terms of convergence and stability of Nash 
+equilibria to the evolutionary stag hunt game above.
+
+However, I want to introduce ``network externalities'' in this model. 
+The interest of the economic literature turned to open source software 
+development, because it is commonly observed that users contribute to 
+projects without receiving a monetary payment for it.
+In fact users share their source code publicly to the open source community,
+being motivated by peer recognition and the signaling for career concerns
+a programmer can achieve \parencite[21]{lerner_simple_2002}.
+The utility for a user then increases with the size of the community as 
+more people contributing code increases the variety and usefulness of the 
+software. 
+To incorporate that in the model, let the utility for a student 
+in the case of coordination on open source software be a function of 
+population size using that strategy, $f(x)$. 
+Preserving the general structure of the
+game, it is useful to focus on the functional specification 
+$f(x) = a + e(x)$, where $a$ is the payoff parameter used 
+previously and $e(x)$ denotes the network externality. 
+A positive network externality satisfes $e(x)>0$ and 
+$\frac{de(x)}{dx}>0$, 
+an increase of the population share choosing the strategy
+also increases the utility due to the network. 
+Including the parameter $a$ makes sure that the utility of this 
+strategy combination is never below the utility of coordination on 
+proprietary software. Otherwise, the structure of the stage game would 
+differ fundamentally with respect to the population share choosing strategy 
+one. So to say, the network externality just adds to the fact that open 
+source software is cheaper and can be customized to the individual project.
+The payoff matrix, using local shifts, than is 
+$A=\begin{psmallmatrix}\alpha_1+u(x) && 0 \\ 0&& \alpha_2\end{psmallmatrix}$. 
+Substituting into the replicator dynamic  \ref{eq:replicatorpara} one gets:
+\begin{alignat}{2}
+        \dot{x} = \varphi(x) = x^2(\alpha_1+e(x) +2\alpha_2 ) 
+        - x^3(\alpha_1+e(x)+\alpha_2) - x(\alpha_2)
+        \label{eq:externalitymodel}
+\end{alignat}
+Plugging $x=0$ and $x=1$ into equation \eqref{eq:externalitymodel} one can 
+ensure, by applying the linearization theorem,
+that the fixed point with pure strategies and their
+property of asymptotical stability did not change.
+($\varphi'(1) = -\alpha_1 -e(1),\ \varphi'(0) = -\alpha_2 -e(2)$).
+While the literature on network externalities usually assumes a diminishing
+marginal effect of the network externality $\frac{d^2e(x)}{dx^2} <0$ 
+\parencite[73]{lin_impact_2008}, I will 
+focus on the linear form $e(x) = \beta x$, with the externality parameter
+$\beta \in \realnumb_+$. This restriction does not change the main implication
+of the model, but makes it less tedious to derive it.
+Although not changing the stability of the pure states, 
+the externality affected the inner fixed point of the dynamic.
+The polynominal $\varphi(x)$ is now of degree $4$:
+\begin{align}
+        \dot{x} = \varphi(x) = -\beta x^4 -x^3(\alpha_1 + \alpha_2 
+        - \beta ) + x^2 (\alpha_1 + 2 \alpha_2) - x(\alpha_2)
+\end{align}
+Using the knowledge from the general case, we can find the roots, i.e. fixed
+points of the dynamic, by reducing the degree with the two roots known. The
+polynominal of degree $2$ can then be solved applying a quadratic formula\footnote{
+The solution with negative sign was omitted, since it has no economic 
+interpretation.}, so that the fixed point with a mixed population state is
+$x_3 = -\frac{\alpha_1+\alpha_2}{2 \beta} + 
+\sqrt{(\frac{\alpha_1+\alpha_2)^2}{4\beta^2} +\frac{\alpha_2}{\beta}}$. 
+Some arithmetic can verify that $0<x_3<\frac{\alpha_2}{\alpha_1+\alpha_2}$, 
+the new inner fixed point is in the feasible range of the population share 
+variable.
+Taking the limit, $\lim_{\beta \rightarrow 0} x_3 = 
+\frac{\alpha_1}{\alpha_2+\alpha_1}$, approves the intuition that for a 
+diminishing network externality the model without externality is obtained.
+The plot of the dynamic and the polynominal is 
+shown figure in \ref{fig:plotmodellinear}.
+Note that the share of students choosing strategy 1 is now lower at the 
+inner fixed point, showing that the externality has a positive 
+effect on the attractiveness of choosing open source software. Indeed,
+the basin of attraction of the equilibrium in which all students are using 
+open source software became larger, depicted by the distance to the
+inner fixed point.
+Comparison of the dashed, red horizontal line, the inner fixed point without 
+externality, with the dashed, green horizontal line, the inner fixed point 
+with externality, in figure \ref{fig:dynamiclinear}, illustrates this. 
+\begin{figure}[h]
+        \centering
+        \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[scale=0.5]{polynominallinearmodel.pdf}
+        \caption[Polynominal of the externality model]{The polynominal $\varphi(x)$} 
+        \end{subfigure}%    
+        \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[scale=0.5]{dynamiclinearmodel.pdf}
+        \caption[Replicator dynamic of the model with externality]{The dynamic $x(t)$ for different $x(t=0)$} 
+        \label{fig:dynamiclinear}
+        \end{subfigure}%        
+        \caption[Polynominal and Dynamic of the model with externality]{The linear externality model for parameters $\alpha_1=1,\alpha_2=3,
+        \beta=3$}
+        \label{fig:plotmodellinear}
+\end{figure}
+The basins of attraction have equal size for $\beta^* = 2 (\alpha_2 -\alpha_1)$,
+attracting an equal amount of initial conditions. However,
+the proprietary equilibrium looses its risk-dominance property 
+only for $1 > x > \frac{\alpha_2-\alpha_1}{\beta}  $, using definition 
+\ref{eq:riskdom}. The right hand side of the equation must be lower than one 
+to change the risk-dominance property. This leads to the conclusion 
+that in this model, the size of the basin of attraction and the risk-dominance
+property do not coincide in general, since the externality changes the Nash 
+product associated with the pure strategy 1 equilibrium. Consider for example 
+the parameter setting $\alpha_1 =1, \alpha_2=3$, but now let $\beta=3$. 
+The basin of attraction is not equal, since $3<\beta^*= 4$. 
+The open source equilibrium attracts all trajectories starting within 
+$x_0 \in (\frac{-2+\sqrt{13}}{3},1]$ and hence the proprietary equilibrium attracts
+all trajectories $x_0 \in [0,\frac{-2+\sqrt{13}}{3})$. Clearly, the latter basin of 
+attraction is larger ($\frac{-2+\sqrt{13}}{3}>0.5)$, 
+but the open source equilibrium gets risk-dominant for
+$x>\frac 23$. Implying that the network externality not only increases the
+utility obtained from the choice of open source software, but also,
+combined with a high enough user base, makes this choice risk-dominant. 
+
+The model presented here is quite a simplification of the real world. 
+First, the students are expected to be able to review which software is 
+appropriate for their projects, hence have more information available then 
+assumed in the model. Secondly, talking to their fellow student seems
+possible before deciding which software to use for the project. 
+However, as the experimental literature, discussed in 
+\ref{sec:experimentalevidence}, and \textcite{aumann_nash_1990} suggests, 
+cheap talk does not generally solve the coordination problem. 
+Additionally, the way the attractiveness of a strategy increases with
+the population size, the network externality, is modeled quite naive.
+Students in university, and social networks in general, are not fully
+connected, as students, for example, only do projects with fellow students
+in the same classes. Furthermore, students usually try to do projects
+with people they are socially connected with. In fact, the assumption about
+a fully connected network is ``one of the main criticisms of evolutionary game
+theory'' \parencite{hanauske_evolutionare_2011}. 
+As a consequence, many researchers recently gave attention to the 
+structure of the network underlying the interaction of agents and the 
+evolving of this structure \parencite[46]{szabo_evolutionary_2007}.
+For example \textcite{ohtsuki_simple_2006} found for a range of 
+network topologies, that fewer connectivity 
+leads to more cooperation, giving the intuition 
+``The fewer friends I have the more strongly my fate is bound to theirs'' 
+\parencite[1]{ohtsuki_simple_2006}.
+Although the model with a positive linear network externality is far to 
+simple to capture the effect of complex, adapting networks, it gives an 
+intuition of how coordination of a small group, in this case two players, 
+can be affected by the choice of the whole population.
