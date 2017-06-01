@@ -5,6 +5,8 @@ stag hunt game, the stage game is the SH game.
 Usually, the number of agents is assumed to be large such that on the hand, 
 the effect of a single individual on the population is small, and on the
 other hand, the interaction happens anonymously.
+Furthermore, agents are described as myopically, so that they do not 
+discount later payoffs.
 Populations can either be \textit{monomorphic} or \textit{polymorphic}.
 Monomorphic populations consist of agents that are only able to play pure
 strategies, whereas in polymorphic populations mixed strategies are allowed.
@@ -179,12 +181,15 @@ payoff to strategy $j$ against the current state of the population and the
 average payoff across the whole population.
 Intuitively, the share of a strategy in the population increases (decreases) 
 if the strategy yields a higher (lower) than average payoff. 
-This property of a (deterministic) evolutionary dynamic is called 
-\textit{Positive correlation} \parencite[144]{sandholm_population_2010}. 
-Seen in the previous section, it is not necessary to assume that an agent
-gets to know the payoffs of all agents in the population. 
-It was sufficient to assume that he gets to know the payoff of one random 
-player. 
+An evolutionary dynamic that satisfies this property is called 
+\textcite{payoff monotone} \parencite[30]{szabo_evolutionary_2007}. 
+Additionally, seen in the previous section, it was not 
+necessary to assume that agents have much knowledge about the game or
+the population. It was sufficient to assume that he gets to know the 
+payoff of one random player. This is interesting for applications were it
+is reasnoable to assume that players cannot obtain that information.
+Albeit this may be appropriate for cases with situations with more than
+two strategies.
 Contrary to the interpretation that agents following a revision protocols 
 are "boundedly rational", \textcite{gintis_game_2000}  argues 
 that ``this is very misleading, because the real issue is the 
@@ -349,10 +354,23 @@ This results in the equation
 \hat{F}(e_i,\epsilon e_i + (1-\epsilon) \vec{x}).
 \end{align*}
 The equivalence to definition \eqref{def:ess} is shown in 
-\textcite[37]{ weibull_evolutionary_1997}.
+\textcite[37]{weibull_evolutionary_1997}.
 As argumented, it exists no $\epsilon$ for that the mixed Nash equilibrium, 
 the inner fixed point of the dynamic, satisfies this connection.
-In figure \ref{fig:basinofattraction} the graph of the replicator dynamics
+The key things to remember are, first, a Nash equilibrium is a rest point of
+the replicator dynamic. Secondly, in general not all rest points are 
+Nash equilibria. And thirdly, strict Nash equilibria 
+are asymptotically stable. These results do not just hold for
+the evolutionary stag hunt game, but are true for the replicator dynamic
+in general. In the literature these connections between the stage game
+and the evolutionary dynamic are summarized in the
+\textit{Folk Theorem of Evolutionary Game theory} 
+\parencite[25]{szabo_evolutionary_2007}. Interestingly, every payoff
+montone dynamic satisfies this theorem, as shown in 
+\textcite{hofbauer_evolutionary_2003}, and so many dynamics have the same
+dynamic properties for the stag hunt game. 
+
+In figure \ref{fig:basinofattraction} the graph of the replicator dynamic
 in the stag hunt game for $\alpha_1=1$ and $\alpha_2=3$ is plotted. The
 horizontal axis represents time $t$, while the vertical axis shows
 the share of the population choosing strategy 1. The dashed gray horizontal
@@ -360,7 +378,6 @@ line represents the inner fixed point of the dynamic at $75\%$.
 Red trajectories converge to the population state $x=0$, the hare hunting
 equilibrium, whereas blue trajectories converge to the population state in 
 which all agents hunt stag.
-\todo{Folk theorem of evolutionary game theory}
 \begin{figure}
  \centering
         \includegraphics[scale=0.5]{basinofattraction.pdf}
@@ -382,27 +399,35 @@ approximation, any stochastic shock would lead to such a disturbance and hence
 would start convergence to one of the states with evolutionary stable 
 strategies.
 The population converges to the stag hunting or the hare
-hunting equilibrium if the initial conditions lie in their basin of attraction.
+hunting equilibrium if the initial conditions lie in their 
+basin of attraction.
 Discussed earlier, the population converges to the state $x=1$, 
 the stag hunting equilibrium of the stage game, for all initial conditions 
 $x_0 \in (\frac{\alpha_2}{\alpha_1+\alpha_2},1]$. Any trajectory of the 
 dynamical system with initial conditions 
 $x_0 \in [0,\frac{\alpha_2}{\alpha_1+\alpha_2})$ lead to the hare hunting
 equilibrium. Interestingly, one observes another connection of the 
-dynamic with the stage game. The basin of attraction is larger for the
-risk-dominating equilibrium. By definition \eqref{eq:riskdom}, 
+dynamic with the stage game. 
+By definition \eqref{eq:riskdom}, 
 the hare hunting equilibrium risk-dominates if $\alpha_2 > \alpha_1$,
-so in fact the basin of attraction is larger for an equilibrium that 
+so the basin of attraction is larger for an equilibrium that 
 risk-dominates the other. With the parameter setting shown
 in figure \ref{fig:basinofattraction}, $75\%$ of the possible initial 
-conditions lead to the risk-dominant equilibrium, whereas only $25\%$ of the 
-initial conditions lead to the payoff-dominant equilibrium. This connection
-was first shown by \textcite{kandori_learning_1993}. 
-The equilibrium selection in the evolutionary stag hunt is determined by
-the intial conditions.
-However, it is not clear what specifies the initial conditions. 
-If for example the agents choose a random strategy in a first round of the 
-game, independently of each other, one can say that the equilibrium with the
+conditions lead to the risk-dominant equilibrium, whereas only $25\%$ of 
+the  initial conditions lead to the payoff-dominant equilibrium. This 
+connection was for example shown by \textcite{kandori_learning_1993} 
+in a stochastical model. In their model, the risk-dominant equilibrium 
+occured 
+In addition \textcite{kandori_learning_1993} showed that their stochastical
+model in one dimension, the stag hunt case, the risk-dominant equilibrium 
+emerged independently of the specific adjustment process underlying the
+dynamic aslong as it satisfied payoff monotonicity
+\parencite[51]{kandori_learning_1993}.
+However, in the deterministic case 
+it is not clear what specifies the initial conditions. 
+If it assumed, for example, that agents choose a random strategy 
+in a first round of the game, independently of each other, 
+one can say that the equilibrium with the
 larger basin of attraction, the risk-dominant equilibrium, is reached more 
-likely. Otherwise, a slice of history is needed to know with which population
-state the dynamic starts \textcite{friedman_economic_1998}.
+likely. Otherwise, a slice of history is needed to know in which population
+state the dynamic starts \parencite{friedman_economic_1998}. 

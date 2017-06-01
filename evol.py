@@ -77,15 +77,15 @@ def logit(x,t,a1,a2,c,d,eps):
 
 
 ## Plot of the standard case with parameters a=5, b=3, c=0, d=2
-fs=15
-a =5
-b =0
-c =4
-d =3
-a1 = a-c
-a2 = d-b  
-x = np.linspace(0,1,100)
-root = newton(poly,0.75,args=(a1,a2))
+#fs=15
+#a =5
+#b =0
+#c =4
+#d =3
+#a1 = a-c
+#a2 = d-b  
+#x = np.linspace(0,1,100)
+#root = newton(poly,0.75,args=(a1,a2))
 #print(root)
 #plt.plot(x,poly(x,a1,a2))
 #axis=plt.gca()
@@ -100,22 +100,22 @@ root = newton(poly,0.75,args=(a1,a2))
 ##plt.savefig('polynominal.pdf')
 #plt.show()
 ##The dyamic of the replicator equation
-for i in range(1,10):
-    x0 = i/10
-    sol = odeint(repdyn,x0,t,args=(a1,a2))
-    if (x0 <= root):
-        plt.plot(t,sol,c='red')
-    else:
-        plt.plot(t,sol,c='blue')
-axis=plt.gca()
-plt.axhline(y=root,c='0.7',ls='dashed')
-plt.xlabel(r'$t$',fontsize=fs)
-plt.ylabel(r'$x(t)$',fontsize=fs,rotation=0)
-axis.yaxis.set_label_coords(x=-0.1,y=0.9)
-#plt.savefig('basinofattraction.pgf')
-plt.savefig('basinofattraction.pdf')
-plt.show()
-
+#for i in range(1,10):
+#    x0 = i/10
+#    sol = odeint(repdyn,x0,t,args=(a1,a2))
+#    if (x0 <= root):
+#        plt.plot(t,sol,c='red')
+#    else:
+#        plt.plot(t,sol,c='blue')
+#axis=plt.gca()
+#plt.axhline(y=root,c='0.7',ls='dashed')
+#plt.xlabel(r'$t$',fontsize=fs)
+#plt.ylabel(r'$x(t)$',fontsize=fs,rotation=0)
+#axis.yaxis.set_label_coords(x=-0.1,y=0.9)
+##plt.savefig('basinofattraction.pgf')
+#plt.savefig('basinofattraction.pdf')
+#plt.show()
+#
 
 
 #### Plot of the externality model
@@ -189,44 +189,37 @@ plt.show()
 ################
 # Some logit dynamic
 ###
-
-
-#
-#def logit(x,t,a1,a2,gamma):
-#    return x*(np.exp(a1*x/(gamma))/((x*np.exp((x*a1)/gamma))
-#            + (1-x)*np.exp(((1-x)*a2)/gamma))) -x
-#def logitroot(x,gamma):
-#    a1=1
-#    a2=3
-#    return x*(np.exp(a1*x/(gamma))/((x*np.exp((x*a1)/gamma))
-#            + (1-x)*np.exp(((1-x)*a2)/gamma))) -x
-#x = np.linspace(0,1,10000)
-#a1 = 1
-#a2 = 3
-#gamma = 0.01
-#gamma1= 0.5
-#runs=10
-#
-#plt.plot(x,logitroot(x,gamma),c='red')
-#plt.plot(x,logitroot(x,gamma1),c='blue')
-#plt.axhline(y=0,c="0.7",ls='dashed')
-#root=newton(logitroot,0.75,args=(gamma,))
-#print(root)
-#plt.axvline(x=root,c='lightcoral',ls='dashed')
-#root=newton(logitroot,0.6,args=(gamma1,))
-#print(root)
-#plt.axvline(x=root,c='deepskyblue',ls='dashed')
-#plt.show()
-#for i in range(1,runs):
-#    x0 = i/runs
-#    sol = odeint(logit,x0,t,args=(a1,a2,gamma1))
-#    plt.plot(t,sol,c='blue')
-#for i in range(1,runs):
-#    x0 = i/runs
-#    sol = odeint(logit,x0,t,args=(a1,a2,gamma))
-#    plt.plot(t,sol,c='red')
-##sol = odeint(logit,root,t,args=(a1,a2,gamma))
-##plt.plot(t,sol,c='red')
-##plt.axhline(y=root)
-#plt.show()
+def logit(x,t,a1,a2,gamma):
+    return (np.exp(a1*x/(gamma))/((x*np.exp((x*a1)/gamma))
+            + (1-x)*np.exp(((1-x)*a2)/gamma))) -x
+def logitroot(x,gamma):
+    a1=1
+    a2=3
+    return (np.exp(a1*x/(gamma))/((x*np.exp((x*a1)/gamma))
+            + (1-x)*np.exp(((1-x)*a2)/gamma))) -x
+x = np.linspace(0,1,10000)
+a1 = 1
+a2 = 3
+gamma= 1
+gamma1= 0.1 
+runs=5
+plt.plot(x,logitroot(x,gamma1),c='blue')
+plt.axhline(y=0,c="0.7",ls='dashed')
+plt.axvline(x=0.75,c="0.7",ls='dashed')
+root=newton(logitroot,0.75,args=(gamma1,))
+print(root)
+plt.axvline(x=root,c='deepskyblue',ls='dashed')
+plt.show()
+for i in range(1,runs):
+    x0 = i/runs
+    sol = odeint(logit,x0,t,args=(a1,a2,gamma1))
+    plt.plot(t,sol,c='blue')
+for i in range(1,runs):
+    x0 = i/runs
+    sol = odeint(logit,x0,t,args=(a1,a2,gamma))
+    plt.plot(t,sol,c='red')
+#sol = odeint(logit,root,t,args=(a1,a2,gamma))
+#plt.plot(t,sol,c='red')
+#plt.axhline(y=root)
+plt.show()
 
