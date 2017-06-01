@@ -1,18 +1,18 @@
 \label{sec:simplemodel}
 This section investigates the effect of a network externality on the
 evolutionary stag hunt game. Motivated by the example introduced in
-\textcite{mailath_learning_1993}, 
+\textcite{kandori_learning_1993}, 
 consider students in university being assigned to
 projects in their classes with other students. Nowadays, most of them 
 involve some kind of software tool to either present the results, analyze 
 the subject or just manage the process of aggretating 
 knowledge. Usually the choice of the tools can be simplified to two 
-possibilities. One can either use proprietary software
+possibilities. Students can either use proprietary software
 which is usually more user-friendly, but costly due to relative high 
 license cost for either the student or the institution using it. 
 Beyond that, students can choose to use open source software which is freely
 available and can be customized, contrary to proprietary software,
-for the personal needs. Common examples for this are Latex or Open Office
+for the personal needs. Common examples of this are Latex or Open Office
 vs. Microsoft Word for text editing, Python vs. Matlab for scientific 
 computing and R vs. Stata for statistical analysis.
 For simplification, I assume that during their studies, a large body of 
@@ -56,7 +56,7 @@ development, because it is commonly observed that users contribute to
 projects without receiving a monetary payment for it.
 In fact users share their source code publicly to the open source community,
 being motivated by peer recognition and the signaling for career concerns
-a programmer can achieve \parencite[21]{lerner_simple_2002}.
+\parencite[21]{lerner_simple_2002}.
 The utility for a user increases with the size of the community as 
 more people contributing code enhance the variety and usefulness of the 
 software. 
@@ -67,7 +67,7 @@ Preserving the general structure of the
 game, it is useful to focus on the functional specification 
 $f(x) = a + e(x)$, where $a$ is the payoff parameter used 
 previously and $e(x)$ denotes the network externality. 
-A positive network externality satisfes $e(x)>0$ and 
+A positive network externality satisfies $e(x)\geq 0$ and 
 $\frac{de(x)}{dx}>0$, 
 an increase of the population share choosing the strategy
 also increases the utility due to the network. 
@@ -115,15 +115,17 @@ the new inner fixed point is in the feasible range of the population share
 variable.
 Taking the limit, $\lim_{\beta \rightarrow 0} x_3 = 
 \frac{\alpha_1}{\alpha_2+\alpha_1}$, approves the intuition that for a 
-diminishing network externality the model without externality is obtained.
+diminishing network externality paramter the model without 
+externality is obtained.
 The plot of the dynamic and the polynominal is 
 shown figure in \ref{fig:plotmodellinear}.
 Note that the share of students choosing strategy 1 is now lower at the 
-inner fixed point, showing that the externality has a positive 
-effect on the attractiveness of choosing open source software. Indeed,
-the basin of attraction of the equilibrium in which all students are using 
-open source software became larger, depicted by the distance to the
-inner fixed point.
+inner fixed point, displayed by the gray dashed lines in subfigure 
+\ref{fig:externalitypolynominal}, showing that the externality has a positive 
+effect on the attractiveness of choosing open source software. 
+Indeed, the basin of attraction of the equilibrium in which all 
+students are using open source software became larger, 
+depicted by the distance to the inner fixed point.
 Comparison of the dashed, red horizontal line, the inner fixed point without 
 externality, with the dashed, green horizontal line, the inner fixed point 
 with externality, in figure \ref{fig:dynamiclinear}, illustrates this. 
@@ -133,6 +135,7 @@ with externality, in figure \ref{fig:dynamiclinear}, illustrates this.
         \centering
         \includegraphics[scale=0.5]{polynominallinearmodel.pdf}
         \caption[Polynominal of the externality model]{The polynominal $\varphi(x)$} 
+        \label{fig:externalitypolynominal}
         \end{subfigure}%    
         \begin{subfigure}{.5\textwidth}
         \centering
@@ -181,8 +184,8 @@ with people they are socially connected with. In fact, the assumption about
 a fully connected network is ``one of the main criticisms of evolutionary game
 theory'' \parencite{hanauske_evolutionare_2011}. 
 As a consequence, many researchers recently gave attention to the 
-structure of the network underlying the interaction of agents and the 
-evolving of this structure \parencite[46]{szabo_evolutionary_2007}.
+structure of the network underlying the interaction of agents and 
+evolving of network structure \parencite[46]{szabo_evolutionary_2007}.
 For example \textcite{ohtsuki_simple_2006} found for a range of 
 network topologies, that fewer connectivity 
 leads to more cooperation, agreeing with the intuition 
