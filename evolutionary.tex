@@ -191,11 +191,17 @@ that ``this is very misleading, because the real issue is the
 distribution of the information'' \parencite[273]{gintis_game_2000}. 
 The argument goes, that even if they were not ``bounded'' they 
 could not calculate a best-reply since they do not have the information about
-the state of the population.
+the state of the population. To make this clear, consider a representative
+agent in the population. At the moment $t$, he plays strategy 1 and hence he
+has an expected payoff $F^1(\vec{x}(t))=\alpha_1 x$. He actually receives 
+either the payoff $\alpha_1$ or $\alpha_2$ when matched against another agent
+with strategy $1$ or $2$, respectively. Based on that information, the agent
+cannot deduce the composition of the population which is needed to choose
+a strategy that maximizes the expected payoff.
 
-Furthermore the replicator dynamic does not incorporate any error or mutation.
-In other words, a strategy that has not existed or has vanished from the 
-population will not be in a future state of the population. 
+A further property of the replicator dynamic is the lack of mutation or 
+an error. In other words, a strategy that has not existed or has 
+vanished from the population will not be in a future state of the population. 
 That means, that if in a population state only a subset $S' \subset S$ of the 
 set of pure strategies is used, any future population state can also only 
 contain strategies from this subset $S'$. Hence, if a strategy in 
@@ -215,7 +221,7 @@ The last step follows by using local shifts to the matrix $A$ from section
 of degree $3$ and contains all information about the dynamic. Actually, 
 outlined in the following, it tells which state the population converges to.
 In figure \ref{fig:polynominal} the graph of $\varphi(x)$ for the parameters
-$a=5, b=4,c=0,d=3$ is plotted. The ordinate represents the polynominal and
+$a=5, b=4,c=0,d=3$ is shown. The ordinate represents the polynominal and
 the abscissa represents the population share choosing strategy 1 and hence is
 between $0$ and $1$. Roots of the polynominal are those values of $x$ for 
 which $\varphi(x)$ crosses the horizontal dashed gray line. The vertical
@@ -256,15 +262,15 @@ $\varphi(x^*) = 0$ for $x^* \in \{0,\frac{\alpha_2}{\alpha_1+\alpha_2},1\}$.
 It suffices to calculate the roots of the polynominal $\varphi(x)$, either
 numerical or, as the Nash equilibria are usually calculated beforehand,
 reducing the degree by polynominal division. In general, the replicator 
-dynamic lacks the \textit{Nash stationarity} property and hence there are 
+dynamic lacks the \textit{Nash stationarity} property and thus there are 
 games with fixed points which are not a Nash equilibrium
 \parencite{sandholm_population_2010}.
 For a trivial example, consider the prisoners dilemma in \ref{fig:pd}. 
 A population consisting only of cooperating agents stays in that state
 which is not a Nash equilibrium forever. However, inserting one single 
-defecting agent would lead all other agents imitate defecting until the 
-whole population defects.
-Therefore, one is usually interested if fixed points of 
+defecting agent would lead all other agents to imitate the strategy defect,
+as it has a higher payoff, until the whole population defects.
+Therefore, one is usually interested which fixed points of 
 a dynamical system are stable in terms of some disturbance of the system. 
 There are different approaches to stability. A quite strict and useful one 
 in the stag hunt game is \textit{asymptotical stability}. 
@@ -279,11 +285,11 @@ stable} if there exists an $\epsilon$-perturbation for that $x(t) \rightarrow
 x^*$ as $t \rightarrow \infty$. 
 The \textit{basin of attraction} of a fixed point $x^*$ is defined as the set 
 of points $x_0 \in \realnumb$ for which a trajectory through $x_0$ approaches 
-the fixed points $x^*$. In one dimensional case, this is simply the range 
+the fixed point $x^*$. In one dimensional case, this is simply the range 
 of $x$ for that any solution to the differential equation with the initial 
 conditions in this range converges to the fixed point. With the following 
-theorem independently contributed by \cite{hartman_lemma_1960} and 
-\cite{grobman_homeomorphism_1959}, one can easily 
+theorem independently contributed by \textcite{hartman_lemma_1960} and 
+\textcite{grobman_homeomorphism_1959}, one can easily 
 find the asymptotically stable fixed points in the stag hunt game:
 \begin{mydef}
         If a one-dimensional dynamical system $\dot{x}(t) = \varphi(x)$ 
@@ -313,30 +319,47 @@ $\varphi'(1) = -\alpha_1 <0$ with linearization $x(t) = x(0) e^{-\alpha_1 t}$.
 However, the linearization theorem cannot be used for the mixed Nash 
 equilibrium, hence the dynamical system is not hyperbolic there, 
 $\varphi'(\frac{\alpha_2}{\alpha_1+\alpha_2}) = 0$. Nevertheless, suppose 
-there is some $\epsilon$-perturbation of the system  \todo{Voooodoooo}
-with $x_0= \frac{\alpha_2}{\alpha_1+\alpha_2}+ \epsilon$ and 
-$\frac{\alpha_1}{\alpha_1+\alpha_2} > \epsilon > 0$. Plugging this into
-\eqref{eq:replicatorpara} one sees that $\dot{x} >0$, the population share
-grows monotonically for every $\epsilon$, converging to the fixed point 
-$x = 1$. Conversely, for $0 > \epsilon > \frac{\alpha_2}{\alpha_1+\alpha_2}$,
+the population is currently at the inner fixed point and now 
+some agents coming from outside into the population
+using strategy 1, represented by the share $\epsilon$,
+$\frac{\alpha_1}{\alpha_1+\alpha_2}>\epsilon > 0$.
+The new population state is 
+$x_{\epsilon}=\left(\frac{\alpha_1}{\alpha_1+\alpha_2}\right)$.
+An asymptotically stable fixed point is now expected to withstand the invasion
+and make the outsiders imitate the prevailing strategy composition. Hence, 
+the change of the population share $\dot{x}$ should be negative.
+Plugging $x_{\epsilon}$ into
+\eqref{eq:replicatorpara} one finds that $\dot{x} >0$, the population share
+choosing strategy 1 grows for every $\epsilon >0$, converging to the 
+fixed point $x = 1$. Conversely, an invasion by agents choosing strategy 2,
+$0 > \epsilon > \frac{\alpha_2}{\alpha_1+\alpha_2}$,
 $\dot{x} < 0$ and so the population share of agents 
-playing strategy 1 decreases monototically, until it reaches the 
+playing strategy 1 decreases, until it reaches the 
 fixed point $x=0$. 
-
+The connection to the ESS concept will become even clearer when using an 
+alternative defintion of an ESS in a monomorphic population. 
+A (mixed) strategy $\vec{x}$, or likewise 
+interpreted as population state, is said to be an ESS if the 
+expected payoff of that strategy against an invasion of a share of agents
+choosing a pure strategy $e_i$ is greater than the payoff to that
+pure strategy against the same invasion.
+This results in the equation 
+\begin{align*}
+\hat{F}(\vec{x},\epsilon e_i + (1-\epsilon) \vec{x}) >
+\hat{F}(e_i,\epsilon e_i + (1-\epsilon) \vec{x}).
+\end{align*}
+The equivalence to definition \eqref{def:ess} is shown in 
+\textcite[37]{ weibull_evolutionary_1997}.
+As argumented, it exists no $\epsilon$ for that the mixed Nash equilibrium, 
+the inner fixed point of the dynamic, satisfies this connection.
 In figure \ref{fig:basinofattraction} the graph of the replicator dynamics
 in the stag hunt game for $\alpha_1=1$ and $\alpha_2=3$ is plotted. The
 horizontal axis represents time $t$, while the vertical axis shows
 the share of the population choosing strategy 1. The dashed gray horizontal
 line represents the inner fixed point of the dynamic at $75\%$.
-Without any disturbance, a population starting at the inner fixed point 
-stays there. But any invasion of individuals with a uniform strategy leads away 
-from this fixed point, resulting in convergence to one of pure 
-strategy equilibria. 
-However, the use of the word invasion is not by coincidence. 
-It clearly shows the connection of the evolutionary stable strategy 
-of the stage game to the stable fixed points of the dynamic. 
-In fact, one can prove that this is not
-only true in the simple stag hunt, but it holds also under general settings.
+Red trajectories converge to the population state $x=0$, the hare hunting
+equilibrium, whereas blue trajectories converge to the population state in 
+which all agents hunt stag.
 \todo{Folk theorem of evolutionary game theory}
 \begin{figure}
  \centering
@@ -360,8 +383,8 @@ would start convergence to one of the states with evolutionary stable
 strategies.
 The population converges to the stag hunting or the hare
 hunting equilibrium if the initial conditions lie in their basin of attraction.
-As discussed, the population converges to the state $x=1$, the stag hunting 
-equilibrium of the stage game, for all initial conditions 
+Discussed earlier, the population converges to the state $x=1$, 
+the stag hunting equilibrium of the stage game, for all initial conditions 
 $x_0 \in (\frac{\alpha_2}{\alpha_1+\alpha_2},1]$. Any trajectory of the 
 dynamical system with initial conditions 
 $x_0 \in [0,\frac{\alpha_2}{\alpha_1+\alpha_2})$ lead to the hare hunting
@@ -369,14 +392,17 @@ equilibrium. Interestingly, one observes another connection of the
 dynamic with the stage game. The basin of attraction is larger for the
 risk-dominating equilibrium. By definition \eqref{eq:riskdom}, 
 the hare hunting equilibrium risk-dominates if $\alpha_2 > \alpha_1$,
-so in fact the basin of attraction is larger. With the parameter setting shown
+so in fact the basin of attraction is larger for an equilibrium that 
+risk-dominates the other. With the parameter setting shown
 in figure \ref{fig:basinofattraction}, $75\%$ of the possible initial 
 conditions lead to the risk-dominant equilibrium, whereas only $25\%$ of the 
-initial conditions lead to the payoff-dominant equilibrium. 
-The equilibrium selection is determined by the position of the initial
-condition. However, it is not clear what specifies the initial conditions. 
+initial conditions lead to the payoff-dominant equilibrium. This connection
+was first shown by \textcite{kandori_learning_1993}. 
+The equilibrium selection in the evolutionary stag hunt is determined by
+the intial conditions.
+However, it is not clear what specifies the initial conditions. 
 If for example the agents choose a random strategy in a first round of the 
 game, independently of each other, one can say that the equilibrium with the
 larger basin of attraction, the risk-dominant equilibrium, is reached more 
-likely reached. 
-\todo{what does evolutionary game theory tell about initial condition} 
+likely. Otherwise, a slice of history is needed to know with which population
+state the dynamic starts \textcite{friedman_economic_1998}.
