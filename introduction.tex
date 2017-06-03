@@ -5,7 +5,6 @@
 %
 %
 %%%%%%%%%%%%%
-
 The beginning of game theory date back to Johann von Neumann in 1928,
 who developed a mathematical framework
 for modelling situations with strategic interactions of rational agents 
@@ -31,6 +30,15 @@ This story, developed by Albert Tucker in 1950 and suitably named Prisoner's
 Dilemma (PD) is usually represented in a table, as shown in figure \ref{fig:pd}, with
 the options for each prisoners denoted by C, remaining silent, and D, admitting
 their crimes. 
+\begin{figure}[h]
+        \centering
+        \def\gamestretch{2.1}
+        \begin{game}{2}{2}[Player 1][Player 2] & $C$ & $D$
+                \\ $C$ &$\stackedpayoffs{-1}{-1}$ &$\stackedpayoffs{-4}{\phantom{-}0}$
+        \\ $D$ &$\stackedpayoffs{\phantom{-}0}{-4}$ &$\stackedpayoffs{-3}{-3}$ \end{game}
+\caption[Prisoner's Dilemma]{A parametrized representation of the prisoners dilemma}
+\label{fig:pd}
+\end{figure}
 The total amount of years for the group is lowest if both do not confess, 
 but each individual prisoner has the 
 incentive to take the deal of the authority as this leaves him, independently
@@ -38,10 +46,10 @@ of what his fellow prisoner does, with a shorter time in prison. The dilemma
 clearly consists of the conflict between individual interest and 
 the benefit of the group \parencite{skyrms_stag_2004}. 
 
-However, there is 
-another ``story that became a game'' \parencite[1]{skyrms_stag_2004}, 
-which describes a different, but as Skyrms argues, 
-underrepresented social dilemma. In \textit{A Discourse on Inequality}, 
+Skyrms argues that there is ``another story that became a game'' 
+which describes a different but underrepresented social dilemma
+\parencite[1]{skyrms_stag_2004}. 
+In \textit{A Discourse on Inequality}, 
 Rousseau outlines the situation of hunters, heading out to hunt 
 stag. However, if a hare runs past a hunter, he might consider to
 shoot the hare, scaring of all stags in the forest. The total reward for
@@ -51,13 +59,41 @@ to PD, it is not the hunters individual interest that is competing with the
 benefit of the group, but the uncertainty about what the other hunters choose
 to do. In fact, none of the hunters would have mind his choice
 not to shoot a hare when returning with a stag, as his personal benefit is 
-greater with a stag as bounty. Figure \ref{fig:sh} represents this dilemma 
+greater with a stag as bounty. 
+\begin{figure}[h]
+\begin{subfigure}{0.5\textwidth}
+\begin{center}
+        \def\gamestretch{2.1}
+        \begin{game}{2}{2}[Player 1][Player 2] & $S$ & $H$
+                \\ $S$ &$\stackedpayoffs{5}{5}$ &$\stackedpayoffs{0}{4}$
+        \\ $H$ &$\stackedpayoffs{4}{0}$ &$\stackedpayoffs{3}{3}$ \end{game}
+\end{center}
+\caption{Numerical example}
+\label{fig:numericalsh}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+\begin{center}
+        \def\gamestretch{2.1}
+        \begin{game}{2}{2}[Player 1][Player 2] & $S$ & $H$
+                \\ $S$ &$\stackedpayoffs{a}{a}$ &$\stackedpayoffs{b}{c}$
+        \\ $H$ &$\stackedpayoffs{c}{b}$ &$\stackedpayoffs{d}{d}$ \end{game}
+\end{center}
+\caption{Parametrized: $a > c \geq d > b$}
+\label{fig:parash}
+\end{subfigure}
+\caption[Stag hunt game]{The stag hunt game: Numerical 
+example and parametrized}
+\label{fig:sh}
+\end{figure}
+Figure \ref{fig:sh} represents this dilemma 
 for two hunters with a numerical example and parametrized. 
 When both coordinate on stag hunting, denoted by S, they receive 
 $9$. If one of them decides to shoot the hare, he gets $8$, whereas
 the other hunter is left with nothing. Coordination on hare
-hunting yields both with $7$. The parameters are usually assumed to fulfill
-$a > c \geq d >b$. 
+hunting yields both with $7$. In the representation with parameters in figure
+\ref{fig:parash}, these 
+are usually assumed to satisfy the condition $a > c \geq d >b$. The 
+relevance of this restriction will be discussed throughout the text.
 Game theory calls this kind of game a coordination game.
 
 In both outcomes, collective stag hunting and collective hare hunting,
@@ -89,7 +125,7 @@ example \textcite{taylor_evolutionary_1978}, \textcite{hofbauer_note_1979} and
 \textcite{zeeman_dynamics_1981}, developed a `time dependent dynamical
 extension of game theory'' \parencite[55]{hanauske_evolutionare_2011}.
 In contrast to traditional game theory, the evolutionary approach  models
- agents in a large population, interacting repeatedly in a strategic environment. 
+agents in a large population, interacting repeatedly in a strategic environment. 
 Furthermore, the agents are not assumed to be rational, but follow a specific 
 rule, updating their strategy. 
 As outlined in the rest of the paper, the
@@ -107,34 +143,3 @@ how real people play the stag hunt game, section 5 considers experimental
 literature on the topic. Section 6 concludes and shows the application of
 evolutionary game theory and the stag hunt game in economics.
 
-\begin{figure}[h]
-        \begin{subfigure}{0.5\textwidth}
-\begin{center}
-\begin{game}{2}{2} & $S$ & $H$
-\\ $S$ &$5,5$ &$0,4$
-\\ $H$ &$4,0$ &$3,3$ \end{game}
-\end{center}
-\caption{Numerical example}
-\label{fig:numericalsh}
-\end{subfigure}
-\begin{subfigure}{0.5\textwidth}
-\begin{center}
-\begin{game}{2}{2} & $S$ & $H$
-\\ $S$ &$a,a$ &$b,c$
-\\ $H$ &$c,b$ &$d,d$ \end{game}
-\end{center}
-\caption{Parametrized: $a > c \geq d > b$}
-\end{subfigure}
-\caption[Stag hunt game]{The stag hunt game: Numerical 
-example and parametrized}
-\label{fig:sh}
-\end{figure}
-\begin{figure}[h]
-\begin{center}
-\begin{game}{2}{2} & $C$ & $D$
-\\ $C$ &$-1,-1$ &$-4,0$
-\\ $D$ &$0,-4$ &$-3,-3$ \end{game}
-\end{center}
-\caption[Prisoner's Dilemma]{A parametrized representation of the prisoners dilemma}
-\label{fig:pd}
-\end{figure}
