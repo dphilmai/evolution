@@ -35,7 +35,7 @@ in the traditional game \parencite[914-915]{rubinstein_comments_1991}.
 Out of convenience, let the expected payoff 
 to a strategy $i \in \{1,2\}$ of an individual randomly matched
 against another individual in the current population state at time $t$, 
-$\vec{x}(t)$, be denoted by $\hat{F}^i(\vec{x}) = \hat{F}(e_i,\vec{x})$. 
+$\vec{x}(t)$, be denoted by $F^i(\vec{x}) = \hat{F}(e_i,\vec{x}(t))$. 
 
 \subsection{Revision Protocols}
 \label{sec:revisionprotocols}
@@ -109,14 +109,15 @@ another agent's strategy and its payoff received in the current
 state of the population. 
 The switching probability of an agent choosing strategy $i$  
 is proportional to the difference between the payoff of the agent with 
-strategy $j$ observed, $\hat{F}^j(x)$, and his
-payoff $\hat{F}^i(x)$.
+strategy $j$ observed, $F^j(x)$, and his
+payoff $F^i(x)$.
 This is formally expressed as
 \begin{align}
         \label{eq:pairwiseproportionalimitation}
         p_{ij}(F^i(\vec{x}),\vec{x}) =
                 \begin{cases}
-                        x_j(F^j(x) -F^i(x)) &\ , \text{for } F^j(x) - F^i(x) > 0 \\
+                        x_j\left[F^j(\vec{x}) -F^i(\vec{x})\right] &\ ,
+                        \text{for } F^j(\vec{x}) - F^i(\vec{x}) > 0 \\
                         0 &\ , \text{else}.
                 \end{cases}
 \end{align}
@@ -130,7 +131,7 @@ observe the strategies other traders use to sell things, because the market
 place is large and the bustle going on is complicated. 
 Hence, a trader is usually committed to a strategy he got to know a while ago.
 However, occasionally as he returns to his tavern, he occasionally 
-gets to meet another trader. i
+gets to meet another trader.
 Being proud of their earnings, they boast about their 
 individual strategy. In this way, they get to know
 other traders strategies and as they all dream of a live in pageantry,
@@ -144,12 +145,12 @@ Plugging the conditional switch rate of the pairwise imitation protocol
 of the population share playing strategy 1, $\dot{x}_1(t)$, leads to the 
 \textit{replicator dynamic}:
 \begin{alignat*}{2}
-        \dot{x}_1 &= 2 x_1 x_2 (F^1(x) - F^2(x)) \\
-                  &= 2 x_1 ((1-x_1) F^1(x) - x_2 F^2(x)) \\
-                  &= 2 x_1 (F^1(x) - \bar{F}(x)), \numberthis \label{eq:replicatorrev} 
+        \dot{x}_1 &= 2 x_1 x_2 \left[F^1(\vec{x}) - F^2(\vec{x})\right] \\
+                  &= 2 x_1 \left[(1-x_1) F^1(\vec{x}) - x_2 F^2(\vec{x})\right] \\
+                  &= 2 x_1 \left[F^1(\vec{x}) - \bar{F}(\vec{x})\right], \numberthis \label{eq:replicatorrev} 
 \end{alignat*}
 with the average payoff across the population 
-$\bar{F}(x) = x_1 \hat{F}^1 + x_2 \hat{F}^2$.
+$\bar{F}(\vec{x}) = x_1 \hat{F}^1(\vec{x}) + x_2 \hat{F}^2(\vec{x})$.
 This equation fully describes the evolution of the population in time.
 Properties and the connection to the stage game are discussed in the next
 section.

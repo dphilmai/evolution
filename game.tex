@@ -16,7 +16,16 @@
 \newcommand{\natnumb}{\mathbb{N}}
 \newcommand{\realnumb}{\mathbb{R}}
 \presetkeys{todonotes}{color=yellow,size=\scriptsize}{}
+\def\stackedpayoffs#1#2{%
+\begin{array}{rl}#1&\\[1.6mm]&#2\end{array}
+}
+%%%%%%%%%%%%%%%%%%%
+%
+% Make math nomenclatur  
+\usepackage{nomencl}
+\makenomenclature
 \begin{document}
+\input{nomenclature.tex}
 %%%%%%%%%%%%%%%%%%%%%%
 %
 % Title page
@@ -30,6 +39,11 @@
 \tableofcontents
 \newpage
 \listoffigures
+\newpage
+%%%%%%
+% Math abbreviation glossary
+\renewcommand{\nomname}{List of Notation}
+\printnomenclature[5em]
 %%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \pagenumbering{arabic}
@@ -80,7 +94,7 @@
 %
 % Summary and Outlook
 %
-\section{Summary and Outlook}
+\section{Conclusion}
 \input{summary.tex}
 %
 %
@@ -89,61 +103,122 @@
 
 
 \section{Appendix}
-\begin{figure}[H]
-\begin{subfigure}{\textwidth}
-\caption{Payoff matrices of games in \textcite{battalio_optimization_2001}}
-        \label{fig:payoffbattalio}
-        \centering
-\begin{alignat*}{3}
-        A_{2R} &= \mqty(45 & 0 \\ 35 & 40) \quad & &A_{R} = \mqty(45 & 0 \\ 
-        40 & 20) \quad & &A_{0.6R} = \mqty( 45 & 0 \\ 42 & 12) \\
-        \delta_{2R} &= 50  \quad & &\ \delta_{R} = 25 \quad & &\ \delta_{0.6R} = 15
-\end{alignat*}
-\end{subfigure}
-\vspace*{50px}
-\begin{subfigure}{\textwidth}
-        \caption{Payoff matrices of the games used in \textcite{schmidt_playing_2003}}
-        \centering
+\begin{figure}[h] \hspace*{\fill}
+        \begin{subfigure}{0.3\textwidth}
+                \begin{game}{2}{2}[$\delta_{2R}=50$]
+                & $S$ & $H$ \\
+            $S$ & $45,45$ & $0,35$ \\
+            $H$ & $35,0$  & $40,40$ 
+    \end{game} \hspace*{\fill}%
+    \caption{Game $2R$}
+    \end{subfigure}
+    \begin{subfigure}{0.3\textwidth}
+            \begin{game}{2}{2}[$\delta_{R} = 25$]
+            & $S$ & $H$ \\
+       $S$  & $45,45$ & $0,40$ \\
+       $H$  & $40,0$ & $20,20$ \\
+       \end{game} 
+       \caption{Game $R$}
+       \end{subfigure}
+       \begin{subfigure}{0.3\textwidth}
+               \begin{game}{2}{2}[$\delta_{0.6R}=15$]
+            & $S$ & $H$ \\
+       $S$  & $45,45$ & $0,42$ \\
+       $H$  & $42,0$ & $12,12$ \\
+       \end{game}
+       \caption{Game $0.6R$} 
+       \end{subfigure}
+\caption{Games used in \textcite{battalio_optimization_2001}}
+\label{fig:payoffbattalio}
+       \end{figure}
+
+\begin{figure}[h] 
+        \begin{subfigure}[b]{0.5\textwidth}
+                \centering
+                \begin{game}{2}{2}[$P=\frac 25$, $R=0$]
+                & $S$ & $H$ \\
+            $S$ & $100,100$ & $20,60$ \\
+            $H$ & $60,20$  & $60,60$ 
+    \end{game} 
+    \caption{Game 1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.5\textwidth}
+            \centering
+            \begin{game}{2}{2}[$P=\frac 15$, $R=ln(3)$]
+            & $S$ & $H$ \\
+       $S$  & $100,100$ & $20,80$ \\
+       $H$  & $80,20$ & $80,80$ 
+       \end{game} 
+       \caption{Game 2}
+       \end{subfigure}
+       \vskip\baselineskip
+       \begin{subfigure}[b]{0.5\textwidth}
+               \centering
+               \begin{game}{2}{2}[$P=\frac 15$, $R=0$]
+            & $S$ & $H$ \\
+       $S$  & $100,100$ & $60,80$ \\
+       $H$  & $80,60$ & $80,80$ 
+       \end{game}
+       \caption{Game 3} 
+       \end{subfigure}
+       \begin{subfigure}[b]{0.5\textwidth}
+               \centering
+            \begin{game}{2}{2}[$P=\frac 25$, $R=ln(3)$]
+            & $S$ & $H$ \\
+       $S$  & $100,100$ & $0,80$ \\
+       $H$  & $80,0$ & $60,60$ 
+       \end{game} 
+       \caption{Game 4}
+       \end{subfigure}
+\caption{Games used in \textcite{schmidt_playing_2003}}
 \label{fig:payoffschmidt}
-\begin{alignat*}{3}
-        A_{Game1} = \mqty( 100 & 20 \\ 60 & 60), \quad A_{Game2} 
-                               &= \mqty( 100 & 20 \\ 80 & 80), \\ 
-        A_{Game3} = \mqty( 100 
-             & 60 \\ 80 & 80), \quad A_{Game4} &= \mqty( 100
-                             & 0 \\ 80 & 60)
-        \end{alignat*}
-\end{subfigure}
-\vspace{50px}
-\begin{subfigure}{\textwidth}
-        \caption{Payoff matrices of the games used
-        in \textcite{dubois_optimization_2012}}
-        \centering
-        \label{fig:payoffdubois}
-        \begin{alignat*}{3}     
-                A_{Game1} &= \mqty(45 & 0 \\ 42 & 12),
-                A_{Game2} &= \mqty(40 & 20 \\37 & 32),
-                A_{Game3} &= \mqty(44 & 4 \\ 38 & 28) \\
-                RR_{Game1}&= \frac 23, RR_{Game2}&=\frac 14, RR_{Game3}&=
-                \frac 14
-        \end{alignat*}
-\end{subfigure}
-\caption[Games in the laboratory experiments]{Payoff matrices for the 
-games used in the experimental literature}
-\end{figure}
-\printbibliography
+       \end{figure}
+
+\begin{figure}[h] \hspace*{\fill}
+        \begin{subfigure}{0.3\textwidth}
+        \begin{game}{2}{2}[$RR_{Game 1}=\frac 23$]
+                & $S$ & $H$ \\
+            $S$ & $45,45$ & $0,42$ \\
+            $H$ & $42,0$  & $12,12$ 
+    \end{game} \hspace*{\fill}%
+    \caption{Game 1}
+    \end{subfigure}
+    \begin{subfigure}{0.3\textwidth}
+            \begin{game}{2}{2}[$RR_{Game 2}=\frac 14$]
+            & $S$ & $H$ \\
+       $S$  & $40,40$ & $20,37$ \\
+       $H$  & $37,20$ & $32,32$ \\
+       \end{game} 
+       \caption{Game 2}
+       \end{subfigure}
+       \begin{subfigure}{0.3\textwidth}
+               \begin{game}{2}{2}[$RR_{Game 3}=\frac 14$]
+            & $S$ & $H$ \\
+       $S$  & $44,44$ & $4,38$ \\
+       $H$  & $38,4$ & $28,28$ \\
+       \end{game}
+       \caption{Game 3} 
+       \end{subfigure}
+       \caption{Games used in \textcite{dubois_optimization_2012}}
+\label{fig:payoffdubois}
+       \end{figure}
+
 
 \newpage
 \thispagestyle{empty}
 \section*{Ehrenw\"ortliche Erkl\"arung}
 \noindent
-Ich versichere hiermit, dass ich die vorliegende Arbeit 
-selbst\"andig und ohne Benutzung anderer als der angegebenen  Quellen  
-und Hilfsmittel verfasst habe. W\"ortlich  \"ubernommene  S\"atze  oder  
-Satzteile  sind  als  Zitat  belegt, andere Anlehnungen, hinsichtlich Aussage 
-und Umfang, unter Quellenangabe kenntlich gemacht. Die Arbeit hat in gleicher 
-oder \"ahnlicher Form noch keiner Pr\"ufungsbeh\"orde vorgelegen und ist nicht 
-ver\"offentlicht. Sie wurde nicht, auch nicht auszugsweise, f\"ur eine andere 
-Pr\"ufungs oder Studienleistung verwendet.
+Ich versichere hiermit, dass ich die vorliegende Arbeit selbst\"andig und
+ohne Benutzung anderer als der angegebenen Quellen und Hilfsmittel verfasst
+habe. W\"ortlich \"ubernommene S\"atze oder Satzteile sind als Zitat belegt,
+andere Anlehnungen, hinsichtlich Aussage und Umfang, unter Quellenangabe 
+kenntlich gemacht. Die Arbeit hat in gleicher oder \"ahnlicher Form noch 
+keiner Pr\"ufungsbeh\"orde vorgelegen und ist nicht ver\"offentlicht. Sie
+wurde nicht, auch nicht auszugsweise, f\"ur eine andere Pr\"ufungs - oder 
+Studienleistung verwendet. Zudem versichere ich, dass die von mir 
+abgegebenen schriftlichen (gebundenen)Versionen der vorliegenden Arbeit mit 
+der abgegebenen elektronischen Version auf einem Datentr\"ager
+inhaltlich \"ubereinstimmen.
 \vspace{1cm}
 
 \noindent

@@ -41,8 +41,8 @@ In the special case of two players, one
 can define a payoff matrix for player 1, $A \in \realnumb^{2 \times2}$ and for 
 player 2,  $B \in \realnumb^{2 \times2}$ with $A_{kl} = F_1(k,l)$, 
 $B_{kl} = F_2(k,l)$ and the pure strategies $k,l \in S$. Using the 
-representation in figure\ref{fig:sh}, one can identify the 
-payoff matrices for the player as
+representation in figure \ref{fig:parash}, one can identify the 
+payoff matrices for the players as
 \begin{align}
      A = \mqty(a && b \\ c && d), \quad B = \mqty(a && c \\ b && d)
         \label{eq:matrix}
@@ -113,7 +113,7 @@ In describing the behavior of agents, game theory developed a wide range of
 tools to solve these strategic interactions. First of all, for each individual
 a best-reply is defined by simply describing the strategies available to him 
 which yield the highest payoff against a given strategy of the other player.
-Formally, the \textit{best-reply} for player $i \in I$ to a 
+Formally, the \textit{best-reply} $\beta_i(y)$ for player $i \in I$ to a 
 strategy $y \in \Delta$ played by $j \neq i$ is defined as:
 \begin{align}
         \beta_i(y) = \{x \in \Delta: \hat{F}(x,y) \geq \hat{F}(x',y), 
@@ -131,7 +131,7 @@ player game is stated.
         A state of $(x^*,y^*) \in \Delta^2$ is called a Nash equilibrium if 
         it holds that
         \begin{alignat*}{2}
-                (x^*)^T A y^* &\geq x^T A y^*, \quad \forall x \in \Delta \\
+                (x^*)^T A y^* &\geq x^T A y^*, \quad \forall x \in \Delta 
         \end{alignat*}
 It is called symmetric if $x^* = y^*$. A Nash equilibrium is called a 
 strict Nash equilibrium if the inequality is strict.
