@@ -19,6 +19,10 @@
 \def\stackedpayoffs#1#2{%
 \begin{array}{rl}#1&\\[1.6mm]&#2\end{array}
 }
+\renewcommand\vec{\mathbf}
+\usepackage[toc,page]{appendix}
+\usepackage[utf8]{inputenc}
+\\
 %%%%%%%%%%%%%%%%%%%
 %
 % Make math nomenclatur  
@@ -29,7 +33,9 @@
 %%%%%%%%%%%%%%%%%%%%%%
 %
 % Title page
+\vskip 2cm
 \input{titlepage.tex}
+\newpage
 %
 %%%%%%%%%%%%%%%%%%%%%%
 %
@@ -103,8 +109,8 @@
 \newpage
 \printbibliography
 \newpage
-
-\section{Appendix}
+\begin{appendices}
+\section{Games of the experimental literature}
 \begin{figure}[H] \hspace*{\fill}
         \begin{subfigure}{0.3\textwidth}
                 \begin{game}{2}{2}[$\delta_{2R}=50$]
@@ -206,6 +212,7 @@
        \caption{Games used in \textcite{dubois_optimization_2012}}
 \label{fig:payoffdubois}
        \end{figure}
+       \end{appendices}
 
 
 \newpage
