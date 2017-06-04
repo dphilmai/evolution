@@ -1,7 +1,7 @@
 \label{sec:evolutionarystaghunt}
 Evolutionary games consist of a population of agents that are randomly matched 
-over time to play a stage game. In an evolutionary interpretation of the 
-stag hunt game, the stage game is the SH game. 
+over time to play a stage game. In an evolutionary interpretation of the
+stag hunt game, it is repeatedly played as the stage game.
 Usually, the number of agents is assumed to be (infinitely) large, 
 such that on one hand, the effect of a single individual 
 on the population is small, and on 
@@ -22,7 +22,7 @@ is not growing. The vector $\vec{x}(t) = \left(x_1(t),x_2(t)\right)
 vector of the population at time $t \in \realnumb$. 
 Each component of the population state vector represents the share of agents 
 choosing a specific strategy. As the individuals can only choose between 
-strategy one and two in our example, it holds that  $x_2(t) = 1-x_1(t)$. 
+strategy 1 and 2 in the SH game, it holds that  $x_2(t) = 1-x_1(t)$. 
 Mentioned earlier, a stage game played by a population enables a 
 new interpretation of mixed strategies, because $\vec{x}(t)$ is an 
 element of the mixed strategy space $\Delta$.
@@ -33,9 +33,9 @@ This has, however, little relevance for the interpretation
 in the traditional game \parencite[914-915]{rubinstein_comments_1991}.
 
 Out of convenience, let the expected payoff 
-to a strategy $i \in \{1,2\}$ of an individual randomly matched
-against another individual in the current population state at time $t$, 
-$\vec{x}(t)$, be denoted by $F^i(\vec{x}) = \hat{F}(e_i,\vec{x}(t))$. 
+to a strategy $j \in \{1,2\}$ of an individual randomly matched
+against another individual in the current population state $\vec{x}(t)$ 
+at time $t$ be denoted by $F^j(\vec{x}) = \hat{F}(e_j,\vec{x}(t))$. 
 
 \subsection{Revision Protocols}
 \label{sec:revisionprotocols}
@@ -51,15 +51,15 @@ The following derivation is by \textcite{sandholm_population_2010}.
 Typically it is assumed that agents have an inner alarm clock 
 which rings at a rate R following an exponential distribution. 
 Of course, this does not translate 
-to economic applications in individuals having literal clocks around their
+in economic applications to individuals having literal clocks around their
 wrist, but illustrates the idea of a randomly occuring chance to reconsider
 their strategy choice.
-The agents' clocks are assumed to be independent from each other, such that
+The agents' clocks are assumed to be independent of each other, such that
 the individuals chance to revise does not dependent on others.
 Whenever the clock of an agent rings, he
 receives a revision opportunity which means that he changes his strategy
 with the probability $\frac{\rho_{ij}}{R}$, where
-$\rho_{ij}(F^i(\vec{x}),\vec{x})$ is called the conditional switch rate,
+$\rho_{ij}(\hat{F},\vec{x})$ is called the conditional switch rate,
 representing the rule by which agents change from strategy 
 $i$ to strategy $j$. 
 In a two-strategy game there are two conditional switch rates, $\rho_{12}$ 
@@ -92,7 +92,7 @@ switching to 1. Hence, this leads to
 \end{align}
 Dividing by $P$ and $dt$ yields the differential equation for
 the change in the share of agents playing strategy 1, 
-$\dot{x}_1 =\frac{dx}{dt}$. 
+$\dot{x}_1 =\frac{dx_1}{dt}$. 
 The sum of the time derivatives of population shares must equal zero and so
 $\dot{x}_2(t) =- \dot{x}_1(t)$.
 There are different plausible revision protocols studied in the literature. 
@@ -100,8 +100,9 @@ There are different plausible revision protocols studied in the literature.
 these revision protocols, such as logit choice, comparison to average payoff 
 and best response protocol. 
 They all contain different assumptions about the information 
-an individual agent can obtain and the abillity to process this information.
-Hence, the resulting evolutionary dynamics have different properties.
+an individual agent can obtain and about the abillity of the agents 
+to process this information. Hence, the resulting evolutionary 
+dynamics have different properties.
 
 With respect to the implied dynamic, the 
 \textit{pairwise proportional imitation} protocol will be outlined 
@@ -111,12 +112,12 @@ agent receives a revision opportunity, he randomly gets to know
 another agent's strategy and its payoff received in the current 
 state of the population. 
 The switching probability of an agent choosing strategy $i$  
-is proportional to the difference between the observed payoff of the other agent 
-with strategy $j$, $F^j(x)$, and his payoff $F^i(x)$.
+is proportional to the difference between the observed payoff $F^j(x)$ 
+of the other agent with strategy $j$ and his payoff $F^i(x)$.
 This can formally be expressed as
 \begin{align}
         \label{eq:pairwiseproportionalimitation}
-        p_{ij}(F^i(\vec{x}),\vec{x}) =
+        p_{ij} =
                 \begin{cases}
                         x_j\left[F^j(\vec{x}) -F^i(\vec{x})\right] &\ ,
                         \text{for } F^j(\vec{x}) - F^i(\vec{x}) > 0 \\
@@ -126,7 +127,8 @@ This can formally be expressed as
 A story of traders on a marketplace can be told to illustrate this revision
 protocol.
 Suppose the traders interact on a market selling some 
-good, implicitly playing a game with each other. The strategies may be the
+good. They implicitly play a game with each other as their choice influences
+the earnings of the others. The strategies may be the
 way they organize their market stall or what position on the market they 
 choose. Usually each trader does not
 observe the strategies other traders use to sell things, because the market
@@ -136,7 +138,7 @@ As he returns to his tavern, he occasionally
 gets to meet another trader.
 Being proud of their earnings, they boast about their 
 individual strategy. In this way, they get to know
-other traders strategies and as they all dream of a live in pageantry,
+other traders' strategies and as they all dream of a live in pageantry,
 they might imitate the other traders. 
 However, they are more likely to imitate traders with a higher payoff 
 compared to theirs, because such traders feel superior and thus, are the 
@@ -157,21 +159,21 @@ This equation fully describes the evolution of the population in time.
 Properties and the connection to the stage game are discussed in the next
 section.
 
-\subsection{Replicator Dynamics}
+\subsection{Replicator Dynamic}
 \label{sec:replicatordynamic}
-The replicator dynamics, one of the most popular dynamics in 
+The replicator dynamic, one of the most popular dynamics in 
 evolutionary game theory, has a wide range of applications and 
 attractive properties, such as population genetics and ecology, abiogenesis and
 of course game theory \parencite[203]{hofbauer_evolutionary_1998}. 
 It was mathematically formulated by \textcite{taylor_evolutionary_1978} and 
 termed after the biological concept of a replicator, which was 
-introduced in 1982 by Dawkins as the ``fundamental units of natural selection,
-the basic things that survive or fail to survive''
+introduced in 1982 by Dawkins as the ``fundamental unit[s] of natural selection,
+the basic thing[s] that survive or fail to survive''
 \parencite[254]{dawkins_selfish_2016}. In a purely game theoretical fashion,
-strategies are the replicator as they are propagated through the population
+strategies are the replicators as they are propagated through the population
 based on the revision protocol. Using the matrix notation, 
 the replicator dynamic  
-for the strategies $j \in \{1,2\}$ can is 
+for the strategies $j \in \{1,2\}$ can be formulated as 
 \begin{alignat}{2}
         \dot{x}_j &= x_j\left[\left(\vec{x}^T A\right)_j -
         \left(\vec{x}^T A \vec{x}\right)\right]. 
@@ -194,15 +196,16 @@ Comparing equation \eqref{eq:replicator} with equation
 \eqref{eq:replicatorrev}, one notices the lack of the factor $2$. 
 This is simple due to the derivation of equation \eqref{eq:replicatorrev}.
 In fact, any positive transformation of the payoff matrix 
-results only in a change in speed in the replicator dynamic
+results only in a change in speed of the replicator dynamic
 \parencite[73]{weibull_evolutionary_1997}.
-Additionally, seen in the previous section, it was not 
+Another property of the replicator dynamic is the low data requirement.
+Seen in the previous section, it was not 
 necessary to assume that agents have much knowledge about the game or
 the population. It was sufficient to assume that an agent gets to know the 
 payoff of one random player. This is interesting for applications where it
 is reasonable to assume that players cannot obtain much information.
 
-Contrary to the interpretation that agents follow a revision protocols 
+Contrary to the interpretation that agents following a revision protocol 
 are "boundedly rational", \textcite{gintis_game_2000}  argues 
 that ``this is very misleading, because the real issue is the 
 distribution of the information'' \parencite[273]{gintis_game_2000}. 
@@ -212,7 +215,8 @@ the state of the population. For clarification, consider a representative
 agent in the population. At time $t$ he plays strategy 1 and hence he
 has an expected payoff $F^1(\vec{x})=\alpha_1 x_1$. But he actually receives 
 either the payoff $\alpha_1$ or $\alpha_2$ when matched against another agent
-with strategy $1$ or $2$, respectively. Based on that information, the agent
+with strategy $1$ or $2$, respectively. Based on that information and the
+knowledge of another agents payoff, the agent
 cannot deduce the composition of the population which is needed to choose
 a strategy that maximizes the expected payoff.
 
@@ -222,7 +226,7 @@ vanished from the population will not be in a future state of the population.
 That means, if only a subset $S' \subset S$ of the 
 set of pure strategies is used in a population state, 
 any future population state can also only contain strategies 
-from this subset $S'$ as well. Hence, if a strategy in 
+from this subset $S'$. Hence, if a strategy in 
 the stag hunt game vanishes, the population state is in one of the two pure 
 Nash equilbria. For further use it is practical to express the replicator 
 dynamics for the parametrized SH game using the matrix in equation 
@@ -252,12 +256,10 @@ dashed gray line indicates the inner root, the root for an $x \in (0,1)$
         \caption[Polynominal of the Replicator Dynamic]{$\varphi(x)$ for the parameter setting $a=5, b=0, c=4, d=3$}
         \label{fig:polynominal}
 \end{figure}
-For the purpose of analyzing the properties of the replicator dynamic, it is 
-useful to introduce some vocabulary used in dynamical system theory. 
 A solution through an initial state $x_0$ of the dynamical system is called a 
 \textit{trajectory}, whereby it is distinguished between a forward trajectory 
 for $t \rightarrow \infty$ and backward trajectory for $t \leftarrow \infty$.
-Analytical solutions, i.e. solutions one can express with the use of
+Analytical solutions, i.e.\ solutions one can express with the use of
 basic functions, can only be derived for simple cases. 
 However, the existence and uniqueness of a solution through
 any initial state for the replicator dynamic is guaranteed by the theorem 
@@ -286,11 +288,11 @@ reducing the degree by polynominal division. In general, the replicator
 dynamic lacks the \textit{Nash stationarity} property and thus there are 
 games with fixed points which are not a Nash equilibrium
 \parencite{sandholm_population_2010}.
-For a trivial example, consider the prisoners dilemma in \ref{fig:pd}. 
+For a trivial example, consider the prisoners dilemma in figure \ref{fig:pd}. 
 A population consisting only of cooperating agents stays in that state
 which is not a Nash equilibrium forever. However, inserting one single 
 defecting agent would lead all other agents to imitate the strategy defect,
-as it has a higher payoff, so that in the end the whole population defects .
+as it has a higher payoff, so that in the end the whole population defects.
 Therefore, one is usually interested in the fixed points of 
 a dynamical system that are stable in terms of some 
 disturbance of the system. 
@@ -311,9 +313,10 @@ stable} if there exists an $\epsilon$-perturbation for which $x(t) \rightarrow
 x^*$ as $t \rightarrow \infty$. 
 The \textit{basin of attraction} of a fixed point $x^*$ is defined as the set 
 of points $x_0 \in \realnumb$ for which a trajectory through $x_0$ approaches 
-the fixed point $x^*$. In one dimensional case, this is simply the range 
+the fixed point $x^*$. For the one dimensional case, 
+this is simply the interval 
 of $x$ for which any solution to the differential equation with the initial 
-conditions in this range converges to the fixed point. With the following 
+conditions in this interval converges to the fixed point. With the following 
 theorem independently contributed by \textcite{hartman_lemma_1960} and 
 \textcite{grobman_homeomorphism_1959}, one can easily 
 find the asymptotically stable fixed points in the stag hunt game:
@@ -325,20 +328,20 @@ find the asymptotically stable fixed points in the stag hunt game:
         is asymptotically stable. 
         A fixed point is called hyperbolic in one-dimension if 
         $\varphi'(x^*) \neq 0$ and the linearization is stable at that
-        point if $\varphi'(x^*) < 0$ and not stable if $\varphi'(x) >0$.
+        point if $\varphi'(x^*) < 0$ and not stable if $\varphi'(x^*) >0$.
 \end{mydef}
 The solution to the linearization can be analytical derived by 
 a standard tool for differential equations - seperation of variables and 
 integration.
 Accordingly, the linearization around the fixed point $x^*$ is 
-$x(t)= x(0) e^{\varphi'(x^*)t}$, where $x_0=x(t=0)$ denotes the 
+$x(t)= x_0 e^{\varphi'(x^*)t}$, where $x_0=x(t=0)$ denotes the 
 initial condition, i.e.\ the share of agents choosing strategy 1 in the 
 beginning.
 Applying the theorem to equation \eqref{eq:replicatorpara}, 
 one finds that the 
 fixed point $x=0$, corresponding to the Nash equilibrium of hunting hare, is 
 asymptotically stable, since $\varphi'(0) = - \alpha_2 <0$. 
-The linearization around the fixed point is $x(t) = x(0) e^{-\alpha_2 t}$, 
+The linearization around the fixed point is $x(t) = x_0 e^{-\alpha_2 t}$, 
 which clearly approaches zero as $t \rightarrow \infty$. 
 Similarly, the Nash equilibrium 
 of hunting stag at $x=1$ is an asymptotically stable fixed point as
@@ -351,7 +354,7 @@ Lyapunov and entropy functions are needed to prove whether a fixed point
 is asymptotically stable \parencite{friedman_economic_1998}.
 
 Nevertheless, in the SH game it can be easily shown that the inner
-fixed point is not asmptotically stable.
+fixed point is not asymptotically stable.
 Suppose the population is currently at the inner fixed point and now 
 some agents come from outside into the population
 using strategy 1, represented by the share $\epsilon$,
@@ -371,27 +374,27 @@ agents start switching away from strategy 1 to strategy 2 $(\dot{x} < 0)$
 and hence, the population share of agents playing strategy 1 
 decreases, until it reaches the 
 fixed point $x=0$. 
-Using an alternative definition of the ESS than that in definition 
-\ref{def:ess} will clarify the connection of asymptotically stable rest 
-points and an ESS.
-A (mixed) strategy $\vec{x} \in \Delta$, likewise 
-interpreted as population state, is said to be an ESS if the 
-expected payoff of that strategy against an invasion of a share of agents
-choosing a pure strategy $e_i$ is greater than the payoff to that
-pure strategy against the same invasion.
-This results in the equation 
-\begin{align*}
-\hat{F}(\vec{x},\epsilon e_i + (1-\epsilon) \vec{x}) >
-\hat{F}(e_i,\epsilon e_i + (1-\epsilon) \vec{x}).
-\end{align*}
-The equivalence to definition \eqref{def:ess} is shown in 
-\textcite[37]{weibull_evolutionary_1997}.
-As argued, it exists no $\epsilon$ for that the mixed Nash equilibrium, 
-the inner fixed point of the dynamic, satisfies this condition. 
-An invasion barrier $\bar{\epsilon}$ can be calculated for both other
-Nash equilibria.
-An invasion barrier is the maximal share of invaders 
-such that the inequality still holds, $\epsilon \in (0,\bar{\epsilon})$.
+Hence, only populations which involve the play of an ESS are asymptotically 
+stable.
+%Using an alternative definition of the ESS than that presented in definition 
+%\ref{def:ess} will clarify the connection of asymptotically stable rest 
+%points and an ESS.
+%Let $(\epsilon e_i + (1-\epsilon) \vec{x})$ denote a population state invaded
+%by some outsiders of share $\epsilon \in (0,1)$ with strategy $e_i$. A (mixed) strategy
+%$\vec{x} \in \Delta$, likewise interpreted as population state, is said to be
+%an ESS if the expected payoff of that strategy in the invaded population 
+%state is higher than the expected payoff to the strategy of the invaders.
+%This results in the condition 
+%\begin{align*}
+%\hat{F}(\vec{x},\epsilon e_i + (1-\epsilon) \vec{x}) >
+%\hat{F}(e_i,\epsilon e_i + (1-\epsilon) \vec{x}).
+%\end{align*}
+%The equivalence to definition \eqref{def:ess} is shown in 
+%\textcite[37]{weibull_evolutionary_1997}.
+%As argued, it exists no $\epsilon$ for that the mixed Nash equilibrium, 
+%the inner fixed point of the dynamic, satisfies this condition. 
+%An invasion barrier $\bar{\epsilon}$ is the maximal share of invaders 
+%such that the inequality still holds, $\epsilon \in (0,\bar{\epsilon})$.
 
 The key things to remember are that, a Nash equilibrium is a rest point of
 the replicator dynamic. Furthermore, not all rest points are 
@@ -422,7 +425,7 @@ which all agents hunt stag.
                 \label{fig:basinofattraction}
 \end{figure}
 
-Concering the equilibrium selection, the evolutionary approach with replicator
+Concerning the equilibrium selection, the evolutionary approach with replicator
 dynamic has a definite answer. The population will reach one of the three
 Nash equilibria depending on the initial condition. 
 However, an equilibrium that is not asymptotically stable 

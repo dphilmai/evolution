@@ -8,24 +8,27 @@ Nowadays, most of the projects involve some kind of software tool to either
 present the results, analyze the subject or just manage the process of aggretating 
 knowledge. Usually the choice of the tools can be simplified to 
 the choice of proprietary software or open source software. 
-Both software types are capable of producing the same output for the
-projects, but propiertary software has high license costs.
+For reasons of simplification, assume that both 
+software types are capable of producing
+the same quality of ouput for the projects and are similiarly easy to handle.
+The only difference is the high license cost for proprietary software.
 Common examples of this are Open Office vs. Microsoft Word for text editing,
 Python vs. Matlab for scientific computing and R vs. Stata for statistical
 analysis. Assigned to a project, students can either choose proprietary
-software denoted as strategy 1 or open software denoted as strategy 2.
+software denoted as strategy 1 or open source software denoted as strategy 2.
 If both students choose open source software they receive utility $a$.
 Coordinating on propierty software leaves both with a utility $d$ which is
 smaller than $a$ as they have to pay for the licenses. In the case 
 where students fail to coordinate on a software tool, the student
 with proprietary software gets $c$. However, the other student
 has to transfer his contributions to the standards of the proprietary software
-as portability is usually only possible in this direction and hence, only 
-gets $b$. The parameters fullfill the condition $a > c \geq d >b$.
-The structure of the game is precisely that of a stag hunt game. 
+as portability is usually only possible in this direction.
+Hence, this stundet only gets $b$. The parameters fullfill 
+the condition $a > c \geq d >b$.
+Evidently, the structure of the game is precisely that of a stag hunt game. 
 Coordination on open source software is the payoff-dominant Nash equilibrium,
-but it is risk-dominated by the equilibrium where the students coordinate on
-proprietary software. 
+but it is risk-dominated by the equilibrium in which the students 
+coordinate on proprietary software. 
 
 For simplification, assume that during their studies, a large body of 
 homogenous students is randomly paired by their professor into groups of two 
@@ -36,7 +39,7 @@ each time they have to do a project.
 For simplicity, students in this model behave according to the 
 revision protocol of pairwise proportional imitation discussed in section 
 \ref{sec:revisionprotocols}. 
-This applies, as students tend to use software they always used and 
+This applies as students tend to use software they always used and 
 only change it, if they get to know someone being more successful with
 another software choice. Therefore, the dynamic in the model can be 
 described by the replicator dynamic derived for the stag hunt game in 
@@ -68,8 +71,8 @@ also increases the utility due to the network.
 Including the parameter $a$ ensures that the utility of this 
 strategy combination is never below the utility of coordination on 
 proprietary software. Otherwise, the structure of the stage game would 
-differ fundamentally with respect to the population share choosing strategy 
-one. The payoff matrix, using local shifts, is 
+differ fundamentally with respect to the population share choosing strategy 1. 
+The payoff matrix, using local shifts, is 
 $A=\begin{psmallmatrix}\alpha_1+u(x) && 0 \\ 0&& \alpha_2\end{psmallmatrix}$. 
 Substituting into the replicator dynamic  \ref{eq:replicatorpara} yields:
 \begin{alignat}{2}
@@ -77,7 +80,7 @@ Substituting into the replicator dynamic  \ref{eq:replicatorpara} yields:
         - x^3(\alpha_1+e(x)+\alpha_2) - x(\alpha_2)
         \label{eq:externalitymodel}
 \end{alignat}
-By plugging $x=0$ and $x=1$ into equation \eqref{eq:externalitymodel} and, 
+By plugging $x=0$ and $x=1$ into equation \eqref{eq:externalitymodel} and 
 by applying the linearization theorem, one can ensure 
 that the fixed point with pure strategies and their
 property of asymptotical stability did not change
@@ -103,11 +106,11 @@ interpretation.}, so that the fixed point with a mixed population state is
 $x_3 = -\frac{\alpha_1+\alpha_2}{2 \beta} + 
 \sqrt{\frac{(\alpha_1+\alpha_2)^2}{4\beta^2} +\frac{\alpha_2}{\beta}}$. 
 The new inner fixed point is always lower than the inner fixed point without 
-externality, but does never coincide with the stag hunt equilibrium, as it 
+externality. It cannot coincide with the stag hunt equilibrium, as it 
 satisfies $0<x_3<\frac{\alpha_2}{\alpha_1+\alpha_2}$. 
 Taking the limit $\lim_{\beta \rightarrow 0} x_3 = 
 \frac{\alpha_2}{\alpha_2+\alpha_1}$ verifies the intuition that for a 
-diminishing network externality parameter the model without 
+diminishing network externality parameter $\beta$ the model without 
 externality is obtained.
 The plot of the dynamic and the polynominal is 
 shown in figure \ref{fig:plotmodellinear}.
@@ -146,14 +149,16 @@ attracting an equal amount of initial conditions. However,
 the proprietary equilibrium looses its risk-dominance property 
 only for $1 > x > \frac{\alpha_2-\alpha_1}{\beta}  $, using definition 
 \ref{eq:riskdom}. The right hand side of the equation must be lower than one 
-to change the risk-dominance property. This leads to the conclusion 
-that in this model, the size of the basin of attraction and the risk-dominance
-property do not coincide in general, since the externality changes the Nash 
+to change the risk-dominance property. In this model,
+the size of the basins of attraction and the risk-dominance
+property do not coincide in general, since the externality affects the Nash 
 product associated with the pure strategy 1 equilibrium. Consider for example 
-the parameter setting $\alpha_1 =1, \alpha_2=3$, but now let $\beta=3$. 
-The basin of attraction is not equal, since $3<\beta^*= 4$. 
-The open source equilibrium attracts all trajectories starting with 
-$x_0 \in (\frac{-2+\sqrt{13}}{3},1]$ and hence the proprietary equilibrium attracts
+the parameter setting $\alpha_1 =1, \alpha_2=3$, and $\beta=3$ in figure 
+\ref{fig:plotmodellinear}. 
+The basins of attraction are not equal, since $3<\beta^*= 4$. 
+All trajectories starting with 
+$x_0 \in (\frac{-2+\sqrt{13}}{3},1]$ converge to the open source equilibrium
+and hence the proprietary equilibrium attracts
 all trajectories with $x_0 \in [0,\frac{-2+\sqrt{13}}{3})$. 
 Clearly, the latter basin of 
 attraction is larger ($\frac{-2+\sqrt{13}}{3}>0.5)$, 
@@ -170,14 +175,15 @@ possible before deciding which software to use for the project.
 However, as the experimental literature that will be discussed in section 
 \ref{sec:experimentalevidence}, and \textcite{aumann_nash_1990} suggest, 
 cheap talk does not generally solve the coordination problem. 
-Additionally, the way the attractiveness of a strategy increases with
-the population size, the network externality, is modeled quite naively.
+Additionally, the way the payoff of a strategy increases with
+the population size using it, the network externality, 
+is modeled quite naively.
 Students at university and social networks in general are not fully
 connected as students, for example, only do projects with fellow students
 in the same classes. Furthermore, students usually try to do projects
 with people they are socially connected with. In fact, the assumption about
 a fully connected network is ``one of the main criticisms of evolutionary game
-theory'' \parencite{hanauske_evolutionare_2011}. 
+theory'' \parencite[246]{hanauske_evolutionare_2011}. 
 As a consequence, many researchers recently gave attention to the 
 structure of the network underlying the interaction of agents and 
 evolving of network structure \parencite[46]{szabo_evolutionary_2007}.
@@ -187,6 +193,10 @@ leads to more cooperation for a range of network topologies,
 agreeing with the intuition
 ``The fewer friends I have the more strongly my fate is bound to theirs'' 
 \parencite[1]{ohtsuki_simple_2006}.
+Additionally, \textcite{santos_evolutionary_2006} found in a model with
+a heterogenous population with respect to the links of each agent that 
+cooperation on the payoff-dominant outcome is easier to achieve than
+in a fully connected population.
 Although the model with a positive linear network externality is far too 
 simple to capture the effect of complex, adapting networks, it gives an 
 intuition of how coordination of a small group, in this case two players, 
