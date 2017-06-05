@@ -25,7 +25,7 @@ choosing a specific strategy. As the individuals can only choose between
 strategy 1 and 2 in the SH game, it holds that  $x_2(t) = 1-x_1(t)$. 
 Mentioned earlier, a stage game played by a population enables a 
 new interpretation of mixed strategies, because $\vec{x}(t)$ is an 
-element of the mixed strategy space $\Delta$.
+element of the mixed strategy space $\Delta$ for all $t$.
 Hence, mixed strategies in monomorphic games are simply the state
 of the population, which is the division of players on the two
 pure strategies in the SH game. 
@@ -59,9 +59,11 @@ the individuals chance to revise does not dependent on others.
 Whenever the clock of an agent rings, he
 receives a revision opportunity which means that he changes his strategy
 with the probability $\frac{\rho_{ij}}{R}$, where
-$\rho_{ij}(\hat{F},\vec{x})$ is called the conditional switch rate,
+$\rho_{ij}(\hat{F},\vec{x}(t))$ is called the conditional switch rate,
 representing the rule by which agents change from strategy 
-$i$ to strategy $j$. 
+$i$ to strategy $j$. The conditional switch rate usually depends
+on the current state of the population $\vec{x}(t)$ at time $t$ and the
+mixed strategy payoff function of the underlying game $\hat{F}$.
 In a two-strategy game there are two conditional switch rates, $\rho_{12}$ 
 describing the rate of switching from strategy 1 to 2 and $\rho_{21}$, 
 the rate for switching from strategy 2 to 1. For $\rho_{ii}$ no actual switch 
@@ -112,8 +114,8 @@ agent receives a revision opportunity, he randomly gets to know
 another agent's strategy and its payoff received in the current 
 state of the population. 
 The switching probability of an agent choosing strategy $i$  
-is proportional to the difference between the observed payoff $F^j(x)$ 
-of the other agent with strategy $j$ and his payoff $F^i(x)$.
+is proportional to the difference between the observed payoff $F^j(\vec{x})$ 
+of the other agent with strategy $j$ and his payoff $F^i(\vec{x}})$.
 This can formally be expressed as
 \begin{align}
         \label{eq:pairwiseproportionalimitation}
@@ -163,7 +165,7 @@ section.
 \label{sec:replicatordynamic}
 The replicator dynamic, one of the most popular dynamics in 
 evolutionary game theory, has a wide range of applications and 
-attractive properties, such as population genetics and ecology, abiogenesis and
+attractive properties, such as population genetics, ecology, abiogenesis, and
 of course game theory \parencite[203]{hofbauer_evolutionary_1998}. 
 It was mathematically formulated by \textcite{taylor_evolutionary_1978} and 
 termed after the biological concept of a replicator, which was 
@@ -175,11 +177,11 @@ based on the revision protocol. Using the matrix notation,
 the replicator dynamic  
 for the strategies $j \in \{1,2\}$ can be formulated as 
 \begin{alignat}{2}
-        \dot{x}_j &= x_j\left[\left(\vec{x}^T A\right)_j -
+        \dot{x}_j &= x_j\left[\left(A\vec{x}\right)_j -
         \left(\vec{x}^T A \vec{x}\right)\right]. 
         \label{eq:replicator}
 \end{alignat}
-The first term in the bracket $(\vec{x}^T A)_j$ is the expected payoff to 
+The first term in the bracket $(A\vec{x})_j$ is the expected payoff to 
 strategy $j$ against the current population state at time $t$. The second
 term is the average payoff of the whole population 
 $(\vec{x}^T A \vec{x}) =\bar{F}(\vec{x})$.
@@ -187,7 +189,7 @@ The growth of the share $\dot{x}_j(t)$ at time $t$ depends
 on the share of the population currently using strategy $j$ and the 
 excess payoff of that strategy, the difference between the expected 
 payoff to strategy $j$ against the current state of the population and the
-average payoff across the whole population.
+average payoff for the whole population.
 Intuitively, the share of a strategy in the population increases (decreases) 
 if the strategy yields a higher (lower) than average payoff. 
 An evolutionary dynamic that satisfies this property is called 
@@ -218,7 +220,11 @@ either the payoff $\alpha_1$ or $\alpha_2$ when matched against another agent
 with strategy $1$ or $2$, respectively. Based on that information and the
 knowledge of another agents payoff, the agent
 cannot deduce the composition of the population which is needed to choose
-a strategy that maximizes the expected payoff.
+a strategy that maximizes the expected payoff. However, one can qualify this 
+argument by assuming that agents have the information but cannot process it.
+In the trader analogy, traders might be able to see the difference of the
+other traders' stalls, but cannot recognize the secret of their success 
+without others telling them.
 
 A further property of the replicator dynamic is the lack of mutation or 
 an error. In other words, a strategy that has not existed or has 
@@ -239,8 +245,8 @@ dynamics for the parametrized SH game using the matrix in equation
 \end{alignat*}
 The last step follows by using local shifts on the matrix $A$. 
 This does not change the dynamic at all because it preserves the relative
-difference between the payoffs to strategies
-\parencite[73]{weibull_evolutionary_1997}. The polynominal $\varphi(x)$ is
+difference of payoffs \parencite[73]{weibull_evolutionary_1997}. 
+The polynominal $\varphi(x)$ is
 of degree $3$ and contains all information about the dynamic. Actually, 
 as outlined below, it shows to which state the population converges.
 In figure \ref{fig:polynominal} the graph of $\varphi(x)$ for the parameters
@@ -248,7 +254,7 @@ $a=5, b=0,c=4,d=3$ is shown. The ordinate represents the polynominal and
 the abscissa represents the population share choosing strategy 1. Hence it is
 between $0$ and $1$. Roots of the polynominal are the values of $x$ for 
 which $\varphi(x)$ crosses the horizontal dashed gray line. The vertical
-dashed gray line indicates the inner root, the root for an $x \in (0,1)$ 
+dashed gray line indicates the inner root, the root for an $x \in (0,1)$. 
 
 \begin{figure}[h]
         \centering
@@ -324,9 +330,10 @@ find the asymptotically stable fixed points in the stag hunt game:
         If a one-dimensional dynamical system $\dot{x}(t) = \varphi(x)$ 
         has a hyperbolic fixed point $x^*$, $x^*$ is asymptotically stable
         if its linearization 
-        $\dot{x}(t) = \frac{\partial\varphi(x)}{\partial x} := \varphi'(x)$ 
+        $\dot{x} = \varphi'(x^*)x$ at that fixed point with 
+        $\frac{\partial \varphi(x)}{\partial x}:= \varphi'(x)$
         is asymptotically stable. 
-        A fixed point is called hyperbolic in one-dimension if 
+        A fixed point is called hyperbolic in one dimension if 
         $\varphi'(x^*) \neq 0$ and the linearization is stable at that
         point if $\varphi'(x^*) < 0$ and not stable if $\varphi'(x^*) >0$.
 \end{mydef}
@@ -345,16 +352,17 @@ The linearization around the fixed point is $x(t) = x_0 e^{-\alpha_2 t}$,
 which clearly approaches zero as $t \rightarrow \infty$. 
 Similarly, the Nash equilibrium 
 of hunting stag at $x=1$ is an asymptotically stable fixed point as
-$\varphi'(1) = -\alpha_1 <0$ with linearization $x(t) = x(0) e^{-\alpha_1 t}$.
-However, the linearization theorem cannot be used for the mixed Nash 
-equilibrium, because this fixed point is not hyperbolic, 
-$\varphi'(\frac{\alpha_2}{\alpha_1+\alpha_2}) = 0$.
+$\varphi'(1) = -\alpha_1 <0$ with linearization $x(t) = x_0 e^{-\alpha_1 t}$.
+At the inner fixed point one gets 
+$\varphi'(\frac{\alpha_2}{\alpha_1+\alpha_2}) = 
+\frac{\alpha_1 \alpha_2}{\alpha_1+\alpha_2} >0$. By the linearization theorem
+the inner fixed point is not asymptotically stable.
 In general, more sophisticated mathematical tools such as the theorem of 
 Lyapunov and entropy functions are needed to prove whether a fixed point
 is asymptotically stable \parencite{friedman_economic_1998}.
 
-Nevertheless, in the SH game it can be easily shown that the inner
-fixed point is not asymptotically stable.
+Another way to look at the asymptotically stability of the inner fixed
+point is the following.
 Suppose the population is currently at the inner fixed point and now 
 some agents come from outside into the population
 using strategy 1, represented by the share $\epsilon$,
@@ -376,25 +384,6 @@ decreases, until it reaches the
 fixed point $x=0$. 
 Hence, only populations which involve the play of an ESS are asymptotically 
 stable.
-%Using an alternative definition of the ESS than that presented in definition 
-%\ref{def:ess} will clarify the connection of asymptotically stable rest 
-%points and an ESS.
-%Let $(\epsilon e_i + (1-\epsilon) \vec{x})$ denote a population state invaded
-%by some outsiders of share $\epsilon \in (0,1)$ with strategy $e_i$. A (mixed) strategy
-%$\vec{x} \in \Delta$, likewise interpreted as population state, is said to be
-%an ESS if the expected payoff of that strategy in the invaded population 
-%state is higher than the expected payoff to the strategy of the invaders.
-%This results in the condition 
-%\begin{align*}
-%\hat{F}(\vec{x},\epsilon e_i + (1-\epsilon) \vec{x}) >
-%\hat{F}(e_i,\epsilon e_i + (1-\epsilon) \vec{x}).
-%\end{align*}
-%The equivalence to definition \eqref{def:ess} is shown in 
-%\textcite[37]{weibull_evolutionary_1997}.
-%As argued, it exists no $\epsilon$ for that the mixed Nash equilibrium, 
-%the inner fixed point of the dynamic, satisfies this condition. 
-%An invasion barrier $\bar{\epsilon}$ is the maximal share of invaders 
-%such that the inequality still holds, $\epsilon \in (0,\bar{\epsilon})$.
 
 The key things to remember are that, a Nash equilibrium is a rest point of
 the replicator dynamic. Furthermore, not all rest points are 
@@ -446,8 +435,7 @@ the stag hunting equilibrium of the stage game, for all initial conditions
 $x_0 \in (\frac{\alpha_2}{\alpha_1+\alpha_2},1]$. Any trajectory of the 
 dynamical system with initial conditions 
 $x_0 \in [0,\frac{\alpha_2}{\alpha_1+\alpha_2})$ leads to the hare hunting
-equilibrium. The size of each basin of attraction coincides with the invasion 
-barrier $\bar{\epsilon}$ of the strategy used in the Nash equilibria.
+equilibrium. 
 
 Interestingly, one observes another connection of the 
 dynamic with the stage game. 
