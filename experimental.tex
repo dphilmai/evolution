@@ -12,7 +12,7 @@ Due to the rich experimental literature on coordination in social
 dilemmas, the focus will be on studies with a framework close to the  
 evolutionary SH game. A comparison will show the shortcomings and what
 is described well by the evolutionary framework.
- 
+
 Due to the different notations authors use, a translation into the present
 notation was performed.
 On these grounds, the 
@@ -48,7 +48,8 @@ five periods of this game, although the subjects played an alternative payoff
 matrix, embracing the payoff-efficient equilibrium, in between. 
 Replications of these results have been performed numerously, with 
 varying group sizes and slightly changed payoff matrices 
-\parencite[6]{devetag_when_2007}. 
+\parencite[6]{devetag_when_2007}.
+
 \textcite{cooper_communication_1992} used a
 two-player stag hunt game\footnote{They call 
 it simple coordination game (SCG).}  
@@ -61,7 +62,8 @@ they intend to choose, solves the coordination problem in the SCG.
 In their game, both players had an incentive to truthfully tell their
 opponents what they intend to do as ($c=d$). 
 Therefore, this does not reject Aumanns hypothesis.
-Nevertheless, \textcite{clark_when_2001} run experiments with a game in which
+
+Nevertheless, \textcite{clark_when_2001} ran experiments with a game in which
 players had an incentive to want their opponents to choose strategy $S$ 
 independently of their choice $(c > d)$.
 In this game, when both players announced $S$, only 25\% coordinated on
@@ -86,7 +88,6 @@ In the evolutionary games discussed above, a group of players is randomly
 matched against each other to play a stag hunt game. For that reason, the
 implementation of random matching in a group closely resembles an 
 evolutionary game.
-
 Random matching was conducted by \textcite{battalio_optimization_2001}. 
 Subjects played three stag hunt games with the typical symmetric pure strategy
 equilibrium and the symmetric mixed strategy equilibrium with $(0.8,0.2)^T \in
@@ -129,11 +130,11 @@ While ``all 24 cohorts start in the basin of attraction
 of the risk-dominant equilibrium'' 
 \parencite[755]{battalio_optimization_2001}, all cohorts 
 should converge to the risk-dominant equilibrium according to the dynamic.
-But, for the sake of completeness, a crossing of the  
-``best-response separatrix'' \parencite{battalio_optimization_2001}, i.e.\ 
+A crossing of the  ``best-response separatrix'' 
+\parencite{battalio_optimization_2001}, i.e.\ 
 mixed-strategy equilibrium, can not happen in the deterministic replicator 
 dynamic. Furthermore, as they conjectured, a larger optimization premium 
-increases the speed of convergence. Hence, a coordination on a equilibrium 
+increases the speed of convergence. Hence,  coordination on a equilibrium 
 was achieved fastest in the $2R$ game. This is consistent with a 
 postulated replicator dynamic for these games. Starting from 
 \eqref{eq:replicator}, one can derive that the dynamics of this 
@@ -141,7 +142,7 @@ games are the same up to a change in speed, proportional to the ratio of
 optimization premia of the games. Thus, in game $R$ the change 
 in the population share playing strategy $S$ is half the 
 speed of $2R$ and four thirds of $0.6R$,
-$\dot{x}_{R} = \frac 12 \dot{x}_{2R} = \frac{4}{3}\dot{x}_R$.
+$\dot{x}_{R} = \frac 12 \dot{x}_{2R} = \frac{5}{3}\dot{x}_R$.
 
 \textcite{schmidt_playing_2003} designed their experiment so that the effect
 of differing risk levels could be observed. It stands to reason to relabel 
@@ -182,7 +183,7 @@ equilibrium in game 2 and 3. In their implementation of a
 random matching protocol, \textcite{schmidt_playing_2003} 
 found evidence that an increase in $R$ leads to a higher choice 
 of the strategy in the risk-dominant Nash equilibrium. Players did not react 
-to changes in $P$, the level of payoff dominance, but to the changes in $R$.
+to changes in $P$, the level of payoff dominance.
 
 According to \textcite{rydval_loss_2005}, the risk measure $R$ 
 can be interpreted as the risk concerned with a players' 
@@ -203,7 +204,8 @@ Alternatively, it can be interpreted as the ratio of the
 standard deviations of the payoffs 
 \parencite[372]{dubois_optimization_2012}. 
 The relative riskiness measure is close to one if both strategies involve
-similar risk. Accordingly, a lower relative riskiness measure implies that
+similar risk. 
+Accordingly, a lower relative riskiness measure implies that
 strategy $H$ has a lower risk compared to strategy $S$.
 A game with a lower $RR$ indicates lower relative riskiness of the strategy
 $S$ to $H$ compared to another game.
@@ -222,7 +224,7 @@ should allow for the case where c=d as compared to $(a-b)$''
 \parencite{dubois_optimization_2008}. The distinction between the two
 measures can be illustrated by two games. Suppose a game A with the parameters 
 $(a,b,c,d) =(9,0,8,7)$ and a game B with $(9,0.5,6.5,6)$. Both games
-have the same optimization premium
+have the same optimization premium $\delta_A = \delta_B = 8$
 Game B has a lower risk than A in regard to the relative riskiness
 measure as $RR_B=\frac{1}{17} < RR_A =\frac19$. Conversely, the 
 risk measure $R$ indicates that risk-dominance is stronger in game A because
@@ -334,11 +336,11 @@ formulated as a single-population continuous-time logistic-response dynamic
 than that of the replicator dynamic as it does not satisfy payoff monotonicity.
 For example in the stag hunt game the dynamic does not have the same inner
 fixed point as the replicator dynamic. Instead, the literature speaks
-of a logit equilibrium \textcite{battalio_optimization_2001}. The discussion
+of a logit equilibrium \parencite{battalio_optimization_2001}. The discussion
 of the explicit dynamic is beyond the scope of this thesis. 
 However, it is interesting to note that revision protocols can be motivated 
-that incorporate that agents use the history of play for their future strategy
-choice.
+to incorporate that agents use the history of play for their future strategy
+choices.
 
 \subsection{Details of the Implementation}
 As outlined, most studies concerned with the stag hunt game in the 
@@ -372,12 +374,12 @@ involves 75 rounds''\parencite[378]{dubois_optimization_2012}.
 While essentially containing the same information,
 it does not emphasize the fact that subjects can encounter the same 
 player again and consequently might have influenced the subjects to play
-the strategy associated with less risk.
+the safer strategy.
 
-An interesting experimental approach is executed by 
+An interesting experimental approach was executed by 
 \textcite{dufwenberg_gender_2005}. They tried to evaluate whether 
-there is a difference in coordination behavior across genders, motivated by 
-the different treatment of males and females in the work place. Playing the 
+there is a difference in coordination behavior across genders.
+Playing the 
 weak-link order statistics game of \textcite{van_huyck_tacit_1990}, groups of 
 only females or only males face the coordination problem with Pareto-ranked 
 equilibria. The motivation of observing gender differences was 
@@ -395,15 +397,18 @@ public goods game. Namely, \textcite{croson_groups_2008} found that
 females in a sorority playing the public goods game perform better than 
 females with no specific affiliation. Contrarily, males in a fraternity 
 performed worse than males without a group identity. 
+
 Interestingly, this and other factors concerning the group of subjects 
 playing the coordination game, might be a rationale for the 
 initial conditions in the evolutionary dynamic. If there is no 
 ``slice of history" available,
 the initial conditions could capture the composition of the subjects 
 interacting, reflecting how well trust or cultural conventions 
-are embedded in this group. It might be interesting to observe the 
-coordination of groups where to each subject the composition of the group
-was pointed out. For example, I suspect that the behavior of people that
+are embedded in this group.
+It might be interesting to observe the 
+coordination of groups where the composition of the group
+was pointed out to each subject. 
+For example, I suspect that the behavior of people that
 are permanently confronted with risky decisions and the risky decisions
 of others, knowing that they are interacting with her kind, 
 may not be as sensitive to risk-dominance as people that do not
@@ -412,4 +417,4 @@ Nevertheless, it seems difficult, at least for the author, to justify
 the reduction of the inheritance of cultural values or conventions to 
 one\footnote{Of course, in games with more than two strategies 
 the initial conditions are represented by a vector.} dimension such 
-as the initial conditions $x_0$.
+as the initial condition $x_0$. 

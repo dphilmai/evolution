@@ -12,18 +12,18 @@ For reasons of simplification, assume that both
 software types are capable of producing
 the same quality of ouput for the projects and are similiarly easy to handle.
 The only difference is the high license cost for proprietary software.
-Common examples of this are Open Office vs. Microsoft Word for text editing,
-Python vs. Matlab for scientific computing and R vs. Stata for statistical
+Common examples of this are Open Office vs.\ Microsoft Word for text editing,
+Python vs.\ Matlab for scientific computing and R vs.\ Stata for statistical
 analysis. Assigned to a project, students can either choose proprietary
 software denoted as strategy 1 or open source software denoted as strategy 2.
-If both students choose open source software they receive utility $a$.
-Coordinating on propierty software leaves both with a utility $d$ which is
-smaller than $a$ as they have to pay for the licenses. In the case 
+If both students choose open source software they receive utility $(a)$.
+Coordinating on propierty software leaves both with a utility $(d)$ which is
+smaller than $(a)$ as they have to pay for the licenses. In the case 
 where students fail to coordinate on a software tool, the student
-with proprietary software gets $c$. However, the other student
+with proprietary software gets $(c)$. However, the other student
 has to transfer his contributions to the standards of the proprietary software
 as portability is usually only possible in this direction.
-Hence, this stundet only gets $b$. The parameters fullfill 
+Hence, this stundet only gets $(b)$. The parameters fullfill 
 the condition $a > c \geq d >b$.
 Evidently, the structure of the game is precisely that of a stag hunt game. 
 Coordination on open source software is the payoff-dominant Nash equilibrium,
@@ -50,31 +50,32 @@ equilibria to the evolutionary stag hunt game above.
 However, I want to introduce \textit{network externalities} in this model. 
 The interest of the economic literature turned to open source software 
 development, because it is commonly observed that users contribute to 
-projects without receiving a monetary payment for it.
+programming projects without receiving a monetary compensation for it.
 In fact users share their source code publicly to the open source community,
 being motivated by peer recognition and the signaling for career concerns
 \parencite[21]{lerner_simple_2002}.
-The utility for a user increases with the size of the community as 
-more people contributing code enhance the variety and usefulness of the 
+The utility for a student increases with the size of the community as 
+more students contributing code enhance the variety and usefulness of the 
 software. 
 To incorporate this in the model, let the utility for a student 
 in the case of coordination on open source software be a function of 
 population size using that strategy $f(x)$. 
 Preserving the general structure of the
 game, it is useful to focus on the functional specification 
-$f(x) = a + e(x)$, where $a$ is the payoff parameter used 
+$f(x) = a + e(x)$, where $(a)$ is the payoff parameter used 
 previously and $e(x)$ denotes the network externality. 
 A positive network externality satisfies $e(x)\geq 0$ and 
 $\frac{de(x)}{dx}>0$, 
 as an increase of the population share choosing the strategy
 also increases the utility due to the network. 
-Including the parameter $a$ ensures that the utility of this 
+Including the parameter $(a)$ ensures that the utility of this 
 strategy combination is never below the utility of coordination on 
 proprietary software. Otherwise, the structure of the stage game would 
 differ fundamentally with respect to the population share choosing strategy 1. 
+
 The payoff matrix, using local shifts, is 
 $A=\begin{psmallmatrix}\alpha_1+u(x) && 0 \\ 0&& \alpha_2\end{psmallmatrix}$. 
-Substituting into the replicator dynamic  \ref{eq:replicatorpara} yields:
+Substituting into the replicator dynamic  \eqref{eq:replicatorpara} yields:
 \begin{alignat}{2}
         \dot{x} = \varphi(x) = x^2(\alpha_1+e(x) +2\alpha_2 ) 
         - x^3(\alpha_1+e(x)+\alpha_2) - x(\alpha_2)
@@ -118,6 +119,10 @@ Note that the share of students choosing strategy 1 is now lower at the
 inner fixed point, displayed by the gray dashed lines in subfigure 
 \ref{fig:externalitypolynominal}, showing that the externality has a positive 
 effect on the attractiveness of choosing open source software. 
+Using the argument developed above, the inner fixed point is still not
+asymptotically stable. Any feasible share of outsider $\epsilon$ 
+with a pure strategy would lead to convergence to one of the 
+pure population states as $|\varphi(x_3+\epsilon)|>0$.
 Indeed, the basin of attraction of the equilibrium in which all 
 students are using open source software became larger, 
 depicted by the distance to the inner fixed point.
@@ -136,7 +141,7 @@ in figure \ref{fig:dynamiclinear}.
         \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[scale=0.5]{dynamiclinearmodel.pdf}
-        \caption[Replicator dynamic of the model with externality]{The dynamic $x(t)$ for different $x(t=0)$} 
+        \caption[Replicator dynamic of the model with externality]{The dynamic $x(t)$ for different $x_0$} 
         \label{fig:dynamiclinear}
         \end{subfigure}%        
         \caption[Polynominal and Dynamic of the model with externality]
@@ -149,7 +154,7 @@ attracting an equal amount of initial conditions. However,
 the proprietary equilibrium looses its risk-dominance property 
 only for $1 > x > \frac{\alpha_2-\alpha_1}{\beta}  $, using definition 
 \ref{eq:riskdom}. The right hand side of the equation must be lower than one 
-to change the risk-dominance property. In this model,
+to make a change of the risk-dominance property feasible. In this model,
 the size of the basins of attraction and the risk-dominance
 property do not coincide in general, since the externality affects the Nash 
 product associated with the pure strategy 1 equilibrium. Consider for example 
