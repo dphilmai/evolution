@@ -1,31 +1,31 @@
 \label{sec:traditional}
-As already explained, the stag hunt game (SH) is played by 
+As already explained, the stag hunt game is played by 
 two players who choose their
-strategies without knowing each others choice.
+strategies simultaneously.
 Both have information about the strategies of the
 other player and the payoffs they and their opponents receive. In game theory
 such a game is called a \textit{normal form} game with complete information. 
 Typically, such a game is formalized as a Triplet $\Gamma = (I,\mathbb{S},F)$, 
-with the set of players $I=\{1,2,...,n\}$, where $n$ is the 
+with the set of players $I=\{1,2,...,n\}$, where $n \in \mathbb{N}$ is the 
 total number of players. 
 Expressing all possible states of the game, the pure
 strategy space of the game $\mathbb{S}$ is defined as the cartesian
 product of the individual pure strategy spaces $S_i$ for a player $i \in I$,
 $\mathbb{S}=\times_i S_i$. The individual pure strategy space is defined as
-$S_i = \{1,2,...,m_i\}$, where $m_i$ denotes the total 
+$S_i = \{1,2,...,m_i\}$, where $m_i \in \mathbb{N}$ denotes the total 
 number of strategies available to player $i$. 
 The payoff 
 function of the game is denoted by $F: S \rightarrow \realnumb^n$.
 As this text focuses upon the stag hunt game, these definitions reduce to the 
 following.
-By setting $n=2$, we define the set of two hunters playing SH as $I=\{1,2\}$. A 
-player $i \in I$  can choose a pure strategies from his 
-pure strategy space, $S_i$. The strategies are called pure to distinguish
-them from the later introduced mixed strategies. 
+By setting $n=2$, we define the set of two hunters playing SH as $I=\{1,2\}$. 
 In the SH game, each hunter can choose one out of two pure strategies, namely, 
 hunting stag (strategy 1 or S) or hunting hare (strategy 2 or H).
 Therefore, the pure strategy space is defined by $S_i = \{1,2\}$, which results
-by setting $m_i=2$. In the SH game both players choose from
+by setting $m_i=2$. 
+The strategies are called pure to distinguish
+them from the later introduced mixed strategies. 
+In the SH game both players choose from
 the same set of strategies such that $S_1 =S_2=S$. Combining the strategy spaces
 of the two players with the cartesian product
 yields the definition of the pure strategy space of the game
@@ -41,8 +41,8 @@ to every state of the game $s=(s_1,s_2) \in S^2$, where $s_i$ is a pure
 strategy of player $i$. A state of the game $s$ is sometimes simply called 
 strategy profile.
 The payoffs are usually interpreted as \textit{von-Neumann} utility when 
-played by individuals or households and are interpreted as earnings regarding 
-firms \parencite{fudenberg_theory_1998}. 
+played by individuals or households and may be interpreted as earnings 
+regarding firms \parencite{fudenberg_theory_1998}. 
 
 In the special case of two players, one can define a payoff matrix for
 player 1, $A \in \realnumb^{2 \times2}$ and for player 2,
@@ -76,7 +76,7 @@ Usually a game is extended by the possibility of the players to play
 Intuitively, the hunters in the SH game could  
 choose whether to shoot the stag or the hare by using a randomization
 tool such as flipping a coin. However, randomization is not really
-satisfying in the most applications \parencite{radner_private_1982}. An
+satisfying in most applications \parencite{radner_private_1982}. An
 alternative interpretation, outlined by Rubinstein, is that mixed 
 strategies are actually deterministic, but seem to be random because they 
 depend on not modelled private information of the individuals 
@@ -91,7 +91,8 @@ his pure strategies space. A strategy $x_i \in \Delta_i$ of
 player $i \in I$ is called a \textit{mixed strategy}, where $\Delta_i$ is 
 the mixed strategy space 
 \begin{align*}
-        \Delta_i = \{ x_i \in \realnumb^2 : \sum_{k=1}^2 x_{ik} = 1, x_{ik} \geq 0 \quad
+        \Delta_i = \{ x_i = (x_{i1}, x_{i2})^T \in \realnumb^2 : 
+                \sum_{k=1}^2 x_{ik} = 1, x_{ik} \geq 0 \quad
 \forall k \in S\}.
 \end{align*}
 In a symmetric game, the mixed strategy spaces of the players are
@@ -105,7 +106,8 @@ Hence, $e_1 = (1,0)^T$ is the pure strategy hunting stag
 and $e_2 =(0,1)^T$ denotes the pure strategy hunting hare.
 The combined mixed strategy space of the game is $\Delta^2 = \Delta \times
 \Delta$.
-From now on, $x \in \Delta$ denotes a (mixed) strategy
+From now on, except otherwise indicated, $x \in \Delta$ 
+denotes a (mixed) strategy
 chosen by player 1 and $y \in \Delta$ a (mixed) strategy of player 2.
 Again, similar to the pure strategy case, the mixed strategy payoff 
 $\hat{F}_i:\Delta^2 \rightarrow \realnumb$ maps 
@@ -124,8 +126,8 @@ normal form game $\Gamma = (I=\{1,2\}, \Delta^2, \hat{F})$.
 \label{sec:traditionalconcepts}
 In describing the behavior of agents, game theory developed a wide range of 
 tools to solve these strategic interactions. First of all, for each individual
-a best-reply is defined by simply describing the strategies available to him 
-which yield the highest expected payoff against a given 
+a best-reply is defined by simply describing the strategies available to the
+agent which yield the highest expected payoff against a given 
 strategy of the other player.
 Formally, the \textit{best-reply} $\beta_i(y)$ for player $i \in I$ to a 
 strategy $y \in \Delta$ played by $j \neq i$ is defined as:
@@ -140,21 +142,23 @@ a normal form game is the \textit{Nash equilibrium}.
 The Nash equilibrium was named by its proposer John Nash in 1950 
 and due to its prominence it is sometimes simply referred to as equilibrium 
 or NE.
-In the following, the definition of a Nash equilibrium in a symmetric two
+In the following, the definition of a Nash equilibrium in a two
 player normal form game is stated. 
 \begin{mydef}
         \label{def:nashequilibrium}
         A state of $(x^*,y^*) \in \Delta^2$ is called a Nash equilibrium if 
         it holds that
         \begin{alignat*}{2}
-                (x^*)^T A y^* &\geq x^T A y^*, \quad \forall x \in \Delta 
+                (x^*)^T A y^* &\geq x^T A y^*, \quad \forall x \in \Delta  \\
+                (x^*)^T A^T y^* &\geq (x^*)^T A^T y \quad \forall y \in \Delta
         \end{alignat*}
 It is called symmetric if $x^* = y^*$. A Nash equilibrium is called a 
 strict Nash equilibrium if the inequality is strict.
 \end{mydef}
-Only one equality is needed in a symmetric game as strategy space and
-payoff function of each player are identical.
-Equivalently to the definition, one can say that a strategy combination 
+Actually, only one inequality is needed in a symmetric game as payoffs
+and strategy spaces are identical and so every state $(y^*,x^*) \in \Delta^2$ 
+is also a Nash equilibrium.
+Equivalently to the definition, one can say that a strategy profile 
 is a Nash equilibrium if all players choose a best-reply in that strategy 
 combination and hence, no player has the incentive to deviate from his 
 choice given the choice of the other players.
@@ -167,7 +171,7 @@ In the stag hunt game, this means that players are able to calculate every
 outcome and additionally know that other players are rational and 
 consequently also know that other players know that 
 they are rational and so forth \parencite{fudenberg_theory_1998}. 
-Additionally it is assumed that they strive to maximize their own payoff.
+Furthermore, it is assumed that they strive to maximize their own payoff.
 
 Analzying the SH game, one finds three symmetric Nash equilibria.
 The first one consists of both players choosing strategy 1, 
@@ -175,18 +179,21 @@ hunting stag, $(e_1,e_1) \in
 \Delta^2$, where both players receive the payoff $(a)$. 
 None of them has an incentive to change his decision as for both
 playing the pure strategy 1 is a best-reply. A unilateral deviation would 
-lead to the payoff $(c < a)$.
+lead to the payoff $c\ (< a)$.
 The second equilibrium is the state of 
 both players choosing strategy 2, hunting hare, $(e_2,e_2)
 \in \Delta^2$. Again, by definition, both play a best-reply and a unilateral 
 deviation of a player results in a lower payoff $b<d$.
 Additionally to these Nash equilibria in pure strategies, there is a symmetric
-mixed-strategy equilbrium where both players assign a probability 
+mixed strategy equilbrium where both players assign a probability 
 $q^*=\left(\frac{d-b}{a-c+d-b}\right)$ to strategy 1. 
 To see this, a player is indifferent between choosing one of his pure
-strategies against $y$, $\hat{F}(e_1,y) = \hat{F}(e_2,y)$, exactly
-when $y=(q^*,1-q^*)^T$. Therefore, strategy $y$ is for players an alternative
-(weak) best-reply as it satisfies equation \eqref{eq:bestreply}.
+strategies against $y$, $\hat{F}(e_1,y^*) = \hat{F}(e_2,y^*)$, exactly
+when $y^*=(q^*,1-q^*)^T$. The best-reply for a player against $y^*$ can 
+be obtained by equating the partial derivative of his payoff function 
+with 0 at $y=y^*$, 
+$\eval{\frac{\partial \hat{F}(x,y)}{\partial y}}_{y=y^*} = 0$.
+One finds that the best-reply is also $x=y^*$. 
 
 For further analysis it is convenient to use the fact that Nash equilibria 
 are only defined by comparison of payoff differences. 
@@ -219,7 +226,7 @@ with dominated strategies, for example the PD, the solution of the game
 is not that obvious as there are multiple Nash equilibria.
 This will be further discussed in section \ref{sec:equilibriumselection}.
 
-\subsection{Evolutionary Concepts}
+\subsection{Evolutionary Solution Concept}
 The stag hunt game has two Nash equilibria. When a game exhibits 
 multiple equilibria it seems to be a reasonable question 
 which equilibrium will be played. To answer this, 
@@ -242,8 +249,7 @@ stable against an invasion by other animals from outside.
         A strategy $x \in \Delta$ is called a evolutionary stable strategy 
         (ESS) if it holds that
         \begin{alignat}{2}
-                \label{eq:essstrict}
-                \hat{F}(x,x) &\geq \hat{F}(y,x) \quad \forall y \\ 
+                \hat{F}(x,x) &\geq \hat{F}(y,x) \quad \forall y \label{eq:essstrict} \\
                 \hat{F}(y,x) &= \hat{F}(x,x) \Rightarrow  
                 \hat{F}(x,y) > \hat{F}(y,y) \quad \forall y \neq x \label{eq:essstrict2}
         \end{alignat}
@@ -271,7 +277,7 @@ For example consider strategy $e_1$.
 The payoff against strategy $y$ is, independently of the other strategy, 
 equal to $\left(\frac{\alpha_2 \alpha_1}{\alpha_2+\alpha_1}\right)$, i.e. 
 \eqref{eq:essstrict} is an equality.
-Proceeding with \eqref{eq:essstrict}, one finds
+Proceeding with \eqref{eq:essstrict2}, one finds
 $\hat{F}(y,e_1) = \frac{\alpha_1 \alpha_2}{\alpha_1+\alpha_2}
 < \alpha_1 = \hat{F}(e_1,e_1)$, implying that $y$ is not an ESS.
 Hence, the concept of an ESS does not help to select one 
@@ -313,6 +319,7 @@ Following \textcite[57]{schelling_strategy_1960}, one may argue that
 Pareto-dominance characterizes $(e_1,e_1)$ as a focal point. 
 A focal point is an outcome of a game that is psychologically prominent and
 hence, might attract players.
+
 However, the equilibrium point $(e_2,e_2)$ exhibits a different property
 called \textit{risk-dominance}. 
 Consider the numerical example in figure \ref{fig:numericalsh}. 
@@ -322,21 +329,32 @@ strategy $H$ is less risky than strategy $S$ if a player is unsure
 about the strategy choice of the other player.
 \textcite{harsanyi_general_1988} defined this selection criterion 
 based on the risk for the players associated with an 
-equilibrium point. In the SH game, this can be expressed with the following
-definition.
+equilibrium point using a tracing procedure. 
+Basically, in this tracing procedure agents use common knowledge
+to form new beliefs about the choice of their opponents, considering that
+the opponent also has a less risky strategy.
+It is noteworthy that ``risk-dominance is theoretically completely unrelated
+to risk aversion'' as on one hand, the payoffs are in terms of von-Neumman
+utility and on the other hand, proceeding with the updating of their beliefs
+using common knowledge finally leaves the agents with certainty that the less 
+risky strategy will be played by their opponent 
+\parencite[341]{straub_risk_1995}.
+A detailed discussion of the tracing procedure is beyond the scope of this
+text. Nevertheless, risk-dominance is easily defined for the SH game.
 \begin{mydef}
+ \label{eq:riskdom}
 The Nash equilibrium $(e_2,e_2)$ \textit{risk-dominates} 
-$(e_1,e_1)$, if $(d-b)^2 > (a-c)^2$. \label{eq:riskdom}
- \end{mydef}
+$(e_1,e_1)$, if $(d-b)^2 > (a-c)^2$. \end{mydef}
 The squares on the left and the right side of the inequality are named
 \textit{Nash products}.
 As mentioned in \textcite{weibull_evolutionary_1997}, a NE risk-dominates 
 if it is Pareto-dominant in the normalized payoff version of the game, 
 associated with the diagonal payoff matrix, 
 as definition \eqref{eq:riskdom} corresponds to $\alpha_1 < \alpha_2$.
-Both pure Nash equilibria have a certain appeal for game theorists to be
-favored as an outcome of the game. 
 
+Therefore, both pure Nash equilibria have a 
+certain appeal for game theorists to be
+favored as an outcome of the game. 
 The question is whether people rather play
 safe and coordinate on the hare hunting equilibrium, terminating in a social
 dilemma as there exists an outcome in which everyone of them is better off.
@@ -359,8 +377,8 @@ player 2, saying that he intends to coordinate on the payoff-dominant
 equilibrium, does not in general contain useful information for player 2. 
 Indeed, in the numerical example of the SH game a player wants his
 opponent to choose strategy $S$ indepentendly of his choice, because
-hare hunting alone is better (payoff: $4$) than hare hunting together 
-(payoff: $3$).
+hare hunting alone is better (payoff:\ $4$) than hare hunting together 
+(payoff:\ $3$).
 Despite this argument, 
 \textcite[114]{farrell_cheap_1996} expect that 
 ``cheap talk will do a good deal to
@@ -370,8 +388,8 @@ to the stag hunt''. The experimental evidence will give a hint on how cheap
 talk affects real players. 
 ``Convinced by Aumann's argument'', Harsanyi formulated a new theory
 of equilibrium selection in 1995, solely focussing on 
-risk-dominance as selection criterion, hence favorising the hare 
-equilibrium in SH game \parencite[92,94,96]{harsanyi_new_1995}. 
+risk-dominance as selection criterion, hence favoring the hare 
+equilibrium in the SH game \parencite[92,94,96]{harsanyi_new_1995}. 
 
 In the social sciences, the infinitely repeated version of the
 prisoner's dilemma has attracted wide interest for studying which factors 
@@ -380,8 +398,9 @@ Axelrod studies the success of different strategies using computer
 simulations of the repeated prisoner's dilemma. The typical theoretical
 framework usually only recognizes the Pareto-dominance of some equilibria
 in the repeated game. Intriguingly, \textcite{blonski_prisoners_2015} show
-that the underlying structure actually is a stag hunt game, as risk-dominance
-and Pareto-dominance select different equilibria. This connection to 
+that the underlying structure actually is simliar to the stag hunt game, 
+as risk-dominance and Pareto-dominance select different equilibria. 
+This connection to 
 one of the most frequently used frameworks of a social dilemma stresses the
 importance of the equilibrium selection problem in the stag hunt game.
 
