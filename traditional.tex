@@ -159,8 +159,8 @@ Actually, only one inequality is needed in a symmetric game as payoffs
 and strategy spaces are identical and so every state $(y^*,x^*) \in \Delta^2$ 
 is also a Nash equilibrium.
 Equivalently to the definition, one can say that a strategy profile 
-is a Nash equilibrium if all players choose a best-reply in that strategy 
-combination and hence, no player has the incentive to deviate from his 
+is a Nash equilibrium if all players choose a best-reply in that state of 
+the game and hence, no player has the incentive to deviate from his 
 choice given the choice of the other players.
 \textcite{nash_equilibrium_1950} proved the existence of such 
 an equilibrium in any normal form game with mixed strategies. 
@@ -173,7 +173,7 @@ consequently also know that other players know that
 they are rational and so forth \parencite{fudenberg_theory_1998}. 
 Furthermore, it is assumed that they strive to maximize their own payoff.
 
-Analzying the SH game, one finds three symmetric Nash equilibria.
+Analyzing the SH game, one finds three symmetric Nash equilibria.
 The first one consists of both players choosing strategy 1, 
 hunting stag, $(e_1,e_1) \in
 \Delta^2$, where both players receive the payoff $(a)$. 
@@ -198,11 +198,11 @@ One finds that the best-reply is also $x=y^*$.
 For further analysis it is convenient to use the fact that Nash equilibria 
 are only defined by comparison of payoff differences. 
 Hence, any affine transformation of the payoff matrix does not change the 
-best-replies of the players and thus, does not effect the set Nash equilibria 
+best-replies of the players and thus, does not affect the set of Nash equilibria 
 of the game \parencite[17-19]{weibull_evolutionary_1997}. 
 Furthermore, adding a constant to every entry in a 
 column of the payoff matrix, 
-called a \textit{local shift}, does not effect the payoff differences
+called a \textit{local shift}, does not affect the payoff differences
 a player considers when valuating which strategy is better against a given
 strategy of the other player.
 Formally, let $A_{kl}$ denote the elements of the player's payoff matrix. 
@@ -239,7 +239,7 @@ In the biological context of \textcite{smith_lhe_1973}, a game is played
 by animals that are of a specific phenotype. A phenotype is interpreted
 as a strategy in the underlying game. The animals of the population are randomly
 matched in pairs, playing the normal form game. Payoffs are interpreted as
-\textit{Darwinian fitness}, the number of expected offsprings to a phenotype.
+\textit{Darwinian fitness}, the number of expected offspring to a phenotype.
 Hence, the payoffs determine the survivability of the phenotype in the 
 population.
 The ESS concept answers the question which compositions of the population are
@@ -256,7 +256,7 @@ stable against an invasion by other animals from outside.
 \end{mydef}
 Equation \eqref{eq:essstrict}
 requires an ESS $x$ to be a better reply to itself than any other strategy $y$.
-If there exists another strategy $y$ with the same payoff, equation 
+If there exists a strategy $y$ with the same payoff, equation 
 \eqref{eq:essstrict2} demands that choosing $x$ against $y$ is better 
 than choosing $y$ against itself.
 Indeed, an ESS is used in a 
@@ -275,7 +275,7 @@ To prove that a strategy is not an ESS it suffices to find one
 strategy for which the inequalities do not hold.
 For example consider strategy $e_1$.
 The payoff against strategy $y$ is, independently of the other strategy, 
-equal to $\left(\frac{\alpha_2 \alpha_1}{\alpha_2+\alpha_1}\right)$, i.e. 
+equal to $\left(\frac{\alpha_2 \alpha_1}{\alpha_2+\alpha_1}\right)$, i.e.\ 
 \eqref{eq:essstrict} is an equality.
 Proceeding with \eqref{eq:essstrict2}, one finds
 $\hat{F}(y,e_1) = \frac{\alpha_1 \alpha_2}{\alpha_1+\alpha_2}
@@ -308,11 +308,11 @@ for both players. $(e_1,e_1)$ is then said to
 \textit{payoff-dominate} or to \textit{Pareto-dominate} 
 $(e_2,e_2)$. Equivalently, the equilibria are said to be
 \textit{Pareto-ranked}.
-In the Prisoners Dilemma, briefly described in the introduction, 
+In the prisoner's dilemma, briefly described in the introduction, 
 the payoff-dominant outcome is not a 
 Nash equilibrium, due to the fact that every agent has the incentive to 
 deviate and accept the deal of the authority.
-Contrarly, in the SH game every agent plays a best-reply 
+On the contrary, in the SH game every agent plays a best-reply 
 in the Pareto efficient outcome, but since there is another Nash equilibrium 
 it is not clear which one is played based on equilibrium play alone. 
 Following \textcite[57]{schelling_strategy_1960}, one may argue that 
@@ -324,14 +324,14 @@ However, the equilibrium point $(e_2,e_2)$ exhibits a property
 called \textit{risk\hyp{}dominance}. 
 Consider the numerical example in figure \ref{fig:numericalsh}. 
 Strategy $H$ ensures a player with a payoff of at least $3$, whereas the 
-payoff for strategy S varies between $5$ and $0$. Undoubetly, 
+payoff for strategy S varies between $5$ and $0$. Undoubtedly, 
 strategy $H$ is less risky than strategy $S$ if a player is unsure 
 about the strategy choice of the other player.
 \textcite{harsanyi_general_1988} defined this selection criterion 
 based on the risk for the players associated with an 
 equilibrium point using a tracing procedure. 
 Basically, in this tracing procedure agents use common knowledge
-to form new beliefs about the choice of their opponents, considering that
+to form new beliefs about the choice of their opponent, considering that
 the opponent also has a less risky strategy.
 It is noteworthy that ``risk-dominance is theoretically completely unrelated
 to risk aversion'' as on one hand, the payoffs are in terms of von-Neumman
@@ -347,8 +347,9 @@ The Nash equilibrium $(e_2,e_2)$ \textit{risk-dominates}
 $(e_1,e_1)$, if $(d-b)^2 > (a-c)^2$. \end{mydef}
 The squares on the left and the right side of the inequality are named
 \textit{Nash products}.
-As mentioned in \textcite{weibull_evolutionary_1997}, a NE risk-dominates 
-if it is Pareto-dominant in the normalized payoff version of the game, 
+As mentioned in \textcite{weibull_evolutionary_1997}, a Nash equilibrium 
+risk-dominates if it is Pareto-dominant in the 
+normalized payoff version of the game, 
 associated with the diagonal payoff matrix, 
 as definition \eqref{eq:riskdom} corresponds to $\alpha_1 < \alpha_2$.
 
@@ -375,8 +376,9 @@ In contrast to that,
 \textcite{aumann_nash_1990} points out that a message from player 1 to 
 player 2, saying that he intends to coordinate on the payoff-dominant 
 equilibrium, does not in general contain useful information for player 2. 
-Indeed, in the numerical example of the SH game a player wants his
-opponent to choose strategy $S$ indepentendly of his choice, because
+Indeed, in the numerical example of the SH game in figure \ref{fig:numericalsh} 
+a player wants his
+opponent to choose strategy $S$ independently of his choice, because
 hare hunting alone is better (payoff:\ $4$) than hare hunting together 
 (payoff:\ $3$).
 Despite this argument, 
@@ -398,7 +400,7 @@ Axelrod studies the success of different strategies using computer
 simulations of the repeated prisoner's dilemma. The typical theoretical
 framework usually only recognizes the Pareto-dominance of some equilibria
 in the repeated game. Intriguingly, \textcite{blonski_prisoners_2015} show
-that the underlying structure actually is simliar to the stag hunt game, 
+that the underlying structure actually is similiar to the stag hunt game, 
 as risk-dominance and Pareto-dominance select different equilibria. 
 This connection to 
 one of the most frequently used frameworks of a social dilemma stresses the

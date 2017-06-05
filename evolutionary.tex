@@ -4,7 +4,7 @@ over time to play a stage game. In an evolutionary interpretation of the
 stag hunt game, it is repeatedly played as the stage game.
 Usually, the number of agents is assumed to be (infinitely) large, 
 such that on one hand, the effect of a single individual 
-on the population is small, and on 
+on the population is small, and on the
 other hand, the interaction happens anonymously.
 Furthermore, agents are described as myopically, so that they do not 
 discount later payoffs.
@@ -52,7 +52,7 @@ Typically it is assumed that agents have an inner alarm clock
 which rings at a rate R following an exponential distribution. 
 Of course, this does not translate 
 in economic applications to individuals having literal clocks around their
-wrist, but illustrates the idea of a randomly occuring chance to reconsider
+wrist, but illustrates the idea of a randomly occurring chance to reconsider
 their strategy choice.
 The agents' clocks are assumed to be independent of each other, such that
 the individuals chance to revise does not dependent on others.
@@ -102,7 +102,7 @@ There are different plausible revision protocols studied in the literature.
 these revision protocols, such as logit choice, comparison to average payoff 
 and best response protocol. 
 They all contain different assumptions about the information 
-an individual agent can obtain and about the abillity of the agents 
+an individual agent can obtain and about the ability of the agents 
 to process this information. Hence, the resulting evolutionary 
 dynamics have different properties.
 
@@ -115,7 +115,7 @@ another agent's strategy and its payoff received in the current
 state of the population. 
 The switching probability of an agent choosing strategy $i$  
 is proportional to the difference between the observed payoff $F^j(\vec{x})$ 
-of the other agent with strategy $j$ and his payoff $F^i(\vec{x})$.
+of the other agent with strategy $j$ and his own payoff $F^i(\vec{x})$.
 This can formally be expressed as
 \begin{align}
         \label{eq:pairwiseproportionalimitation}
@@ -223,7 +223,7 @@ cannot deduce the composition of the population which is needed to choose
 a strategy that maximizes the expected payoff. However, one can qualify this 
 argument by assuming that agents have the information but cannot process it.
 In the trader analogy, traders might be able to see the difference of the
-other traders' stalls, but cannot recognize the secret of their success 
+other traders' market stalls, but cannot recognize the secret of their success 
 without others telling them.
 
 A further property of the replicator dynamic is the lack of mutation or 
@@ -246,26 +246,26 @@ dynamics for the parametrized SH game using the matrix in equation
 The last step follows by using local shifts on the matrix $A$. 
 This does not change the dynamic at all because it preserves the relative
 difference of payoffs \parencite[73]{weibull_evolutionary_1997}. 
-The polynominal $\varphi(x)$ is
+The polynomial $\varphi(x)$ is
 of degree $3$ and contains all information about the dynamic. Actually, 
 as outlined below, it shows to which state the population converges.
-In figure \ref{fig:polynominal} the graph of $\varphi(x)$ for the parameters
-$a=5, b=0,c=4,d=3$ is shown. The ordinate represents the polynominal and
-the abscissa represents the population share choosing strategy 1. Hence it is
-between $0$ and $1$. Roots of the polynominal are the values of $x$ for 
+In figure \ref{fig:polynomial} the graph of $\varphi(x)$ for the parameters
+$a=5, b=0,c=4,d=3$ is shown. The ordinate represents the polynomial and
+the abscissa represents the population share choosing strategy 1. Hence, it is
+between $0$ and $1$. Roots of the polynomial are the values of $x$ for 
 which $\varphi(x)$ crosses the horizontal dashed gray line. The vertical
 dashed gray line indicates the inner root, the root for an $x \in (0,1)$. 
 
 \begin{figure}[h]
         \centering
-        \includegraphics[scale=0.5]{polynominal.pdf}
-        \caption[Polynominal of the Replicator Dynamic]{$\varphi(x)$ for the parameter setting $a=5, b=0, c=4, d=3$}
-        \label{fig:polynominal}
+        \includegraphics[scale=0.6]{polynominal.pdf}
+        \caption[Polynomial of the Replicator Dynamic]{$\varphi(x)$ for the parameter setting $a=5, b=0, c=4, d=3$}
+        \label{fig:polynomial}
 \end{figure}
 A solution through an initial state $x_0$ of the dynamical system is called a 
 \textit{trajectory}, whereby it is distinguished between a forward trajectory 
 for $t \rightarrow \infty$ and backward trajectory for $t \leftarrow \infty$.
-Analytical solutions, i.e.\ solutions one can express with the use of
+Analytic solutions, i.e.\ solutions one can express with the use of
 basic functions, can only be derived for simple cases. 
 However, the existence and uniqueness of a solution through
 any initial state for the replicator dynamic is guaranteed by the theorem 
@@ -288,13 +288,15 @@ $\varphi(x^*) = 0$.
 The fixed points of the dynamic coincide 
 with the Nash equilibria of the stage game as 
 $\varphi(x^*) = 0$ for $x^* \in \{0,\frac{\alpha_2}{\alpha_1+\alpha_2},1\}$. 
-It suffices to calculate the roots of the polynominal $\varphi(x)$, either
+It suffices to calculate the roots of the polynomial $\varphi(x)$, either
 numerical or, as the Nash equilibria are usually calculated beforehand,
-reducing the degree by polynominal division. In general, the replicator 
+reducing the degree by polynomial division. 
+
+In general, the replicator 
 dynamic lacks the \textit{Nash stationarity} property and thus there are 
 games with fixed points which are not a Nash equilibrium
 \parencite{sandholm_population_2010}.
-For a trivial example, consider the prisoners dilemma in figure \ref{fig:pd}. 
+For a trivial example, consider the prisoner's dilemma in figure \ref{fig:pd}. 
 A population consisting only of cooperating agents stays in that state
 which is not a Nash equilibrium forever. However, inserting one single 
 defecting agent would lead all other agents to imitate the strategy defect,
@@ -304,7 +306,7 @@ a dynamical system that are stable in terms of some
 disturbance of the system. 
 
 A quite strict and useful concept of stability, often used in evolutionary 
-game theory, is \textit{asymptotical stability}. 
+game theory, is \textit{asymptotic stability}. 
 It essentially requires that a system in a specific fixed point returns 
 to the fixed point after a perturbation.
 Hence, the system tends to move back to an asymptotically stable fixed point
@@ -327,18 +329,18 @@ theorem independently contributed by \textcite{hartman_lemma_1960} and
 \textcite{grobman_homeomorphism_1959}, one can easily 
 find the asymptotically stable fixed points in the stag hunt game:
 \begin{mydef}
-        If a one-dimensional dynamical system $\dot{x}(t) = \varphi(x)$ 
+        If a one dimensional dynamical system $\dot{x}(t) = \varphi(x)$ 
         has a hyperbolic fixed point $x^*$, $x^*$ is asymptotically stable
         if its linearization 
-        $\dot{x} = \varphi'(x^*)x$ at that fixed point with 
-        $\frac{\partial \varphi(x)}{\partial x}:= \varphi'(x)$
-        is asymptotically stable. 
+        $\dot{x} = \varphi'(x^*)x$ at that fixed point 
+        is asymptotically stable, with
+        $\frac{\partial \varphi(x)}{\partial x}:= \varphi'(x)$.
         A fixed point is called hyperbolic in one dimension if 
-        $\varphi'(x^*) \neq 0$ and the linearization is stable at that
+        $\varphi'(x^*) \neq 0$. The linearization is stable at that
         point if $\varphi'(x^*) < 0$ and not stable if $\varphi'(x^*) >0$.
 \end{mydef}
-The solution to the linearization can be analytical derived by 
-a standard tool for differential equations - seperation of variables and 
+The solution to the linearization can be analytically derived by 
+a standard tool for differential equations - separation of variables and 
 integration.
 Accordingly, the linearization around the fixed point $x^*$ is 
 $x(t)= x_0 e^{\varphi'(x^*)t}$, where $x_0=x(t=0)$ denotes the 
@@ -361,7 +363,7 @@ In general, more sophisticated mathematical tools such as the theorem of
 Lyapunov and entropy functions are needed to prove whether a fixed point
 is asymptotically stable \parencite{friedman_economic_1998}.
 
-Another way to look at the asymptotically stability of the inner fixed
+Another way to look at the asymptotic stability of the inner fixed
 point is the following.
 Suppose the population is currently at the inner fixed point and now 
 some agents come from outside into the population
@@ -382,7 +384,7 @@ agents start switching away from strategy 1 to strategy 2 $(\dot{x} < 0)$
 and hence, the population share of agents playing strategy 1 
 decreases, until it reaches the 
 fixed point $x=0$. 
-Hence, only populations which involve the play of an ESS are asymptotically 
+Hence, only population state which involve the play of an ESS are asymptotically 
 stable.
 
 The key things to remember are that, a Nash equilibrium is a rest point of
@@ -408,15 +410,15 @@ equilibrium, whereas blue trajectories converge to the population state in
 which all agents hunt stag.
 \begin{figure}
  \centering
-        \includegraphics[scale=0.5]{basinofattraction.pdf}
+        \includegraphics[scale=0.6]{basinofattraction.pdf}
         \caption[Replicator dynamic of the stag hunt game]{Replicator dynamics in the stag hunt game for 
                 $\alpha_1=1,\ \alpha_2=3$ with different initial conditions}
                 \label{fig:basinofattraction}
 \end{figure}
 
 Concerning the equilibrium selection, the evolutionary approach with replicator
-dynamic has a definite answer. The population will reach one of the three
-Nash equilibria depending on the initial condition. 
+dynamic has a definite answer. The population will be in one of the three
+Nash equilibria depending on the initial condition after some time. 
 However, an equilibrium that is not asymptotically stable 
 is rather implausible,
 because it only emerges from one initial condition in which the population
@@ -441,7 +443,7 @@ Interestingly, one observes another connection of the
 dynamic with the stage game. 
 By definition \eqref{eq:riskdom}, 
 the hare hunting equilibrium risk-dominates if $\alpha_2 > \alpha_1$.
-Thus the basin of attraction is larger for an equilibrium that 
+Thus, the basin of attraction is larger for an equilibrium that 
 risk-dominates the other. With the parameter setting shown
 in figure \ref{fig:basinofattraction}, $75\%$ of the possible initial 
 conditions lead to the risk-dominant equilibrium, whereas only $25\%$ of 
@@ -449,7 +451,7 @@ them lead to the payoff-dominant equilibrium. This
 connection was for example also shown by \textcite{kandori_learning_1993} 
 in a stochastical model. The convergence to the risk-dominant equilibrium
 in one dimension was independent of the specific adjustment process 
-underlying the dynamic, aslong it satisfied payoff monotonicity. 
+underlying the dynamic, as long it satisfied payoff monotonicity. 
 However, it is not clear what specifies the 
 initial conditions which ultimately determine the selected equilibrium in 
 the deterministic case. 
